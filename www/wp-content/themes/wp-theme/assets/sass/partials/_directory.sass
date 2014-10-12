@@ -1,0 +1,87 @@
+.directory
+	list-style: none
+	width: 820px
+	margin: 0 auto
+	+cf
+
+	&.column-2
+		padding: 0
+
+	+tablet
+		width: 100%
+		padding: 0 20px !important
+
+
+.person-item
+	position: relative
+	width: 410px
+	height: 140px
+	float: left
+	padding-left: 160px
+	padding-top: 33px
+	margin-bottom: 40px
+
+	img
+		position: absolute
+		top: 0
+		left: 0
+		width: 140px
+		height: 140px
+		border-radius: 70px
+
+	h3
+		font-size: +em(26)
+		line-height: 1em
+		margin-bottom: .3em
+
+		a
+			color: $color-dark-gray
+
+	h4
+		color: #7b7b7b
+		font-size: +em(18)
+		font-weight: normal
+		margin-bottom: 0
+		letter-spacing: 0
+
+	.h5
+		text-transform: uppercase
+		font-weight: bold
+		font-size: +em(13)
+		+font("proxima")
+
+	.email
+		text-transform: uppercase
+		font-weight: bold
+		font-size: +em(13)
+		font-family: "proxima-nova", sans-serif
+		font-style: normal
+		font-weight: bold
+		letter-spacing: 0.04em
+
+	+tablet
+		width: 50%
+		height: 90px
+		padding-left: 110px
+		padding-top: 9px
+
+		img
+			width: 90px
+			height: 90px
+			border-radius: 45px
+
+		h3
+			font-size: +em(23)
+
+
+	+mq-contact
+		width: 290px
+		height: 90px
+		padding-left: 110px
+		float: none
+		margin: 0 auto 40px
+		padding-top: 14px
+
+		h3,
+		h4
+			font-size: +em(18)

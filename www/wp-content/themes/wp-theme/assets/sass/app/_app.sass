@@ -1,0 +1,121 @@
+body
+	background-color: $color-light-gray
+	padding-top: 29px
+
+	> section 
+		padding: 70px 0
+
+		&:nth-child(even)
+			background-color: #fff
+
+.middlifier
+	max-width: 1100px
+	margin: 0 auto
+
+
+h1
+	font-size: +em(60)
+	text-align: center
+	line-height: 1.2em
+	color: #fff
+	+middlify
+
+	+mobile
+		font-size: +em(30)
+
+h2
+	font-size: 44px
+	text-align: center
+	border-bottom: 2px solid #cecece
+	padding-bottom: .6em
+	margin-bottom: 1em
+
+	+mobile
+		font-size: +em(30)
+
+
+.wysiwyg
+	padding: 70px 20px
+
+
+
+.contact
+	background: $color-light-gray
+
+	header
+		text-align: center
+		max-width: 1100px
+		margin: 0 auto
+
+	h2
+		text-transform: none
+		font-size: +em(32)
+		margin-bottom: 0.7em
+
+		span
+			color: #b5b5b5
+			font-style: italic
+			font-weight: normal
+
+	article
+		width: 780px
+		margin: 0 auto
+
+		> p
+			text-align: center
+
+		+smallscreen
+			width: 100%
+			padding: 0 22px
+
+	.wpcf7
+		width: 620px
+		margin: 0 auto
+
+		+mq-contact
+			width: 100%
+
+	.checkboxes
+		+mq-contact
+			height: 117px
+
+	form p:nth-child(odd),
+	.wpcf7-list-item:nth-child(even)
+		margin-right: 0
+
+
+footer
+	background: $color-dark-gray
+	padding: 90px 0
+
+	+tablet
+		padding: 45px 0
+
+	p
+		+font("proxima")
+		color: $color-almost-white
+		font-size: +em(16)
+		font-weight: bold
+		display: block
+		text-align: center
+		padding: 0 22px
+
+
+	// FB icon
+	.fb
+		margin: 0 auto
+
+	.fb,
+	.fb > i
+		width: 61px
+		height: 59px
+		background: url(assets/images/fb-ico.png)
+		display: block
+
+	.fb > i
+		+opacity(0)
+		+transition(opacity, 200ms, ease-out)
+		background-position: 61px 0
+
+		&:hover
+			+opacity(1)

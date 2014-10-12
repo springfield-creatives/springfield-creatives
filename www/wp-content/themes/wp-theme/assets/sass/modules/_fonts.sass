@@ -1,0 +1,67 @@
+/** FONTS
+ *===================================
+
+// If you're using a fontello font, please include the json file in your fonts folder and name it as projectname_config.json
+// It's not recommended to make any edits here except for the addition of additional fonts. By default the icons inherit the size of the element they are attached to.
+// Change the fontello font-family name to the one you desire. When you download the fontello font, you can set the name. Set it to icon-font
+
+//----------------------------------*\
+// @FONT-FACE
+//----------------------------------
+
+//----------------------------------*\
+// FONTELLO
+//----------------------------------
+
+@font-face
+  font-family: 'icon-font'
+  src: url("./assets/fonts/icon-font.eot?98763708")
+  src: url("./assets/fonts/icon-font.eot?98763708#iefix") format("embedded-opentype"), url("./assets/fonts/icon-font.woff?98763708") format("woff"), url("./assets/fonts/icon-font.ttf?98763708") format("truetype"), url("./assets/fonts/icon-font.svg?98763708#icon-font") format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+// placeholder mixin
+%icon-font
+  font-family: "icon-font" !important
+  font-style: normal
+  font-weight: normal
+  speak: none
+  text-decoration: inherit
+  width: 1em
+  margin: 0em
+  text-align: center
+  font-variant: normal
+  text-transform: none
+  line-height: 1em
+
+// mixin to include a custom font.
+// We were using a placeholder to include the styles, but there is a change coming in the new future disabling that option.
+// For now you will have duplicate styles in the placeholder and this mixin
+=icon-font($icon: false)
+  font-family: "icon-font" !important
+  font-style: normal
+  font-weight: normal
+  speak: none
+  text-decoration: inherit
+  width: 1em
+  margin: 0em
+  text-align: center
+  font-variant: normal
+  text-transform: none
+  line-height: 1em
+  @if $icon == "example-one"
+    content: '\e803'
+  @if $icon == "example-two"
+    content: '\e805'
+
+[class^="icon-"]:before, [class*=" icon-"]:before
+  +icon-font
+
+// these are default styles for if you choose to use a class name
+// ex: <i class="icon-example-one"></i>
+.icon-example-one:before
+  content: '\e803'
+
+.icon-example-two:before
+  content: '\e805'

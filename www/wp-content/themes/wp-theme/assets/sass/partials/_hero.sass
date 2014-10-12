@@ -1,0 +1,49 @@
+.hero
+	position: relative
+	padding: 130px 0
+
+	// all these !importants are to overwrite "body > section:nth"
+	// bg rule in _app.sass
+	background: no-repeat center center
+	background-attachment: fixed
+	-webkit-background-size: cover
+	-moz-background-size: cover
+	-o-background-size: cover
+	background-size: cover
+
+	// Add a dark overlay on top
+	&:before
+		display: block
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0, 0, 0, 0.2)
+
+	img
+		width: 91px
+		height: 64px
+		margin: 48px auto 0
+		display: block
+
+		+smallscreen
+			margin: 30px auto 0
+
+	+tablet
+		padding: 45px 0
+
+	+smallscreen
+		padding: 90px 0
+
+	.credit
+		position: absolute
+		bottom: 20px
+		right: 20px
+		font-size: 14px
+		color: #fff
+		+font("proxima")
+		font-weight: normal
+		font-style: italic
+		opacity: .5

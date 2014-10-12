@@ -1,0 +1,149 @@
+/** UTILITIES
+ *===================================
+
+// These mixins and placeholders will make your development process easier.
+// Place any and all utilities here.
+
+// clear function placeholder
+%cf
+  zoom: 1
+  &:before,
+  &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+
+// font smoothing
+=font-smoothing
+  -webkit-font-smoothing: antialiased
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004)
+
+// absolute center content
+=abs-center
+  margin: auto
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+
+//----------------------------------*\
+// CROSS BROWSER
+//----------------------------------
+
+// cross-browser alpha transparency
+=rgba($color, $alpha)
+  $rgba: rgba($color, $alpha)
+  $ie-hex-str: ie-hex-str($rgba)
+  background-color: transparent
+  background-color: $rgba
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str})
+  zoom: 1
+
+// cross-browser opacity
+=opacity($alpha)
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha*100)"
+  filter: alpha(opacity = $alpha * 100)
+  -webkit-opacity: $alpha
+  -moz-opacity: $alpha
+  -khtml-opacity: $alpha
+  opacity: $alpha
+
+// cross-browser background-cover
+// ex: @extend %bg-cover
+%bg-cover
+  background-repeat: no-repeat
+  background-size: cover
+  -ms-behavior: url(images/backgroundsize.min.htc)
+  background-position: center center
+
+//----------------------------------*\
+// CSS TRANSITIONS
+//----------------------------------
+
+// Transition Shorthand
+// ex: @include transition(color, 350ms, linear)
+=transition($transition-property, $transition-time, $method)
+  -webkit-transition: $transition-property $transition-time $method
+  -moz-transition: $transition-property $transition-time $method
+  -ms-transition: $transition-property $transition-time $method
+  -o-transition: $transition-property $transition-time $method
+  transition: $transition-property $transition-time $method
+
+// Transition Basic
+// ex: @include transition-simple(350ms)
+=transition-simple($speed)
+  -webkit-transition: all $speed
+  -moz-transition: all $speed
+  -ms-transition: all $speed
+  -o-transition: all $speed
+  transition: all $speed
+
+//----------------------------------*\
+// CSS ANIMATIONS
+//----------------------------------
+
+// Animation Shorthand
+// ex: @include animation(keyframe_name, 500ms, linera, 0s, forwards, 1)
+=animation($name, $duration, $timing-function, $delay, $direction, $iteration)
+  -webkit-animation: $name $duration $timing-function $delay $direction $iteration
+  -moz-animation: $name $duration $timing-function $delay $direction $iteration
+  -o-animation: $name $duration $timing-function $delay $direction $iteration
+  animation: $name $duration $timing-function $delay $direction $iteration
+
+// Animation Name
+=animation-name($name)
+  -webkit-animation-name: $name
+  -moz-animation-name: $name
+  -o-animation-name: $name
+  animation-name: $name
+
+// Animation Duration
+=animation-duration($duration)
+  -webkit-animation-duration: $duration
+  -moz-animation-duration: $duration
+  -o-animation-duration: $duration
+  animation-duration: $duration
+
+// Animation Timing Function
+=animation-timing-function($timing)
+  -webkit-animation-timing-function: $timing
+  -moz-animation-timing-function: $timing
+  -o-animation-timing-function: $timing
+  animation-timing-function: $timing
+
+// Animation Delay
+=animation-delay($delay)
+  -webkit-animation-delay: $delay
+  -moz-animation-delay: $delay
+  -o-animation-delay: $delay
+  animation-delay: $delay
+
+// Animation Iteration
+=animation-iteration($iteration)
+  -webkit-animation-iteration-count: $iteration
+  -moz-animation-iteration-count: $iteration
+  -o-animation-iteration-count: $iteration
+  animation-iteration-count: $iteration
+
+// Animation Direction
+=animation-direction($animation-direction)
+  -webkit-animation-direction: $animation-direction
+  -moz-animation-direction: $animation-direction
+  -o-animation-direction: $animation-direction
+  animation-direction: $animation-direction
+
+// Animation Fill
+=animation-fill($animation-fill)
+  -webkit-animation-fill-mode: $animation-fill
+  -moz-animation-fill-mode: $animation-fill
+  -o-animation-fill-mode: $animation-fill
+  animation-fill-mode: $animation-fill
+
+// Transition Delay
+=transition-delay($transition-delay)
+  -webkit-transition-delay: $transition-delay
+  -moz-transition-delay: $transition-delay
+  -o-transition-delay: $transition-delay
+  transition-delay: $transition-delay

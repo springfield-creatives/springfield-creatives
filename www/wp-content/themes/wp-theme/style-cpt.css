@@ -1,0 +1,95 @@
+/*CUSTOM POST TYPE ICONS
+ *=================================== */
+/*FONTS
+ *=================================== */
+@font-face {
+  font-family: "icon-font";
+  src: url("./assets/fonts/icon-font.eot?98763708");
+  src: url("./assets/fonts/icon-font.eot?98763708#iefix") format("embedded-opentype"), url("./assets/fonts/icon-font.woff?98763708") format("woff"), url("./assets/fonts/icon-font.ttf?98763708") format("truetype"), url("./assets/fonts/icon-font.svg?98763708#icon-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 58, assets/sass/modules/_fonts.sass */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icon-font" !important;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  width: 1em;
+  margin: 0em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+}
+
+/* line 63, assets/sass/modules/_fonts.sass */
+.icon-example-one:before {
+  content: "\e803";
+}
+
+/* line 66, assets/sass/modules/_fonts.sass */
+.icon-example-two:before {
+  content: "\e805";
+}
+
+/* line 9, assets/sass/style-cpt.sass */
+div.wp-menu-image:before {
+  margin: 0 !important;
+}
+
+/* line 14, assets/sass/style-cpt.sass */
+#adminmenu .menu-icon-post#menu-posts-individual_spotlight .wp-menu-image:before {
+  font-family: "icon-font" !important;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  width: 1em;
+  margin: 0em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+}
+/* line 16, assets/sass/style-cpt.sass */
+#adminmenu .menu-icon-post#menu-posts-partner_spotlight .wp-menu-image:before {
+  font-family: "icon-font" !important;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  width: 1em;
+  margin: 0em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+}
+/* line 18, assets/sass/style-cpt.sass */
+#adminmenu .menu-icon-post#menu-posts-hope_report .wp-menu-image:before {
+  font-family: "icon-font" !important;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  width: 1em;
+  margin: 0em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  font-weight: bold !important;
+}
+
+/*ADMIN MENU SEPARATOR
+ *=================================== */
+/* line 25, assets/sass/style-cpt.sass */
+#adminmenu li.wp-menu-separator {
+  background: #444444;
+  border-color: rgba(255, 255, 255, 0.1);
+  height: 5px;
+  margin: 6px 0;
+}

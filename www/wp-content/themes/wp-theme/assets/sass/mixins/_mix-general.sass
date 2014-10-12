@@ -1,0 +1,115 @@
+// Default structure & component styling on the site.
+
+//----------------------------------*\
+// LAYOUT
+//----------------------------------
+
+// Max-width Container - you can also use class .row to accomplish the same if you are using the responsive grid.
+%row
+  max-width: $max-width
+  width: 100%
+  margin: 0 auto
+
+// max-width container with multiple options, see variables for options
+// ex: @include row(medium)
+=row($width: false)
+  @if $width == large
+    max-width: $max-width-large
+  @if $width == medium
+    max-width: $max-width-medium
+  @if $width == small
+    max-width: $max-width-small
+  width: 100%
+  margin: 0 auto
+
+// gutter between columns, see variables for options
+// ex: @include gutter or @include gutter(large)
+=gutter($size: false)
+  @if $size == large
+    padding-left: $gutter
+    padding-right: $gutter
+    +mq-min-medium
+      padding-left: $gutter-large
+      padding-right: $gutter-large
+  @else
+    padding-left: $gutter
+    padding-right: $gutter
+
+//----------------------------------*\
+// MODULAR STYLES
+//----------------------------------
+
+// please refer to http://wiki.40digits.net/dev-learning/modular-responsive-mixins-placeholders/
+// this is an example where we are adding placeholders and defining the responsive styles for each breakpoint
+
+%hsize-large
+  font-size: em(20)
+  +mq-min-netbook
+    font-size: em(30)
+
+  +mq-min-medium
+    font-size: em(34)
+
+  +mq-min-large
+    font-size: em(40)
+
+%hsize-medium
+  font-size: em(18)
+  +mq-min-netbook
+    font-size: em(24)
+
+  +mq-min-medium
+    font-size: em(32)
+
+  +mq-min-large
+    font-size: em(36)
+
+
+
+
+
+@mixin mobile
+  @media only screen and (max-width : 568px)
+    @content
+
+@mixin mq-contact
+  @media only screen and (max-width : 619px)
+    @content
+
+@mixin tablet
+  @media only screen and (max-width : 829px)
+    @content
+
+@mixin mq-nav
+  @media only screen and (max-width : 1000px)
+    @content
+
+@mixin smallscreen
+  @media only screen and (max-width : 1319px)
+    @content
+
+@mixin middlify
+  width: 1280px
+  margin: 0 auto
+
+  +smallscreen
+    width: 790px
+  +tablet
+    width: 100%
+    padding: 0 22px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
