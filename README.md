@@ -8,7 +8,7 @@ Dev Environment Setup Instructions
 1. SASS/Compass' `config.rb` is in the theme's directory, so you can `compass watch` from there.
 1. Premium plugins are not committed to Github, and should be downloaded via our super secret zip file on [Trello](https://trello.com/c/YVX1q0d7).
 1. You'll need to create a DB dump using the Migrate DB plugin on the dev site. Credentials and instructions are on the [Trello board](https://trello.com/c/YVX1q0d7) as well.
-1. Configure your local install by renaming `www/wp-config-sample.local` to `wp-config.local`. Treat it like you typically would 1wp-config.php`.
+1. Configure your local install by renaming `www/wp-config-sample.local` to `www/wp-config.local`. Treat it like you typically would `wp-config.php`.
 
 
 SASS Structure
