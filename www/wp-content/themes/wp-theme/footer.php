@@ -9,7 +9,7 @@
 
 	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/main.js" ></script>
 
-	<?php if(ENVIRONMENT == 'staging' || ENVIRONMENT == 'testing'){ ?>
+	<?php if(is_user_logged_in()){ ?>
 		<!-- BugHerd -->
 		<script type='text/javascript'>
 			(function (d, t) {
