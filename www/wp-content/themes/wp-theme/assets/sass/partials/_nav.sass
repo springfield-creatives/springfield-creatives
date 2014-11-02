@@ -6,72 +6,28 @@
 
 .nav--top
 
-	margin-top: 20px
-	+mq-min-medium
-		margin-top: 0
-
 	ul
 		display: block
 		margin: 0 auto
 		width: 100%
-		max-width: 1080px
+		text-align: center
+		background: $color-white
+		z-index: 1000
 
-		+mq-min-medium
-			position: absolute
-			top: 25px
-			max-width: none
+	li
+		display: inline-block
 
-		+mq-min-large
-			top: 0px
 
-		li
-			display: inline-block
+	a
+		+font("proxima")
+		display: block
+		font-size: +em(18)
+		letter-spacing: 0.1em
+
+		padding: 0 28px
+		width: 100%
+		height: 40px
+		line-height: 40px
+
+		+mobile
 			width: 100%
-
-			+mq-min-small
-				float: left
-				width: 50%
-
-			+mq-min-medium
-				width: 40%
-				&:nth-child(even)
-					margin-left: 20%
-
-			+mq-min-large
-				float: none
-				width: auto
-				display: inline-block
-				&:nth-child(even)
-					margin-left: 0
-				&.gap-right
-					margin-right: 120px
-				&.gap-left
-					margin-left: 120px
-
-			+mq-min-xlarge
-				&.gap-right
-					margin-right: 150px
-				&.gap-left
-					margin-left: 150px
-
-		a
-			+font("proxima")
-			display: block
-			font-size: +em(18)
-			letter-spacing: 0.1em
-
-			padding: 10px 28px
-			width: 100%
-
-			+mq-min-medium
-				padding: 0 28px
-				height: 80px
-				line-height: 80px
-
-			+mq-min-large
-				padding: 0 28px
-				height: 210px
-				line-height: 210px
-
-			+mq-min-xlarge
-				padding: 0 38px

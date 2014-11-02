@@ -14,8 +14,11 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 
 get_header();
 
-
-//include(__DIR__ . '/../partials/hero.php');
+if(!is_single()){
+	// tell hero partial which ACF option to reference
+	$hero_page_option_prefix = "events_landing_hero";
+}
+include(__DIR__ . '/../partials/hero.php');
 ?>
 
 <div id="tribe-events-pg-template">
@@ -26,7 +29,6 @@ get_header();
 
 <?php
 
-include(__DIR__ . '/../partials/contact.php');
-
 get_footer();
 ?>
+
