@@ -10,6 +10,12 @@ remove_action('wp_head', 'index_rel_link');
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 
 
+// Add jQuery
+function sgf_creatives_dat_jquery(){
+    wp_enqueue_script('jquery'); 
+}
+add_action( 'wp_enqueue_scripts', 'sgf_creatives_dat_jquery' );
+
 // ADD WORDPRESS FEATURE SUPPORT
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
