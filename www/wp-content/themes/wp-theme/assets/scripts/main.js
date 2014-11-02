@@ -58,17 +58,5 @@ jQuery(function($){
 
 	// Nav section animation
 	var $nav = $('body > header > nav');
-
-	$nav.on('click', 'a', function(e){
-
-		var $el = $(e.currentTarget),
-			$target = $($el.attr('href'));
-
-		e.preventDefault();
-
-		$('html, body').animate({
-			scrollTop: $target.offset().top
-		}, 400);
-
-	});
+	$nav.pin();
 });

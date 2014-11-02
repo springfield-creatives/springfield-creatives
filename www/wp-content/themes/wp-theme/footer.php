@@ -7,6 +7,7 @@
 		<a class="fb" href="https://www.facebook.com/pages/Springfield-Creatives/620529168034609" target="_blank"><i></i></a>
 	</footer>
 
+	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/vendor/jquery.pin.min.js" ></script>
 	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/main.js" ></script>
 
 	<?php if(is_user_logged_in()){ ?>

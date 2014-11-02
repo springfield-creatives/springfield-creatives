@@ -1,4 +1,5 @@
-/* line 17, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+@charset "UTF-8";
+/* line 5, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,54 +21,54 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/*THIRD-PARTY FONTS
+/** THIRD-PARTY FONTS
  *=================================== */
-/*UTILITIES
+/** UTILITIES
  *=================================== */
-/*FONTS
+/** FONTS
  *=================================== */
 @font-face {
   font-family: "icon-font";
@@ -76,7 +77,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-weight: normal;
   font-style: normal;
 }
-
 /* line 58, assets/sass/modules/_fonts.sass */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "icon-font" !important;
@@ -94,15 +94,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 63, assets/sass/modules/_fonts.sass */
 .icon-example-one:before {
-  content: "\e803";
+  content: "";
 }
 
 /* line 66, assets/sass/modules/_fonts.sass */
 .icon-example-two:before {
-  content: "\e805";
+  content: "";
 }
 
-/*DEFAULTS GLOBAL
+/** DEFAULTS GLOBAL
  *=================================== */
 /* line 9, assets/sass/modules/_defaults.sass */
 *, *:before, *:after {
@@ -114,7 +114,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* line 9, assets/sass/modules/_defaults.sass */
   *, *:before, *:after {
     background: transparent !important;
-    color: black !important;
+    color: #000 !important;
     text-shadow: none !important;
     filter: none !important;
     -ms-filter: none !important;
@@ -123,7 +123,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 21, assets/sass/modules/_defaults.sass */
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* line 25, assets/sass/modules/_defaults.sass */
@@ -142,7 +142,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 47, assets/sass/modules/_defaults.sass */
 body {
-  background: white;
+  background: #FFF;
   font-size: 16px;
   font-family: "pt-serif", sans-serif;
   color: #434343;
@@ -239,7 +239,7 @@ section ul {
   list-style-type: disc;
 }
 
-/*INPUTS
+/** INPUTS
  *=================================== */
 /* line 4, assets/sass/modules/_input.sass */
 .gform_wrapper {
@@ -791,12 +791,10 @@ section ul {
   text-transform: uppercase;
   font-weight: normal;
   background: #1daad1;
-  color: white;
+  color: #fff;
   text-align: center;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   -o-transition: 0.3s;
@@ -832,11 +830,9 @@ textarea,
   font-size: 1em;
   line-height: 20px;
   padding: 14px 22px;
-  background: white;
-  -webkit-border-radius: 3px;
+  background: #fff;
   -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #d4d4d4;
   z-index: 1;
@@ -876,7 +872,7 @@ textarea {
   text-align: center;
 }
 
-/*JS BREAKPOINS
+/** JS BREAKPOINS
  *=================================== */
 @media screen and (min-width: 30em) {
   /* line 11, assets/sass/modules/_js-breakpoints.sass */
@@ -974,7 +970,7 @@ textarea {
     display: none;
   }
 }
-/*WORDPRESS DEFAULT
+/** WORDPRESS DEFAULT
  *=================================== */
 /* line 6, assets/sass/modules/_wordpress-default.sass */
 .alignnone {
@@ -1122,24 +1118,26 @@ a img.aligncenter {
   width: 100% !important;
 }
 
-/*HEADER
+/** HEADER
  *=================================== */
 /* line 4, assets/sass/partials/_header.sass */
 .header--main {
-  background: white;
+  background: #fff;
   position: relative;
   text-align: center;
-  padding: 25px 0;
+  padding: 25px 0 10px;
+  z-index: 1000;
 }
-/* line 10, assets/sass/partials/_header.sass */
+/* line 11, assets/sass/partials/_header.sass */
 .header--main .springfield-creatives-logo {
   width: 232px;
   height: 160px;
   position: relative;
   z-index: 10;
+  margin-bottom: 20px;
 }
 
-/*NAVIGATION
+/** NAVIGATION
  *=================================== */
 /* line 4, assets/sass/partials/_nav.sass */
 .menu-top-navigation-container {
@@ -1155,91 +1153,21 @@ a img.aligncenter {
   clear: both;
 }
 
-/* line 7, assets/sass/partials/_nav.sass */
-.nav--top {
-  margin-top: 20px;
-}
-@media screen and (min-width: 48em) {
-  /* line 7, assets/sass/partials/_nav.sass */
-  .nav--top {
-    margin-top: 0;
-  }
-}
-/* line 13, assets/sass/partials/_nav.sass */
+/* line 9, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
   margin: 0 auto;
   width: 100%;
-  max-width: 1080px;
+  text-align: center;
+  background: #ffffff;
+  z-index: 1000;
 }
-@media screen and (min-width: 48em) {
-  /* line 13, assets/sass/partials/_nav.sass */
-  .nav--top ul {
-    position: absolute;
-    top: 25px;
-    max-width: none;
-  }
-}
-@media screen and (min-width: 64.0625em) {
-  /* line 13, assets/sass/partials/_nav.sass */
-  .nav--top ul {
-    top: 0px;
-  }
-}
-/* line 27, assets/sass/partials/_nav.sass */
-.nav--top ul li {
+/* line 17, assets/sass/partials/_nav.sass */
+.nav--top li {
   display: inline-block;
-  width: 100%;
 }
-@media screen and (min-width: 30em) {
-  /* line 27, assets/sass/partials/_nav.sass */
-  .nav--top ul li {
-    float: left;
-    width: 50%;
-  }
-}
-@media screen and (min-width: 48em) {
-  /* line 27, assets/sass/partials/_nav.sass */
-  .nav--top ul li {
-    width: 40%;
-  }
-  /* line 37, assets/sass/partials/_nav.sass */
-  .nav--top ul li:nth-child(even) {
-    margin-left: 20%;
-  }
-}
-@media screen and (min-width: 64.0625em) {
-  /* line 27, assets/sass/partials/_nav.sass */
-  .nav--top ul li {
-    float: none;
-    width: auto;
-    display: inline-block;
-  }
-  /* line 44, assets/sass/partials/_nav.sass */
-  .nav--top ul li:nth-child(even) {
-    margin-left: 0;
-  }
-  /* line 46, assets/sass/partials/_nav.sass */
-  .nav--top ul li.gap-right {
-    margin-right: 120px;
-  }
-  /* line 48, assets/sass/partials/_nav.sass */
-  .nav--top ul li.gap-left {
-    margin-left: 120px;
-  }
-}
-@media screen and (min-width: 90em) {
-  /* line 52, assets/sass/partials/_nav.sass */
-  .nav--top ul li.gap-right {
-    margin-right: 150px;
-  }
-  /* line 54, assets/sass/partials/_nav.sass */
-  .nav--top ul li.gap-left {
-    margin-left: 150px;
-  }
-}
-/* line 57, assets/sass/partials/_nav.sass */
-.nav--top ul a {
+/* line 21, assets/sass/partials/_nav.sass */
+.nav--top a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -1247,37 +1175,23 @@ a img.aligncenter {
   display: block;
   font-size: 1.125em;
   letter-spacing: 0.1em;
-  padding: 10px 28px;
+  padding: 0 28px;
   width: 100%;
+  height: 40px;
+  line-height: 40px;
 }
-@media screen and (min-width: 48em) {
-  /* line 57, assets/sass/partials/_nav.sass */
-  .nav--top ul a {
-    padding: 0 28px;
-    height: 80px;
-    line-height: 80px;
-  }
-}
-@media screen and (min-width: 64.0625em) {
-  /* line 57, assets/sass/partials/_nav.sass */
-  .nav--top ul a {
-    padding: 0 28px;
-    height: 210px;
-    line-height: 210px;
-  }
-}
-@media screen and (min-width: 90em) {
-  /* line 57, assets/sass/partials/_nav.sass */
-  .nav--top ul a {
-    padding: 0 38px;
+@media only screen and (max-width: 568px) {
+  /* line 21, assets/sass/partials/_nav.sass */
+  .nav--top a {
+    width: 100%;
   }
 }
 
-/*SIDEBARS
+/** SIDEBARS
  *=================================== */
-/*FOOTER
+/** FOOTER
  *=================================== */
-/*WYSIWYG CONTENT
+/** WYSIWYG CONTENT
  *=================================== */
 /* line 1, assets/sass/partials/_hero.sass */
 .hero {
@@ -1332,7 +1246,7 @@ a img.aligncenter {
   bottom: 20px;
   right: 20px;
   font-size: 14px;
-  color: white;
+  color: #fff;
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -1463,9 +1377,9 @@ a img.aligncenter {
   }
 }
 
-/*VENDOR NAME
+/** VENDOR NAME
  *=================================== */
-/*GRAVITY FORMS
+/** GRAVITY FORMS
  *=================================== */
 /* line 1, assets/sass/app/_app.sass */
 body {
@@ -1478,7 +1392,7 @@ body > section {
 }
 /* line 8, assets/sass/app/_app.sass */
 body > section:nth-child(even) {
-  background-color: white;
+  background-color: #fff;
 }
 
 /* line 11, assets/sass/app/_app.sass */
@@ -1492,7 +1406,7 @@ h1 {
   font-size: 3.75em;
   text-align: center;
   line-height: 1.2em;
-  color: white;
+  color: #fff;
   width: 1280px;
   margin: 0 auto;
 }
@@ -1716,7 +1630,7 @@ body.home h3 em {
   padding: 80px 60px;
   border-radius: 8px;
   background-color: #1daad1;
-  color: white;
+  color: #ffffff;
   font-family: "PT Serif Regular", Times, serif;
 }
 /* line 12, assets/sass/app/_about.sass */
@@ -2116,5 +2030,5 @@ body.single-post .post .content {
   font-weight: normal;
 }
 
-/*IE 8 FIXES
+/** IE 8 FIXES
  *=================================== */
