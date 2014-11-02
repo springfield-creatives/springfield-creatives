@@ -4,8 +4,10 @@
 */
 
 	$hero_img = get_field('hero_image');
-	if(empty($hero_img)){
-		$hero_img = get_field('default_hero_image', 'options');
+	if(empty($hero_img) || !empty($hero_page_option_prefix)){
+		// allow containing template to choose with ACF option field to use for hero image
+		$opts_hero_img = empty($hero_page_option_prefix) ? 'default_hero_image' : $hero_page_option_prefix . '_image';
+		$hero_img = get_field($opts_hero_img, 'options');
 	}
 
 	$credit = array(
@@ -28,7 +30,7 @@
 
 	$hero_text = get_field('hero_text');
 	if(strlen($hero_text) === 0)
-		$hero_text = get_the_title();
+		$hero_text = empty($hero_page_option_prefix) ? get_the_title() :  get_field($hero_page_option_prefix . '_text', 'options');
 ?>
 
 <!-- A hero banner -->
