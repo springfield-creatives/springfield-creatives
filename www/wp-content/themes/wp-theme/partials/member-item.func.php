@@ -46,7 +46,7 @@ function render_member_item ($user, $subtitle = false) {
         $email_hash = md5(strtolower(trim($email)));
         $url = 'https://www.gravatar.com/' . $email_hash . '.php';
 
-        if ($profile = (file_get_contents($url, false))) {
+        if ($profile = @file_get_contents($url, false)) {
 
             $profile = file_get_contents($url);
             $profile = unserialize($profile);
@@ -55,7 +55,8 @@ function render_member_item ($user, $subtitle = false) {
 
         } else {
             // Set default user image w/e that may be
-            $user_image = '';
+            $user_image = get_field('default_user_image', 'options');
+            $user_image = $user_image['sizes']['square-medium'];
         }
     } else {
         $user_image = $user_image['sizes']['square-medium'];
