@@ -56,7 +56,19 @@ jQuery(function($){
 	$(document).bind('gform_post_render', maybeHideFormLabels);
 
 
-	// Nav section animation
-	var $nav = $('body > header > nav');
-	$nav.pin();
+	// Nav section stickiness
+	var $nav = $('body > header > nav'),
+		hasAdminBar = $('body.admin-bar').length > 0,
+		navPinOpts = {
+			activeClass: 'pinned'
+		};
+
+	if(hasAdminBar)
+		navPinOpts.padding = {top: 32};
+
+	$nav.pin(navPinOpts);
+
+	// create sticky nav logo
+	$('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
+
 });

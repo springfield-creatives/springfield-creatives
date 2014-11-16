@@ -1163,11 +1163,7 @@ a img.aligncenter {
   z-index: 1000;
 }
 /* line 17, assets/sass/partials/_nav.sass */
-.nav--top li {
-  display: inline-block;
-}
-/* line 21, assets/sass/partials/_nav.sass */
-.nav--top a {
+.nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -1181,10 +1177,36 @@ a img.aligncenter {
   line-height: 40px;
 }
 @media only screen and (max-width: 568px) {
-  /* line 21, assets/sass/partials/_nav.sass */
-  .nav--top a {
+  /* line 17, assets/sass/partials/_nav.sass */
+  .nav--top ul a {
     width: 100%;
   }
+}
+/* line 31, assets/sass/partials/_nav.sass */
+.nav--top li {
+  display: inline-block;
+}
+/* line 34, assets/sass/partials/_nav.sass */
+.nav--top .springfield-creatives-logo-wrap {
+  position: absolute;
+  left: -50px;
+  bottom: 5px;
+  -o-transition: left 0.3s;
+  -ms-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  -webkit-transition: left 0.3s;
+  /* ...and now for the proper property */
+  transition: left 0.3s;
+}
+/* line 45, assets/sass/partials/_nav.sass */
+.nav--top .springfield-creatives-logo-wrap img {
+  width: 40px;
+  height: auto;
+  margin-bottom: 0;
+}
+/* line 50, assets/sass/partials/_nav.sass */
+.nav--top.pinned .springfield-creatives-logo-wrap {
+  left: 10px;
 }
 
 /** SIDEBARS

@@ -20,7 +20,7 @@
 <body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
 
 	<header class="header--main">
-		<a href="<?php bloginfo('wpurl') ?>">
+		<a class="springfield-creatives-logo-wrap" href="<?php bloginfo('wpurl') ?>">
 			<img class="springfield-creatives-logo" src="<?php bloginfo('template_directory') ?>/assets/images/logo-2x.png" alt="Springfield Creatives" />
 		</a>
 
