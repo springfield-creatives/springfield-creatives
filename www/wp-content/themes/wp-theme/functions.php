@@ -52,10 +52,16 @@ include_once('partials/member-item.func.php');
 // Author slug rewrite
 include_once('functions/wordpress/author-slug-rewrite.php');
 
+// Custom gravity forms stuff
 include_once('functions/wordpress/gravity-forms.php');
+
+// cleanup admin bar
+include_once('functions/wordpress/admin-bar.php');
 
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
+
+
 
 // -----------------------------------------------------------------------------
 // DO NOT EDIT BELOW THIS LINE ~ Fred
