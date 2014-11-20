@@ -42,6 +42,19 @@ function p2p_users_companies(){
 		)
 	) );
 
+	// Users and Events
+	p2p_register_connection_type( array(
+	    'name' => 'events_user',
+	    'from' => 'tribe_events',
+	    'to' => 'user',
+	    'reciprocal' => true,
+
+	    'admin_box' => array(
+			'show' => 'any',
+			'context' => 'advanced'
+		)
+	) );
+
 }
 
 add_action( 'p2p_init', 'p2p_users_companies' );
