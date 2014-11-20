@@ -266,27 +266,28 @@ body {
 
 /* line 7, assets/sass/app/_admin.sass */
 div.error,
-div.updated {
+div.updated,
+div.update-nag {
   background: #ededed;
 }
 
-/* line 12, assets/sass/app/_admin.sass */
+/* line 13, assets/sass/app/_admin.sass */
 #wpfooter {
   display: none;
 }
 
-/* line 15, assets/sass/app/_admin.sass */
+/* line 16, assets/sass/app/_admin.sass */
 #adminmenuwrap,
 #adminmenu {
   background: #434343;
 }
 
-/* line 19, assets/sass/app/_admin.sass */
+/* line 20, assets/sass/app/_admin.sass */
 #adminmenuback {
   z-index: 0;
 }
 
-/* line 22, assets/sass/app/_admin.sass */
+/* line 23, assets/sass/app/_admin.sass */
 h2,
 h3,
 label,
@@ -294,24 +295,24 @@ label,
   font-family: "pt-serif", sans-serif;
 }
 
-/* line 28, assets/sass/app/_admin.sass */
+/* line 29, assets/sass/app/_admin.sass */
 h2,
 h3,
 label {
   color: #434343;
 }
 
-/* line 33, assets/sass/app/_admin.sass */
+/* line 34, assets/sass/app/_admin.sass */
 h2 {
   font-size: 2em !important;
 }
 
-/* line 36, assets/sass/app/_admin.sass */
+/* line 37, assets/sass/app/_admin.sass */
 h3 {
   font-size: 1.5em;
 }
 
-/* line 39, assets/sass/app/_admin.sass */
+/* line 40, assets/sass/app/_admin.sass */
 .form-table,
 .form-table td,
 .form-table td p,
@@ -321,13 +322,13 @@ h3 {
   font-size: 16px;
 }
 
-/* line 47, assets/sass/app/_admin.sass */
+/* line 48, assets/sass/app/_admin.sass */
 label,
 .acf-field .acf-label label {
   font-weight: normal;
 }
 
-/* line 51, assets/sass/app/_admin.sass */
+/* line 52, assets/sass/app/_admin.sass */
 .acf-field .acf-label {
   padding-left: 0;
 }
