@@ -19,6 +19,8 @@
 
 <body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
 
+	<a class="member-login" href="<?php bloginfo('url') ?>/wp-login.php">Member Login</a>
+
 	<header class="header--main">
 		<a class="springfield-creatives-logo-wrap" href="<?php bloginfo('wpurl') ?>">
 			<img class="springfield-creatives-logo" src="<?php bloginfo('template_directory') ?>/assets/images/logo-2x.png" alt="Springfield Creatives" />

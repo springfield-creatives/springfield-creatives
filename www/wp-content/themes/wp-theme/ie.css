@@ -1032,6 +1032,24 @@ a img.aligncenter {
   margin-bottom: 20px;
 }
 
+/* line 18, assets/sass/partials/_header.sass */
+.member-login {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  font-weight: bold;
+  padding-right: 10px;
+  letter-spacing: 1px;
+  height: 32px;
+  line-height: 32px;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 29, assets/sass/partials/_header.sass */
+.admin-bar .member-login {
+  display: none;
+}
+
 /** NAVIGATION
  *=================================== */
 /* line 4, assets/sass/partials/_nav.sass */
@@ -1490,7 +1508,6 @@ footer .fb > i:hover {
 
 /* line 1, assets/sass/app/_home.sass */
 body.home {
-  padding-top: 50px;
   background: #f9f8f8;
 }
 @media only screen and (max-width: 568px) {
@@ -1499,16 +1516,16 @@ body.home {
     padding-top: 45px;
   }
 }
-/* line 8, assets/sass/app/_home.sass */
+/* line 7, assets/sass/app/_home.sass */
 body.home .post-list {
   max-width: 1100px;
   margin: 0 auto;
 }
-/* line 12, assets/sass/app/_home.sass */
+/* line 11, assets/sass/app/_home.sass */
 body.home .post {
   margin-bottom: 70px;
 }
-/* line 16, assets/sass/app/_home.sass */
+/* line 15, assets/sass/app/_home.sass */
 body.home h3 {
   display: block;
   padding-top: 6px;
@@ -1523,19 +1540,19 @@ body.home h3 {
   letter-spacing: 0.04em;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 16, assets/sass/app/_home.sass */
+  /* line 15, assets/sass/app/_home.sass */
   body.home h3 {
     text-align: center;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 16, assets/sass/app/_home.sass */
+  /* line 15, assets/sass/app/_home.sass */
   body.home h3 {
     width: 100%;
     font-size: 1.5em;
   }
 }
-/* line 35, assets/sass/app/_home.sass */
+/* line 34, assets/sass/app/_home.sass */
 body.home h3 em {
   color: #1daad1;
   font-style: normal;
