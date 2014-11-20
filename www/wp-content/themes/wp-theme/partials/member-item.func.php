@@ -27,7 +27,7 @@ function render_member_item ($user, $subtitle = false) {
         // set the subtitle accordingly
         // TODO: list all businesses if there are multiple
         if (!empty($connected)) {
-            $subtitle = '<a href="' . $connected[0]->post_title . '">' . $connected[0]->post_title . '</a>';
+            $subtitle = '<a href="' . get_permalink($connected[0]->ID) . '">' . $connected[0]->post_title . '</a>';
         } else {
             // get manual text meta and use that, no link
             $subtitle = get_field( 'business', 'user_' . $user->ID );
