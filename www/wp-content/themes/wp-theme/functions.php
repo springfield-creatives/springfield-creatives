@@ -36,7 +36,7 @@ include_once('functions/custom_sidebars.php');
 include_once('functions/wordpress/utility.php');
 
 // Add CPT icons as well as seperators to the admin menu
-include_once('functions/wordpress/admin-menu.php');
+include_once('functions/wordpress/customize-admin.php');
 
 // ENVIRONMENT STUFF
 include_once('functions/environment.php');
