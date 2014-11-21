@@ -11,11 +11,7 @@ include('partials/hero.php');
 $args = array(
     'role' => array(
         'Administrator',
-        'Member',
-        'Subscriber',
-        'Contributor',
-        'Author',
-        'Editor'
+        'Member'
     )
 );
 $members = new WP_User_Query($args);
