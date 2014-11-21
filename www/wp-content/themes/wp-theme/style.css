@@ -1445,22 +1445,26 @@ a img.aligncenter {
  *=================================== */
 /** GRAVITY FORMS
  *=================================== */
-/* line 3, assets/sass/app/_app.sass */
+/* line 1, assets/sass/app/_app.sass */
+body {
+  background-color: #ededed;
+}
+/* line 4, assets/sass/app/_app.sass */
 body > section {
   padding: 70px 0;
 }
-/* line 6, assets/sass/app/_app.sass */
+/* line 7, assets/sass/app/_app.sass */
 body > section:nth-child(even) {
   background-color: #fff;
 }
 
-/* line 9, assets/sass/app/_app.sass */
+/* line 10, assets/sass/app/_app.sass */
 .middlifier {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* line 14, assets/sass/app/_app.sass */
+/* line 15, assets/sass/app/_app.sass */
 h1 {
   font-size: 3.75em;
   text-align: center;
@@ -1470,26 +1474,26 @@ h1 {
   margin: 0 auto;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 14, assets/sass/app/_app.sass */
+  /* line 15, assets/sass/app/_app.sass */
   h1 {
     width: 790px;
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 14, assets/sass/app/_app.sass */
+  /* line 15, assets/sass/app/_app.sass */
   h1 {
     width: 100%;
     padding: 0 22px;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 14, assets/sass/app/_app.sass */
+  /* line 15, assets/sass/app/_app.sass */
   h1 {
     font-size: 1.875em;
   }
 }
 
-/* line 24, assets/sass/app/_app.sass */
+/* line 25, assets/sass/app/_app.sass */
 h2 {
   font-size: 44px;
   text-align: center;
@@ -1498,90 +1502,90 @@ h2 {
   margin-bottom: 1em;
 }
 @media only screen and (max-width: 568px) {
-  /* line 24, assets/sass/app/_app.sass */
+  /* line 25, assets/sass/app/_app.sass */
   h2 {
     font-size: 1.875em;
   }
 }
 
-/* line 35, assets/sass/app/_app.sass */
+/* line 36, assets/sass/app/_app.sass */
 .wysiwyg {
   padding: 70px 20px;
 }
 
-/* line 40, assets/sass/app/_app.sass */
+/* line 41, assets/sass/app/_app.sass */
 .contact {
   background: #ededed;
 }
-/* line 43, assets/sass/app/_app.sass */
+/* line 44, assets/sass/app/_app.sass */
 .contact header {
   text-align: center;
   max-width: 1100px;
   margin: 0 auto;
 }
-/* line 48, assets/sass/app/_app.sass */
+/* line 49, assets/sass/app/_app.sass */
 .contact h2 {
   text-transform: none;
   font-size: 2em;
   margin-bottom: 0.7em;
 }
-/* line 53, assets/sass/app/_app.sass */
+/* line 54, assets/sass/app/_app.sass */
 .contact h2 span {
   color: #b5b5b5;
   font-style: italic;
   font-weight: normal;
 }
-/* line 58, assets/sass/app/_app.sass */
+/* line 59, assets/sass/app/_app.sass */
 .contact article {
   width: 780px;
   margin: 0 auto;
 }
-/* line 62, assets/sass/app/_app.sass */
+/* line 63, assets/sass/app/_app.sass */
 .contact article > p {
   text-align: center;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 58, assets/sass/app/_app.sass */
+  /* line 59, assets/sass/app/_app.sass */
   .contact article {
     width: 100%;
     padding: 0 22px;
   }
 }
-/* line 69, assets/sass/app/_app.sass */
+/* line 70, assets/sass/app/_app.sass */
 .contact .wpcf7 {
   width: 620px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 619px) {
-  /* line 69, assets/sass/app/_app.sass */
+  /* line 70, assets/sass/app/_app.sass */
   .contact .wpcf7 {
     width: 100%;
   }
 }
 @media only screen and (max-width: 619px) {
-  /* line 76, assets/sass/app/_app.sass */
+  /* line 77, assets/sass/app/_app.sass */
   .contact .checkboxes {
     height: 117px;
   }
 }
-/* line 80, assets/sass/app/_app.sass */
+/* line 81, assets/sass/app/_app.sass */
 .contact form p:nth-child(odd),
 .contact .wpcf7-list-item:nth-child(even) {
   margin-right: 0;
 }
 
-/* line 85, assets/sass/app/_app.sass */
+/* line 86, assets/sass/app/_app.sass */
 footer {
   background: #434343;
   padding: 90px 0;
 }
 @media only screen and (max-width: 829px) {
-  /* line 85, assets/sass/app/_app.sass */
+  /* line 86, assets/sass/app/_app.sass */
   footer {
     padding: 45px 0;
   }
 }
-/* line 92, assets/sass/app/_app.sass */
+/* line 93, assets/sass/app/_app.sass */
 footer p {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1594,11 +1598,11 @@ footer p {
   text-align: center;
   padding: 0 22px;
 }
-/* line 103, assets/sass/app/_app.sass */
+/* line 104, assets/sass/app/_app.sass */
 footer .fb {
   margin: 0 auto;
 }
-/* line 106, assets/sass/app/_app.sass */
+/* line 107, assets/sass/app/_app.sass */
 footer .fb,
 footer .fb > i {
   width: 61px;
@@ -1606,7 +1610,7 @@ footer .fb > i {
   background: url(assets/images/fb-ico.png);
   display: block;
 }
-/* line 113, assets/sass/app/_app.sass */
+/* line 114, assets/sass/app/_app.sass */
 footer .fb > i {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha*100)";
   filter: alpha(opacity=0);
@@ -1621,7 +1625,7 @@ footer .fb > i {
   transition: opacity 200ms ease-out;
   background-position: 61px 0;
 }
-/* line 118, assets/sass/app/_app.sass */
+/* line 119, assets/sass/app/_app.sass */
 footer .fb > i:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$alpha*100)";
   filter: alpha(opacity=100);
@@ -1638,15 +1642,10 @@ footer .fb > i:hover {
   }
 }
 /* line 6, assets/sass/app/_home.sass */
-body.home .post-list {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-/* line 10, assets/sass/app/_home.sass */
 body.home .post {
   margin-bottom: 70px;
 }
-/* line 14, assets/sass/app/_home.sass */
+/* line 10, assets/sass/app/_home.sass */
 body.home h3 {
   display: block;
   padding-top: 6px;
@@ -1661,19 +1660,19 @@ body.home h3 {
   letter-spacing: 0.04em;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 14, assets/sass/app/_home.sass */
+  /* line 10, assets/sass/app/_home.sass */
   body.home h3 {
     text-align: center;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 14, assets/sass/app/_home.sass */
+  /* line 10, assets/sass/app/_home.sass */
   body.home h3 {
     width: 100%;
     font-size: 1.5em;
   }
 }
-/* line 33, assets/sass/app/_home.sass */
+/* line 29, assets/sass/app/_home.sass */
 body.home h3 em {
   color: #1daad1;
   font-style: normal;
