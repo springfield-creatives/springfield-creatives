@@ -305,14 +305,15 @@ label {
 /* line 34, assets/sass/app/_admin.sass */
 h2 {
   font-size: 2em !important;
+  text-align: left;
 }
 
-/* line 37, assets/sass/app/_admin.sass */
+/* line 38, assets/sass/app/_admin.sass */
 h3 {
   font-size: 1.5em;
 }
 
-/* line 40, assets/sass/app/_admin.sass */
+/* line 41, assets/sass/app/_admin.sass */
 .form-table,
 .form-table td,
 .form-table td p,
@@ -322,13 +323,13 @@ h3 {
   font-size: 16px;
 }
 
-/* line 48, assets/sass/app/_admin.sass */
+/* line 49, assets/sass/app/_admin.sass */
 label,
 .acf-field .acf-label label {
   font-weight: normal;
 }
 
-/* line 52, assets/sass/app/_admin.sass */
+/* line 53, assets/sass/app/_admin.sass */
 .acf-field .acf-label {
   padding-left: 0;
 }
