@@ -110,9 +110,12 @@
 
 
 // checkboxes
-.gfield_checkbox
-  list-style: none
-  padding-left: 0
+// the wrapper
+.gfield.checkbox
+  height: auto
+
+  > label
+    padding: 0 !important
 
   label
     cursor: pointer
@@ -125,6 +128,11 @@
     height: auto
     padding: 0
     margin: 0
+
+// the box list
+.gfield_checkbox
+  list-style: none
+  padding-left: 0
 
 
 // credit card

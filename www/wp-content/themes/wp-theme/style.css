@@ -416,27 +416,36 @@ section ul {
   line-height: 48px;
 }
 
-/* line 113, assets/sass/modules/_input.sass */
-.gfield_checkbox {
-  list-style: none;
-  padding-left: 0;
+/* line 114, assets/sass/modules/_input.sass */
+.gfield.checkbox {
+  height: auto;
 }
 /* line 117, assets/sass/modules/_input.sass */
-.gfield_checkbox label {
+.gfield.checkbox > label {
+  padding: 0 !important;
+}
+/* line 120, assets/sass/modules/_input.sass */
+.gfield.checkbox label {
   cursor: pointer;
   color: #434343;
   position: relative;
   padding: 0 0 0 10px;
 }
-/* line 123, assets/sass/modules/_input.sass */
-.gfield_checkbox input {
+/* line 126, assets/sass/modules/_input.sass */
+.gfield.checkbox input {
   width: auto;
   height: auto;
   padding: 0;
   margin: 0;
 }
 
-/* line 131, assets/sass/modules/_input.sass */
+/* line 133, assets/sass/modules/_input.sass */
+.gfield_checkbox {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 139, assets/sass/modules/_input.sass */
 .gfield.creditcard {
   clear: both;
   height: auto;
@@ -452,14 +461,14 @@ section ul {
 .gfield.creditcard:after {
   clear: both;
 }
-/* line 137, assets/sass/modules/_input.sass */
+/* line 145, assets/sass/modules/_input.sass */
 .gfield.creditcard > label {
   display: none;
   position: relative;
   padding-left: 0;
   color: #434343;
 }
-/* line 143, assets/sass/modules/_input.sass */
+/* line 151, assets/sass/modules/_input.sass */
 .gfield.creditcard .ginput_complex {
   float: left;
   zoom: 1;
@@ -474,13 +483,13 @@ section ul {
   clear: both;
 }
 @media only screen and (max-width: 568px) {
-  /* line 143, assets/sass/modules/_input.sass */
+  /* line 151, assets/sass/modules/_input.sass */
   .gfield.creditcard .ginput_complex {
     width: 100%;
   }
 }
 
-/* line 150, assets/sass/modules/_input.sass */
+/* line 158, assets/sass/modules/_input.sass */
 .ginput_cardextras {
   clear: both;
   height: auto;
@@ -496,7 +505,7 @@ section ul {
   clear: both;
 }
 
-/* line 155, assets/sass/modules/_input.sass */
+/* line 163, assets/sass/modules/_input.sass */
 .ginput_cardinfo_left,
 .ginput_cardinfo_right {
   float: left;
@@ -504,24 +513,24 @@ section ul {
   position: relative;
 }
 @media only screen and (max-width: 568px) {
-  /* line 155, assets/sass/modules/_input.sass */
+  /* line 163, assets/sass/modules/_input.sass */
   .ginput_cardinfo_left,
   .ginput_cardinfo_right {
     width: 100%;
   }
 }
 
-/* line 166, assets/sass/modules/_input.sass */
+/* line 174, assets/sass/modules/_input.sass */
 .ginput_cardinfo_right {
   float: right;
 }
 
-/* line 170, assets/sass/modules/_input.sass */
+/* line 178, assets/sass/modules/_input.sass */
 .ginput_card_expiration {
   margin: 28px 20px 20px 0;
 }
 
-/* line 173, assets/sass/modules/_input.sass */
+/* line 181, assets/sass/modules/_input.sass */
 .ginput_card_expiration_container label {
   color: #434343;
   position: absolute;
@@ -529,18 +538,18 @@ section ul {
   padding: 0;
 }
 
-/* line 180, assets/sass/modules/_input.sass */
+/* line 188, assets/sass/modules/_input.sass */
 .gfield_creditcard_warning_message {
   display: none;
 }
 
-/* line 184, assets/sass/modules/_input.sass */
+/* line 192, assets/sass/modules/_input.sass */
 .gform_card_icon_container {
   display: none;
   margin-top: -32px;
 }
 
-/* line 189, assets/sass/modules/_input.sass */
+/* line 197, assets/sass/modules/_input.sass */
 .gform_wrapper .ginput_complex .ginput_cardinfo_right span.ginput_card_security_code_icon {
   width: 32px;
   height: 23px;
@@ -556,7 +565,7 @@ section ul {
   display: none;
 }
 
-/* line 203, assets/sass/modules/_input.sass */
+/* line 211, assets/sass/modules/_input.sass */
 .gform_wrapper div.gform_card_icon {
   margin-right: 4px;
   text-indent: -9000px;
@@ -567,191 +576,191 @@ section ul {
   float: left;
 }
 
-/* line 212, assets/sass/modules/_input.sass */
+/* line 220, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_visa {
   background-position: 0 0;
 }
 
-/* line 215, assets/sass/modules/_input.sass */
+/* line 223, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_visa {
   background-position: 0 -32px;
 }
 
-/* line 218, assets/sass/modules/_input.sass */
+/* line 226, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_visa {
   background-position: 0 -64px;
 }
 
-/* line 221, assets/sass/modules/_input.sass */
+/* line 229, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_mastercard {
   background-position: -36px 0;
 }
 
-/* line 224, assets/sass/modules/_input.sass */
+/* line 232, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_mastercard {
   background-position: -36px -32px;
 }
 
-/* line 227, assets/sass/modules/_input.sass */
+/* line 235, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_mastercard {
   background-position: -36px -64px;
 }
 
-/* line 230, assets/sass/modules/_input.sass */
+/* line 238, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_amex {
   background-position: -72px 0;
 }
 
-/* line 233, assets/sass/modules/_input.sass */
+/* line 241, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_amex {
   background-position: -72px -32px;
 }
 
-/* line 236, assets/sass/modules/_input.sass */
+/* line 244, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_amex {
   background-position: -72px -64px;
 }
 
-/* line 239, assets/sass/modules/_input.sass */
+/* line 247, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_discover {
   background-position: -108px 0;
 }
 
-/* line 242, assets/sass/modules/_input.sass */
+/* line 250, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_discover {
   background-position: -108px -32px;
 }
 
-/* line 245, assets/sass/modules/_input.sass */
+/* line 253, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_discover {
   background-position: -108px -64px;
 }
 
-/* line 248, assets/sass/modules/_input.sass */
+/* line 256, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_maestro {
   background-position: -144px 0;
 }
 
-/* line 251, assets/sass/modules/_input.sass */
+/* line 259, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_maestro {
   background-position: -144px -32px;
 }
 
-/* line 254, assets/sass/modules/_input.sass */
+/* line 262, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_maestro {
   background-position: -144px -64px;
 }
 
-/* line 257, assets/sass/modules/_input.sass */
+/* line 265, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_jcb {
   background-position: -180px 0;
 }
 
-/* line 260, assets/sass/modules/_input.sass */
+/* line 268, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_jcb {
   background-position: -180px -32px;
 }
 
-/* line 263, assets/sass/modules/_input.sass */
+/* line 271, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_jcb {
   background-position: -180px -64px;
 }
 
-/* line 266, assets/sass/modules/_input.sass */
+/* line 274, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_visa {
   background-position: 0 -192px;
 }
 
-/* line 269, assets/sass/modules/_input.sass */
+/* line 277, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_visa {
   background-position: 0 -224px;
 }
 
-/* line 272, assets/sass/modules/_input.sass */
+/* line 280, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_visa {
   background-position: 0 -256px;
 }
 
-/* line 275, assets/sass/modules/_input.sass */
+/* line 283, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_mastercard {
   background-position: -36px -192px;
 }
 
-/* line 278, assets/sass/modules/_input.sass */
+/* line 286, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_mastercard {
   background-position: -36px -224px;
 }
 
-/* line 281, assets/sass/modules/_input.sass */
+/* line 289, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_mastercard {
   background-position: -36px -256px;
 }
 
-/* line 284, assets/sass/modules/_input.sass */
+/* line 292, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_amex {
   background-position: -72px -192px;
 }
 
-/* line 287, assets/sass/modules/_input.sass */
+/* line 295, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_amex {
   background-position: -72px -224px;
 }
 
-/* line 290, assets/sass/modules/_input.sass */
+/* line 298, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_amex {
   background-position: -72px -256px;
 }
 
-/* line 293, assets/sass/modules/_input.sass */
+/* line 301, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_discover {
   background-position: -108px -192px;
 }
 
-/* line 296, assets/sass/modules/_input.sass */
+/* line 304, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_discover {
   background-position: -108px -224px;
 }
 
-/* line 299, assets/sass/modules/_input.sass */
+/* line 307, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_discover {
   background-position: -108px -256px;
 }
 
-/* line 302, assets/sass/modules/_input.sass */
+/* line 310, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_maestro {
   background-position: -144px -192px;
 }
 
-/* line 305, assets/sass/modules/_input.sass */
+/* line 313, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_maestro {
   background-position: -144px -224px;
 }
 
-/* line 308, assets/sass/modules/_input.sass */
+/* line 316, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_maestro {
   background-position: -144px -256px;
 }
 
-/* line 311, assets/sass/modules/_input.sass */
+/* line 319, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_jcb {
   background-position: -180px -192px;
 }
 
-/* line 314, assets/sass/modules/_input.sass */
+/* line 322, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_jcb {
   background-position: -180px -224px;
 }
 
-/* line 317, assets/sass/modules/_input.sass */
+/* line 325, assets/sass/modules/_input.sass */
 .gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_jcb {
   background-position: -180px -256px;
 }
 
-/* line 322, assets/sass/modules/_input.sass */
+/* line 330, assets/sass/modules/_input.sass */
 .gfield.total {
   clear: both;
 }
-/* line 325, assets/sass/modules/_input.sass */
+/* line 333, assets/sass/modules/_input.sass */
 .gfield.total label,
 .gfield.total span {
   float: left;
@@ -759,23 +768,23 @@ section ul {
   padding-left: 0;
   color: #434343;
 }
-/* line 332, assets/sass/modules/_input.sass */
+/* line 340, assets/sass/modules/_input.sass */
 .gfield.total label {
   text-transform: uppercase;
 }
 
-/* line 339, assets/sass/modules/_input.sass */
+/* line 347, assets/sass/modules/_input.sass */
 .gsection {
   margin-top: 40px;
   width: 100%;
   clear: both;
 }
-/* line 344, assets/sass/modules/_input.sass */
+/* line 352, assets/sass/modules/_input.sass */
 .gsection h2 {
   font-size: 24px;
 }
 
-/* line 352, assets/sass/modules/_input.sass */
+/* line 360, assets/sass/modules/_input.sass */
 .gform_footer input {
   display: block;
   margin: 0 auto;
@@ -804,18 +813,18 @@ section ul {
   /* ...and now for the proper property */
   transition: 0.3s;
 }
-/* line 376, assets/sass/modules/_input.sass */
+/* line 384, assets/sass/modules/_input.sass */
 .gform_footer input:hover {
   background: #22c5f2;
 }
 @media only screen and (max-width: 568px) {
-  /* line 352, assets/sass/modules/_input.sass */
+  /* line 360, assets/sass/modules/_input.sass */
   .gform_footer input {
     width: 100%;
   }
 }
 
-/* line 383, assets/sass/modules/_input.sass */
+/* line 391, assets/sass/modules/_input.sass */
 input,
 textarea,
 .validation_error {
@@ -839,12 +848,12 @@ textarea,
   color: #434343;
 }
 
-/* line 401, assets/sass/modules/_input.sass */
+/* line 409, assets/sass/modules/_input.sass */
 textarea {
   height: 150px;
 }
 
-/* line 407, assets/sass/modules/_input.sass */
+/* line 415, assets/sass/modules/_input.sass */
 .validation_error {
   height: auto;
   clear: both;
@@ -856,18 +865,18 @@ textarea {
   text-align: center;
 }
 
-/* line 418, assets/sass/modules/_input.sass */
+/* line 426, assets/sass/modules/_input.sass */
 .gfield_error input,
 .gfield_error textarea {
   border-color: #ff8484;
 }
 
-/* line 422, assets/sass/modules/_input.sass */
+/* line 430, assets/sass/modules/_input.sass */
 .validation_message {
   display: none;
 }
 
-/* line 426, assets/sass/modules/_input.sass */
+/* line 434, assets/sass/modules/_input.sass */
 .gform_confirmation_wrapper {
   text-align: center;
 }
