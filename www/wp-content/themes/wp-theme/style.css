@@ -422,7 +422,7 @@ section ul {
 }
 /* line 117, assets/sass/modules/_input.sass */
 .gfield.checkbox > label {
-  padding: 0 !important;
+  padding: 0 0 10px !important;
 }
 /* line 120, assets/sass/modules/_input.sass */
 .gfield.checkbox label {
@@ -1242,6 +1242,21 @@ a img.aligncenter {
  *=================================== */
 /** WYSIWYG CONTENT
  *=================================== */
+/* line 10, assets/sass/partials/_wysiwyg.sass */
+.content ul {
+  list-style: disc;
+  margin-bottom: 1.5em;
+  padding-left: 2em;
+}
+/* line 15, assets/sass/partials/_wysiwyg.sass */
+.content li {
+  line-height: 1.5em;
+}
+/* line 18, assets/sass/partials/_wysiwyg.sass */
+.content h3 {
+  margin-bottom: 1em;
+}
+
 /* line 1, assets/sass/partials/_hero.sass */
 .hero {
   position: relative;
