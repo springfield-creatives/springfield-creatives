@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Members
+Template Name: Members Listing
 */
 
 get_header();
@@ -13,9 +13,9 @@ $args = array(
         'Administrator',
         'Member'
     ),
-    'orderby' => "registered",
-    "order" => "desc",
-    "number" => 8
+    'orderby' => "display_name",
+    "order" => "asc"
+
 );
 $members = new WP_User_Query($args);
 ?>
@@ -24,7 +24,6 @@ $members = new WP_User_Query($args);
 <?php if (!empty($members->results)) : ?>
     <section class="main">
         <div class="middlifier">
-            <h2>Newest Members</h2>
             <ul class="directory column-2">
                 <?php
                 foreach ($members->results as $member) : 
@@ -32,7 +31,6 @@ $members = new WP_User_Query($args);
                 endforeach;
                 ?>
             </ul>
-            <a href="<?php bloginfo('url') ?>/members/list" class="view-all alignright">View All Members</a>
         </div>
     </section>
 <?php endif; ?>
