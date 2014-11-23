@@ -12,7 +12,10 @@ $args = array(
     'role' => array(
         'Administrator',
         'Member'
-    )
+    ),
+    'orderby' => "registered",
+    "order" => "desc",
+    "number" => 8
 );
 $members = new WP_User_Query($args);
 ?>
