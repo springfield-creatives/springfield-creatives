@@ -39,7 +39,7 @@ function render_person_item($user, $subtitle = false){
             $subtitle = '<a href="' . get_permalink($connected[0]->ID) . '">' . $connected[0]->post_title . '</a>';
         } else {
             // get manual text meta and use that, no link
-            $subtitle = get_field( 'business', 'user_' . $user->ID );
+            $subtitle = get_field( 'company', 'user_' . $user->ID );
         }
     }
 
