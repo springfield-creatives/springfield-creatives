@@ -28,7 +28,7 @@ $members = new WP_User_Query($args);
             <ul class="directory column-2">
                 <?php
                 foreach ($members->results as $member) : 
-                    render_member_item($member);
+                    render_person_item($member);
                 endforeach;
                 ?>
             </ul>
