@@ -28,10 +28,9 @@ the_post();
 			// determine photo to use. use hero unless it's not defined.
 			$hero_image = get_field( 'hero_image' );
 			if( !empty($hero_image) ){
-				$featured_img = $hero_image['sizes']['square-medium'];
+				$featured_img = '<img src="' . $hero_image['sizes']['square-medium'] . '" alt="" />';
 			}else{
-				$member_photo = get_field( 'photo', 'user_' . get_the_author_meta( 'ID' ) );
-				$featured_img = $member_photo['sizes']['medium'];
+				$featured_img = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
 			}
 
 			?>
@@ -39,7 +38,7 @@ the_post();
 				<header>
 					<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
 					<span class="date">posted <?php the_time('F j, Y');?></span>
-					<a href="<?php the_permalink() ?>"><img src="<?php echo $featured_img ?>" alt="" /></a>
+					<a href="<?php the_permalink() ?>"><?php echo $featured_img ?></a>
 				</header>
 
 				<div class="content">

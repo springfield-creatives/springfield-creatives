@@ -2,7 +2,7 @@
 get_header();
 the_post();
 
-$member_photo = get_field( 'photo', 'user_' . get_the_author_meta( 'ID' ) );
+$member_photo = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
 ?>
 
 <?php include('partials/hero.php'); ?>
@@ -16,7 +16,7 @@ $member_photo = get_field( 'photo', 'user_' . get_the_author_meta( 'ID' ) );
 	<header class="top">
 		<span class="date">posted <?php the_time('F j, Y');?></span>
 		<span class="author">by <?php the_author_posts_link(); ?></span>
-		<img src="<?php echo $member_photo['sizes']['square-medium'] ?>" alt="<?php the_author(); ?>" />
+		<?php echo $member_photo ?>
 	</header>
 
 </article>
