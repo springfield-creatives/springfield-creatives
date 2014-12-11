@@ -71,4 +71,8 @@ jQuery(function($){
 	// create sticky nav logo
 	$('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
 
+
+	// hack for :nth-child(even) gravity forms sections
+	$('li.gsection').after('<li></li>');
+
 });
