@@ -270,6 +270,11 @@ label,
   padding-left: 0;
 }
 
+/* line 58, assets/sass/app/_admin.sass */
+.gfield.hidden {
+  display: block !important;
+}
+
 /** CUSTOM POST TYPE ICONS
  *=================================== */
 /** FONTS
