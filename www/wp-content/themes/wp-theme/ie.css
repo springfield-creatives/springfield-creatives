@@ -1235,7 +1235,7 @@ a img.aligncenter {
 
 /* line 1, assets/sass/partials/_directory.sass */
 .directory {
-  list-style: none;
+  list-style: none !important;
   width: 820px;
   margin: 0 auto;
   zoom: 1;

@@ -1,11 +1,55 @@
 <?php
 
-	/*
-	$user: $user array returned by WP or ACF
-	$subtitle: override subtitle default of company
-	*/
+/*
+Registers a [member] shortcode
 
-function render_person_item($user, $subtitle = false){
+Usage:
+[member id=1,2,3 class=whatever-class-you-want]
+Where id is a comma-separated list of user IDs
+*/
+
+function register_member_shortcode($atts, $content = null ) {
+	if(empty($atts['id']))
+		return;
+
+	// get user objects
+	$args = array(
+	    'include' => explode(',', $atts['id'])
+	);
+	$members = new WP_User_Query($args);
+
+	// set class if defined
+	$class = !empty($atts['class']) ? $atts['class'] : '';
+
+	if(empty($members->results))
+		return 'No members found with id=' . $atts['id'];
+
+	// setup list and echo li's
+	$to_return = '<ul class="directory ' . $class . '">';
+
+	foreach($members->results as $member){
+		$to_return .= return_person_item_html($member);
+	}
+
+	$to_return .= '</ul>';
+
+	return $to_return;
+}
+
+add_shortcode( 'member', 'register_member_shortcode' );
+
+
+
+
+
+
+
+/*
+$user: $user array returned by WP or ACF
+$subtitle: override subtitle default of company
+*/
+
+function return_person_item_html($user, $subtitle = false){
 
 	if(empty($user))
 		return false;
@@ -52,23 +96,23 @@ function render_person_item($user, $subtitle = false){
 	// get image
 	$user_image = get_avatar( $user->ID, 300, null, $name );
 
-	$email = $user->user_email;
+	$email = is_user_logged_in() ? '<a href="mailto:' . $user->user_email . '" class="email">Email</a>' : '';
 
-	?>
-	<li class="person-item">
-		<a href="<?php echo $link ?>">
-			<?php echo $user_image ?>
-		</a>
-		<h3><a href="<?php echo $link ?>"><?php echo $name ?></a></h3>
-		<h4><?php echo $subtitle ?></h4>
-		<?php
-		if(is_user_logged_in()){
-			?>
-			<a href="mailto:<?php echo $email ?>" class="email">Email</a>
-			<?php
-		}
-		?>
-	</li>
-	<?php
+	$to_return = '<li class="person-item">' .
+		'<a href="' .  $link . '">' . $user_image . '</a>' . 
+		'<h3><a href="' . $link . '">' . $name . '</a></h3>' .
+		'<h4>' . $subtitle . '</h4>' .
+		$email .
+		'</li>';
+
+	return $to_return;
 }
-?>
+
+
+/*
+$user: $user array returned by WP or ACF
+$subtitle: override subtitle default of company
+*/
+function render_person_item($user, $subtitle = false){
+	echo return_person_item_html($user, $subtitle);
+}
