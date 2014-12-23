@@ -94,12 +94,12 @@ function return_person_item_html($user, $subtitle = false){
     $email = $user->user_email;
 
 	// get image
-	$user_image = get_avatar( $user->ID, 300, null, $name );
+	$user_image = get_wp_user_avatar_src( $user->ID, 300, null, $name );
 
 	$email = is_user_logged_in() ? '<a href="mailto:' . $user->user_email . '" class="email">Email</a>' : '';
 
 	$to_return = '<li class="person-item">' .
-		'<a href="' .  $link . '">' . $user_image . '</a>' . 
+		'<a href="' .  $link . '" class="user-image" style="background-image: url(' . $user_image . ')"></a>' . 
 		'<h3><a href="' . $link . '">' . $name . '</a></h3>' .
 		'<h4>' . $subtitle . '</h4>' .
 		$email .

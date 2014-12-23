@@ -1377,25 +1377,31 @@ a img.aligncenter {
   margin-bottom: 40px;
 }
 /* line 24, assets/sass/partials/_directory.sass */
-.person-item img {
+.person-item .user-image {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   width: 140px;
   height: 140px;
   border-radius: 70px;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-/* line 32, assets/sass/partials/_directory.sass */
+/* line 38, assets/sass/partials/_directory.sass */
 .person-item h3 {
   font-size: 1.625em;
   line-height: 1em;
   margin-bottom: 0.3em;
 }
-/* line 37, assets/sass/partials/_directory.sass */
+/* line 43, assets/sass/partials/_directory.sass */
 .person-item h3 a {
   color: #434343;
 }
-/* line 40, assets/sass/partials/_directory.sass */
+/* line 46, assets/sass/partials/_directory.sass */
 .person-item h4 {
   color: #7b7b7b;
   font-size: 1.125em;
@@ -1403,7 +1409,7 @@ a img.aligncenter {
   margin-bottom: 0;
   letter-spacing: 0;
 }
-/* line 47, assets/sass/partials/_directory.sass */
+/* line 53, assets/sass/partials/_directory.sass */
 .person-item .h5 {
   text-transform: uppercase;
   font-weight: bold;
@@ -1413,7 +1419,7 @@ a img.aligncenter {
   font-weight: bold;
   letter-spacing: 0.04em;
 }
-/* line 53, assets/sass/partials/_directory.sass */
+/* line 59, assets/sass/partials/_directory.sass */
 .person-item .email {
   text-transform: uppercase;
   font-weight: bold;
@@ -1431,13 +1437,13 @@ a img.aligncenter {
     padding-left: 110px;
     padding-top: 9px;
   }
-  /* line 68, assets/sass/partials/_directory.sass */
+  /* line 74, assets/sass/partials/_directory.sass */
   .person-item img {
     width: 90px;
     height: 90px;
     border-radius: 45px;
   }
-  /* line 73, assets/sass/partials/_directory.sass */
+  /* line 79, assets/sass/partials/_directory.sass */
   .person-item h3 {
     font-size: 1.4375em;
   }
@@ -1452,7 +1458,7 @@ a img.aligncenter {
     margin: 0 auto 40px;
     padding-top: 14px;
   }
-  /* line 85, assets/sass/partials/_directory.sass */
+  /* line 91, assets/sass/partials/_directory.sass */
   .person-item h3,
   .person-item h4 {
     font-size: 1.125em;
