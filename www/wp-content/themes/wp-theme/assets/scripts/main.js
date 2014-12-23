@@ -33,7 +33,7 @@ jQuery(function($){
 
 	}
 
-	var watchedInputs = 'input[type=text], input[type=email], textarea';
+	var watchedInputs = 'input[type=text], input[type=email], input[type=tel], textarea';
 	$(document).on('keyup keypress', watchedInputs, inputFocus)
 		.on('blur change', watchedInputs, inputBlur);
 
