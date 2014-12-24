@@ -98,7 +98,7 @@ function return_person_item_html($user, $subtitle = false){
 
 	$email = is_user_logged_in() ? '<a href="mailto:' . $user->user_email . '" class="email">Email</a>' : '';
 
-	$to_return = '<li class="post-list-item user">' .
+	$to_return = '<li class="directory-list-item user">' .
 		'<a href="' .  $link . '" class="thumbnail-image" style="background-image: url(' . $user_image . ')"></a>' . 
 		'<h3><a href="' . $link . '">' . $name . '</a></h3>' .
 		'<h4>' . $subtitle . '</h4>' .

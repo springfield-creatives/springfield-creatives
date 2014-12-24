@@ -1339,46 +1339,46 @@ a img.aligncenter {
 }
 
 /* line 1, assets/sass/partials/_directory.sass */
-.post-list {
+.directory {
   list-style: none !important;
   width: 820px;
   margin: 0 auto;
   zoom: 1;
 }
 /* line 36, assets/sass/modules/_defaults.sass */
-.post-list:before, .post-list:after {
+.directory:before, .directory:after {
   content: "";
   display: table;
 }
 /* line 40, assets/sass/modules/_defaults.sass */
-.post-list:after {
+.directory:after {
   clear: both;
 }
 /* line 7, assets/sass/partials/_directory.sass */
-.post-list.column-2 {
+.directory.column-2 {
   padding: 0;
 }
 /* line 10, assets/sass/partials/_directory.sass */
-.post-list.column-3 {
+.directory.column-3 {
   padding: 0;
   width: 1230px;
 }
 @media only screen and (max-width: 1319px) {
   /* line 10, assets/sass/partials/_directory.sass */
-  .post-list.column-3 {
+  .directory.column-3 {
     width: 820px;
   }
 }
 @media only screen and (max-width: 829px) {
   /* line 1, assets/sass/partials/_directory.sass */
-  .post-list {
+  .directory {
     width: 100% !important;
     padding: 0 20px !important;
   }
 }
 
 /* line 22, assets/sass/partials/_directory.sass */
-.post-list-item {
+.directory-list-item {
   position: relative;
   width: 410px;
   height: 140px;
@@ -1388,7 +1388,7 @@ a img.aligncenter {
   margin-bottom: 40px;
 }
 /* line 31, assets/sass/partials/_directory.sass */
-.post-list-item .thumbnail-image {
+.directory-list-item .thumbnail-image {
   display: block;
   position: absolute;
   top: 0;
@@ -1403,17 +1403,17 @@ a img.aligncenter {
   background-size: cover;
 }
 /* line 45, assets/sass/partials/_directory.sass */
-.post-list-item h3 {
+.directory-list-item h3 {
   font-size: 1.625em;
   line-height: 1em;
   margin-bottom: 0.3em;
 }
 /* line 50, assets/sass/partials/_directory.sass */
-.post-list-item h3 a {
+.directory-list-item h3 a {
   color: #434343;
 }
 /* line 53, assets/sass/partials/_directory.sass */
-.post-list-item h4 {
+.directory-list-item h4 {
   color: #7b7b7b;
   font-size: 1.125em;
   font-weight: normal;
@@ -1421,7 +1421,7 @@ a img.aligncenter {
   letter-spacing: 0;
 }
 /* line 60, assets/sass/partials/_directory.sass */
-.post-list-item .h5 {
+.directory-list-item .h5 {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8125em;
@@ -1431,7 +1431,7 @@ a img.aligncenter {
   letter-spacing: 0.04em;
 }
 /* line 66, assets/sass/partials/_directory.sass */
-.post-list-item .email {
+.directory-list-item .email {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 0.8125em;
@@ -1442,26 +1442,26 @@ a img.aligncenter {
 }
 @media only screen and (max-width: 829px) {
   /* line 22, assets/sass/partials/_directory.sass */
-  .post-list-item {
+  .directory-list-item {
     width: 50%;
     height: 90px;
     padding-left: 110px;
     padding-top: 9px;
   }
   /* line 81, assets/sass/partials/_directory.sass */
-  .post-list-item img {
+  .directory-list-item img {
     width: 90px;
     height: 90px;
     border-radius: 45px;
   }
   /* line 86, assets/sass/partials/_directory.sass */
-  .post-list-item h3 {
+  .directory-list-item h3 {
     font-size: 1.4375em;
   }
 }
 @media only screen and (max-width: 619px) {
   /* line 22, assets/sass/partials/_directory.sass */
-  .post-list-item {
+  .directory-list-item {
     width: 290px;
     height: 90px;
     padding-left: 110px;
@@ -1470,8 +1470,8 @@ a img.aligncenter {
     padding-top: 14px;
   }
   /* line 98, assets/sass/partials/_directory.sass */
-  .post-list-item h3,
-  .post-list-item h4 {
+  .directory-list-item h3,
+  .directory-list-item h4 {
     font-size: 1.125em;
   }
 }

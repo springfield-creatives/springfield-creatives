@@ -74,7 +74,7 @@ include('partials/hero.php');
 
 		if( have_rows('board_members') ):
 
-			echo '<ul class="post-list directory column-2">';
+			echo '<ul class="directory column-2">';
 
 			while( have_rows('board_members') ): the_row(); 
 

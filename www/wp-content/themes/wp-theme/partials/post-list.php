@@ -4,7 +4,7 @@
 
     <?php if (have_posts()) : ?>
 
-        <ul class="post-list column-3">
+        <ul class="directory column-3">
             <?php
             while (have_posts()) : the_post();
                 render_post_list_item();
