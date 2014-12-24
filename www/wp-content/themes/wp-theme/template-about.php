@@ -66,7 +66,7 @@ include('partials/hero.php');
 <!-- Charter Board Members -->
 <section id="charter-board-members" class="charter-board-members main">
 	<div class="middlifier">
-		<h2>Charter Board Members</h2>
+		<h2>Board Members</h2>
 
 		<p><?php the_field('chart_board_members_intro'); ?></p>
 
@@ -74,7 +74,7 @@ include('partials/hero.php');
 
 		if( have_rows('board_members') ):
 
-			echo '<ul class="directory column-2">';
+			echo '<ul class="post-list directory column-2">';
 
 			while( have_rows('board_members') ): the_row(); 
 

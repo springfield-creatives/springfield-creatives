@@ -48,6 +48,7 @@ include_once('functions/site/posts2posts.php');
 
 // Partial Functions
 include_once('partials/person-item.func.php');
+include_once('partials/post-item.func.php');
 
 // Author slug rewrite
 include_once('functions/wordpress/author-slug-rewrite.php');

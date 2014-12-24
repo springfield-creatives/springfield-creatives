@@ -25,7 +25,7 @@ $members = new WP_User_Query($args);
     <section class="main">
         <div class="middlifier">
             <h2>Newest Members</h2>
-            <ul class="directory column-2">
+            <ul class="post-list directory column-2">
                 <?php
                 foreach ($members->results as $member) : 
                     render_person_item($member);
