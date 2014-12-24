@@ -117,7 +117,6 @@ function register_CPTs()
 		'supports' => array(
 			'title',
 			'editor',
-			'thumbnail',
 			'page-attributes'
 		)
 	);
@@ -159,7 +158,6 @@ function register_CPTs()
 		'supports' => array(
 			'title',
 			'editor',
-			'thumbnail',
 			'page-attributes'
 		)
 	);
@@ -201,7 +199,6 @@ function register_CPTs()
 		'supports' => array(
 			'title',
 			'editor',
-			'thumbnail',
 			'page-attributes'
 		)
 	);
