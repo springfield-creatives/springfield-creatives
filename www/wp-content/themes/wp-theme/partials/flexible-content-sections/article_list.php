@@ -50,7 +50,7 @@
 
 				<div class="content">
 					<?php the_excerpt() ?>
-					<a href="<?php the_permalink() ?>" class="more">Read More</a>
+					<a href="<?php the_permalink() ?>" class="read-more secondary-button">Read More</a>
 				</div>
 
 			</article>

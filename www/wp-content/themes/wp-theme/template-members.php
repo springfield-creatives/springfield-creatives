@@ -32,7 +32,7 @@ $members = new WP_User_Query($args);
                 endforeach;
                 ?>
             </ul>
-            <a href="<?php bloginfo('url') ?>/members/list" class="view-all alignright">View All Members</a>
+            <a href="<?php bloginfo('url') ?>/members/list" class="view-all secondary-button">View All Members</a>
         </div>
     </section>
 <?php endif; ?>
