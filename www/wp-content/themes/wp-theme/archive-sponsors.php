@@ -27,17 +27,29 @@ get_header();
 				'compare' => '!=',
 				'key' => 'level',
 				'value' => 1
+			),
+			array(
+				'key' => 'is_sponsor',
+				'value' => true
 			)
 		)
 	));
 
 	while($sponsors_query->have_posts()): $sponsors_query->the_post();
 
+		$sponsor_logo = get_field('sponsor_logo');
+		if(empty($sponsor_logo))
+			$sponsor_logo = get_field('logo');
+
+		$sponsor_url = get_field('sponsor_url');
+		if(empty($sponsor_url))
+			$sponsor_url = get_field('website_url');
+
 		//store each sponsor by level
-		$sponsors[ intval(get_field('level')) ][] = array(
+		$sponsors[ intval(get_field('sponsor_level')) ][] = array(
 			'name' => get_the_title(),
-			'logo' => get_field('logo'),
-			'link' => get_field('sponsor_link')
+			'logo' => $sponsor_logo,
+			'link' => $sponsor_url
 		);
 
 	endwhile;

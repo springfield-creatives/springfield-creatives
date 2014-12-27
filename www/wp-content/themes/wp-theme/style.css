@@ -1713,7 +1713,8 @@ body.home h3 em {
   font-style: normal;
 }
 
-/* line 5, assets/sass/app/_about.sass */
+/* line 6, assets/sass/app/_about.sass */
+.longer-headline p,
 .about-our-mission p {
   padding: 80px 60px;
   border-radius: 8px;
@@ -1721,7 +1722,8 @@ body.home h3 em {
   color: #ffffff;
   font-family: "PT Serif Regular", Times, serif;
 }
-/* line 12, assets/sass/app/_about.sass */
+/* line 13, assets/sass/app/_about.sass */
+.longer-headline h3,
 .about-our-mission h3 {
   font-family: "PT Serif Regular", Times, serif;
   font-size: 1.7em;
@@ -1733,18 +1735,19 @@ body.home h3 em {
   padding: 0 20px;
 }
 @media only screen and (max-width: 568px) {
-  /* line 12, assets/sass/app/_about.sass */
+  /* line 13, assets/sass/app/_about.sass */
+  .longer-headline h3,
   .about-our-mission h3 {
     font-size: 1.4em;
     line-height: 1.3em;
   }
 }
 
-/* line 31, assets/sass/app/_about.sass */
+/* line 32, assets/sass/app/_about.sass */
 .about-what-we-do .middlifier {
   max-width: 1280px;
 }
-/* line 34, assets/sass/app/_about.sass */
+/* line 35, assets/sass/app/_about.sass */
 .about-what-we-do ul {
   zoom: 1;
   list-style-type: none;
@@ -1760,14 +1763,14 @@ body.home h3 em {
 .about-what-we-do ul:after {
   clear: both;
 }
-/* line 40, assets/sass/app/_about.sass */
+/* line 41, assets/sass/app/_about.sass */
 .about-what-we-do li {
   padding: 0 30px 30px 130px;
   background-repeat: no-repeat;
   background-size: 100px;
 }
 @media screen and (min-width: 48em) {
-  /* line 40, assets/sass/app/_about.sass */
+  /* line 41, assets/sass/app/_about.sass */
   .about-what-we-do li {
     float: left;
     width: 50%;
@@ -1775,64 +1778,64 @@ body.home h3 em {
   }
 }
 @media screen and (max-width: 47.9375em) {
-  /* line 52, assets/sass/app/_about.sass */
+  /* line 53, assets/sass/app/_about.sass */
   .about-what-we-do li:nth-child(odd) {
     padding: 0 130px 30px 30px;
     background-position: 100% 0;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 40, assets/sass/app/_about.sass */
+  /* line 41, assets/sass/app/_about.sass */
   .about-what-we-do li {
     background-position: center top !important;
     padding: 130px 0 30px !important;
   }
 }
-/* line 60, assets/sass/app/_about.sass */
+/* line 61, assets/sass/app/_about.sass */
 .about-what-we-do h3 {
   text-transform: uppercase;
 }
 @media only screen and (max-width: 568px) {
-  /* line 60, assets/sass/app/_about.sass */
+  /* line 61, assets/sass/app/_about.sass */
   .about-what-we-do h3 {
     text-align: center;
   }
 }
-/* line 66, assets/sass/app/_about.sass */
+/* line 67, assets/sass/app/_about.sass */
 .about-what-we-do p {
   font-family: "PT Serif Regular", Times, serif;
 }
 @media only screen and (max-width: 568px) {
-  /* line 66, assets/sass/app/_about.sass */
+  /* line 67, assets/sass/app/_about.sass */
   .about-what-we-do p {
     text-align: justify;
   }
 }
-/* line 73, assets/sass/app/_about.sass */
+/* line 74, assets/sass/app/_about.sass */
 .about-what-we-do .specialized-meetups {
   background-image: url("assets/images/about/specialized-meetup.png");
 }
-/* line 75, assets/sass/app/_about.sass */
+/* line 76, assets/sass/app/_about.sass */
 .about-what-we-do .speakers {
   background-image: url("assets/images/about/speaker.png");
 }
-/* line 77, assets/sass/app/_about.sass */
+/* line 78, assets/sass/app/_about.sass */
 .about-what-we-do .meetings {
   background-image: url("assets/images/about/meeting.png");
 }
-/* line 79, assets/sass/app/_about.sass */
+/* line 80, assets/sass/app/_about.sass */
 .about-what-we-do .social {
   background-image: url("assets/images/about/social.png");
 }
-/* line 81, assets/sass/app/_about.sass */
+/* line 82, assets/sass/app/_about.sass */
 .about-what-we-do .promotion {
   background-image: url("assets/images/about/promotion.png");
 }
-/* line 83, assets/sass/app/_about.sass */
+/* line 84, assets/sass/app/_about.sass */
 .about-what-we-do .advocacy {
   background-image: url("assets/images/about/advocacy.png");
 }
-/* line 85, assets/sass/app/_about.sass */
+/* line 86, assets/sass/app/_about.sass */
 .about-what-we-do .students {
   background-image: url("assets/images/about/students.png");
 }
