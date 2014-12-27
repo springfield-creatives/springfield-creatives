@@ -92,7 +92,7 @@
 		echo '</ul>';
 
 		if(get_sub_field('view_all_link'))
-			echo '<a href="' . get_sub_field('view_all_link_url') . '" class="read-more secondary-button">' . get_sub_field('view_all_link_label') . '</a>
+			echo '<a href="' . get_sub_field('view_all_link_url') . '" class="read-more secondary-button">' . get_sub_field('view_all_link_label') . '</a>';
 
 		?>
 	</div>
