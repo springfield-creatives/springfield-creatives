@@ -1387,7 +1387,7 @@ a img.aligncenter {
     padding-top: 9px;
   }
   /* line 81, assets/sass/partials/_directory.sass */
-  .directory-list-item img {
+  .directory-list-item .thumbnail-image {
     width: 90px;
     height: 90px;
     border-radius: 45px;
