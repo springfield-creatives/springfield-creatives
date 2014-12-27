@@ -15,9 +15,11 @@
 		if($dir_type == 'members'){
 			$render_func = 'render_person_item';
 			$post_obj_name = 'directory_user_object';
+			$view_all = 'members/list';
 		}else{
 			$render_func = 'render_post_list_item';
 			$post_obj_name = 'directory_post_object';
+			$view_all = $dir_type;
 		}
 
 		$dir_data = get_sub_field('directory_data');
@@ -81,13 +83,16 @@
 		                }
 
 						wp_reset_postdata();
-						
+
 					}
 
 			break;
 		}
 
 		echo '</ul>';
+
+		if(get_sub_field('view_all_link'))
+			echo '<a href="' . get_sub_field('view_all_link_url') . '" class="read-more secondary-button">' . get_sub_field('view_all_link_label') . '</a>
 
 		?>
 	</div>
