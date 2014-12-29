@@ -1,4 +1,4 @@
-<section id="charter-board-members" class="charter-board-members main">
+<section class="main">
 	<div class="middlifier">
 		<?php
 		$title = get_sub_field('section_title');
