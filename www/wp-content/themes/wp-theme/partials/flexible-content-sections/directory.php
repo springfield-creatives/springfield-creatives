@@ -5,7 +5,6 @@
 		if(!empty($title))
 			echo "<h2>$title</h2>";
 
-
 		$intro = get_sub_field('section_intro_text');
 		if(!empty($intro))
 			echo "<p>$intro</p>";
@@ -26,11 +25,13 @@
 
 		echo '<ul class="directory ' . $dir_type . ' column-2">';
 
+		// load posts/authors based on data selection method
 		switch($dir_data){
 			case 'specific':
 
-				// name of ACF field
+				// name of ACF field containing the specified posts to load
 				$list_name = 'selected_' . $dir_type;
+
 				if( have_rows($list_name) ):
 
 					while( have_rows($list_name) ): the_row(); 
@@ -47,42 +48,66 @@
 				endif;
 			break;
 
-			case 'recent':
+			case 'dynamic':
 
 					$num_to_show = get_sub_field('number_of_listing_items');
+					$orderby = get_sub_field('orderby');
+					$order = get_sub_field('order');
 
 					// query recent posts/users/whatever
-					if($dir_type == 'members'){
-						$args = array(
-						    'role' => array(
-						        'Administrator',
-						        'Member'
-						    ),
-						    'orderby' => "registered",
-						    "order" => "desc",
-						    "number" => $num_to_show
-						);
-						$members = new WP_User_Query($args);
+					switch($dir_type) {
+						case 'members':
 
-		                foreach ($members->results as $member) : 
-		                    render_person_item($member);
-		                endforeach;
+							switch($orderby) {
+								case 'date':
+									$orderby = 'registered';
+									break;
 
-					}else{
+								case 'name':
+									$orderby = 'display_name';
+									break;
+							}
 
-						$dir_posts = new WP_Query(array(
-							"post_type" => $dir_type,
-							"posts_per_page" => $num_to_show
-						));
+							$args = array(
+							    'role' => array(
+							        'Administrator',
+							        'Member'
+							    ),
+							    'orderby' => $orderby,
+							    "order" => $order,
+							    "number" => $num_to_show
+							);
+							$members = new WP_User_Query($args);
 
-						while( $dir_posts->have_posts() ) {
-							$dir_posts->the_post();
+			                foreach ($members->results as $member) {
+			                    render_person_item($member);
+			                }
 
-							// render_post_list_item will use global $post by default					
-							call_user_func($render_func);
-		                }
+							break;
 
-						wp_reset_postdata();
+
+						case 'sponsors':
+
+							// TODO
+							break;
+
+						default:
+
+							$dir_posts = new WP_Query(array(
+								"post_type" => $dir_type,
+							    'orderby' => $orderby,
+							    "order" => $order,
+								"posts_per_page" => $num_to_show
+							));
+
+							while( $dir_posts->have_posts() ) {
+								$dir_posts->the_post();
+
+								// render_post_list_item will use global $post by default					
+								call_user_func($render_func);
+			                }
+
+							wp_reset_postdata();
 
 					}
 
