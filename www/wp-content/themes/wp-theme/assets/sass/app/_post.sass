@@ -3,10 +3,12 @@
 .posts-wrap
 	+cf
 
+	.post
+		float: left
+
 .post
 	margin: 0 auto 40px
 	padding: 0 40px
-	float: left
 	+cf
 
 	+mobile
@@ -196,15 +198,19 @@ body.single-post
 			.content
 				border-bottom: 2px solid #cecece
 				padding-bottom: 40px
+				float: none
+				margin: 0 auto
+				width: 100%
 
 			> header
 				position: relative
 				height: 100px
-				width: 100%
+				width: 400px
 				padding: 26px 0 0 120px
 				margin: 0 auto 40px
 				display: block
 				margin-top: 40px
+				float: none
 
 
 
@@ -220,3 +226,7 @@ body.single-post
 					border-radius: 50px
 					float: left
 					margin: 0
+		+mobile
+			> header,
+			.content
+				width: 100%

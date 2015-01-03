@@ -1752,12 +1752,15 @@ body.home .post {
 .posts-wrap:after {
   clear: both;
 }
-
 /* line 6, assets/sass/app/_post.sass */
+.posts-wrap .post {
+  float: left;
+}
+
+/* line 9, assets/sass/app/_post.sass */
 .post {
   margin: 0 auto 40px;
   padding: 0 40px;
-  float: left;
   zoom: 1;
 }
 /* line 36, assets/sass/modules/_defaults.sass */
@@ -1770,13 +1773,13 @@ body.home .post {
   clear: both;
 }
 @media only screen and (max-width: 568px) {
-  /* line 6, assets/sass/app/_post.sass */
+  /* line 9, assets/sass/app/_post.sass */
   .post {
     float: none;
     padding: 0 20px;
   }
 }
-/* line 17, assets/sass/app/_post.sass */
+/* line 19, assets/sass/app/_post.sass */
 .post > header {
   zoom: 1;
   width: 410px;
@@ -1792,7 +1795,7 @@ body.home .post {
 .post > header:after {
   clear: both;
 }
-/* line 23, assets/sass/app/_post.sass */
+/* line 25, assets/sass/app/_post.sass */
 .post > header img {
   width: 200px;
   height: 200px;
@@ -1800,16 +1803,16 @@ body.home .post {
   display: block;
   margin: 30px 0;
 }
-/* line 30, assets/sass/app/_post.sass */
+/* line 32, assets/sass/app/_post.sass */
 .post > header span {
   display: block;
   line-height: 1.4em;
 }
-/* line 34, assets/sass/app/_post.sass */
+/* line 36, assets/sass/app/_post.sass */
 .post > header .date {
   text-transform: uppercase;
 }
-/* line 38, assets/sass/app/_post.sass */
+/* line 40, assets/sass/app/_post.sass */
 .post h3 {
   display: block;
   padding-top: 6px;
@@ -1823,33 +1826,33 @@ body.home .post {
   font-weight: bold;
   letter-spacing: 0.04em;
 }
-/* line 51, assets/sass/app/_post.sass */
+/* line 53, assets/sass/app/_post.sass */
 .post h3 em {
   color: #1daad1;
   font-style: normal;
 }
-/* line 56, assets/sass/app/_post.sass */
+/* line 58, assets/sass/app/_post.sass */
 .post > article {
   float: right;
   width: 790px;
 }
-/* line 61, assets/sass/app/_post.sass */
+/* line 63, assets/sass/app/_post.sass */
 .post .content {
   float: right;
   width: 530px;
 }
-/* line 65, assets/sass/app/_post.sass */
+/* line 67, assets/sass/app/_post.sass */
 .post .content .more {
   font-size: 1.2em;
   display: block;
   text-align: right;
 }
-/* line 72, assets/sass/app/_post.sass */
+/* line 74, assets/sass/app/_post.sass */
 .post.featured {
   width: 100%;
   min-height: 370px;
 }
-/* line 76, assets/sass/app/_post.sass */
+/* line 78, assets/sass/app/_post.sass */
 .post.featured > header {
   float: none;
   margin-right: 0;
@@ -1857,159 +1860,163 @@ body.home .post {
   width: 100%;
   position: relative;
 }
-/* line 83, assets/sass/app/_post.sass */
+/* line 85, assets/sass/app/_post.sass */
 .post.featured > header > a {
   position: absolute;
   display: block;
   left: 0;
   top: 69px;
 }
-/* line 89, assets/sass/app/_post.sass */
+/* line 91, assets/sass/app/_post.sass */
 .post.featured > header img {
   width: 300px;
   height: 300px;
   border-radius: 150px;
   margin: 0;
 }
-/* line 96, assets/sass/app/_post.sass */
+/* line 98, assets/sass/app/_post.sass */
 .post.featured > header span {
   display: none;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 76, assets/sass/app/_post.sass */
+  /* line 78, assets/sass/app/_post.sass */
   .post.featured > header {
     padding-bottom: 30px;
   }
-  /* line 102, assets/sass/app/_post.sass */
+  /* line 104, assets/sass/app/_post.sass */
   .post.featured > header > a {
     position: relative;
     top: 0;
     left: 0;
   }
-  /* line 107, assets/sass/app/_post.sass */
+  /* line 109, assets/sass/app/_post.sass */
   .post.featured > header img {
     margin: 30px auto;
     width: 200px;
     height: 200px;
     border-radius: 100px;
   }
-  /* line 113, assets/sass/app/_post.sass */
+  /* line 115, assets/sass/app/_post.sass */
   .post.featured > header span {
     display: block;
     text-align: center;
   }
 }
-/* line 117, assets/sass/app/_post.sass */
+/* line 119, assets/sass/app/_post.sass */
 .post.featured h3 {
   font-size: 1.875em;
   text-align: center;
   width: 100%;
 }
 @media only screen and (max-width: 568px) {
-  /* line 117, assets/sass/app/_post.sass */
+  /* line 119, assets/sass/app/_post.sass */
   .post.featured h3 {
     font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 1319px) {
-  /* line 125, assets/sass/app/_post.sass */
+  /* line 127, assets/sass/app/_post.sass */
   .post.featured > article {
     float: none;
     width: 100%;
   }
 }
 @media only screen and (max-width: 1319px) {
-  /* line 130, assets/sass/app/_post.sass */
+  /* line 132, assets/sass/app/_post.sass */
   .post.featured .content {
     width: auto !important;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 135, assets/sass/app/_post.sass */
+  /* line 137, assets/sass/app/_post.sass */
   .post.featured .content p {
     text-align: justify;
   }
 }
-/* line 141, assets/sass/app/_post.sass */
+/* line 143, assets/sass/app/_post.sass */
 .post.block {
   width: 50%;
 }
 @media only screen and (max-width: 568px) {
-  /* line 141, assets/sass/app/_post.sass */
+  /* line 143, assets/sass/app/_post.sass */
   .post.block {
     width: auto;
   }
 }
-/* line 148, assets/sass/app/_post.sass */
+/* line 150, assets/sass/app/_post.sass */
 .post.block h3 {
   text-align: center;
   width: 100%;
   font-size: 1.5em;
 }
-/* line 154, assets/sass/app/_post.sass */
+/* line 156, assets/sass/app/_post.sass */
 .post.block > header {
   float: none;
   margin-right: 0;
   padding-bottom: 30px;
   width: 100%;
 }
-/* line 160, assets/sass/app/_post.sass */
+/* line 162, assets/sass/app/_post.sass */
 .post.block > header img {
   margin: 30px auto;
 }
-/* line 163, assets/sass/app/_post.sass */
+/* line 165, assets/sass/app/_post.sass */
 .post.block > header span {
   text-align: center;
 }
-/* line 166, assets/sass/app/_post.sass */
+/* line 168, assets/sass/app/_post.sass */
 .post.block .content {
   width: auto !important;
 }
-/* line 169, assets/sass/app/_post.sass */
+/* line 171, assets/sass/app/_post.sass */
 .post.block .content p {
   text-align: justify;
 }
-/* line 173, assets/sass/app/_post.sass */
+/* line 175, assets/sass/app/_post.sass */
 .post.block > article {
   float: none;
   width: 100%;
 }
-/* line 178, assets/sass/app/_post.sass */
+/* line 180, assets/sass/app/_post.sass */
 .post.block.new-row {
   clear: left;
 }
 
-/* line 186, assets/sass/app/_post.sass */
+/* line 188, assets/sass/app/_post.sass */
 body.single-post .post {
   max-width: 1280px;
   padding-top: 70px;
   padding-bottom: 70px;
 }
-/* line 191, assets/sass/app/_post.sass */
+/* line 193, assets/sass/app/_post.sass */
 body.single-post .post .content {
   width: 710px;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 196, assets/sass/app/_post.sass */
+  /* line 198, assets/sass/app/_post.sass */
   body.single-post .post .content {
     border-bottom: 2px solid #cecece;
     padding-bottom: 40px;
+    float: none;
+    margin: 0 auto;
+    width: 100%;
   }
-  /* line 200, assets/sass/app/_post.sass */
+  /* line 205, assets/sass/app/_post.sass */
   body.single-post .post > header {
     position: relative;
     height: 100px;
-    width: 100%;
+    width: 400px;
     padding: 26px 0 0 120px;
     margin: 0 auto 40px;
     display: block;
     margin-top: 40px;
+    float: none;
   }
-  /* line 211, assets/sass/app/_post.sass */
+  /* line 217, assets/sass/app/_post.sass */
   body.single-post .post > header span {
     text-align: left;
   }
-  /* line 214, assets/sass/app/_post.sass */
+  /* line 220, assets/sass/app/_post.sass */
   body.single-post .post > header img {
     position: absolute;
     top: 0;
@@ -2019,6 +2026,13 @@ body.single-post .post .content {
     border-radius: 50px;
     float: left;
     margin: 0;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 230, assets/sass/app/_post.sass */
+  body.single-post .post > header,
+  body.single-post .post .content {
+    width: 100%;
   }
 }
 
