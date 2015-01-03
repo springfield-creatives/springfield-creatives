@@ -63,3 +63,6 @@ www/wp-content/plugins/events-calendar-pro
 www/wp-content/plugins/gravityforms*
 www/wp-content/plugins/advanced-custom-fields-pro
 www/wp-content/plugins/acf-repeater
+
+# IDE
+.idea

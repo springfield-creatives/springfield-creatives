@@ -1045,6 +1045,15 @@ textarea {
     display: none;
   }
 }
+/* line 2, assets/sass/modules/_blog-pagination.sass */
+.blog-pagination .previous {
+  float: left;
+}
+/* line 4, assets/sass/modules/_blog-pagination.sass */
+.blog-pagination .next {
+  float: right;
+}
+
 /** WORDPRESS DEFAULT
  *=================================== */
 /* line 6, assets/sass/modules/_wordpress-default.sass */
