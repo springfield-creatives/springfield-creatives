@@ -1973,8 +1973,8 @@ body.home .post {
 .post.featured > header > a {
   position: absolute;
   display: block;
-  left: 95px;
-  top: 67px;
+  left: 0;
+  top: 69px;
 }
 /* line 89, assets/sass/app/_post.sass */
 .post.featured > header img {
