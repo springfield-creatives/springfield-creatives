@@ -2274,6 +2274,7 @@ body.single-post .post .content {
 .sponsors-stripe ul {
   list-style: none;
   margin: 0 auto;
+  text-align: center;
   zoom: 1;
 }
 /* line 36, assets/sass/modules/_defaults.sass */
@@ -2291,12 +2292,16 @@ body.single-post .post .content {
     padding-left: 0;
   }
 }
-/* line 70, assets/sass/app/_sponsors.sass */
+/* line 71, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li {
   display: inline-block;
   margin: 0 40px 20px 0;
 }
-/* line 74, assets/sass/app/_sponsors.sass */
+/* line 75, assets/sass/app/_sponsors.sass */
+.sponsors-stripe li:last-child {
+  margin-right: 0;
+}
+/* line 78, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li a {
   display: block;
   width: 150px;
@@ -2308,20 +2313,20 @@ body.single-post .post .content {
   background-size: contain;
 }
 @media only screen and (max-width: 829px) {
-  /* line 70, assets/sass/app/_sponsors.sass */
+  /* line 71, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li {
     width: 50%;
     float: left;
     margin: 0 0 20px;
   }
-  /* line 89, assets/sass/app/_sponsors.sass */
+  /* line 93, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     margin: 0 auto 20px;
     width: 80%;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 94, assets/sass/app/_sponsors.sass */
+  /* line 98, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     height: 100px;
   }
