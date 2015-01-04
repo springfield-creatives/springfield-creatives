@@ -46,6 +46,9 @@ include_once('functions/environment.php');
 include_once('functions/site/acf.php');
 include_once('functions/site/posts2posts.php');
 
+// Help with dealing with Sponsors
+include_once('functions/wordpress/sponsors-helpers.php');
+
 // Partial Functions
 include_once('partials/person-item.func.php');
 include_once('partials/post-item.func.php');

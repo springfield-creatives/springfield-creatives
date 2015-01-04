@@ -2200,5 +2200,132 @@ body.single-post .post .content {
   color: #fff !important;
 }
 
+/* line 3, assets/sass/app/_sponsors.sass */
+.sponsors-list .block .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+/* line 13, assets/sass/app/_sponsors.sass */
+.sponsors-list .block header {
+  margin: 0 auto;
+  padding: 0;
+}
+@media only screen and (max-width: 568px) {
+  /* line 2, assets/sass/app/_sponsors.sass */
+  .sponsors-list .block {
+    width: 100%;
+  }
+}
+/* line 22, assets/sass/app/_sponsors.sass */
+.sponsors-list.level-4 header, .sponsors-list.level-3 header {
+  width: 285px;
+  height: 285px;
+}
+/* line 26, assets/sass/app/_sponsors.sass */
+.sponsors-list.level-4 h3, .sponsors-list.level-3 h3 {
+  display: none;
+}
+/* line 30, assets/sass/app/_sponsors.sass */
+.sponsors-list.level-2 header {
+  width: 130px;
+  height: 130px;
+}
+/* line 34, assets/sass/app/_sponsors.sass */
+.sponsors-list.level-2 h3 {
+  display: none;
+}
+/* line 38, assets/sass/app/_sponsors.sass */
+.sponsors-list.column-3 .block {
+  width: 33.33333%;
+}
+@media only screen and (max-width: 568px) {
+  /* line 42, assets/sass/app/_sponsors.sass */
+  .sponsors-list.column-3 header {
+    width: 122px;
+    height: 122px;
+  }
+  /* line 46, assets/sass/app/_sponsors.sass */
+  .sponsors-list.column-3 .block {
+    width: 50%;
+  }
+}
+
+/* line 51, assets/sass/app/_sponsors.sass */
+.sponsors-stripe {
+  padding-top: 30px;
+}
+/* line 54, assets/sass/app/_sponsors.sass */
+.sponsors-stripe h4 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+/* line 59, assets/sass/app/_sponsors.sass */
+.sponsors-stripe h4 a {
+  color: #434343;
+}
+/* line 62, assets/sass/app/_sponsors.sass */
+.sponsors-stripe ul {
+  list-style: none;
+  margin: 0 auto;
+  zoom: 1;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.sponsors-stripe ul:before, .sponsors-stripe ul:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.sponsors-stripe ul:after {
+  clear: both;
+}
+@media only screen and (max-width: 829px) {
+  /* line 62, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe ul {
+    padding-left: 0;
+  }
+}
+/* line 70, assets/sass/app/_sponsors.sass */
+.sponsors-stripe li {
+  display: inline-block;
+  margin: 0 40px 20px 0;
+}
+/* line 74, assets/sass/app/_sponsors.sass */
+.sponsors-stripe li a {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+@media only screen and (max-width: 829px) {
+  /* line 70, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe li {
+    width: 50%;
+    float: left;
+    margin: 0 0 20px;
+  }
+  /* line 89, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe li a {
+    margin: 0 auto 20px;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 94, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe li a {
+    height: 100px;
+  }
+}
+
 /** IE 8 FIXES
  *=================================== */

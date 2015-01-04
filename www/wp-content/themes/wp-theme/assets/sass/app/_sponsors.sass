@@ -1,0 +1,95 @@
+.sponsors-list
+	.block
+		.image
+			display: block
+			width: 100%
+			height: 100%
+			background: no-repeat center center
+			-webkit-background-size: contain
+			-moz-background-size: contain
+			-o-background-size: contain
+			background-size: contain
+
+		header
+			margin: 0 auto
+			padding: 0
+
+		+mobile
+			width: 100%
+
+	&.level-4,
+	&.level-3
+		header
+			width: 285px
+			height: 285px
+
+		h3
+			display: none
+			
+	&.level-2
+		header
+			width: 130px
+			height: 130px
+			
+		h3
+			display: none
+
+	&.column-3
+		.block
+			width: 33.33333333%
+
+		+mobile
+			header
+				width: 122px
+				height: 122px
+
+			.block
+				width: 50%
+
+
+
+.sponsors-stripe
+	padding-top: 30px
+
+	h4
+		text-align: center
+		font-size: +em(24)
+		margin-bottom: 1em
+
+		a
+			color: $color-dark-gray
+
+	ul
+		list-style: none
+		margin: 0 auto
+		+cf
+
+		+tablet
+			padding-left: 0
+
+	li
+		display: inline-block
+		margin: 0 40px 20px 0
+
+		a
+			display: block
+			width: 150px
+			height: 150px
+			background: no-repeat center center
+			-webkit-background-size: contain
+			-moz-background-size: contain
+			-o-background-size: contain
+			background-size: contain
+
+		+tablet
+			width: 50%
+			float: left
+			margin: 0 0 20px
+
+			a
+				margin: 0 auto 20px
+				width: 80%
+
+		+mobile
+			a
+				height: 100px

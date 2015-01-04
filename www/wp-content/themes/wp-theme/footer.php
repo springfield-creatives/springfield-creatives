@@ -1,3 +1,35 @@
+	<?php
+	
+	$is_sponsors_template = basename(get_page_template()) == 'template-sponsors.php';
+
+	if(!$is_sponsors_template) {
+		?>
+		<section class="sponsors-stripe">
+			<h4><a href="<?php bloginfo('url') ?>/sponsors/"><?php the_field( 'sponsors_stripe_title', 'option') ?></a></h4>
+			<ul>
+				<?php
+
+				// get all sponsor posts level 3 and up
+				$stripe_sponsors = get_sponsors(3);
+
+				foreach($stripe_sponsors as $level){
+					foreach($level as $sponsor){
+						?>
+						<li>
+							<a href="<?php echo $sponsor['url'] ?>" class="sponsor" target="_blank" title="<?php echo $sponsor['name'] ?>" style="background-image: url(<?php echo $sponsor['logo']['sizes']['medium'] ?>)"></a>
+						</li>
+						<?php
+				    }
+				}
+
+				wp_reset_postdata();
+
+				?>
+			</ul>
+		</section>
+		<?php
+	}
+	?>
 
 	<footer class="footer--main">
 		<p>
