@@ -2380,12 +2380,12 @@ body.single-post .post .content {
 
 /* line 51, assets/sass/app/_sponsors.sass */
 .sponsors-stripe {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 /* line 54, assets/sass/app/_sponsors.sass */
 .sponsors-stripe h4 {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.875em;
   margin-bottom: 1em;
 }
 /* line 59, assets/sass/app/_sponsors.sass */
