@@ -16,7 +16,7 @@
 					foreach($level as $sponsor){
 						?>
 						<li>
-							<a href="<?php echo $sponsor['url'] ?>" class="sponsor" target="_blank" title="<?php echo $sponsor['name'] ?>" style="background-image: url(<?php echo $sponsor['logo']['sizes']['medium'] ?>)"></a>
+							<a href="<?php echo $sponsor['link'] ?>" class="sponsor" target="_blank" title="<?php echo $sponsor['name'] ?>" style="background-image: url(<?php echo $sponsor['logo']['sizes']['medium'] ?>)"></a>
 						</li>
 						<?php
 				    }
