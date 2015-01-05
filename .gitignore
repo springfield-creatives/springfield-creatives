@@ -38,7 +38,7 @@ Thumbs.db
 .sass-cache
 
 # WORDPRESS
-wp-config.local
+wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/
