@@ -39,30 +39,30 @@ Thumbs.db
 
 # WORDPRESS
 wp-config.local
-www/wp-content/uploads/
-www/wp-content/blogs.dir/
-www/wp-content/upgrade/
-www/wp-content/backup-db/
-www/wp-content/advanced-cache.php
-www/wp-content/wp-cache-config.php
-www/wp-content/timthumb-cache/
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/timthumb-cache/
 sitemap.xml
 *.log
-www/wp-content/cache/
-www/wp-content/backups/
+wp-content/cache/
+wp-content/backups/
 sitemap.xml.gz
-www/.htaccess
-www/.htaccess?
-www/wp-content/themes/twenty*
+.htaccess
+.htaccess?
+wp-content/themes/twenty*
 
 # SUBLIME
 *.sublime-*
 
 # Premium Plugins that shouldn't go on GitHub
-www/wp-content/plugins/events-calendar-pro
-www/wp-content/plugins/gravityforms*
-www/wp-content/plugins/advanced-custom-fields-pro
-www/wp-content/plugins/acf-repeater
+wp-content/plugins/events-calendar-pro
+wp-content/plugins/gravityforms*
+wp-content/plugins/advanced-custom-fields-pro
+wp-content/plugins/acf-repeater
 
 # IDE
 .idea
