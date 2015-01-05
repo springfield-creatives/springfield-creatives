@@ -164,46 +164,7 @@ function register_CPTs()
 
 	register_post_type('organizations', $args);
 
-	// Sponsors
-	//--------------------------------------------------------------------------
-	$labels = array(
-		'name' => _x('Sponsors', 'post type general name'),
-		'singular_name' => _x('Sponsor', 'post type singular name'),
-		'add_new' => _x('Add New', 'sponsors'),
-		'add_new_item' => __('Add New Sponsor'),
-		'edit_item' => __('Edit Sponsor'),
-		'new_item' => __('New Sponsor'),
-		'view_item' => __('View Sponsor'),
-		'search_items' => __('Search Sponsors'),
-		'not_found' =>  __('No Sponsors found'),
-		'not_found_in_trash' => __('No Sponsors found in Trash'),
-		'parent_item_colon' => '',
-		'menu_name' => 'Sponsors'
 
-	);
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'show_in_nav_menus' => true,
-		'query_var' => true,
-		'rewrite' => Array(
-			'slug' => 'sponsor'
-		),
-		'capability_type' => 'sponsor',
-		'has_archive' => true,
-		'hierarchical' => false,
-		'menu_position' => 21,
-		'supports' => array(
-			'title',
-			'editor',
-			'page-attributes'
-		)
-	);
-
-	register_post_type('sponsors', $args);
 
 	// Committees
 	//--------------------------------------------------------------------------
