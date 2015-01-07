@@ -13,13 +13,19 @@
 			case 'specific':
 
 				$selected = get_sub_field('selected_' . $post_type);
-				if(!is_array($selected))
-					$selected = array($selected);
+				if(count($selected) == 1) {
+					$args = array(
+						"post_type" => $post_type,
+						"p" => $selected[0]
+					);
+				} else {
+					$args = array(
+						"post__in" => $selected
+					);
+				}
 
 
-				$articles = new WP_Query(array(
-					"post__in" => $selected
-				));
+				$articles = new WP_Query($args);
 
 			break;
 
