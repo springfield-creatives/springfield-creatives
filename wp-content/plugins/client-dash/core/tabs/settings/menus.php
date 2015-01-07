@@ -485,14 +485,14 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 		 *
 		 * @since Client Dash 1.6
 		 */
-		$this::$menu_item_defaults = apply_filters( 'cd_nav_menu_item_defaults', $this::$menu_item_defaults );
+		self::$menu_item_defaults = apply_filters( 'cd_nav_menu_item_defaults', self::$menu_item_defaults );
 
 		/**
 		 * Add or remove items from the CD default WP Core menu item list.
 		 *
 		 * @since Client Dash 1.6
 		 */
-		$this::$wp_core = apply_filters( 'cd_nav_menu_wp_core_items', $this::$wp_core );
+		self::$wp_core = apply_filters( 'cd_nav_menu_wp_core_items', self::$wp_core );
 
 		/**
 		 * Allows extensions to add to the available side sortables.
@@ -553,7 +553,7 @@ class ClientDash_Core_Page_Settings_Tab_Menus extends ClientDash {
 			// Skip links IF the link manager is not enabled
 			// Links are disabled as of WP 3.5, and only enabled with the presence of this filter being true. So if this
 			// filter is set, we can pretty safely assume it's set to true.
-			if ( $menu_item[0] == 'Links' && $wp_filter['pre_option_link_manager_enabled'] === null ) {
+			if ( $menu_item[0] == 'Links' && isset( $wp_filter['pre_option_link_manager_enabled'] ) ) {
 				continue;
 			}
 

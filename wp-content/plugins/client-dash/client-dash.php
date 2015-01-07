@@ -3,9 +3,9 @@
 /*
 Plugin Name: Client Dash
 Description: Creating a more intuitive admin interface for clients.
-Version: 1.6.6
-Author: Kyle Maurer
-Author URI: http://realbigmarketing.com/staff/kyle
+Version: 1.6.7
+Author: Joel Worsham & Kyle Maurer
+Author URI: http://realbigmarketing.com/staff
 */
 
 // Require the functions class first so we can extend it
@@ -31,7 +31,7 @@ class ClientDash extends ClientDash_Functions {
 	 *
 	 * @since Client Dash 1.5
 	 */
-	protected static $version = '1.6.6';
+	protected static $version = '1.6.7';
 
 	/**
 	 * The path to the plugin.
@@ -480,7 +480,7 @@ class ClientDash extends ClientDash_Functions {
 			echo '<!--Client Dash Colors-->';
 			echo '<style>';
 			foreach ( $styles as $selector => $properties ) {
-				echo "$selector {";
+				echo $selector . '{';
 				foreach ( $properties as $property => $value ) {
 					echo "$property: $value;";
 				}
@@ -631,7 +631,7 @@ class ClientDash extends ClientDash_Functions {
 		// widgets need to be translated
 		if ( empty( $sidebars[ $current_sidebar ] ) ) {
 
-			$new_widgets = $this::$_cd_widgets;
+			$new_widgets = self::$_cd_widgets;
 		} else {
 
 			// Cycle through each widget
