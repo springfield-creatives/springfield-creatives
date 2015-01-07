@@ -42,7 +42,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 				$class .= ' new-row';
 
 		// set "date" text
-		if($post->post_type == 'tribe_events')
+		if(get_post_type() == 'tribe_events')
 			$date_text = tribe_get_start_date();
 		else
 			$date_text = 'posted ' . get_the_time('F j, Y');
@@ -56,7 +56,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		}
 
 		?>
-		<article class="post <?php echo $class . ' ' . $post->post_type ?>">
+		<article class="post <?php echo $class . ' ' . get_post_type() ?>">
 			<header>
 				<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
 				<span class="date"><?php echo $date_text ?></span>
