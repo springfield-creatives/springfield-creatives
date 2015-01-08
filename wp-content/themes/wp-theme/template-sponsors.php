@@ -19,7 +19,7 @@ foreach($sponsors as $level => $level_sponsors):
 	// and # columns
 	switch($level){
 		case 2:
-			$logo_size = "thumbnail";
+			$logo_size = "medium";
 			$columns_class = "column-3";
 			break;
 		case 3:
