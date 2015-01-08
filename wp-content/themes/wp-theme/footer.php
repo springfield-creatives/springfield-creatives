@@ -26,6 +26,7 @@
 
 				?>
 			</ul>
+			<a href="<?php bloginfo('url') ?>/sponsors/" class="view-all secondary-button">View All</a>
 		</section>
 		<?php
 	}

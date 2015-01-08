@@ -2204,7 +2204,7 @@ body.single-post .post .content {
   color: #fff !important;
 }
 
-/* line 3, assets/sass/app/_sponsors.sass */
+/* line 4, assets/sass/app/_sponsors.sass */
 .sponsors-list .block .image {
   display: block;
   width: 100%;
@@ -2215,71 +2215,85 @@ body.single-post .post .content {
   -o-background-size: contain;
   background-size: contain;
 }
-/* line 13, assets/sass/app/_sponsors.sass */
+/* line 14, assets/sass/app/_sponsors.sass */
 .sponsors-list .block header {
   margin: 0 auto;
   padding: 0;
 }
 @media only screen and (max-width: 568px) {
-  /* line 2, assets/sass/app/_sponsors.sass */
+  /* line 3, assets/sass/app/_sponsors.sass */
   .sponsors-list .block {
     width: 100%;
   }
 }
-/* line 22, assets/sass/app/_sponsors.sass */
+/* line 23, assets/sass/app/_sponsors.sass */
 .sponsors-list.level-4 header, .sponsors-list.level-3 header {
   width: 285px;
   height: 285px;
 }
-/* line 26, assets/sass/app/_sponsors.sass */
+/* line 27, assets/sass/app/_sponsors.sass */
 .sponsors-list.level-4 h3, .sponsors-list.level-3 h3 {
   display: none;
 }
-/* line 30, assets/sass/app/_sponsors.sass */
+/* line 31, assets/sass/app/_sponsors.sass */
 .sponsors-list.level-2 header {
   width: 130px;
   height: 130px;
 }
-/* line 34, assets/sass/app/_sponsors.sass */
+/* line 35, assets/sass/app/_sponsors.sass */
 .sponsors-list.level-2 h3 {
   display: none;
 }
-/* line 38, assets/sass/app/_sponsors.sass */
+/* line 39, assets/sass/app/_sponsors.sass */
 .sponsors-list.column-3 .block {
   width: 33.33333%;
 }
 @media only screen and (max-width: 568px) {
-  /* line 42, assets/sass/app/_sponsors.sass */
+  /* line 43, assets/sass/app/_sponsors.sass */
   .sponsors-list.column-3 header {
     width: 122px;
     height: 122px;
   }
-  /* line 46, assets/sass/app/_sponsors.sass */
+  /* line 47, assets/sass/app/_sponsors.sass */
   .sponsors-list.column-3 .block {
     width: 50%;
   }
 }
 
-/* line 51, assets/sass/app/_sponsors.sass */
+/* line 52, assets/sass/app/_sponsors.sass */
 .sponsors-stripe {
-  padding-top: 50px;
-}
-/* line 54, assets/sass/app/_sponsors.sass */
-.sponsors-stripe h4 {
+  padding: 40px 0;
   text-align: center;
-  font-size: 1.875em;
-  margin-bottom: 1em;
 }
-/* line 59, assets/sass/app/_sponsors.sass */
+/* line 56, assets/sass/app/_sponsors.sass */
+.sponsors-stripe h4 {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  vertical-align: text-top;
+}
+/* line 63, assets/sass/app/_sponsors.sass */
 .sponsors-stripe h4 a {
   color: #434343;
 }
-/* line 62, assets/sass/app/_sponsors.sass */
+/* line 66, assets/sass/app/_sponsors.sass */
+.sponsors-stripe .view-all {
+  display: inline-block;
+  font-size: 0.75em;
+  height: 36px;
+  line-height: 36px;
+  width: 140px;
+  margin-left: 16px;
+  vertical-align: middle;
+}
+/* line 75, assets/sass/app/_sponsors.sass */
 .sponsors-stripe ul {
   list-style: none;
   margin: 0 auto;
   text-align: center;
   zoom: 1;
+  padding-left: 0;
 }
 /* line 36, assets/sass/modules/_defaults.sass */
 .sponsors-stripe ul:before, .sponsors-stripe ul:after {
@@ -2290,25 +2304,30 @@ body.single-post .post .content {
 .sponsors-stripe ul:after {
   clear: both;
 }
-@media only screen and (max-width: 829px) {
-  /* line 62, assets/sass/app/_sponsors.sass */
-  .sponsors-stripe ul {
-    padding-left: 0;
-  }
-}
-/* line 71, assets/sass/app/_sponsors.sass */
+/* line 83, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li {
   display: inline-block;
-  margin: 0 40px 20px 0;
+  margin: 0 2% 20px;
+  width: 12.5%;
 }
-/* line 75, assets/sass/app/_sponsors.sass */
-.sponsors-stripe li:last-child {
-  margin-right: 0;
+@media only screen and (max-width: 1319px) {
+  /* line 83, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe li {
+    margin: 0 2% 20px;
+    width: 19.1%;
+  }
 }
-/* line 78, assets/sass/app/_sponsors.sass */
+@media only screen and (min-width: 1800px) {
+  /* line 83, assets/sass/app/_sponsors.sass */
+  .sponsors-stripe li {
+    margin: 0 2% 20px;
+    width: 8.5%;
+  }
+}
+/* line 97, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li a {
   display: block;
-  width: 150px;
+  width: 100%;
   height: 150px;
   background: no-repeat center center;
   -webkit-background-size: contain;
@@ -2317,20 +2336,20 @@ body.single-post .post .content {
   background-size: contain;
 }
 @media only screen and (max-width: 829px) {
-  /* line 71, assets/sass/app/_sponsors.sass */
+  /* line 83, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li {
     width: 50%;
     float: left;
     margin: 0 0 20px;
   }
-  /* line 93, assets/sass/app/_sponsors.sass */
+  /* line 112, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     margin: 0 auto 20px;
     width: 80%;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 98, assets/sass/app/_sponsors.sass */
+  /* line 117, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     height: 100px;
   }

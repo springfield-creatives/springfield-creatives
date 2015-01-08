@@ -33,7 +33,7 @@ foreach($sponsors as $level => $level_sponsors):
 	}
 
 	echo '<section class="sponsors-list posts-wrap level-' . $level . ' ' . $columns_class . '">';
-	echo '<div class="middlify">';
+	echo '<div class="middlifier">';
 	echo '<h2>' . $sc_sponsorship_level_names[$level] . '</h2>';
 
 
