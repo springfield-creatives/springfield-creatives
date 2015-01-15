@@ -66,6 +66,9 @@ include_once('functions/wordpress/admin-bar.php');
 // posts filter
 include_once('functions/wordpress/filter-post-types.php');
 
+// Member Signin
+include_once('functions/site/members-signin.php');
+
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
 
