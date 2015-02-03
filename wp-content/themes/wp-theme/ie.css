@@ -1289,6 +1289,14 @@ a img.aligncenter {
   font-style: italic;
   opacity: 0.5;
 }
+/* line 51, assets/sass/partials/_hero.sass */
+.hero.fit {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-attachment: initial;
+}
 
 /* line 1, assets/sass/partials/_directory.sass */
 .directory {
