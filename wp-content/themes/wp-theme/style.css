@@ -2174,6 +2174,23 @@ body.single-post .post .content {
   }
 }
 
+/* line 239, assets/sass/app/_post.sass */
+.pagination {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+/* line 244, assets/sass/app/_post.sass */
+.pagination li {
+  display: inline-block;
+  margin: 0 5px;
+}
+/* line 248, assets/sass/app/_post.sass */
+.pagination a {
+  padding: 3px 10px;
+  border: 1px solid #1daad1;
+}
+
 /* line 3, assets/sass/app/_events.sass */
 #tribe-events-content a {
   font-family: "proxima-nova", sans-serif;
