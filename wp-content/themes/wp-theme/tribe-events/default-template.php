@@ -16,7 +16,7 @@ get_header();
 
 if(!is_single()){
 	// tell hero partial which ACF option to reference
-	$hero_page_option_prefix = "events_landing_hero";
+	$hero_page_option_prefix = "events_landing";
 }
 include(__DIR__ . '/../partials/hero.php');
 ?>

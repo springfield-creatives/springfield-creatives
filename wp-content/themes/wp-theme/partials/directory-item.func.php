@@ -6,7 +6,7 @@ $post: $post object returned by WP or ACF. Defaults to current $post
 $subtitle: override subtitle default for that post type
 */
 
-function return_post_list_item_html($post_object = false, $subtitle = false){
+function return_directory_item_html($post_object = false, $subtitle = false){
 	global $post;
 
 	if($post_object === false)
@@ -43,7 +43,7 @@ function return_post_list_item_html($post_object = false, $subtitle = false){
 
 	$post_image_src = $post_image['sizes']['square-medium'];
 
-	$to_return = '<li class="post-list-item ' . $post_object->post_type . '">' .
+	$to_return = '<li class="directory-list-item ' . $post_object->post_type . '">' .
 		'<a href="' .  $link . '" class="thumbnail-image" style="background-image: url(' . $post_image_src . ')"></a>' . 
 		'<h3><a href="' . $link . '">' . $name . '</a></h3>';
 
@@ -60,6 +60,6 @@ function return_post_list_item_html($post_object = false, $subtitle = false){
 $post: $post array returned by WP or ACF
 $subtitle: override subtitle default of company
 */
-function render_post_list_item($post = false, $subtitle = false){
-	echo return_post_list_item_html($post, $subtitle);
+function render_directory_item($post = false, $subtitle = false){
+	echo return_directory_item_html($post, $subtitle);
 }

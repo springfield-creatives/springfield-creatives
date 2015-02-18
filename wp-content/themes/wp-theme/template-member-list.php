@@ -51,7 +51,8 @@ $total_pages = intval($total_users / $number) + 1;
                 ?>
             </ul>
 
-            <?php  
+            <?php
+            // pagination
             if ($total_users > $total_query) {  
                 echo '<nav id="pagination" class="pagination clearfix">';  
                 $current_page = max(1, get_query_var('paged'));  
@@ -60,7 +61,7 @@ $total_pages = intval($total_users / $number) + 1;
                     'format' => 'page/%#%/',  
                     'current' => $current_page,  
                     'total' => $total_pages,  
-                    'prev_next'    => false,  
+                    'prev_next'    => true,  
                     'type'         => 'list',  
                 ));  
                 echo '</nav>'; 

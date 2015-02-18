@@ -7,25 +7,25 @@
         <ul class="directory column-3">
             <?php
             while (have_posts()) : the_post();
-                render_post_list_item();
+                render_directory_item();
             endwhile;
             ?>
         </ul>
+        <?php
+        include('pagination.php');
+        ?>
 
     <?php else : ?>
 
         <article class="article error">
             <header>
-                <h1>No Articles Found</h1>
+                <h1>Nothing Found</h1>
             </header>
 
             <div class="content">
-                <p>This page currently does not have any posts.</p>
+                <p>Looks like nothing matches those filters. Please try something else.</p>
             </div>
 
-            <footer>
-
-            </footer>
         </article>
 
     <?php endif; ?>

@@ -1,6 +1,7 @@
 <?php
 get_header();
-the_post();
+
+$hero_page_option_prefix = $wp_query->query['post_type'] . '_directory';
 
 include('partials/hero.php');
 

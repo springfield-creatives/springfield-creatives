@@ -879,7 +879,7 @@ section ul {
   /* ...and now for the proper property */
   transition: 0.3s;
 }
-/* line 440, assets/sass/modules/_input.sass */
+/* line 135, assets/sass/mixins/_mix-general.sass */
 .secondary-button:hover {
   background: #dbf3f9;
 }
@@ -890,7 +890,7 @@ section ul {
   }
 }
 
-/* line 446, assets/sass/modules/_input.sass */
+/* line 419, assets/sass/modules/_input.sass */
 input,
 textarea,
 .validation_error {
@@ -914,12 +914,12 @@ textarea,
   color: #434343;
 }
 
-/* line 464, assets/sass/modules/_input.sass */
+/* line 437, assets/sass/modules/_input.sass */
 textarea {
   height: 150px;
 }
 
-/* line 470, assets/sass/modules/_input.sass */
+/* line 443, assets/sass/modules/_input.sass */
 .validation_error {
   height: auto;
   clear: both;
@@ -931,18 +931,18 @@ textarea {
   text-align: center;
 }
 
-/* line 481, assets/sass/modules/_input.sass */
+/* line 454, assets/sass/modules/_input.sass */
 .gfield_error input,
 .gfield_error textarea {
   border-color: #ff8484;
 }
 
-/* line 485, assets/sass/modules/_input.sass */
+/* line 458, assets/sass/modules/_input.sass */
 .validation_message {
   display: none;
 }
 
-/* line 489, assets/sass/modules/_input.sass */
+/* line 462, assets/sass/modules/_input.sass */
 .gform_confirmation_wrapper {
   text-align: center;
 }
@@ -1434,6 +1434,20 @@ a img.aligncenter {
   .directory-list-item h4 {
     font-size: 1.125em;
   }
+}
+
+/* line 103, assets/sass/partials/_directory.sass */
+.search-filter {
+  text-align: right;
+  margin-top: 45px !important;
+}
+/* line 107, assets/sass/partials/_directory.sass */
+.search-filter .search {
+  float: none;
+}
+/* line 110, assets/sass/partials/_directory.sass */
+.search-filter .wrapper {
+  display: inline-block;
 }
 
 /** VENDOR NAME
@@ -2069,14 +2083,53 @@ body.single-post .post .content {
   text-align: center;
 }
 /* line 244, assets/sass/app/_post.sass */
-.pagination li {
+.pagination li, .pagination div {
   display: inline-block;
   margin: 0 5px;
 }
 /* line 248, assets/sass/app/_post.sass */
 .pagination a {
-  padding: 3px 10px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 240px;
+  height: 50px;
+  line-height: 50px;
+  font-family: "proxima-nova", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: normal;
   border: 1px solid #1daad1;
+  color: #1daad1;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  cursor: pointer;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  /* ...and now for the proper property */
+  transition: 0.3s;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 0.75em;
+}
+/* line 135, assets/sass/mixins/_mix-general.sass */
+.pagination a:hover {
+  background: #dbf3f9;
+}
+@media only screen and (max-width: 568px) {
+  /* line 248, assets/sass/app/_post.sass */
+  .pagination a {
+    width: 100%;
+  }
 }
 
 /* line 3, assets/sass/app/_events.sass */

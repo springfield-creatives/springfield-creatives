@@ -18,7 +18,8 @@ function register_taxonomies() {
 			'label' => __('Industry'),
 			'show_in_nav_menus' => true,
 			'labels' => array(
-				'add_new_item' => 'Add New Industry'
+				'add_new_item' => 'Add New Industry',
+				'all_items' => 'Industries'
 			),
 			'query_var' => true,
 		)
@@ -36,7 +37,8 @@ function register_taxonomies() {
 			'label' => __('Organization Type'),
 			'show_in_nav_menus' => true,
 			'labels' => array(
-				'add_new_item' => 'Add New Type'
+				'add_new_item' => 'Add New Type',
+				'all_items' => 'Organization Types'
 			),
 			'query_var' => true,
 		)

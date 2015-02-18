@@ -16,14 +16,14 @@
 			$post_obj_name = 'directory_user_object';
 			$view_all = 'members/list';
 		}else{
-			$render_func = 'render_post_list_item';
+			$render_func = 'render_directory_item';
 			$post_obj_name = 'directory_post_object';
 			$view_all = $dir_type;
 		}
 
 		$dir_data = get_sub_field('directory_data');
 
-		echo '<ul class="directory ' . $dir_type . ' column-2">';
+		echo '<ul class="directory ' . $dir_type . ' column-3">';
 
 		// load posts/authors based on data selection method
 		switch($dir_data){
@@ -69,34 +69,25 @@
 							}
 
 							$args = array(
-							    'role' => array(
-							        'Administrator',
-							        'Member'
-							    ),
+							    'role' => 'Member',
 							    'orderby' => $orderby,
 							    "order" => $order,
 							    "number" => $num_to_show
 							);
 							$members = new WP_User_Query($args);
 
-			                foreach ($members->results as $member) {
-			                    render_person_item($member);
-			                }
+              foreach ($members->results as $member) {
+                  render_person_item($member);
+              }
 
-							break;
-
-
-						case 'sponsors':
-
-							// TODO
 							break;
 
 						default:
 
 							$dir_posts = new WP_Query(array(
 								"post_type" => $dir_type,
-							    'orderby' => $orderby,
-							    "order" => $order,
+						    'orderby' => $orderby,
+						    "order" => $order,
 								"posts_per_page" => $num_to_show
 							));
 
@@ -105,7 +96,7 @@
 
 								// render_post_list_item will use global $post by default					
 								call_user_func($render_func);
-			                }
+              }
 
 							wp_reset_postdata();
 

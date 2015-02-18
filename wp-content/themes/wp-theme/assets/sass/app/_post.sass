@@ -241,10 +241,14 @@ body.single-post
 	display: block
 	text-align: center
 
-	li
+	li, div
 		display: inline-block
 		margin: 0 5px
 
 	a
-		padding: 3px 10px
-		border: 1px solid $color-blue
+		+secondary-button
+		padding-left: 10px
+		padding-right: 10px
+		height: 36px
+		line-height: 36px
+		font-size: 0.75em
