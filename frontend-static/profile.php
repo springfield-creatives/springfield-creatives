@@ -1,5 +1,5 @@
 <?php 
-$body_class = 'page page-id-60 page-template page-template-template-about page-template-template-about-php logged-in admin-bar no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme';
+$body_class = 'page page-id-60 page-template page-template-template-about page-template-template-about-php logged-in admin-bar no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme post-single';
 include('_header-fit.php');
 ?>
 
@@ -14,13 +14,15 @@ include('_header-fit.php');
 		<article class="contact-info">
 			<div class="list">
 				<h4>Hours</h4>
-				<ul>
-					<li>Monday: 9-5</li>
-					<li>Monday: 9-5</li>
-					<li>Monday: 9-5</li>
-					<li>Monday: 9-5</li>
-					<li>Monday: 9-5</li>
-				</ul>
+				<div>
+				Sunday: Closed<br />
+				Monday: 8AM - 5PM<br />
+				Tuesday: 8AM - 5PM<br />
+				Wednesday: 8AM - 5PM<br />
+				Thursday: 8AM - 5PM<br />
+				Friday: 8AM - 5PM<br />
+				Saturday: Closed
+				</div>
 			</div>
 			<div class="list">
 				<h4>Contact</h4>
