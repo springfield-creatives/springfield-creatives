@@ -23,7 +23,7 @@
 
 		$dir_data = get_sub_field('directory_data');
 
-		echo '<ul class="directory ' . $dir_type . ' column-3">';
+		echo '<ul class="directory ' . $dir_type . ' column-2">';
 
 		// load posts/authors based on data selection method
 		switch($dir_data){
