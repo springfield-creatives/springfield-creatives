@@ -69,6 +69,9 @@ include_once('functions/wordpress/filter-post-types.php');
 // Member Signin
 include_once('functions/site/members-signin.php');
 
+// Robots.txt
+include_once('functions/site/robots.php');
+
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
 
