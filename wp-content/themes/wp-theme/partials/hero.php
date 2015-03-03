@@ -32,7 +32,13 @@
 
 	// set Hero text
 	if(is_search()){
-		$hero_text = "Search Results";
+		// general search
+		$cpt = is_post_type_archive() ? post_type_archive_title('', false) . ' ' : '';
+		$hero_text = $cpt . "Search Results";
+
+	}else if(!empty($_GET["member-s"])){
+		// member search
+		$hero_text = "Member Search Results";
 	}else{
 		$hero_text = get_field('hero_text');
 		if(strlen($hero_text) === 0)

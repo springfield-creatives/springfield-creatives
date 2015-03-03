@@ -9,7 +9,7 @@ include('partials/hero.php');
 
 <section class="wysiwyg">
     <div class="middlifier">
-        <?php the_content() ?>
+        Woops, that page doesn't exist.
     </div>
 </section>
 

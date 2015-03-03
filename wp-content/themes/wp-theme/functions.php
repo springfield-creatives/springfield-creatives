@@ -72,6 +72,9 @@ include_once('functions/site/members-signin.php');
 // Robots.txt
 include_once('functions/site/robots.php');
 
+// Better User Search Results
+include_once('functions/wordpress/user-search-fields.php');
+
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
 

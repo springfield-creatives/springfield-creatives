@@ -17,7 +17,7 @@
 
     <?php else : ?>
 
-        <article class="article error">
+        <article class="no-results">
             <header>
                 <h1>Nothing Found</h1>
             </header>

@@ -2,10 +2,6 @@
 
 function sgf_filter_post_types ($query) {
 
-    // Skip if running a search
-    if (!empty($_GET['s']))
-        return false;
-
     // Skip if not main query
     if (
         !$query->is_main_query() ||
