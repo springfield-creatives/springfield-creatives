@@ -2380,5 +2380,80 @@ body.single-post .post .content {
   }
 }
 
+/* line 2, assets/sass/app/_profile.sass */
+.profile-about .middlifier {
+  position: relative;
+  min-height: 440px;
+}
+/* line 6, assets/sass/app/_profile.sass */
+.profile-about .intro {
+  display: block;
+}
+/* line 9, assets/sass/app/_profile.sass */
+.profile-about .intro h2 {
+  border-bottom: none;
+  text-align: left;
+  font-size: 2em;
+  padding-bottom: 0;
+  margin-bottom: 0.25em;
+}
+/* line 16, assets/sass/app/_profile.sass */
+.profile-about .intro h3 {
+  font-size: 1.5em;
+}
+/* line 19, assets/sass/app/_profile.sass */
+.profile-about .links {
+  height: 40px;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+/* line 27, assets/sass/app/_profile.sass */
+.profile-about .links ul {
+  padding: 0;
+}
+/* line 30, assets/sass/app/_profile.sass */
+.profile-about .links li {
+  list-style: none;
+  display: inline-block;
+  font-size: 40px;
+  line-height: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* line 38, assets/sass/app/_profile.sass */
+.profile-about .featured {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 400px;
+}
+/* line 44, assets/sass/app/_profile.sass */
+.profile-about .contact-info {
+  zoom: 1;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.profile-about .contact-info:before, .profile-about .contact-info:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.profile-about .contact-info:after {
+  clear: both;
+}
+/* line 47, assets/sass/app/_profile.sass */
+.profile-about .contact-info .list {
+  width: 50%;
+  float: left;
+}
+/* line 52, assets/sass/app/_profile.sass */
+.profile-about .intro,
+.profile-about .description,
+.profile-about .contact-info {
+  padding-right: 440px;
+}
+
 /** IE 8 FIXES
  *=================================== */

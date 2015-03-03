@@ -1,1 +1,56 @@
 .profile-about
+	.middlifier
+		position: relative
+		min-height: 440px
+
+	.intro
+		display: block
+
+		h2
+			border-bottom: none
+			text-align: left
+			font-size: 2em
+			padding-bottom: 0
+			margin-bottom: 0.25em
+
+		h3
+			font-size: 1.5em
+
+	.links
+		height: 40px
+		width: 400px
+		position: absolute
+		top: 0
+		right: 0
+		text-align: center
+
+		ul
+			padding: 0
+
+		li
+			list-style: none
+			display: inline-block
+			font-size: 40px
+			line-height: 40px
+			margin-left: 5px
+			margin-right: 5px
+
+	.featured
+		position: absolute
+		top: 60px
+		right: 0
+		width: 400px
+
+	.contact-info
+		+cf
+
+		.list
+			width: 50%
+			float: left
+
+	// left column stuff
+	.intro,
+	.description,
+	.contact-info
+		padding-right: 440px
+
