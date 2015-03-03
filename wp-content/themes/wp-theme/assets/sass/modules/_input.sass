@@ -73,8 +73,13 @@
 .full-width
   width: 100%
 
+.width-100 .gfield
+  width: 100% !important
+
+
 // radio buttons
 .gfield.option
+.gfield.radio
   height: auto
   padding-top: 14px
 
@@ -84,23 +89,28 @@
 
   label
     color: $color-dark-gray
+    height: auto
 
 .gfield_radio
   
   li
     +cf
-
-  input
-    float: left
     position: relative
+
+  input[type="radio"]
+    position: absolute
+    top: 0
+    left: -25px
     width: auto
     margin: 0 10px 0 0
 
   label
-    float: left
+    display: inline-block
     position: relative
     padding-left: 0
     cursor: pointer
+
+//select
 
 .gfield.select
   height: auto
