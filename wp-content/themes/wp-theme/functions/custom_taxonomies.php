@@ -24,25 +24,7 @@ function register_taxonomies() {
 			'query_var' => true,
 		)
 	);
-	register_taxonomy(
-		'specialization', // taxononmy ID. Make this unique from CPTs and Pages to avoid URL rewrite headaches.
-		array(
-			'jobs'
-		),
-		array(
-			'hierarchical' => true,
-			'show_ui' => true,
-			'public' => true,
-			'label' => __('Specialization'),
-			'show_in_nav_menus' => true,
-			'labels' => array(
-				'add_new_item' => 'Add New Specialization',
-				'all_items' => 'Specializations'
-			),
-			'query_var' => true,
-		)
-	);
-
+	
 	register_taxonomy(
 		'organization-type', // taxononmy ID. Make this unique from CPTs and Pages to avoid URL rewrite headaches.
 		array(
