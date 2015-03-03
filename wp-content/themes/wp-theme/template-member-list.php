@@ -19,7 +19,7 @@ include('partials/hero.php');
 <?php 
 
 // query and pagination
-$number     = 1;
+$number     = 10;
 $paged      = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $offset     = ($paged - 1) * $number;
 
