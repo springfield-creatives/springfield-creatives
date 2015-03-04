@@ -1545,6 +1545,274 @@ a img.aligncenter {
  *=================================== */
 /** GRAVITY FORMS
  *=================================== */
+/* Slider */
+/* line 3, assets/sass/vendor/_slick.sass */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 18, assets/sass/vendor/_slick.sass */
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* line 25, assets/sass/vendor/_slick.sass */
+.slick-list:focus {
+  outline: none;
+}
+/* line 29, assets/sass/vendor/_slick.sass */
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 34, assets/sass/vendor/_slick.sass */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 43, assets/sass/vendor/_slick.sass */
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+/* line 49, assets/sass/vendor/_slick.sass */
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+/* line 55, assets/sass/vendor/_slick.sass */
+.slick-track:after {
+  clear: both;
+}
+/* line 59, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+/* line 63, assets/sass/vendor/_slick.sass */
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+/* line 67, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+/* line 70, assets/sass/vendor/_slick.sass */
+.slick-slide img {
+  display: block;
+}
+/* line 73, assets/sass/vendor/_slick.sass */
+.slick-slide.slick-loading img {
+  display: none;
+}
+/* line 79, assets/sass/vendor/_slick.sass */
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+/* line 83, assets/sass/vendor/_slick.sass */
+.slick-initialized .slick-slide {
+  display: block;
+}
+/* line 87, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+/* line 91, assets/sass/vendor/_slick.sass */
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+/* Slider */
+/* line 137, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-list {
+  background: #fff url('/assets/images/assets/images/ajax-loader.gif') center center no-repeat;
+}
+
+/* Arrows */
+/* line 143, assets/sass/vendor/_slick.sass */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: -10px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+/* line 159, assets/sass/vendor/_slick.sass */
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+/* line 163, assets/sass/vendor/_slick.sass */
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+/* line 167, assets/sass/vendor/_slick.sass */
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+/* line 172, assets/sass/vendor/_slick.sass */
+.slick-prev:before, .slick-next:before {
+  font-family: "FontAwesome";
+  font-size: 20px;
+  line-height: 1;
+  color: #434343;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 182, assets/sass/vendor/_slick.sass */
+.slick-prev {
+  left: -25px;
+}
+/* line 184, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+/* line 188, assets/sass/vendor/_slick.sass */
+.slick-prev:before {
+  content: "";
+}
+/* line 190, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-prev:before {
+  content: "";
+}
+
+/* line 196, assets/sass/vendor/_slick.sass */
+.slick-next {
+  right: -25px;
+}
+/* line 198, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-next {
+  left: -25px;
+  right: auto;
+}
+/* line 202, assets/sass/vendor/_slick.sass */
+.slick-next:before {
+  content: "";
+}
+/* line 204, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-next:before {
+  content: "";
+}
+
+/* Dots */
+/* line 212, assets/sass/vendor/_slick.sass */
+.slick-slider {
+  margin-bottom: 30px;
+}
+
+/* line 216, assets/sass/vendor/_slick.sass */
+.slick-dots {
+  position: absolute;
+  bottom: -60px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+/* line 225, assets/sass/vendor/_slick.sass */
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+/* line 233, assets/sass/vendor/_slick.sass */
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+/* line 245, assets/sass/vendor/_slick.sass */
+.slick-dots li button:hover {
+  outline: none;
+}
+/* line 247, assets/sass/vendor/_slick.sass */
+.slick-dots li button:hover:before {
+  opacity: 1;
+}
+/* line 251, assets/sass/vendor/_slick.sass */
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 20px;
+  height: 20px;
+  font-family: "FontAwesome";
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 268, assets/sass/vendor/_slick.sass */
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
 /* line 1, assets/sass/app/_app.sass */
 body {
   background-color: #ededed;
@@ -2575,6 +2843,18 @@ body.single-post .post .content {
 .profile-about .description,
 .profile-about .contact-info {
   padding-right: 440px;
+}
+
+/* line 58, assets/sass/app/_profile.sass */
+.mini-portfolio .slick-carousel {
+  padding: 0 !important;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 64, assets/sass/app/_profile.sass */
+.mini-portfolio img {
+  padding: 1%;
 }
 
 /** IE 8 FIXES

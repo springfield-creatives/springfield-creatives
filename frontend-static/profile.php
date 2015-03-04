@@ -1,5 +1,5 @@
 <?php 
-$body_class = 'archive author author-abbaanderson author-36 logged-in admin-bar no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme page-template-author-php';
+$body_class = 'archive author author-abbaanderson author-36 logged-in no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme page-template-author-php';
 include('_header-fit.php');
 ?>
 
@@ -53,9 +53,17 @@ include('_header-fit.php');
 
 
 <section class="mini-portfolio main">
-	<div class="middlifier">
-		
-	</div>
+	<ul class="slick-carousel">
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+		<li><img src="http://placehold.it/400x350" /></li>
+	</ul>
 </section>
 
 <section class="profile-contact main">
@@ -64,4 +72,6 @@ include('_header-fit.php');
 		<!-- form here -->
 	</div>
 </section>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+
 <?php include('_footer.php'); ?>
