@@ -135,7 +135,7 @@ $slick-opacity-not-active: 0.25 !default
 
 .slick-list 
     .slick-loading & 
-        background: #fff slick-image-url("assets/images/ajax-loader.gif") center center no-repeat   
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat   
 
 
 /* Arrows */
@@ -264,6 +264,11 @@ $slick-opacity-not-active: 0.25 !default
                 -webkit-font-smoothing: antialiased
                 -moz-osx-font-smoothing: grayscale
             
+                +mobile
+                    font-size: $slick-dot-size * .75
+                    width: 14px
+        +mobile
+            margin: 0 2px
         
         &.slick-active button:before 
             color: $slick-dot-color-active
