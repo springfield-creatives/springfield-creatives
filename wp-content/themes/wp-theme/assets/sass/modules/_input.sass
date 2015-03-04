@@ -79,7 +79,8 @@
 
 // radio buttons
 .gfield.option,
-.gfield.radio
+.gfield.radio,
+.gfield.checkbox
   height: auto
   padding-top: 14px
 
@@ -91,14 +92,16 @@
   label
     height: auto
 
-.gfield_radio
+.gfield_radio,
+.gfield_checkbox
   height: auto
   
   li
     +cf
     position: relative
 
-  input[type="radio"]
+  input[type="radio"],
+  input[type="checkbox"],
     position: absolute
     top: 0
     left: -25px
@@ -135,30 +138,30 @@
     line-height: 48px
 
 
-// checkboxes
-// the wrapper
-.gfield.checkbox
-  height: auto
+// // checkboxes
+// // the wrapper
+// .gfield.checkbox
+//   height: auto
 
-  > label
-    padding: 0 0 10px !important
+//   > label
+//     padding: 0 0 10px !important
 
-  label
-    cursor: pointer
-    color: $color-dark-gray
-    position: relative
-    padding: 0 0 0 10px
+//   label
+//     cursor: pointer
+//     color: $color-dark-gray
+//     position: relative
+//     padding: 0 0 0 10px
 
-  input
-    width: auto
-    height: auto
-    padding: 0
-    margin: 0
+//   input
+//     width: auto
+//     height: auto
+//     padding: 0
+//     margin: 0
 
-// the box list
-.gfield_checkbox
-  list-style: none !important
-  padding-left: 0
+// // the box list
+// .gfield_checkbox
+//   list-style: none !important
+//   padding-left: 0
 
 
 
