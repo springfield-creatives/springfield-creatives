@@ -31,13 +31,12 @@ foreach($meta as $k=>$v){
 // add email to $meta
 $meta['email'] = $user->data->user_email;
 
-// var_dump($meta); exit;
-
 // image
 $user_image = get_wp_user_avatar_src( $user_id, 'large', null, $user_data->display_name );
 
 // description
-$user_desc = !empty($meta['about_you'][0]) ? $meta['about_you'][0] : $meta['description'][0];
+$user_desc = !empty($meta['about_you']) ? $meta['about_you'] : $meta['description'];
+$user_desc = wpautop($user_desc);
 
 // links
 $contact_links = get_contact_links_arr($user_id, true, $meta);

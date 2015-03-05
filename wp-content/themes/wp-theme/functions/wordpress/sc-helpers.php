@@ -188,11 +188,12 @@ function get_portfolio_arr($id, $is_user = false){
 
 	foreach($media_rows as $row){
 
-		if($row['type'] == 'image'){
+		if($row['media_type'] == 'image'){
+
 			$image = $row['image_src'];
 
-			if(isset($image['sizes']['medium']))
-				$thumb = $image['sizes']['medium'];
+			if(isset($image['sizes']['square-medium']))
+				$thumb = $image['sizes']['square-medium'];
 			else
 				$thumb = $image['url'];
 
@@ -204,8 +205,8 @@ function get_portfolio_arr($id, $is_user = false){
 			if(isset($row['thumbnail'])){
 
 				// they provided a video thumb
-				if(isset($row['thumbnail']['sizes']['medium']))
-					$thumb = $row['thumbnail']['sizes']['medium'];
+				if(isset($row['thumbnail']['sizes']['square-medium']))
+					$thumb = $row['thumbnail']['sizes']['square-medium'];
 				else
 					$thumb = $row['url'];
 

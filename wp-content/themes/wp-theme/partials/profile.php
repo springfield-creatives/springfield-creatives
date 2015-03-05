@@ -81,13 +81,13 @@ $fa_icons = array(
 
 );
 
-if(isset($profile['logo'])){
+if(!empty($profile['logo'])){
 	$hero_text = '<img src="' . $profile['logo'] . '" alt="' . $profile['title'] . '">';
 }else{
 	$hero_text = $profile['title'];
 }
 
-if(isset($profile['cover_img']))
+if(!empty($profile['cover_img']))
 	$hero_img = $profile['cover_img'];
 
 get_header();
@@ -103,7 +103,7 @@ require('hero.php');
 		</article>
 		<article class="featured">
 			<?php
-			if(isset($profile['contact-links']['address'])){
+			if(!empty($profile['contact-links']['address'])){
 
 				// echo a map
 				$safe_address = urlencode(

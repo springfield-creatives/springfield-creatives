@@ -3238,18 +3238,25 @@ body.single-post .post .content {
   max-width: 400px;
   max-height: 400px;
 }
+@media only screen and (max-width: 568px) {
+  /* line 68, assets/sass/app/_profile.sass */
+  .profile-about .featured img,
+  .profile-about .featured iframe {
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 829px) {
   /* line 61, assets/sass/app/_profile.sass */
   .profile-about .featured {
     margin: 10px auto 40px;
   }
-  /* line 78, assets/sass/app/_profile.sass */
+  /* line 81, assets/sass/app/_profile.sass */
   .profile-about .featured img {
     display: block;
     margin: 0 auto;
   }
 }
-/* line 83, assets/sass/app/_profile.sass */
+/* line 86, assets/sass/app/_profile.sass */
 .profile-about .contact-info {
   zoom: 1;
 }
@@ -3262,23 +3269,23 @@ body.single-post .post .content {
 .profile-about .contact-info:after {
   clear: both;
 }
-/* line 86, assets/sass/app/_profile.sass */
+/* line 89, assets/sass/app/_profile.sass */
 .profile-about .contact-info h4 {
   font-size: 1.25em;
 }
-/* line 89, assets/sass/app/_profile.sass */
+/* line 92, assets/sass/app/_profile.sass */
 .profile-about .contact-info ul {
   list-style: none;
   padding-left: 0;
 }
-/* line 93, assets/sass/app/_profile.sass */
+/* line 96, assets/sass/app/_profile.sass */
 .profile-about .contact-info .list {
   width: 50%;
   float: left;
   line-height: 1.3em;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 93, assets/sass/app/_profile.sass */
+  /* line 96, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     float: none;
     width: auto;
@@ -3286,28 +3293,28 @@ body.single-post .post .content {
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 93, assets/sass/app/_profile.sass */
+  /* line 96, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     width: 50%;
     float: left;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 93, assets/sass/app/_profile.sass */
+  /* line 96, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     float: none;
     width: auto;
     margin-bottom: 40px;
   }
 }
-/* line 113, assets/sass/app/_profile.sass */
+/* line 116, assets/sass/app/_profile.sass */
 .profile-about .intro,
 .profile-about .description,
 .profile-about .contact-info {
   padding-right: 440px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 113, assets/sass/app/_profile.sass */
+  /* line 116, assets/sass/app/_profile.sass */
   .profile-about .intro,
   .profile-about .description,
   .profile-about .contact-info {
@@ -3315,27 +3322,27 @@ body.single-post .post .content {
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 113, assets/sass/app/_profile.sass */
+  /* line 116, assets/sass/app/_profile.sass */
   .profile-about .intro,
   .profile-about .description,
   .profile-about .contact-info {
     padding-right: 0;
   }
 }
-/* line 125, assets/sass/app/_profile.sass */
+/* line 128, assets/sass/app/_profile.sass */
 .profile-about .links,
 .profile-about .featured {
   right: 60px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 125, assets/sass/app/_profile.sass */
+  /* line 128, assets/sass/app/_profile.sass */
   .profile-about .links,
   .profile-about .featured {
     width: 300px;
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 125, assets/sass/app/_profile.sass */
+  /* line 128, assets/sass/app/_profile.sass */
   .profile-about .links,
   .profile-about .featured {
     width: auto;
@@ -3345,14 +3352,14 @@ body.single-post .post .content {
   }
 }
 
-/* line 139, assets/sass/app/_profile.sass */
+/* line 142, assets/sass/app/_profile.sass */
 .mini-portfolio .slick-carousel {
   padding: 0 !important;
   display: block;
   margin: 0 auto;
   width: 80%;
 }
-/* line 145, assets/sass/app/_profile.sass */
+/* line 148, assets/sass/app/_profile.sass */
 .mini-portfolio img {
   padding: 1%;
 }
