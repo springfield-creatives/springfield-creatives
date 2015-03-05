@@ -54,15 +54,33 @@ include('_header-fit.php');
 
 <section class="mini-portfolio main">
 	<ul class="slick-carousel">
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
-		<li><img src="http://placehold.it/400x350" /></li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="https://www.youtube.com/watch?v=JGHrCWSIhIM"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
 	</ul>
 </section>
 
@@ -73,5 +91,7 @@ include('_header-fit.php');
 	</div>
 </section>
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+<script type="text/javascript" src="../wp-content/themes/wp-theme/assets/scripts/vendor/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="../wp-content/themes/wp-theme/assets/scripts/vendor/jquery.fancybox-media.js"></script>
 
 <?php include('_footer.php'); ?>

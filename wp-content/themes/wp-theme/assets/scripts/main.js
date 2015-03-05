@@ -72,7 +72,40 @@ jQuery(function($){
 	$('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
 
 	// SLICK
-	$('.slick-carousel').slick({
+	$slick = $('.slick-carousel');
+	
+	// profile page fancybox init
+	var fancyBoxSlides = [];
+	$slick.on('init', function(e, slick){
+
+		// init sometimes fires twice
+		if(fancyBoxSlides.length > 0)
+			return;
+
+		slick.$slides.each(function(i, el){
+			var $med = $(el).find('[data-big]');
+
+			fancyBoxSlides.push({
+				href: $med.data('big'),
+				title: $med.attr('title')
+			});
+		});
+
+		$slick.on('click.customFancybox', '[data-big]', function(e){
+			var index = $(e.currentTarget).parent().data('slick-index');
+			$.fancybox.open(fancyBoxSlides, {
+				index: index,
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+            media : {}
+        }
+			});
+		});
+  });
+	
+
+	$slick.slick({
 		dots: true,
 	  infinite: true,
 	  speed: 500,
@@ -116,7 +149,6 @@ jQuery(function($){
 	    // instead of a settings object
 	  ]
 	});
-
 
 	// hack for :nth-child(even) gravity forms sections
 	$('li.gsection').after('<li></li>');
