@@ -27,9 +27,8 @@
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
 <script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
 <link rel='shortlink' href='http://www.springfieldcreatives.com/' />
-
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../wp-content/themes/wp-theme/style.css" />
-
 	<script type="text/javascript" src="//use.typekit.net/hlc5scr.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>

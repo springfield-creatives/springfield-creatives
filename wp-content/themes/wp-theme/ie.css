@@ -1453,6 +1453,584 @@ a img.aligncenter {
  *=================================== */
 /** GRAVITY FORMS
  *=================================== */
+/* Slider */
+/* line 3, assets/sass/vendor/_slick.sass */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 18, assets/sass/vendor/_slick.sass */
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* line 25, assets/sass/vendor/_slick.sass */
+.slick-list:focus {
+  outline: none;
+}
+/* line 29, assets/sass/vendor/_slick.sass */
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 34, assets/sass/vendor/_slick.sass */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 43, assets/sass/vendor/_slick.sass */
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+/* line 49, assets/sass/vendor/_slick.sass */
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+/* line 55, assets/sass/vendor/_slick.sass */
+.slick-track:after {
+  clear: both;
+}
+/* line 59, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+/* line 63, assets/sass/vendor/_slick.sass */
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+/* line 67, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+/* line 70, assets/sass/vendor/_slick.sass */
+.slick-slide img {
+  display: block;
+}
+/* line 73, assets/sass/vendor/_slick.sass */
+.slick-slide.slick-loading img {
+  display: none;
+}
+/* line 79, assets/sass/vendor/_slick.sass */
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+/* line 83, assets/sass/vendor/_slick.sass */
+.slick-initialized .slick-slide {
+  display: block;
+}
+/* line 87, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+/* line 91, assets/sass/vendor/_slick.sass */
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+/* Slider */
+/* line 120, assets/sass/vendor/_slick.sass */
+.slick-loading .slick-list {
+  background: #fff url("assets/images/ajax-loader.gif") center center no-repeat;
+}
+
+/* Arrows */
+/* line 126, assets/sass/vendor/_slick.sass */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  margin-top: -10px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+/* line 142, assets/sass/vendor/_slick.sass */
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+/* line 146, assets/sass/vendor/_slick.sass */
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+/* line 150, assets/sass/vendor/_slick.sass */
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+/* line 155, assets/sass/vendor/_slick.sass */
+.slick-prev:before, .slick-next:before {
+  font-family: "FontAwesome";
+  font-size: 20px;
+  line-height: 1;
+  color: #434343;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 165, assets/sass/vendor/_slick.sass */
+.slick-prev {
+  left: -25px;
+}
+/* line 167, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: -25px;
+}
+/* line 171, assets/sass/vendor/_slick.sass */
+.slick-prev:before {
+  content: "";
+}
+/* line 173, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-prev:before {
+  content: "";
+}
+
+/* line 179, assets/sass/vendor/_slick.sass */
+.slick-next {
+  right: -25px;
+}
+/* line 181, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-next {
+  left: -25px;
+  right: auto;
+}
+/* line 185, assets/sass/vendor/_slick.sass */
+.slick-next:before {
+  content: "";
+}
+/* line 187, assets/sass/vendor/_slick.sass */
+[dir="rtl"] .slick-next:before {
+  content: "";
+}
+
+/* Dots */
+/* line 195, assets/sass/vendor/_slick.sass */
+.slick-slider {
+  margin-bottom: 30px;
+}
+
+/* line 199, assets/sass/vendor/_slick.sass */
+.slick-dots {
+  position: absolute;
+  bottom: -60px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+/* line 208, assets/sass/vendor/_slick.sass */
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+/* line 216, assets/sass/vendor/_slick.sass */
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 20px;
+  width: 20px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+/* line 228, assets/sass/vendor/_slick.sass */
+.slick-dots li button:hover {
+  outline: none;
+}
+/* line 230, assets/sass/vendor/_slick.sass */
+.slick-dots li button:hover:before {
+  opacity: 1;
+}
+/* line 234, assets/sass/vendor/_slick.sass */
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 20px;
+  height: 20px;
+  font-family: "FontAwesome";
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 250, assets/sass/vendor/_slick.sass */
+.slick-dots li.slick-active button:before {
+  color: black;
+  opacity: 0.75;
+}
+
+/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+/* line 2, assets/sass/vendor/_fancybox.scss */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  vertical-align: top;
+}
+
+/* line 20, assets/sass/vendor/_fancybox.scss */
+.fancybox-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8020;
+}
+
+/* line 27, assets/sass/vendor/_fancybox.scss */
+.fancybox-skin {
+  position: relative;
+  background: #f9f9f9;
+  color: #444;
+  text-shadow: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 37, assets/sass/vendor/_fancybox.scss */
+.fancybox-opened {
+  z-index: 8030;
+}
+
+/* line 41, assets/sass/vendor/_fancybox.scss */
+.fancybox-opened .fancybox-skin {
+  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* line 47, assets/sass/vendor/_fancybox.scss */
+.fancybox-outer, .fancybox-inner {
+  position: relative;
+}
+
+/* line 51, assets/sass/vendor/_fancybox.scss */
+.fancybox-inner {
+  overflow: hidden;
+}
+
+/* line 55, assets/sass/vendor/_fancybox.scss */
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 59, assets/sass/vendor/_fancybox.scss */
+.fancybox-error {
+  color: #444;
+  font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+  padding: 15px;
+  white-space: nowrap;
+}
+
+/* line 67, assets/sass/vendor/_fancybox.scss */
+.fancybox-image, .fancybox-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 73, assets/sass/vendor/_fancybox.scss */
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 78, assets/sass/vendor/_fancybox.scss */
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+  background-image: url("assets/images/fancybox/fancybox_sprite.png");
+}
+
+/* line 82, assets/sass/vendor/_fancybox.scss */
+#fancybox-loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -22px;
+  background-position: 0 -108px;
+  opacity: 0.8;
+  cursor: pointer;
+  z-index: 8060;
+}
+
+/* line 94, assets/sass/vendor/_fancybox.scss */
+#fancybox-loading div {
+  width: 44px;
+  height: 44px;
+  background: url("assets/images/fancybox/fancybox_loading.gif") center center no-repeat;
+}
+
+/* line 100, assets/sass/vendor/_fancybox.scss */
+.fancybox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 8040;
+}
+
+/* line 110, assets/sass/vendor/_fancybox.scss */
+.fancybox-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent url("assets/images/fancybox/blank.gif");
+  /* helps IE */
+  -webkit-tap-highlight-color: transparent;
+  z-index: 8040;
+}
+
+/* line 122, assets/sass/vendor/_fancybox.scss */
+.fancybox-prev {
+  left: 0;
+}
+
+/* line 126, assets/sass/vendor/_fancybox.scss */
+.fancybox-next {
+  right: 0;
+}
+
+/* line 130, assets/sass/vendor/_fancybox.scss */
+.fancybox-nav span {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 34px;
+  margin-top: -18px;
+  cursor: pointer;
+  z-index: 8040;
+  visibility: hidden;
+}
+
+/* line 141, assets/sass/vendor/_fancybox.scss */
+.fancybox-prev span {
+  left: 10px;
+  background-position: 0 -36px;
+}
+
+/* line 146, assets/sass/vendor/_fancybox.scss */
+.fancybox-next span {
+  right: 10px;
+  background-position: 0 -72px;
+}
+
+/* line 151, assets/sass/vendor/_fancybox.scss */
+.fancybox-nav:hover span {
+  visibility: visible;
+}
+
+/* line 155, assets/sass/vendor/_fancybox.scss */
+.fancybox-tmp {
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  visibility: hidden;
+  max-width: 99999px;
+  max-height: 99999px;
+  overflow: visible !important;
+}
+
+/* Overlay helper */
+/* line 167, assets/sass/vendor/_fancybox.scss */
+.fancybox-lock {
+  overflow: hidden !important;
+  width: auto;
+}
+
+/* line 172, assets/sass/vendor/_fancybox.scss */
+.fancybox-lock body {
+  overflow: hidden !important;
+}
+
+/* line 176, assets/sass/vendor/_fancybox.scss */
+.fancybox-lock-test {
+  overflow-y: hidden !important;
+}
+
+/* line 180, assets/sass/vendor/_fancybox.scss */
+.fancybox-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  z-index: 8010;
+  background: url("assets/images/fancybox/fancybox_overlay.png");
+}
+
+/* line 190, assets/sass/vendor/_fancybox.scss */
+.fancybox-overlay-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* line 196, assets/sass/vendor/_fancybox.scss */
+.fancybox-lock .fancybox-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+/* Title helper */
+/* line 203, assets/sass/vendor/_fancybox.scss */
+.fancybox-title {
+  visibility: hidden;
+  font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+  position: relative;
+  text-shadow: none;
+  z-index: 8050;
+}
+
+/* line 211, assets/sass/vendor/_fancybox.scss */
+.fancybox-opened .fancybox-title {
+  visibility: visible;
+}
+
+/* line 215, assets/sass/vendor/_fancybox.scss */
+.fancybox-title-float-wrap {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  margin-bottom: -35px;
+  z-index: 8050;
+  text-align: center;
+}
+
+/* line 224, assets/sass/vendor/_fancybox.scss */
+.fancybox-title-float-wrap .child {
+  display: inline-block;
+  margin-right: -100%;
+  padding: 2px 20px;
+  background: transparent;
+  /* Fallback for web browsers that doesn't support RGBa */
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  text-shadow: 0 1px 2px #222;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+/* line 240, assets/sass/vendor/_fancybox.scss */
+.fancybox-title-outside-wrap {
+  position: relative;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* line 246, assets/sass/vendor/_fancybox.scss */
+.fancybox-title-inside-wrap {
+  padding-top: 10px;
+}
+
+/* line 250, assets/sass/vendor/_fancybox.scss */
+.fancybox-title-over-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  padding: 10px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/*Retina graphics!*/
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* line 265, assets/sass/vendor/_fancybox.scss */
+  #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+    background-image: url("assets/images/fancybox/fancybox_sprite@2x.png");
+    background-size: 44px 152px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+
+  /* line 270, assets/sass/vendor/_fancybox.scss */
+  #fancybox-loading div {
+    background-image: url("assets/images/fancybox/fancybox_loading@2x.gif");
+    background-size: 24px 24px;
+    /*The size of the normal image, half the size of the hi-res image*/
+  }
+}
 /* line 1, assets/sass/app/_app.sass */
 body {
   background-color: #ededed;
@@ -2442,6 +3020,202 @@ body.single-post .post .content {
   .sponsors-stripe li a {
     height: 100px;
   }
+}
+
+/* line 2, assets/sass/app/_profile.sass */
+.profile-about .middlifier {
+  position: relative;
+  min-height: 440px;
+  padding: 0 60px;
+  max-width: 1220px;
+}
+@media only screen and (max-width: 829px) {
+  /* line 2, assets/sass/app/_profile.sass */
+  .profile-about .middlifier {
+    padding: 0 40px;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 2, assets/sass/app/_profile.sass */
+  .profile-about .middlifier {
+    padding: 0 20px;
+  }
+}
+/* line 14, assets/sass/app/_profile.sass */
+.profile-about .intro {
+  display: block;
+}
+/* line 17, assets/sass/app/_profile.sass */
+.profile-about .intro h2 {
+  border-bottom: none;
+  text-align: left;
+  font-size: 2em;
+  padding-bottom: 0;
+  margin-bottom: 0.25em;
+}
+/* line 24, assets/sass/app/_profile.sass */
+.profile-about .intro h3 {
+  font-size: 1.5em;
+}
+@media only screen and (max-width: 829px) {
+  /* line 28, assets/sass/app/_profile.sass */
+  .profile-about .intro h2,
+  .profile-about .intro h3 {
+    text-align: center;
+  }
+}
+/* line 32, assets/sass/app/_profile.sass */
+.profile-about .links {
+  height: 40px;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+/* line 40, assets/sass/app/_profile.sass */
+.profile-about .links ul {
+  padding: 0;
+}
+/* line 43, assets/sass/app/_profile.sass */
+.profile-about .links li {
+  list-style: none;
+  display: inline-block;
+  font-size: 40px;
+  line-height: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 43, assets/sass/app/_profile.sass */
+  .profile-about .links li {
+    font-size: 30px;
+  }
+}
+/* line 55, assets/sass/app/_profile.sass */
+.profile-about .featured {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 400px;
+}
+@media only screen and (max-width: 829px) {
+  /* line 55, assets/sass/app/_profile.sass */
+  .profile-about .featured {
+    margin: 10px auto 40px;
+  }
+  /* line 64, assets/sass/app/_profile.sass */
+  .profile-about .featured img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+/* line 69, assets/sass/app/_profile.sass */
+.profile-about .contact-info {
+  zoom: 1;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.profile-about .contact-info:before, .profile-about .contact-info:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.profile-about .contact-info:after {
+  clear: both;
+}
+/* line 72, assets/sass/app/_profile.sass */
+.profile-about .contact-info h4 {
+  font-size: 1.25em;
+}
+/* line 75, assets/sass/app/_profile.sass */
+.profile-about .contact-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+/* line 79, assets/sass/app/_profile.sass */
+.profile-about .contact-info .list {
+  width: 50%;
+  float: left;
+  line-height: 1.3em;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 79, assets/sass/app/_profile.sass */
+  .profile-about .contact-info .list {
+    float: none;
+    width: auto;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 829px) {
+  /* line 79, assets/sass/app/_profile.sass */
+  .profile-about .contact-info .list {
+    width: 50%;
+    float: left;
+  }
+}
+@media only screen and (max-width: 568px) {
+  /* line 79, assets/sass/app/_profile.sass */
+  .profile-about .contact-info .list {
+    float: none;
+    width: auto;
+    margin-bottom: 40px;
+  }
+}
+/* line 99, assets/sass/app/_profile.sass */
+.profile-about .intro,
+.profile-about .description,
+.profile-about .contact-info {
+  padding-right: 440px;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 99, assets/sass/app/_profile.sass */
+  .profile-about .intro,
+  .profile-about .description,
+  .profile-about .contact-info {
+    padding-right: 340px;
+  }
+}
+@media only screen and (max-width: 829px) {
+  /* line 99, assets/sass/app/_profile.sass */
+  .profile-about .intro,
+  .profile-about .description,
+  .profile-about .contact-info {
+    padding-right: 0;
+  }
+}
+/* line 111, assets/sass/app/_profile.sass */
+.profile-about .links,
+.profile-about .featured {
+  right: 60px;
+}
+@media only screen and (max-width: 1000px) {
+  /* line 111, assets/sass/app/_profile.sass */
+  .profile-about .links,
+  .profile-about .featured {
+    width: 300px;
+  }
+}
+@media only screen and (max-width: 829px) {
+  /* line 111, assets/sass/app/_profile.sass */
+  .profile-about .links,
+  .profile-about .featured {
+    width: auto;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* line 125, assets/sass/app/_profile.sass */
+.mini-portfolio .slick-carousel {
+  padding: 0 !important;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 131, assets/sass/app/_profile.sass */
+.mini-portfolio img {
+  padding: 1%;
 }
 
 /** IE 8 FIXES

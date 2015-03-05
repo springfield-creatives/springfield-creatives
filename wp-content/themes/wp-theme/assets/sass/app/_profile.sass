@@ -1,1 +1,132 @@
 .profile-about
+	.middlifier
+		position: relative
+		min-height: 440px
+		padding: 0 60px
+		max-width: 1220px
+
+		+tablet
+			padding: 0 40px
+
+		+mobile
+			padding: 0 20px
+
+	.intro
+		display: block
+
+		h2
+			border-bottom: none
+			text-align: left
+			font-size: 2em
+			padding-bottom: 0
+			margin-bottom: 0.25em
+
+		h3
+			font-size: 1.5em
+
+		+tablet
+			h2,
+			h3
+				text-align: center
+
+	.links
+		height: 40px
+		width: 400px
+		position: absolute
+		top: 0
+		right: 0
+		text-align: center
+
+		ul
+			padding: 0
+
+		li
+			list-style: none
+			display: inline-block
+			font-size: 40px
+			line-height: 40px
+			margin-left: 10px
+			margin-right: 10px
+
+			+mq-nav
+				font-size: 30px
+
+
+	.featured
+		position: absolute
+		top: 60px
+		right: 0
+		width: 400px
+
+		+tablet
+			margin: 10px auto 40px
+
+			img
+				display: block
+				margin: 0 auto
+
+
+	.contact-info
+		+cf
+
+		h4
+			font-size: 1.25em
+
+		ul
+			list-style: none
+			padding-left: 0
+
+		.list
+			width: 50%
+			float: left
+			line-height: 1.3em
+
+			+mq-nav
+				float: none
+				width: auto
+				margin-bottom: 40px
+
+			+tablet
+				width: 50%
+				float: left
+
+			+mobile
+				float: none
+				width: auto
+				margin-bottom: 40px
+
+	// left column stuff
+	.intro,
+	.description,
+	.contact-info
+		padding-right: 440px
+
+		+mq-nav
+			padding-right: 340px
+
+		+tablet
+			padding-right: 0
+
+	// right column stuff
+	.links,
+	.featured
+		right: 60px
+
+		+mq-nav
+			width: 300px
+
+		+tablet
+			width: auto
+			position: relative
+			top: 0
+			right: 0
+
+.mini-portfolio
+	.slick-carousel
+		padding: 0 !important
+		display: block
+		margin: 0 auto
+		width: 80%
+
+	img
+		padding: 1%

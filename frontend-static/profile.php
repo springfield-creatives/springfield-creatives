@@ -1,5 +1,5 @@
 <?php 
-$body_class = 'page page-id-60 page-template page-template-template-about page-template-template-about-php logged-in admin-bar no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme post-single';
+$body_class = 'archive author author-abbaanderson author-36 logged-in no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme page-template-author-php';
 include('_header-fit.php');
 ?>
 
@@ -9,6 +9,12 @@ include('_header-fit.php');
 		<article class="intro">
 			<h2>Herbie Hancock</h2>
 			<h3><a href="#">Musician</a></h3>
+		</article>
+		<article class="featured">
+			<!-- featured image or map -->
+			<img src="http://placehold.it/400x350" />
+		</article>
+		<article class="description">
 			<p>Springfield Creatives is a collaborative group of local creative professionals committed to the celebration, continued development and promotion of the rich creative community in Springfield, MO and the surrounding areas.</p>
 		</article>
 		<article class="contact-info">
@@ -34,18 +40,12 @@ include('_header-fit.php');
 		</article>
 		<article class="links">
 			<ul>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
-				<li><a href="#"></a></li>
+				<li><a class="fa fa-camera-retro" href="#"></a></li>
+				<li><a class="fa fa-camera-retro" href="#"></a></li>
+				<li><a class="fa fa-camera-retro" href="#"></a></li>
+				<li><a class="fa fa-camera-retro" href="#"></a></li>
+				<li><a class="fa fa-camera-retro" href="#"></a></li>
 			</ul>
-		</article>
-		<article class="featured">
-			<!-- featured image or map -->
 		</article>
 	</div>
 </section>
@@ -53,9 +53,35 @@ include('_header-fit.php');
 
 
 <section class="mini-portfolio main">
-	<div class="middlifier">
-		
-	</div>
+	<ul class="slick-carousel">
+		<li>
+			<img src="http://placehold.it/400x350" data-big="https://www.youtube.com/watch?v=JGHrCWSIhIM"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+		<li>
+			<img src="http://placehold.it/400x350" data-big="http://fancyapps.com/fancybox/demo/1_b.jpg"/>
+		</li>
+	</ul>
 </section>
 
 <section class="profile-contact main">
@@ -64,4 +90,8 @@ include('_header-fit.php');
 		<!-- form here -->
 	</div>
 </section>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+<script type="text/javascript" src="../wp-content/themes/wp-theme/assets/scripts/vendor/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="../wp-content/themes/wp-theme/assets/scripts/vendor/jquery.fancybox-media.js"></script>
+
 <?php include('_footer.php'); ?>
