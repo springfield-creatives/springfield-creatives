@@ -13,29 +13,29 @@ function return_directory_item_html($post_object = false, $subtitle = false){
 		$post_object = $post;
 
 
-    // determine defaults
-    if (!$subtitle) {
+  // determine defaults
+  if (!$subtitle) {
 
-    	if($post_object->post_type == 'businesses')
-    		$tax = 'industry';
-	    else if($post_object->post_type == 'organizations')
-	    	$tax = 'organization-type';
+  	if($post_object->post_type == 'businesses')
+  		$tax = 'industry';
+    else if($post_object->post_type == 'organizations')
+    	$tax = 'organization-type';
 
 		$terms = get_the_terms( $post->ID, $tax );
 		if ( $terms && ! is_wp_error( $terms ) ) {
 			$subtitles = array();
-    		foreach ( $terms as $term ) {
+	  		foreach ( $terms as $term ) {
 				$subtitles[] = $term->name;
 			}
 			$subtitle = join( ", ", $subtitles );
 		} else {
 			$subtitle = false;
 		}
-    }
+  }
 
-    $name = $post_object->post_title;
+  $name = $post_object->post_title;
 
-    $link = get_permalink($post_object->ID);
+  $link = get_permalink($post_object->ID);
 
 	$post_image = get_field( 'logo', $post_object->ID );
 	if(empty($post_image))

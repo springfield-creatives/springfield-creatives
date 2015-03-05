@@ -32,6 +32,9 @@ include_once('functions/custom_post_types.php');
 include_once('functions/custom_taxonomies.php');
 include_once('functions/custom_sidebars.php');
 
+
+include_once('functions/wordpress/enqueue-scripts.php');
+
 // CUSTOM FUNCTIONS
 include_once('functions/wordpress/utility.php');
 
@@ -48,6 +51,9 @@ include_once('functions/site/posts2posts.php');
 
 // Help with dealing with Sponsors
 include_once('functions/wordpress/sponsors-helpers.php');
+
+// Misc Helpers
+include_once('functions/wordpress/sc-helpers.php');
 
 // Partial Functions
 include_once('partials/person-item.func.php');

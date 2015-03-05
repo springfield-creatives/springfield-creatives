@@ -70,21 +70,7 @@ function return_person_item_html($user, $subtitle = false){
     // default subtitle to company
     if (!$subtitle) {
         // get connected businesses posts
-        $connected = get_posts( array(
-            'connected_type' => 'businesses_user',
-            'connected_items' => $user,
-            'suppress_filters' => false,
-            'nopaging' => true
-        ) );
-
-        // set the subtitle accordingly
-        // TODO: list all businesses if there are multiple
-        if (!empty($connected)) {
-            $subtitle = '<a href="' . get_permalink($connected[0]->ID) . '">' . $connected[0]->post_title . '</a>';
-        } else {
-            // get manual text meta and use that, no link
-            $subtitle = get_field( 'company', 'user_' . $user->ID );
-        }
+        $subtitle = get_user_business($user);
     }
 
     $name = $user->display_name;

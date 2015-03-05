@@ -12,7 +12,11 @@ include('_header-fit.php');
 		</article>
 		<article class="featured">
 			<!-- featured image or map -->
-			<img src="http://placehold.it/400x350" />
+			<img src="http://placehold.it/800x850" />
+			<?php
+			//map
+			// echo '<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC9_2YM2sPM3qgTwlfEO9oYCotYT8ZlF3U&q=2346+E+Cherryvale+St%2C+Springfield%2C+MO+65804" width="100%" height="300" frameborder="0" style="border:0"></iframe>';
+			?>
 		</article>
 		<article class="description">
 			<p>Springfield Creatives is a collaborative group of local creative professionals committed to the celebration, continued development and promotion of the rich creative community in Springfield, MO and the surrounding areas.</p>
