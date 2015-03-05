@@ -1,7 +1,4 @@
 <?php
-get_header();
-
-exit;
 $user_id = get_query_var('author');
 
 // temporarily redirect to their configged URL
