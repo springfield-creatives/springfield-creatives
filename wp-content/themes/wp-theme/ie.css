@@ -3233,13 +3233,18 @@ body.single-post .post .content {
 }
 
 /* line 142, assets/sass/app/_profile.sass */
+.mini-portfolio h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+/* line 146, assets/sass/app/_profile.sass */
 .mini-portfolio .slick-carousel {
   padding: 0 !important;
   display: block;
   margin: 0 auto;
   width: 80%;
 }
-/* line 148, assets/sass/app/_profile.sass */
+/* line 152, assets/sass/app/_profile.sass */
 .mini-portfolio img {
   padding: 1%;
 }

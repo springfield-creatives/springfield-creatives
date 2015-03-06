@@ -33,6 +33,7 @@ if(!empty($media)){
 	?>
 
 	<section class="mini-portfolio main">
+		<h2 class="middlifier">Media Gallery</h2>
 		<ul class="slick-carousel">
 			<?php
 
