@@ -3,7 +3,7 @@
  * A hero banner
 */
 
-	$hero_img = empty($hero_img) ? $hero_img : get_field('hero_image');
+	$hero_img = !empty($hero_img) ? $hero_img : get_field('hero_image');
 	if(empty($hero_img) || !empty($hero_page_option_prefix)){
 		// allow containing template to choose with ACF option field to use for hero image
 		$opts_hero_img = empty($hero_page_option_prefix) ? 'default_hero_image' : $hero_page_option_prefix . '_hero_image';
@@ -30,6 +30,7 @@
 		$credit_html = '';
 	}
 
+
 	// set Hero text
 	if(is_search()){
 		
@@ -41,7 +42,7 @@
 		// member search
 		$hero_text = "Member Search Results";
 	}else{
-		$hero_text = empty($hero_text) ? $hero_text : get_field('hero_text');
+		$hero_text = !empty($hero_text) ? $hero_text : get_field('hero_text');
 		if(strlen($hero_text) === 0)
 			$hero_text = empty($hero_page_option_prefix) ? get_the_title() :  get_field($hero_page_option_prefix . '_hero_text', 'options');
 	}
