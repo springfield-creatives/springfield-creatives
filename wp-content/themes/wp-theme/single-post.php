@@ -3,6 +3,9 @@ get_header();
 the_post();
 
 $member_photo = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
+
+// media
+$media = get_gallery_arr(get_the_ID());
 ?>
 
 <?php include('partials/hero.php'); ?>
@@ -19,7 +22,34 @@ $member_photo = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_auth
 		<?php echo $member_photo ?>
 	</header>
 
+
 </article>
 
 
-<?php get_footer() ?>
+<?php
+
+// Media!
+if(!empty($media)){
+	?>
+
+	<section class="mini-portfolio main">
+		<ul class="slick-carousel">
+			<?php
+
+			foreach($media as $media){
+
+				// use default thumbnail for video if not specified
+				if($media['type'] == 'video' && !isset($media['thumb']))
+					$media['thumb'] = get_field('default_video_thumbnail', 'option');
+
+				echo '<li><img src="' . $media['thumb'] . '" title="' . $media['title'] . '" data-big="' . $media['src'] . '"/></li>';
+			}
+
+			?>
+		</ul>
+	</section>
+
+	<?php 
+}
+
+get_footer() ?>

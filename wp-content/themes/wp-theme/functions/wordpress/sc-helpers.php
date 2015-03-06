@@ -175,13 +175,13 @@ function get_social_links_arr($id, $is_user = false, $meta){
  * @param  string $type 
  * @return Array
  */
-function get_portfolio_arr($id, $is_user = false){
+function get_gallery_arr($id, $is_user = false){
 
 	$media = array();
 	
 	$post_id = $is_user ? 'user_' . $id : $id;
 
-	$media_rows = get_field('media_portfolio', $post_id); 
+	$media_rows = get_field('media_gallery', $post_id); 
 
 	if(empty($media_rows))
 		return $media;

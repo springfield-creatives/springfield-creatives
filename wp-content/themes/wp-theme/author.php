@@ -43,7 +43,7 @@ $contact_links = get_contact_links_arr($user_id, true, $meta);
 $social_links = get_social_links_arr($user_id, true, $meta);
 
 // media
-$media = get_portfolio_arr($user_id, true);
+$media = get_gallery_arr($user_id, true);
 
 
 // build the $profile var for the partial

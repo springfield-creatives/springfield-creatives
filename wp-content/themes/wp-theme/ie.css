@@ -1527,31 +1527,33 @@ a img.aligncenter {
   min-height: 1px;
   display: none;
 }
-/* line 67, assets/sass/vendor/_slick.sass */
+/* line 68, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-slide {
   float: right;
 }
-/* line 70, assets/sass/vendor/_slick.sass */
+/* line 71, assets/sass/vendor/_slick.sass */
 .slick-slide img {
   display: block;
+  cursor: pointer;
+  border-radius: 50%;
 }
-/* line 73, assets/sass/vendor/_slick.sass */
+/* line 76, assets/sass/vendor/_slick.sass */
 .slick-slide.slick-loading img {
   display: none;
 }
-/* line 79, assets/sass/vendor/_slick.sass */
+/* line 82, assets/sass/vendor/_slick.sass */
 .slick-slide.dragging img {
   pointer-events: none;
 }
-/* line 83, assets/sass/vendor/_slick.sass */
+/* line 86, assets/sass/vendor/_slick.sass */
 .slick-initialized .slick-slide {
   display: block;
 }
-/* line 87, assets/sass/vendor/_slick.sass */
+/* line 90, assets/sass/vendor/_slick.sass */
 .slick-loading .slick-slide {
   visibility: hidden;
 }
-/* line 91, assets/sass/vendor/_slick.sass */
+/* line 94, assets/sass/vendor/_slick.sass */
 .slick-vertical .slick-slide {
   display: block;
   height: auto;
@@ -1559,13 +1561,13 @@ a img.aligncenter {
 }
 
 /* Slider */
-/* line 120, assets/sass/vendor/_slick.sass */
+/* line 123, assets/sass/vendor/_slick.sass */
 .slick-loading .slick-list {
   background: #fff url("assets/images/ajax-loader.gif") center center no-repeat;
 }
 
 /* Arrows */
-/* line 126, assets/sass/vendor/_slick.sass */
+/* line 129, assets/sass/vendor/_slick.sass */
 .slick-prev,
 .slick-next {
   position: absolute;
@@ -1583,7 +1585,7 @@ a img.aligncenter {
   border: none;
   outline: none;
 }
-/* line 142, assets/sass/vendor/_slick.sass */
+/* line 145, assets/sass/vendor/_slick.sass */
 .slick-prev:hover, .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
@@ -1591,19 +1593,19 @@ a img.aligncenter {
   background: transparent;
   color: transparent;
 }
-/* line 146, assets/sass/vendor/_slick.sass */
+/* line 149, assets/sass/vendor/_slick.sass */
 .slick-prev:hover:before, .slick-prev:focus:before,
 .slick-next:hover:before,
 .slick-next:focus:before {
   opacity: 1;
 }
-/* line 150, assets/sass/vendor/_slick.sass */
+/* line 153, assets/sass/vendor/_slick.sass */
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before {
   opacity: 0.25;
 }
 
-/* line 155, assets/sass/vendor/_slick.sass */
+/* line 158, assets/sass/vendor/_slick.sass */
 .slick-prev:before, .slick-next:before {
   font-family: "FontAwesome";
   font-size: 20px;
@@ -1614,49 +1616,49 @@ a img.aligncenter {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 165, assets/sass/vendor/_slick.sass */
+/* line 168, assets/sass/vendor/_slick.sass */
 .slick-prev {
   left: -25px;
 }
-/* line 167, assets/sass/vendor/_slick.sass */
+/* line 170, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-prev {
   left: auto;
   right: -25px;
 }
-/* line 171, assets/sass/vendor/_slick.sass */
+/* line 174, assets/sass/vendor/_slick.sass */
 .slick-prev:before {
   content: "";
 }
-/* line 173, assets/sass/vendor/_slick.sass */
+/* line 176, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-prev:before {
   content: "";
 }
 
-/* line 179, assets/sass/vendor/_slick.sass */
+/* line 182, assets/sass/vendor/_slick.sass */
 .slick-next {
   right: -25px;
 }
-/* line 181, assets/sass/vendor/_slick.sass */
+/* line 184, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-next {
   left: -25px;
   right: auto;
 }
-/* line 185, assets/sass/vendor/_slick.sass */
+/* line 188, assets/sass/vendor/_slick.sass */
 .slick-next:before {
   content: "";
 }
-/* line 187, assets/sass/vendor/_slick.sass */
+/* line 190, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-next:before {
   content: "";
 }
 
 /* Dots */
-/* line 195, assets/sass/vendor/_slick.sass */
+/* line 198, assets/sass/vendor/_slick.sass */
 .slick-slider {
   margin-bottom: 30px;
 }
 
-/* line 199, assets/sass/vendor/_slick.sass */
+/* line 202, assets/sass/vendor/_slick.sass */
 .slick-dots {
   position: absolute;
   bottom: -60px;
@@ -1666,7 +1668,7 @@ a img.aligncenter {
   padding: 0;
   width: 100%;
 }
-/* line 208, assets/sass/vendor/_slick.sass */
+/* line 211, assets/sass/vendor/_slick.sass */
 .slick-dots li {
   position: relative;
   display: inline-block;
@@ -1676,7 +1678,7 @@ a img.aligncenter {
   padding: 0;
   cursor: pointer;
 }
-/* line 216, assets/sass/vendor/_slick.sass */
+/* line 219, assets/sass/vendor/_slick.sass */
 .slick-dots li button {
   border: 0;
   background: transparent;
@@ -1690,15 +1692,15 @@ a img.aligncenter {
   padding: 5px;
   cursor: pointer;
 }
-/* line 228, assets/sass/vendor/_slick.sass */
+/* line 231, assets/sass/vendor/_slick.sass */
 .slick-dots li button:hover {
   outline: none;
 }
-/* line 230, assets/sass/vendor/_slick.sass */
+/* line 233, assets/sass/vendor/_slick.sass */
 .slick-dots li button:hover:before {
   opacity: 1;
 }
-/* line 234, assets/sass/vendor/_slick.sass */
+/* line 237, assets/sass/vendor/_slick.sass */
 .slick-dots li button:before {
   position: absolute;
   top: 0;
@@ -1715,7 +1717,7 @@ a img.aligncenter {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* line 250, assets/sass/vendor/_slick.sass */
+/* line 253, assets/sass/vendor/_slick.sass */
 .slick-dots li.slick-active button:before {
   color: black;
   opacity: 0.75;
