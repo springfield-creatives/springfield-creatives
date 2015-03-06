@@ -20,6 +20,12 @@ add_action( 'wp_enqueue_scripts', 'sgf_creatives_dat_jquery' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
+add_action( 'after_setup_theme', 'register_my_menu' );
+function register_my_menu() {
+  register_nav_menu( 'primary', 'Primary Menu' );
+}
+
+
 
 // ADD CUSTOM PHOTO CROPS
 if ( function_exists( 'add_image_size' ) ) {

@@ -27,6 +27,6 @@
 		</a>
 
 		<nav class="nav--top">
-			<?php wp_nav_menu('Top navigation'); ?>
+			<?php wp_nav_menu( array('theme_location' => 'primary' )); ?>
 		</nav>
 	</header>
