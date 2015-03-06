@@ -202,7 +202,7 @@ function get_gallery_arr($id, $is_user = false){
 		}else{
 
 			$src = $row['video_url'];
-			if(isset($row['thumbnail'])){
+			if(!empty($row['thumbnail'])){
 
 				// they provided a video thumb
 				if(isset($row['thumbnail']['sizes']['square-medium']))
@@ -211,7 +211,7 @@ function get_gallery_arr($id, $is_user = false){
 					$thumb = $row['url'];
 
 			}else{
-				$thumb = '';
+				$thumb = get_field('default_video_thumbnail', 'option');
 			}
 
 		}

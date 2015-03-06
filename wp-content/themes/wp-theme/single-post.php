@@ -37,13 +37,8 @@ if(!empty($media)){
 		<ul class="slick-carousel">
 			<?php
 
-			foreach($media as $media){
-
-				// use default thumbnail for video if not specified
-				if($media['type'] == 'video' && !isset($media['thumb']))
-					$media['thumb'] = get_field('default_video_thumbnail', 'option');
-
-				echo '<li><img src="' . $media['thumb'] . '" title="' . $media['title'] . '" data-big="' . $media['src'] . '"/></li>';
+			foreach($media as $media_item){
+				echo '<li><img src="' . $media_item['thumb'] . '" title="' . $media_item['title'] . '" data-big="' . $media_item['src'] . '"/></li>';
 			}
 
 			?>
