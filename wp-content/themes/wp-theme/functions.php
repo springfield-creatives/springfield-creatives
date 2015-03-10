@@ -33,33 +33,26 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 
-// CUSTOM FILES
+// WP Configuration
 include_once('functions/custom_post_types.php');
 include_once('functions/custom_taxonomies.php');
 include_once('functions/custom_sidebars.php');
-
-
 include_once('functions/wordpress/enqueue-scripts.php');
 
-// CUSTOM FUNCTIONS
-include_once('functions/wordpress/utility.php');
-
-// Add CPT icons as well as seperators to the admin menu
-include_once('functions/wordpress/customize-admin.php');
-include_once('functions/wordpress/customize-login.php');
-
-// ENVIRONMENT STUFF
-include_once('functions/environment.php');
-
-// Plugin things
+// Plugins
 include_once('functions/site/acf.php');
 include_once('functions/site/posts2posts.php');
 
-// Help with dealing with Sponsors
-include_once('functions/wordpress/sponsors-helpers.php');
+// Admin Customization
+include_once('functions/wordpress/admin-bar.php');
+include_once('functions/wordpress/admin-menu.php');
+include_once('functions/wordpress/customize-admin.php');
+include_once('functions/wordpress/customize-login.php');
 
-// Misc Helpers
-include_once('functions/wordpress/sc-helpers.php');
+// Helpers
+include_once('functions/wordpress/sponsors-helpers.php');
+include_once('functions/wordpress/sc-helpers.php'); // misc helpers
+include_once('functions/wordpress/utility.php');
 
 // Partial Functions
 include_once('partials/person-item.func.php');
@@ -69,11 +62,9 @@ include_once('partials/article-list.func.php');
 // Author slug rewrite
 include_once('functions/wordpress/author-slug-rewrite.php');
 
-// Custom gravity forms stuff
+// Custom Gravity Forms stuff
 include_once('functions/wordpress/gravity-forms.php');
 
-// cleanup admin bar
-include_once('functions/wordpress/admin-bar.php');
 
 // posts filter
 include_once('functions/wordpress/filter-post-types.php');
