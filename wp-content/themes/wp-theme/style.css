@@ -1,5 +1,4 @@
-@charset "UTF-8";
-/* line 5, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,54 +20,54 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+/* line 116, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/** THIRD-PARTY FONTS
+/*THIRD-PARTY FONTS
  *=================================== */
-/** UTILITIES
+/*UTILITIES
  *=================================== */
-/** FONTS
+/*FONTS
  *=================================== */
 @font-face {
   font-family: "icon-font";
@@ -77,6 +76,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: normal;
   font-style: normal;
 }
+
 /* line 58, assets/sass/modules/_fonts.sass */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "icon-font" !important;
@@ -94,15 +94,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 63, assets/sass/modules/_fonts.sass */
 .icon-example-one:before {
-  content: "";
+  content: "\e803";
 }
 
 /* line 66, assets/sass/modules/_fonts.sass */
 .icon-example-two:before {
-  content: "";
+  content: "\e805";
 }
 
-/** DEFAULTS GLOBAL
+/*DEFAULTS GLOBAL
  *=================================== */
 /* line 9, assets/sass/modules/_defaults.sass */
 *, *:before, *:after {
@@ -114,7 +114,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   /* line 9, assets/sass/modules/_defaults.sass */
   *, *:before, *:after {
     background: transparent !important;
-    color: #000 !important;
+    color: black !important;
     text-shadow: none !important;
     filter: none !important;
     -ms-filter: none !important;
@@ -123,7 +123,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 21, assets/sass/modules/_defaults.sass */
 * {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* line 25, assets/sass/modules/_defaults.sass */
@@ -142,7 +142,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 47, assets/sass/modules/_defaults.sass */
 body {
-  background: #FFF;
+  background: white;
   font-size: 16px;
   font-family: "pt-serif", sans-serif;
   color: #434343;
@@ -239,7 +239,7 @@ section ul {
   list-style-type: disc;
 }
 
-/** INPUTS
+/*INPUTS
  *=================================== */
 /* line 4, assets/sass/modules/_input.sass */
 .gform_wrapper {
@@ -823,10 +823,12 @@ section ul {
   text-transform: uppercase;
   font-weight: normal;
   background: #1daad1;
-  color: #fff;
+  color: white;
   text-align: center;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   -o-transition: 0.3s;
@@ -867,8 +869,10 @@ section ul {
   border: 1px solid #1daad1;
   color: #1daad1;
   text-align: center;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   -o-transition: 0.3s;
@@ -904,9 +908,11 @@ textarea,
   font-size: 1em;
   line-height: 20px;
   padding: 14px 22px;
-  background: #fff;
-  -moz-border-radius: 3px;
+  background: white;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #d4d4d4;
   z-index: 1;
@@ -946,7 +952,7 @@ textarea {
   text-align: center;
 }
 
-/** JS BREAKPOINS
+/*JS BREAKPOINS
  *=================================== */
 @media screen and (min-width: 30em) {
   /* line 11, assets/sass/modules/_js-breakpoints.sass */
@@ -1053,7 +1059,7 @@ textarea {
   float: right;
 }
 
-/** WORDPRESS DEFAULT
+/*WORDPRESS DEFAULT
  *=================================== */
 /* line 6, assets/sass/modules/_wordpress-default.sass */
 .alignnone {
@@ -1201,11 +1207,11 @@ a img.aligncenter {
   width: 100% !important;
 }
 
-/** HEADER
+/*HEADER
  *=================================== */
 /* line 4, assets/sass/partials/_header.sass */
 .header--main {
-  background: #fff;
+  background: white;
   position: relative;
   text-align: center;
   padding: 25px 0 10px;
@@ -1238,7 +1244,7 @@ a img.aligncenter {
   display: none;
 }
 
-/** NAVIGATION
+/*NAVIGATION
  *=================================== */
 /* line 4, assets/sass/partials/_nav.sass */
 .menu-top-navigation-container {
@@ -1254,16 +1260,83 @@ a img.aligncenter {
   clear: both;
 }
 
-/* line 9, assets/sass/partials/_nav.sass */
+/* line 7, assets/sass/partials/_nav.sass */
+.nav--menu {
+  zoom: 1;
+  padding: 0 10px;
+  line-height: 60px;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.nav--menu:before, .nav--menu:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.nav--menu:after {
+  clear: both;
+}
+/* line 11, assets/sass/partials/_nav.sass */
+.nav--menu .left {
+  float: left;
+}
+/* line 13, assets/sass/partials/_nav.sass */
+.nav--menu .right {
+  float: right;
+  text-align: right;
+}
+
+/* line 17, assets/sass/partials/_nav.sass */
+.menu--user {
+  position: relative;
+}
+/* line 19, assets/sass/partials/_nav.sass */
+.menu--user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+/* line 24, assets/sass/partials/_nav.sass */
+.menu--user span {
+  padding-left: 5px;
+  font-weight: bold;
+}
+/* line 27, assets/sass/partials/_nav.sass */
+.menu--user ul {
+  position: absolute;
+  display: none;
+  width: 180px;
+  right: -10px;
+  z-index: 10000;
+  background: #1daad1;
+  color: white;
+  padding: 0 20px;
+  line-height: 1.25em;
+}
+/* line 37, assets/sass/partials/_nav.sass */
+.menu--user ul a {
+  display: block;
+  color: white;
+  padding: 0.5em 0;
+  text-align: left;
+}
+/* line 42, assets/sass/partials/_nav.sass */
+.menu--user ul li.section {
+  border-top: 2px solid #1790bd;
+  margin: 0.5em 0 0 0;
+  padding: 0.5em 0 0 0;
+}
+
+/* line 49, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  background: #ffffff;
+  background: white;
   z-index: 1000;
 }
-/* line 17, assets/sass/partials/_nav.sass */
+/* line 57, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1274,20 +1347,50 @@ a img.aligncenter {
   letter-spacing: 0.1em;
   padding: 0 28px;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 67, assets/sass/partials/_nav.sass */
+.nav--top ul a:hover {
+  background: #1daad1;
+  color: white;
 }
 @media only screen and (max-width: 568px) {
-  /* line 17, assets/sass/partials/_nav.sass */
+  /* line 57, assets/sass/partials/_nav.sass */
   .nav--top ul a {
     width: 100%;
   }
 }
-/* line 31, assets/sass/partials/_nav.sass */
+/* line 74, assets/sass/partials/_nav.sass */
 .nav--top li {
   display: inline-block;
+  position: relative;
 }
-/* line 34, assets/sass/partials/_nav.sass */
+/* line 77, assets/sass/partials/_nav.sass */
+.nav--top li ul {
+  width: auto;
+  overflow: visible;
+  padding-top: 3px;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 10;
+  text-align: left;
+}
+/* line 87, assets/sass/partials/_nav.sass */
+.nav--top li ul li {
+  width: 100%;
+}
+/* line 89, assets/sass/partials/_nav.sass */
+.nav--top li ul li a {
+  width: 100%;
+}
+/* line 92, assets/sass/partials/_nav.sass */
+.nav--top li:hover ul {
+  display: block;
+}
+/* line 95, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap {
   position: absolute;
   left: -50px;
@@ -1299,22 +1402,22 @@ a img.aligncenter {
   /* ...and now for the proper property */
   transition: left 0.3s;
 }
-/* line 45, assets/sass/partials/_nav.sass */
+/* line 106, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap img {
   width: 40px;
   height: auto;
   margin-bottom: 0;
 }
-/* line 50, assets/sass/partials/_nav.sass */
+/* line 111, assets/sass/partials/_nav.sass */
 .nav--top.pinned .springfield-creatives-logo-wrap {
   left: 10px;
 }
 
-/** SIDEBARS
+/*SIDEBARS
  *=================================== */
-/** FOOTER
+/*FOOTER
  *=================================== */
-/** WYSIWYG CONTENT
+/*WYSIWYG CONTENT
  *=================================== */
 /* line 10, assets/sass/partials/_wysiwyg.sass */
 .content ul {
@@ -1384,7 +1487,7 @@ a img.aligncenter {
   bottom: 20px;
   right: 20px;
   font-size: 14px;
-  color: #fff;
+  color: white;
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -1554,9 +1657,9 @@ a img.aligncenter {
   display: inline-block;
 }
 
-/** VENDOR NAME
+/*VENDOR NAME
  *=================================== */
-/** GRAVITY FORMS
+/*GRAVITY FORMS
  *=================================== */
 /* Slider */
 /* line 3, assets/sass/vendor/_slick.sass */
@@ -1668,7 +1771,7 @@ a img.aligncenter {
 /* Slider */
 /* line 123, assets/sass/vendor/_slick.sass */
 .slick-loading .slick-list {
-  background: #fff url("assets/images/ajax-loader.gif") center center no-repeat;
+  background: white url("assets/images/ajax-loader.gif") center center no-repeat;
 }
 
 /* Arrows */
@@ -1732,11 +1835,11 @@ a img.aligncenter {
 }
 /* line 174, assets/sass/vendor/_slick.sass */
 .slick-prev:before {
-  content: "";
+  content: "\f053";
 }
 /* line 176, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-prev:before {
-  content: "";
+  content: "\f054";
 }
 
 /* line 182, assets/sass/vendor/_slick.sass */
@@ -1750,11 +1853,11 @@ a img.aligncenter {
 }
 /* line 188, assets/sass/vendor/_slick.sass */
 .slick-next:before {
-  content: "";
+  content: "\f054";
 }
 /* line 190, assets/sass/vendor/_slick.sass */
 [dir="rtl"] .slick-next:before {
-  content: "";
+  content: "\f053";
 }
 
 /* Dots */
@@ -1810,7 +1913,7 @@ a img.aligncenter {
   position: absolute;
   top: 0;
   left: 0;
-  content: "";
+  content: "\f111";
   width: 20px;
   height: 20px;
   font-family: "FontAwesome";
@@ -1829,7 +1932,7 @@ a img.aligncenter {
 }
 
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
-/* line 2, assets/sass/vendor/_fancybox.scss */
+/* line 12, assets/sass/vendor/_fancybox.scss */
 .fancybox-wrap,
 .fancybox-skin,
 .fancybox-outer,
@@ -1961,7 +2064,7 @@ a img.aligncenter {
   text-decoration: none;
   background: transparent url("assets/images/fancybox/blank.gif");
   /* helps IE */
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040;
 }
 
@@ -2148,7 +2251,7 @@ body > section {
 }
 /* line 7, assets/sass/app/_app.sass */
 body > section:nth-child(even) {
-  background-color: #fff;
+  background-color: white;
 }
 
 /* line 10, assets/sass/app/_app.sass */
@@ -2162,7 +2265,7 @@ h1 {
   font-size: 3.75em;
   text-align: center;
   line-height: 1.2em;
-  color: #fff;
+  color: white;
   width: 1280px;
   margin: 0 auto;
 }
@@ -2345,7 +2448,7 @@ body.home .post {
   padding: 80px 60px;
   border-radius: 8px;
   background-color: #1daad1;
-  color: #ffffff;
+  color: white;
   font-family: "PT Serif Regular", Times, serif;
 }
 /* line 13, assets/sass/app/_about.sass */
@@ -2808,8 +2911,10 @@ body.single-post .post .content {
   border: 1px solid #1daad1;
   color: #1daad1;
   text-align: center;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   cursor: pointer;
   -o-transition: 0.3s;
@@ -2972,7 +3077,7 @@ body.single-post .post .content {
 /* line 4, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a,
 #wpadminbar .quicklinks a span {
-  color: #000 !important;
+  color: black !important;
 }
 /* line 8, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a {
@@ -2984,7 +3089,7 @@ body.single-post .post .content {
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper,
 #wpadminbar .ab-top-menu > li .ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu > li .ab-item:focus {
   background: #434343;
-  color: #fff !important;
+  color: white !important;
 }
 /* line 20, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item span,
@@ -2992,7 +3097,7 @@ body.single-post .post .content {
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper span,
 #wpadminbar .ab-top-menu > li .ab-item:focus span, #wpadminbar.nojq .quicklinks .ab-top-menu > li .ab-item:focus span {
   background: #434343;
-  color: #fff !important;
+  color: white !important;
 }
 
 /* line 4, assets/sass/app/_sponsors.sass */
@@ -3371,5 +3476,5 @@ body.single-post .post .content {
   padding: 1%;
 }
 
-/** IE 8 FIXES
+/*IE 8 FIXES
  *=================================== */
