@@ -11,11 +11,21 @@
 
 jQuery(function($){
 
-	// Throwing in a quick hover intent for nav and handling mobile
+	// Throwing in a quick hover intent.  I like it, but might not be desired for sake of cleanliness
 	$('.menu--user').hoverIntent( function(){
 		$('.menu--user ul:first').show();
 	}, function(){
 		$('.menu--user ul:first').hide();
+	});
+
+	$('.menu--user').on('click', function() {
+		$('.menu--user ul:first').toggle();
+
+		return false;
+	})
+
+	$('.nav--top header').on('click', function() {
+		$('.nav--top ul.menu').slideToggle();
 	});
 
 	// Input label-toggling
@@ -75,19 +85,19 @@ jQuery(function($){
 
 
 	// Nav section stickiness
-	var $nav = $('body > header > nav'),
-		hasAdminBar = $('body.admin-bar').length > 0,
-		navPinOpts = {
-			activeClass: 'pinned'
-		};
+	// var $nav = $('body > header > nav'),
+	// 	hasAdminBar = $('body.admin-bar').length > 0,
+	// 	navPinOpts = {
+	// 		activeClass: 'pinned'
+	// 	};
 
-	if(hasAdminBar)
-		navPinOpts.padding = {top: 32};
+	// if(hasAdminBar)
+	// 	navPinOpts.padding = {top: 32};
 
-	$nav.pin(navPinOpts);
+	// $nav.pin(navPinOpts);
 
-	// create sticky nav logo
-	$('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
+	// // create sticky nav logo
+	// $('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
 
 	// SLICK
 	$slick = $('.slick-carousel');

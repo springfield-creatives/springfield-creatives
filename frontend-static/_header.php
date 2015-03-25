@@ -66,6 +66,14 @@
 		</a>
 
 		<nav class="nav--top">
+			<header>
+				<h3>Menu</h3>
+				<!-- Brad originally had a hamburger concept here but I think the menu bar
+				itself is sufficient and less confusing in regards to where the hit area is.
+				just my two cents, so I am commenting out the half done burger
+				... it is just a bun. I dunno... thoughts? _myke -->
+				<!-- <a href="#">=</a> -->
+			</header>
 			<div class="menu-top-navigation-container">
 				<ul id="menu-top-navigation" class="menu">
 					<li id="menu-item-129" class="gap-right menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://www.springfieldcreatives.com/about/">About</a></li>

@@ -48,6 +48,8 @@
 
 	ul
 		display: block
+		+mq-max-netbook
+			display: none
 		margin: 0 auto
 		width: 100%
 		text-align: center
@@ -71,6 +73,10 @@
 			+mobile
 				width: 100%
 
+	+mq-min-medium
+		ul.menu
+			display: block !important
+
 	li
 		display: inline-block
 		position: relative
@@ -88,6 +94,15 @@
 				width: 100%
 				a
 					width: 100%
+			+mq-max-netbook
+				padding-top: 0
+				display: block
+				top: 0
+				position: relative
+				
+				li a
+					font-size: 1.5em
+					padding-left: 40px
 		&:hover
 			ul
 				display: block
@@ -110,3 +125,37 @@
 
 	&.pinned .springfield-creatives-logo-wrap
 		left: 10px
+
+	header
+		+cf
+		display: none
+		background: #E0E0E0
+		padding: 0 10px
+		h3, a
+			display: inline-block
+			line-height: 40px
+		h3
+			float: left
+			margin-bottom: 0
+			color: #1DAAD1
+		a
+			float: right
+
+	+mq-max-medium
+		ul li a
+			padding: 0 17px
+
+	+mq-max-netbook
+		header
+			display: block
+		ul
+			background: #1daad1
+			text-align: left
+			font-size: .75em
+			li
+				display: block
+			a
+				color: #fff
+				font-weight: normal
+				padding-left: 10px
+				padding-right: 10px

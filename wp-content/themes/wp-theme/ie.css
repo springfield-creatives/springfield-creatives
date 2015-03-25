@@ -1109,7 +1109,7 @@ a img.aligncenter {
   background: white;
   position: relative;
   text-align: center;
-  padding: 25px 0 10px;
+  padding: 25px 0 0 0;
   z-index: 1000;
 }
 /* line 11, assets/sass/partials/_header.sass */
@@ -1225,13 +1225,14 @@ a img.aligncenter {
 /* line 49, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
+  display: none;
   margin: 0 auto;
   width: 100%;
   text-align: center;
   background: white;
   z-index: 1000;
 }
-/* line 57, assets/sass/partials/_nav.sass */
+/* line 59, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1245,23 +1246,27 @@ a img.aligncenter {
   height: 50px;
   line-height: 50px;
 }
-/* line 67, assets/sass/partials/_nav.sass */
+/* line 69, assets/sass/partials/_nav.sass */
 .nav--top ul a:hover {
   background: #1daad1;
   color: white;
 }
 @media only screen and (max-width: 568px) {
-  /* line 57, assets/sass/partials/_nav.sass */
+  /* line 59, assets/sass/partials/_nav.sass */
   .nav--top ul a {
     width: 100%;
   }
 }
-/* line 74, assets/sass/partials/_nav.sass */
+/* line 77, assets/sass/partials/_nav.sass */
+.nav--top ul.menu {
+  display: block !important;
+}
+/* line 80, assets/sass/partials/_nav.sass */
 .nav--top li {
   display: inline-block;
   position: relative;
 }
-/* line 77, assets/sass/partials/_nav.sass */
+/* line 83, assets/sass/partials/_nav.sass */
 .nav--top li ul {
   width: auto;
   overflow: visible;
@@ -1272,20 +1277,29 @@ a img.aligncenter {
   left: 0;
   z-index: 10;
   text-align: left;
+  padding-top: 0;
+  display: block;
+  top: 0;
+  position: relative;
 }
-/* line 87, assets/sass/partials/_nav.sass */
+/* line 93, assets/sass/partials/_nav.sass */
 .nav--top li ul li {
   width: 100%;
 }
-/* line 89, assets/sass/partials/_nav.sass */
+/* line 95, assets/sass/partials/_nav.sass */
 .nav--top li ul li a {
   width: 100%;
 }
-/* line 92, assets/sass/partials/_nav.sass */
+/* line 103, assets/sass/partials/_nav.sass */
+.nav--top li ul li a {
+  font-size: 1.5em;
+  padding-left: 40px;
+}
+/* line 107, assets/sass/partials/_nav.sass */
 .nav--top li:hover ul {
   display: block;
 }
-/* line 95, assets/sass/partials/_nav.sass */
+/* line 110, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap {
   position: absolute;
   left: -50px;
@@ -1297,15 +1311,67 @@ a img.aligncenter {
   /* ...and now for the proper property */
   transition: left 0.3s;
 }
-/* line 106, assets/sass/partials/_nav.sass */
+/* line 121, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap img {
   width: 40px;
   height: auto;
   margin-bottom: 0;
 }
-/* line 111, assets/sass/partials/_nav.sass */
+/* line 126, assets/sass/partials/_nav.sass */
 .nav--top.pinned .springfield-creatives-logo-wrap {
   left: 10px;
+}
+/* line 129, assets/sass/partials/_nav.sass */
+.nav--top header {
+  zoom: 1;
+  display: none;
+  background: #e0e0e0;
+  padding: 0 10px;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.nav--top header:before, .nav--top header:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.nav--top header:after {
+  clear: both;
+}
+/* line 134, assets/sass/partials/_nav.sass */
+.nav--top header h3, .nav--top header a {
+  display: inline-block;
+  line-height: 40px;
+}
+/* line 137, assets/sass/partials/_nav.sass */
+.nav--top header h3 {
+  float: left;
+  margin-bottom: 0;
+  color: #1daad1;
+}
+/* line 141, assets/sass/partials/_nav.sass */
+.nav--top header a {
+  float: right;
+}
+/* line 149, assets/sass/partials/_nav.sass */
+.nav--top header {
+  display: block;
+}
+/* line 151, assets/sass/partials/_nav.sass */
+.nav--top ul {
+  background: #1daad1;
+  text-align: left;
+  font-size: 0.75em;
+}
+/* line 155, assets/sass/partials/_nav.sass */
+.nav--top ul li {
+  display: block;
+}
+/* line 157, assets/sass/partials/_nav.sass */
+.nav--top ul a {
+  color: white;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /*SIDEBARS

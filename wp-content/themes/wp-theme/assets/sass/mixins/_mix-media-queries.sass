@@ -90,6 +90,14 @@
     @media screen and (max-width: $mq-max-medium)
       @content
 
+=mq-max-smaller-than-medium
+  @if $m-query
+    @if $m-query >= $mq-max-medium - 1
+      @content
+  @else
+    @media screen and (max-width: $mq-max-medium)
+      @content
+
 // Tablet Portrait Down or Landscape Orientation
 =mq-max-tablet
   @if $m-query
