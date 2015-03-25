@@ -61,6 +61,7 @@ include_once('partials/article-list.func.php');
 
 // Author slug rewrite
 include_once('functions/wordpress/author-slug-rewrite.php');
+include_once('functions/wordpress/member-card-url.php');
 
 // Custom Gravity Forms stuff
 include_once('functions/wordpress/gravity-forms.php');

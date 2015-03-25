@@ -1008,7 +1008,7 @@ textarea {
     display: none;
   }
 }
-@media screen and (max-width: 29.9375em) {
+@media screen and (max-width: 25em) {
   /* line 52, assets/sass/modules/_js-breakpoints.sass */
   html {
     font-family: "mq-tiny";
@@ -3371,5 +3371,72 @@ body.single-post .post .content {
   padding: 1%;
 }
 
+@media only screen and (max-width: 568px) {
+  /* line 8, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .header--main,
+  body.sc-page-member-card .sponsors-stripe,
+  body.sc-page-member-card .footer--main,
+  body.sc-page-member-card #wpadminbar {
+    display: none !important;
+  }
+
+  /* line 14, assets/sass/app/_member-card.sass */
+  .member-card {
+    padding: 0 20px;
+  }
+  /* line 17, assets/sass/app/_member-card.sass */
+  .member-card h1 {
+    text-align: left;
+    color: #1daad1;
+    margin-bottom: 0.3em;
+    padding: 0;
+  }
+  /* line 23, assets/sass/app/_member-card.sass */
+  .member-card h2 {
+    border: none;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0.3em;
+  }
+  /* line 30, assets/sass/app/_member-card.sass */
+  .member-card .perks {
+    display: none;
+  }
+
+  /* line 33, assets/sass/app/_member-card.sass */
+  .mc-profile-pic {
+    display: block;
+    float: left;
+    width: 140px;
+    height: 140px;
+    border-radius: 70px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 25em) {
+  /* line 50, assets/sass/app/_member-card.sass */
+  .member-info {
+    display: block;
+    clear: left;
+  }
+  /* line 54, assets/sass/app/_member-card.sass */
+  .member-info h1,
+  .member-info h2 {
+    text-align: center;
+  }
+
+  /* line 58, assets/sass/app/_member-card.sass */
+  .mc-profile-pic {
+    margin: 0 auto 1em;
+    float: none;
+  }
+}
 /** IE 8 FIXES
  *=================================== */

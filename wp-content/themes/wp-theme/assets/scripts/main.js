@@ -73,83 +73,86 @@ jQuery(function($){
 
 	// SLICK
 	$slick = $('.slick-carousel');
-	
-	// profile page fancybox init
-	var fancyBoxSlides = [];
-	$slick.on('init', function(e, slick){
 
-		// init sometimes fires twice
-		if(fancyBoxSlides.length > 0)
-			return;
+	if($slick.length > 0){
+		
+		// profile page fancybox init
+		var fancyBoxSlides = [];
+		$slick.on('init', function(e, slick){
 
-		slick.$slides.each(function(i, el){
-			var $med = $(el).find('[data-big]');
+			// init sometimes fires twice
+			if(fancyBoxSlides.length > 0)
+				return;
 
-			fancyBoxSlides.push({
-				href: $med.data('big'),
-				title: $med.attr('title')
+			slick.$slides.each(function(i, el){
+				var $med = $(el).find('[data-big]');
+
+				fancyBoxSlides.push({
+					href: $med.data('big'),
+					title: $med.attr('title')
+				});
 			});
-		});
 
-		$slick.on('click.customFancybox', '[data-big]', function(e){
-			var index = $(e.currentTarget).parent().data('slick-index');
-			$.fancybox.open(fancyBoxSlides, {
-				index: index,
-        openEffect  : 'none',
-        closeEffect : 'none',
-        helpers : {
-            media : {}
-        }
+			$slick.on('click.customFancybox', '[data-big]', function(e){
+				var index = $(e.currentTarget).parent().data('slick-index');
+				$.fancybox.open(fancyBoxSlides, {
+					index: index,
+	        openEffect  : 'none',
+	        closeEffect : 'none',
+	        helpers : {
+	            media : {}
+	        }
+				});
 			});
+	  });
+		
+
+		$slick.slick({
+			dots: true,
+		  infinite: true,
+		  speed: 500,
+		  slidesToShow: 6,
+		  slidesToScroll: 6,
+		  responsive: [
+		    {
+		      breakpoint: 1400,
+		      settings: {
+		        slidesToShow: 4,
+		        slidesToScroll: 4,
+		        infinite: true,
+		        dots: true
+		      }
+		    },
+		    {
+		      breakpoint: 600,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 3
+		      }
+		    },
+		    {
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 2,
+		        dots: false
+		      }
+		    },
+		    {
+		      breakpoint: 320,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1,
+		        dots: false
+		      }
+		    }
+		    // You can unslick at a given breakpoint now by adding:
+		    // settings: "unslick"
+		    // instead of a settings object
+		  ]
 		});
-  });
+	}
 	
-
-	$slick.slick({
-		dots: true,
-	  infinite: true,
-	  speed: 500,
-	  slidesToShow: 6,
-	  slidesToScroll: 6,
-	  responsive: [
-	    {
-	      breakpoint: 1400,
-	      settings: {
-	        slidesToShow: 4,
-	        slidesToScroll: 4,
-	        infinite: true,
-	        dots: true
-	      }
-	    },
-	    {
-	      breakpoint: 600,
-	      settings: {
-	        slidesToShow: 3,
-	        slidesToScroll: 3
-	      }
-	    },
-	    {
-	      breakpoint: 480,
-	      settings: {
-	        slidesToShow: 2,
-	        slidesToScroll: 2,
-	        dots: false
-	      }
-	    },
-	    {
-	      breakpoint: 320,
-	      settings: {
-	        slidesToShow: 1,
-	        slidesToScroll: 1,
-	        dots: false
-	      }
-	    }
-	    // You can unslick at a given breakpoint now by adding:
-	    // settings: "unslick"
-	    // instead of a settings object
-	  ]
-	});
-
 	// hack for :nth-child(even) gravity forms sections
 	$('li.gsection').after('<li></li>');
 
