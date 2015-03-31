@@ -8,7 +8,6 @@ function sc_admin_bar_render() {
 
     // for non-admins:
     if(! current_user_can( 'manage_options' ) ) {
-        $wp_admin_bar->remove_menu('site-name');
         $wp_admin_bar->remove_menu('new-content');
     }
 }
