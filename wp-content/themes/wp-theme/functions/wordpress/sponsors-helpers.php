@@ -7,6 +7,8 @@
  */
 function get_sponsors($min_level = 1, $user_args = array()) {
 
+	global $post;
+
 	$args = array(
 		"post_type" => array( 'businesses', 'organizations' ),
 		"posts_per_page" => "-1",

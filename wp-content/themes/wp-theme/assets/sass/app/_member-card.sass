@@ -1,0 +1,60 @@
+
+// phone landscape
++mobile
+
+	body.sc-page-member-card
+
+		// hide a bunch of stuff
+		.header--main,
+		.sponsors-stripe,
+		.footer--main,
+		#wpadminbar
+			display: none !important
+
+	.member-card
+		padding: 0 20px
+
+		h1
+			text-align: left
+			color: $color-blue
+			margin-bottom: .3em
+			padding: 0
+
+		h2
+			border: none
+			font-size: 1.2em
+			text-align: left
+			padding: 0
+			margin-bottom: 0.3em
+
+		.perks
+			display: none
+
+	.mc-profile-pic
+		display: block
+		float: left
+		width: 140px
+		height: 140px
+		border-radius: 70px
+		margin-right: 1em
+		margin-bottom: 1em
+		background: no-repeat center center
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+
+//phone portrait
++mq-max-mini
+
+	.member-info
+		display: block
+		clear: left
+
+		h1,
+		h2
+			text-align: center
+
+	.mc-profile-pic
+		margin: 0 auto 1em
+		float: none
