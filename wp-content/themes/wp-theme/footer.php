@@ -46,7 +46,7 @@
 	<?php if(is_user_logged_in()){ ?>
 		<!-- BugHerd -->
 		<script type='text/javascript'>
-		if($('body.sc-page-member-card').length == 0)
+		if(jQuery('body.sc-page-member-card').length == 0)
 			(function (d, t) {
 			  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
 			  bh.type = 'text/javascript';

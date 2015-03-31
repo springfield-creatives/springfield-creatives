@@ -11,18 +11,25 @@
 
 jQuery(function($){
 
-	// Throwing in a quick hover intent.  I like it, but might not be desired for sake of cleanliness
+	var hoveringOnUserNav = false;
 	$('.menu--user').hoverIntent( function(){
 		$('.menu--user ul:first').show();
+		hoveringOnUserNav = true;
 	}, function(){
 		$('.menu--user ul:first').hide();
+		hoveringOnUserNav = false;
 	});
 
-	$('.menu--user').on('click', function() {
-		$('.menu--user ul:first').toggle();
+	$('.menu--user .toggle-menu').on('click', function(e) {
+		// check if they're hovering (there's a cursor)
+		if(hoveringOnUserNav)
+			return true;
 
+		// treat top link as a toggle for menu
+		$('.menu--user ul:first').toggle();
+		e.preventDefault();
 		return false;
-	})
+	});
 
 	$('.nav--top header').on('click', function() {
 		$('.nav--top ul.menu').slideToggle();
@@ -83,21 +90,6 @@ jQuery(function($){
 
 	$(document).bind('gform_post_render', maybeHideFormLabels);
 
-
-	// Nav section stickiness
-	// var $nav = $('body > header > nav'),
-	// 	hasAdminBar = $('body.admin-bar').length > 0,
-	// 	navPinOpts = {
-	// 		activeClass: 'pinned'
-	// 	};
-
-	// if(hasAdminBar)
-	// 	navPinOpts.padding = {top: 32};
-
-	// $nav.pin(navPinOpts);
-
-	// // create sticky nav logo
-	// $('a.springfield-creatives-logo-wrap').clone().prependTo($nav);
 
 	// SLICK
 	$slick = $('.slick-carousel');
@@ -184,4 +176,32 @@ jQuery(function($){
 	// hack for :nth-child(even) gravity forms sections
 	$('li.gsection').after('<li></li>');
 
+	// member card
+	var $memberCardBody = $('body.sc-page-member-card');
+
+	if($memberCardBody.length > 0){
+		var $memberCard = $('.member-card'),
+			$win = $(window);
+
+		// overwrite wp admin bar css
+		$memberCardBody.append('<style>html, html body{ margin-top: 0 !important }</style>');
+
+		function sizeBody(){
+
+			// return if not mobile width
+			if($win.width() > 760)
+				return;
+			
+			$memberCardBody.height($win.height());
+
+			$memberCard.css({
+				top: ($memberCardBody.height() / 2) - ($memberCard.height() / 2),
+				width: $memberCardBody.width()
+			});
+		}
+
+		sizeBody();
+		$win.resize(sizeBody);
+		setTimeout(sizeBody, 100);
+	}
 });

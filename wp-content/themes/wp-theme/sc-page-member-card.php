@@ -46,6 +46,15 @@ if(current_user_can('member')){
 		<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
 
 	</section>
+
+	<section class="member-card-info main">
+
+		<div class="middlifier">
+			<h1>Member Card</h1>
+			<p>To display your member card, visit this page on your mobile device after logging in.</p>
+		</div>
+
+	</section>
 	<?php
 
 	get_footer();

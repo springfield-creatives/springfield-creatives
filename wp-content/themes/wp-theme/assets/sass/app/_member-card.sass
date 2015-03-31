@@ -3,15 +3,25 @@
 +tablet
 
 	body.sc-page-member-card
+		background: #ededed url('assets/images/member-card-bg.png') no-repeat center center
+		-webkit-background-size: contain
+		-moz-background-size: contain
+		-o-background-size: contain
+		background-size: contain
 
 		// hide a bunch of stuff
 		.header--main,
 		.sponsors-stripe,
 		.footer--main,
+		.member-card-info,
+		.nav--menu,
 		#wpadminbar
 			display: none !important
 
 	.member-card
+		position: absolute
+		left: 0
+		top: 0
 		padding: 0 20px
 
 		h1
@@ -58,3 +68,22 @@
 	.mc-profile-pic
 		margin: 0 auto 1em
 		float: none
+
+// everything else
++mq-min-medium
+
+	.member-card-info
+		display: block
+
+		h1
+			color: $color-dark-gray
+
+		p
+			text-align: center
+
+		div
+			padding: 0 40px
+	
+	body.sc-page-member-card
+		.member-card
+			display: none
