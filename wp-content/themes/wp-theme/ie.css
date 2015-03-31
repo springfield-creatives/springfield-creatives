@@ -3462,15 +3462,16 @@ body.single-post .post .content {
     left: 0;
     top: 0;
     padding: 0 20px;
+    background: none !important;
   }
-  /* line 27, assets/sass/app/_member-card.sass */
+  /* line 28, assets/sass/app/_member-card.sass */
   .member-card h1 {
     text-align: left;
     color: #1daad1;
     margin-bottom: 0.3em;
     padding: 0;
   }
-  /* line 33, assets/sass/app/_member-card.sass */
+  /* line 34, assets/sass/app/_member-card.sass */
   .member-card h2 {
     border: none;
     font-size: 1.2em;
@@ -3478,12 +3479,12 @@ body.single-post .post .content {
     padding: 0;
     margin-bottom: 0.3em;
   }
-  /* line 40, assets/sass/app/_member-card.sass */
+  /* line 41, assets/sass/app/_member-card.sass */
   .member-card .perks {
     display: none;
   }
 
-  /* line 43, assets/sass/app/_member-card.sass */
+  /* line 44, assets/sass/app/_member-card.sass */
   .mc-profile-pic {
     display: block;
     float: left;
@@ -3499,41 +3500,41 @@ body.single-post .post .content {
     background-size: cover;
   }
 }
-/* line 60, assets/sass/app/_member-card.sass */
+/* line 61, assets/sass/app/_member-card.sass */
 .member-info {
   display: block;
   clear: left;
 }
-/* line 64, assets/sass/app/_member-card.sass */
+/* line 65, assets/sass/app/_member-card.sass */
 .member-info h1,
 .member-info h2 {
   text-align: center;
 }
 
-/* line 68, assets/sass/app/_member-card.sass */
+/* line 69, assets/sass/app/_member-card.sass */
 .mc-profile-pic {
   margin: 0 auto 1em;
   float: none;
 }
 
-/* line 75, assets/sass/app/_member-card.sass */
+/* line 76, assets/sass/app/_member-card.sass */
 .member-card-info {
   display: block;
 }
-/* line 78, assets/sass/app/_member-card.sass */
+/* line 79, assets/sass/app/_member-card.sass */
 .member-card-info h1 {
   color: #434343;
 }
-/* line 81, assets/sass/app/_member-card.sass */
+/* line 82, assets/sass/app/_member-card.sass */
 .member-card-info p {
   text-align: center;
 }
-/* line 84, assets/sass/app/_member-card.sass */
+/* line 85, assets/sass/app/_member-card.sass */
 .member-card-info div {
   padding: 0 40px;
 }
 
-/* line 88, assets/sass/app/_member-card.sass */
+/* line 89, assets/sass/app/_member-card.sass */
 body.sc-page-member-card .member-card {
   display: none;
 }
