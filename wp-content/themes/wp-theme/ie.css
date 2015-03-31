@@ -3249,7 +3249,7 @@ body.single-post .post .content {
   padding: 1%;
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (max-width: 829px) {
   /* line 8, assets/sass/app/_member-card.sass */
   body.sc-page-member-card .header--main,
   body.sc-page-member-card .sponsors-stripe,
