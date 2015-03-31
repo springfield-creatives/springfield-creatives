@@ -4,10 +4,52 @@
 .menu-top-navigation-container
 	+cf
 
+.nav--menu
+	+cf
+	padding: 0 10px
+	line-height: 60px
+	.left
+		float: left
+	.right
+		float: right
+		text-align: right
+
+.menu--user
+	position: relative
+	img
+		width: 30px
+		height: 30px
+		border-radius: 50%
+		vertical-align: middle
+	span
+		padding-left: 5px
+		font-weight: bold
+	ul
+		position: absolute
+		display: none
+		width: 180px
+		right: -10px
+		z-index: 10000
+		background: #1daad1
+		color: #fff
+		padding: 0 20px
+		line-height: 1.25em
+		a
+			display: block
+			color: #fff
+			padding: .5em 0
+			text-align: left
+		li.section
+			border-top: 2px solid #1790bd
+			margin: .5em 0 0 0
+			padding: .5em 0 0 0
+
 .nav--top
 
 	ul
 		display: block
+		+mq-max-netbook
+			display: none
 		margin: 0 auto
 		width: 100%
 		text-align: center
@@ -22,14 +64,48 @@
 
 			padding: 0 28px
 			width: 100%
-			height: 40px
-			line-height: 40px
+			height: 50px
+			line-height: 50px
+			&:hover
+				background: #1daad1
+				color: #fff
 
 			+mobile
 				width: 100%
 
+	+mq-min-medium
+		ul.menu
+			display: block !important
+
 	li
 		display: inline-block
+		position: relative
+		ul
+			width: auto
+			overflow: visible
+			padding-top: 3px
+			display: none
+			position: absolute
+			top: 50px
+			left: 0
+			z-index: 10
+			text-align: left
+			li
+				width: 100%
+				a
+					width: 100%
+			+mq-max-netbook
+				padding-top: 0
+				display: block
+				top: 0
+				position: relative
+				
+				li a
+					font-size: 1.5em
+					padding-left: 40px
+		&:hover
+			ul
+				display: block
 
 	.springfield-creatives-logo-wrap
 		position: absolute
@@ -49,3 +125,37 @@
 
 	&.pinned .springfield-creatives-logo-wrap
 		left: 10px
+
+	header
+		+cf
+		display: none
+		background: #E0E0E0
+		padding: 0 10px
+		h3, a
+			display: inline-block
+			line-height: 40px
+		h3
+			float: left
+			margin-bottom: 0
+			color: #1DAAD1
+		a
+			float: right
+
+	+mq-max-medium
+		ul li a
+			padding: 0 17px
+
+	+mq-max-netbook
+		header
+			display: block
+		ul
+			background: #1daad1
+			text-align: left
+			font-size: .75em
+			li
+				display: block
+			a
+				color: #fff
+				font-weight: normal
+				padding-left: 10px
+				padding-right: 10px

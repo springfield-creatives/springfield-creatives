@@ -1,4 +1,4 @@
-<?php 
+<?php
 $body_class = 'page page-id-60 page-template page-template-template-about page-template-template-about-php logged-in admin-bar no-customize-support tribe-bar-is-disabled tribe-theme-wp-theme';
 include('_header.php');
 ?>

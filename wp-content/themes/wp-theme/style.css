@@ -1229,7 +1229,7 @@ a img.aligncenter {
   background: #fff;
   position: relative;
   text-align: center;
-  padding: 25px 0 10px;
+  padding: 25px 0 0 0;
   z-index: 1000;
 }
 /* line 11, assets/sass/partials/_header.sass */
@@ -1275,7 +1275,74 @@ a img.aligncenter {
   clear: both;
 }
 
-/* line 9, assets/sass/partials/_nav.sass */
+/* line 7, assets/sass/partials/_nav.sass */
+.nav--menu {
+  zoom: 1;
+  padding: 0 10px;
+  line-height: 60px;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.nav--menu:before, .nav--menu:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.nav--menu:after {
+  clear: both;
+}
+/* line 11, assets/sass/partials/_nav.sass */
+.nav--menu .left {
+  float: left;
+}
+/* line 13, assets/sass/partials/_nav.sass */
+.nav--menu .right {
+  float: right;
+  text-align: right;
+}
+
+/* line 17, assets/sass/partials/_nav.sass */
+.menu--user {
+  position: relative;
+}
+/* line 19, assets/sass/partials/_nav.sass */
+.menu--user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+/* line 24, assets/sass/partials/_nav.sass */
+.menu--user span {
+  padding-left: 5px;
+  font-weight: bold;
+}
+/* line 27, assets/sass/partials/_nav.sass */
+.menu--user ul {
+  position: absolute;
+  display: none;
+  width: 180px;
+  right: -10px;
+  z-index: 10000;
+  background: #1daad1;
+  color: #fff;
+  padding: 0 20px;
+  line-height: 1.25em;
+}
+/* line 37, assets/sass/partials/_nav.sass */
+.menu--user ul a {
+  display: block;
+  color: #fff;
+  padding: 0.5em 0;
+  text-align: left;
+}
+/* line 42, assets/sass/partials/_nav.sass */
+.menu--user ul li.section {
+  border-top: 2px solid #1790bd;
+  margin: 0.5em 0 0 0;
+  padding: 0.5em 0 0 0;
+}
+
+/* line 49, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
   margin: 0 auto;
@@ -1284,7 +1351,13 @@ a img.aligncenter {
   background: #ffffff;
   z-index: 1000;
 }
-/* line 17, assets/sass/partials/_nav.sass */
+@media screen and (max-width: 47.9375em) {
+  /* line 49, assets/sass/partials/_nav.sass */
+  .nav--top ul {
+    display: none;
+  }
+}
+/* line 59, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1295,20 +1368,70 @@ a img.aligncenter {
   letter-spacing: 0.1em;
   padding: 0 28px;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 50px;
+  line-height: 50px;
+}
+/* line 69, assets/sass/partials/_nav.sass */
+.nav--top ul a:hover {
+  background: #1daad1;
+  color: #fff;
 }
 @media only screen and (max-width: 568px) {
-  /* line 17, assets/sass/partials/_nav.sass */
+  /* line 59, assets/sass/partials/_nav.sass */
   .nav--top ul a {
     width: 100%;
   }
 }
-/* line 31, assets/sass/partials/_nav.sass */
+@media screen and (min-width: 48em) {
+  /* line 77, assets/sass/partials/_nav.sass */
+  .nav--top ul.menu {
+    display: block !important;
+  }
+}
+/* line 80, assets/sass/partials/_nav.sass */
 .nav--top li {
   display: inline-block;
+  position: relative;
 }
-/* line 34, assets/sass/partials/_nav.sass */
+/* line 83, assets/sass/partials/_nav.sass */
+.nav--top li ul {
+  width: auto;
+  overflow: visible;
+  padding-top: 3px;
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 10;
+  text-align: left;
+}
+/* line 93, assets/sass/partials/_nav.sass */
+.nav--top li ul li {
+  width: 100%;
+}
+/* line 95, assets/sass/partials/_nav.sass */
+.nav--top li ul li a {
+  width: 100%;
+}
+@media screen and (max-width: 47.9375em) {
+  /* line 83, assets/sass/partials/_nav.sass */
+  .nav--top li ul {
+    padding-top: 0;
+    display: block;
+    top: 0;
+    position: relative;
+  }
+  /* line 103, assets/sass/partials/_nav.sass */
+  .nav--top li ul li a {
+    font-size: 1.5em;
+    padding-left: 40px;
+  }
+}
+/* line 107, assets/sass/partials/_nav.sass */
+.nav--top li:hover ul {
+  display: block;
+}
+/* line 110, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap {
   position: absolute;
   left: -50px;
@@ -1320,15 +1443,75 @@ a img.aligncenter {
   /* ...and now for the proper property */
   transition: left 0.3s;
 }
-/* line 45, assets/sass/partials/_nav.sass */
+/* line 121, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap img {
   width: 40px;
   height: auto;
   margin-bottom: 0;
 }
-/* line 50, assets/sass/partials/_nav.sass */
+/* line 126, assets/sass/partials/_nav.sass */
 .nav--top.pinned .springfield-creatives-logo-wrap {
   left: 10px;
+}
+/* line 129, assets/sass/partials/_nav.sass */
+.nav--top header {
+  zoom: 1;
+  display: none;
+  background: #E0E0E0;
+  padding: 0 10px;
+}
+/* line 36, assets/sass/modules/_defaults.sass */
+.nav--top header:before, .nav--top header:after {
+  content: "";
+  display: table;
+}
+/* line 40, assets/sass/modules/_defaults.sass */
+.nav--top header:after {
+  clear: both;
+}
+/* line 134, assets/sass/partials/_nav.sass */
+.nav--top header h3, .nav--top header a {
+  display: inline-block;
+  line-height: 40px;
+}
+/* line 137, assets/sass/partials/_nav.sass */
+.nav--top header h3 {
+  float: left;
+  margin-bottom: 0;
+  color: #1DAAD1;
+}
+/* line 141, assets/sass/partials/_nav.sass */
+.nav--top header a {
+  float: right;
+}
+@media screen and (max-width: 64em) {
+  /* line 145, assets/sass/partials/_nav.sass */
+  .nav--top ul li a {
+    padding: 0 17px;
+  }
+}
+@media screen and (max-width: 47.9375em) {
+  /* line 149, assets/sass/partials/_nav.sass */
+  .nav--top header {
+    display: block;
+  }
+  /* line 151, assets/sass/partials/_nav.sass */
+  .nav--top ul {
+    background: #1daad1;
+    text-align: left;
+    font-size: 0.75em;
+  }
+  /* line 155, assets/sass/partials/_nav.sass */
+  .nav--top ul li {
+    display: block;
+  }
+  /* line 157, assets/sass/partials/_nav.sass */
+  .nav--top ul a {
+    color: #fff;
+    font-weight: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /** SIDEBARS
