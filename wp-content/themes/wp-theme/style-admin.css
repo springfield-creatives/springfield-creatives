@@ -3,6 +3,27 @@
  *=================================== */
 /** UTILITIES
  *=================================== */
+/* line 157, assets/sass/mixins/_mix-general.sass */
+.member-thumbnail-image {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media only screen and (max-width: 829px) {
+  /* line 157, assets/sass/mixins/_mix-general.sass */
+  .member-thumbnail-image {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+  }
+}
+
 /* line 1, assets/sass/app/_app.sass */
 body {
   background-color: #ededed;

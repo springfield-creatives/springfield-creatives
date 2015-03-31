@@ -138,7 +138,21 @@
   +mobile
     width: 100%
 
+@mixin member-thumbnail-image
+  display: block
+  width: 140px
+  height: 140px
+  border-radius: 70px
+  background: no-repeat center center
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
 
+  +tablet
+    width: 90px
+    height: 90px
+    border-radius: 45px
 
-
-
+.member-thumbnail-image
+  +member-thumbnail-image

@@ -52,7 +52,8 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		if( !empty($hero_image) ){
 			$featured_img = '<img src="' . $hero_image['sizes']['square-medium'] . '" alt="" />';
 		}else{
-			$featured_img = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
+			$member_photo = get_wp_user_avatar_src( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
+			$featured_img = '<a href="' .  get_the_permalink() . '" class="member-thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>';
 		}
 
 		?>
@@ -60,7 +61,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 			<header>
 				<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
 				<span class="date"><?php echo $date_text ?></span>
-				<a href="<?php the_permalink() ?>"><?php echo $featured_img ?></a>
+				<?php echo $featured_img ?>
 			</header>
 
 			<div class="content">

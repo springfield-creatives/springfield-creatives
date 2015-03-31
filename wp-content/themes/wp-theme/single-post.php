@@ -2,7 +2,7 @@
 get_header();
 the_post();
 
-$member_photo = get_avatar( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
+$member_photo = get_wp_user_avatar_src( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
 
 // media
 $media = get_gallery_arr(get_the_ID());
@@ -19,7 +19,7 @@ $media = get_gallery_arr(get_the_ID());
 	<header class="top">
 		<span class="date">posted <?php the_time('F j, Y');?></span>
 		<span class="author">by <?php the_author_posts_link(); ?></span>
-		<?php echo $member_photo ?>
+		<?php echo '<a href="' .  get_author_posts_url(get_the_author_meta( 'ID' )) . '" class="member-thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>'; ?>
 	</header>
 
 
