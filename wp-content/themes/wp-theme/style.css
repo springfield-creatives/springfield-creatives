@@ -2802,13 +2802,15 @@ body.home .post {
   top: 107px;
 }
 /* line 92, assets/sass/app/_post.sass */
-.post.featured > header img {
+.post.featured > header img,
+.post.featured > header .member-thumbnail-image {
   width: 300px;
   height: 300px;
   border-radius: 150px;
   margin: 0;
+  position: absolute;
 }
-/* line 99, assets/sass/app/_post.sass */
+/* line 101, assets/sass/app/_post.sass */
 .post.featured > header span {
   display: block;
   font-size: 1.3em;
@@ -2820,26 +2822,26 @@ body.home .post {
   .post.featured > header {
     padding-bottom: 30px;
   }
-  /* line 108, assets/sass/app/_post.sass */
+  /* line 110, assets/sass/app/_post.sass */
   .post.featured > header > a {
     position: relative;
     top: 0;
     left: 0;
   }
-  /* line 113, assets/sass/app/_post.sass */
+  /* line 115, assets/sass/app/_post.sass */
   .post.featured > header img {
     margin: 30px auto;
     width: 200px;
     height: 200px;
     border-radius: 100px;
   }
-  /* line 119, assets/sass/app/_post.sass */
+  /* line 121, assets/sass/app/_post.sass */
   .post.featured > header span {
     display: block;
     text-align: center;
   }
 }
-/* line 123, assets/sass/app/_post.sass */
+/* line 125, assets/sass/app/_post.sass */
 .post.featured h3 {
   font-size: 1.875em;
   text-align: center;
@@ -2847,104 +2849,104 @@ body.home .post {
   margin-bottom: 4px;
 }
 @media only screen and (max-width: 568px) {
-  /* line 123, assets/sass/app/_post.sass */
+  /* line 125, assets/sass/app/_post.sass */
   .post.featured h3 {
     font-size: 1.5em;
   }
 }
 @media only screen and (max-width: 1319px) {
-  /* line 132, assets/sass/app/_post.sass */
+  /* line 134, assets/sass/app/_post.sass */
   .post.featured > article {
     float: none;
     width: 100%;
   }
 }
 @media only screen and (max-width: 1319px) {
-  /* line 137, assets/sass/app/_post.sass */
+  /* line 139, assets/sass/app/_post.sass */
   .post.featured .content {
     width: auto !important;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 142, assets/sass/app/_post.sass */
+  /* line 144, assets/sass/app/_post.sass */
   .post.featured .content p {
     text-align: justify;
   }
 }
-/* line 148, assets/sass/app/_post.sass */
+/* line 150, assets/sass/app/_post.sass */
 .post.block {
   width: 50%;
 }
 @media only screen and (max-width: 568px) {
-  /* line 148, assets/sass/app/_post.sass */
+  /* line 150, assets/sass/app/_post.sass */
   .post.block {
     width: auto;
   }
 }
-/* line 155, assets/sass/app/_post.sass */
+/* line 157, assets/sass/app/_post.sass */
 .post.block h3 {
   text-align: center;
   width: 100%;
   font-size: 1.5em;
 }
-/* line 161, assets/sass/app/_post.sass */
+/* line 163, assets/sass/app/_post.sass */
 .post.block > header {
   float: none;
   margin-right: 0;
   padding-bottom: 30px;
   width: 100%;
 }
-/* line 167, assets/sass/app/_post.sass */
+/* line 169, assets/sass/app/_post.sass */
 .post.block > header img,
 .post.block > header .member-thumbnail-image {
   margin: 30px auto;
 }
-/* line 171, assets/sass/app/_post.sass */
+/* line 173, assets/sass/app/_post.sass */
 .post.block > header span {
   text-align: center;
 }
-/* line 174, assets/sass/app/_post.sass */
+/* line 176, assets/sass/app/_post.sass */
 .post.block .content {
   width: auto !important;
 }
-/* line 177, assets/sass/app/_post.sass */
+/* line 179, assets/sass/app/_post.sass */
 .post.block .content p {
   text-align: justify;
 }
-/* line 181, assets/sass/app/_post.sass */
+/* line 183, assets/sass/app/_post.sass */
 .post.block > article {
   float: none;
   width: 100%;
 }
-/* line 186, assets/sass/app/_post.sass */
+/* line 188, assets/sass/app/_post.sass */
 .post.block.new-row {
   clear: left;
 }
 
-/* line 191, assets/sass/app/_post.sass */
+/* line 193, assets/sass/app/_post.sass */
 .no-results {
   float: none !important;
   width: auto !important;
 }
-/* line 195, assets/sass/app/_post.sass */
+/* line 197, assets/sass/app/_post.sass */
 .no-results .content {
   float: none;
   text-align: center;
   width: auto;
 }
 
-/* line 204, assets/sass/app/_post.sass */
+/* line 206, assets/sass/app/_post.sass */
 body.single-post .post {
   max-width: 1280px;
   padding-top: 70px;
   padding-bottom: 70px;
 }
-/* line 209, assets/sass/app/_post.sass */
+/* line 211, assets/sass/app/_post.sass */
 body.single-post .post .content {
   width: 710px;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 214, assets/sass/app/_post.sass */
+  /* line 216, assets/sass/app/_post.sass */
   body.single-post .post .content {
     border-bottom: 2px solid #cecece;
     padding-bottom: 40px;
@@ -2952,7 +2954,7 @@ body.single-post .post .content {
     margin: 0 auto;
     width: 100%;
   }
-  /* line 221, assets/sass/app/_post.sass */
+  /* line 223, assets/sass/app/_post.sass */
   body.single-post .post > header {
     position: relative;
     height: 100px;
@@ -2963,11 +2965,11 @@ body.single-post .post .content {
     margin-top: 40px;
     float: none;
   }
-  /* line 233, assets/sass/app/_post.sass */
+  /* line 235, assets/sass/app/_post.sass */
   body.single-post .post > header span {
     text-align: left;
   }
-  /* line 236, assets/sass/app/_post.sass */
+  /* line 238, assets/sass/app/_post.sass */
   body.single-post .post > header img {
     position: absolute;
     top: 0;
@@ -2980,25 +2982,25 @@ body.single-post .post .content {
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 246, assets/sass/app/_post.sass */
+  /* line 248, assets/sass/app/_post.sass */
   body.single-post .post > header,
   body.single-post .post .content {
     width: 100%;
   }
 }
 
-/* line 251, assets/sass/app/_post.sass */
+/* line 253, assets/sass/app/_post.sass */
 .pagination {
   margin: 0 auto;
   display: block;
   text-align: center;
 }
-/* line 256, assets/sass/app/_post.sass */
+/* line 258, assets/sass/app/_post.sass */
 .pagination li, .pagination div {
   display: inline-block;
   margin: 0 5px;
 }
-/* line 260, assets/sass/app/_post.sass */
+/* line 262, assets/sass/app/_post.sass */
 .pagination a {
   display: block;
   margin: 0 auto;
@@ -3037,7 +3039,7 @@ body.single-post .post .content {
   background: #dbf3f9;
 }
 @media only screen and (max-width: 568px) {
-  /* line 260, assets/sass/app/_post.sass */
+  /* line 262, assets/sass/app/_post.sass */
   .pagination a {
     width: 100%;
   }
