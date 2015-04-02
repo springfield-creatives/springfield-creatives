@@ -48,7 +48,7 @@ if(current_user_can('member')){
 
 			<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
 
-		</div>			
+		</div>
 
 	</section>
 

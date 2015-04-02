@@ -19,21 +19,17 @@
 
 <body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
 
-	<nav class="nav--menu">
+	<nav class="nav--menu right <?php echo !is_user_logged_in() ? 'signin' : '' ?>">
 		<?php
 		if(!is_user_logged_in()){
-			?>
 
-			<div class="right">
-				<a href="<?php bloginfo('url') ?>/wp-login.php">Members Login</a>
-			</div>
+				$current_url = urlencode("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
 
-			<?php
+				echo '<a href="' . get_bloginfo('url') . '/wp-login.php?redirect_to=' . $current_url . '">Members Login</a>';
+
 		}else{
 			$cur_user = wp_get_current_user();
 			?>
-
-			<div class="right">
 				<!-- <a href="#">Become a Member</a> -->
 				<div class="menu--user">
 					<a class="toggle-menu" href="<?php echo get_author_posts_url($cur_user->ID) ?>">
@@ -48,7 +44,6 @@
 						<li><a href="<?php echo wp_logout_url() ?>">Log Out</a></li>
 					</ul>
 				</div>
-			</div>
 
 			<?php
 		}

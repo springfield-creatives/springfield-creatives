@@ -5,6 +5,7 @@ function sc_admin_bar_render() {
     $wp_admin_bar->remove_menu('wpseo-menu');
     $wp_admin_bar->remove_menu('tribe-events');
     $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_menu('top-secondary');
 
     // for non-admins:
     if(! current_user_can( 'manage_options' ) ) {

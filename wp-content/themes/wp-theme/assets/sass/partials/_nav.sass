@@ -6,12 +6,23 @@
 
 .nav--menu
 	+cf
+
+	background: #ededed
 	padding: 0 10px
 	line-height: 60px
-	.left
-		float: left
-	.right
-		float: right
+	position: fixed
+	top: 0
+	z-index: 999991
+	border-bottom-left-radius: 3px
+
+	&.signin
+		line-height: 30px
+		font-size: 1em
+
+	&.left
+		left: 0
+	&.right
+		right: 0
 		text-align: right
 
 .menu--user

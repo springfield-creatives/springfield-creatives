@@ -50,7 +50,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		// determine photo to use. use hero unless it's not defined.
 		$hero_image = get_field( 'hero_image' );
 		if( !empty($hero_image) ){
-			$featured_img = '<img src="' . $hero_image['sizes']['square-medium'] . '" alt="" />';
+			$featured_img = '<a href="' .  get_the_permalink() . '" class="member-thumbnail-image" style="background-image: url(' . $hero_image['sizes']['square-medium'] . ')"></a>';
 		}else{
 			$member_photo = get_wp_user_avatar_src( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
 			$featured_img = '<a href="' .  get_the_permalink() . '" class="member-thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>';
