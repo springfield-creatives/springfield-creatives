@@ -1419,6 +1419,10 @@ a img.aligncenter {
 .content h3 {
   margin-bottom: 1em;
 }
+/* line 21, assets/sass/partials/_wysiwyg.sass */
+.content iframe {
+  max-width: 100% !important;
+}
 
 /* line 1, assets/sass/partials/_hero.sass */
 .hero {

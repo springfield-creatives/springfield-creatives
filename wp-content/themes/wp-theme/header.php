@@ -11,8 +11,6 @@
 	
 	<?php wp_head();?>
 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/style.css?v=1" />
-
 	<script type="text/javascript" src="//use.typekit.net/hlc5scr.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
