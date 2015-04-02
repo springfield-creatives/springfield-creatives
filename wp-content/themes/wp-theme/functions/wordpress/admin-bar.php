@@ -15,7 +15,7 @@ add_action( 'wp_before_admin_bar_render', 'sc_admin_bar_render' );
 
 // hide admin bar for non-admins
 function remove_admin_bar() {
-	if (!current_user_can('administrator') && !is_admin()) {
+	if (!current_user_can('publish_posts') && !is_admin()) {
 	  show_admin_bar(false);
 	}
 }
