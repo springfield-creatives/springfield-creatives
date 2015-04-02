@@ -3581,16 +3581,85 @@ body.single-post .post .content {
   padding: 1%;
 }
 
+/* line 2, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card {
+  position: relative;
+  padding: 40px 20px;
+  overflow: hidden;
+  background: url("assets/images/iphone6-city-bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 13, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card h1 {
+  text-align: left;
+  color: #1daad1;
+  margin-bottom: 0.3em;
+  padding: 0;
+  font-size: 2em;
+}
+/* line 20, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card h2 {
+  border: none;
+  font-size: 1.2em;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 0.3em;
+}
+/* line 27, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card .perks {
+  display: none;
+}
+/* line 30, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .iphone-wrap {
+  background: transparent url("assets/images/iphone6.png") no-repeat;
+  padding: 21px 74px 21px 76px;
+  margin: 0 auto;
+  width: 649px;
+  height: 323px;
+  transform: translateY(0);
+  -o-transition: 0.6s;
+  -ms-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -webkit-transition: 0.6s;
+  /* ...and now for the proper property */
+  transition: 0.6s;
+  transition-timing-function: ease;
+}
+/* line 45, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .iphone-wrap.offscreen {
+  transform: translateY(400px);
+}
+/* line 48, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .iphone-member-card-bg {
+  background: #ededed url("assets/images/member-card-bg.png") no-repeat center center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  padding: 74px 20px 0;
+  height: 281px;
+}
+/* line 59, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .mc-profile-pic {
+  display: block;
+  float: left;
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 @media only screen and (max-width: 829px) {
-  /* line 5, assets/sass/app/_member-card.sass */
-  body.sc-page-member-card {
-    background: #ededed url("assets/images/member-card-bg.png") no-repeat center center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-  }
-  /* line 13, assets/sass/app/_member-card.sass */
+  /* line 79, assets/sass/app/_member-card.sass */
   body.sc-page-member-card .header--main,
   body.sc-page-member-card .sponsors-stripe,
   body.sc-page-member-card .footer--main,
@@ -3599,91 +3668,74 @@ body.single-post .post .content {
   body.sc-page-member-card #wpadminbar {
     display: none !important;
   }
-
-  /* line 21, assets/sass/app/_member-card.sass */
-  .member-card {
+  /* line 87, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .iphone-wrap {
+    background: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+  /* line 94, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .iphone-wrap.offscreen {
+    transform: translateY(0);
+  }
+  /* line 97, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .member-card {
     position: absolute;
     left: 0;
     top: 0;
-    padding: 0 20px;
-    background: none !important;
+    background: #ededed url("assets/images/member-card-bg.png") no-repeat center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
   }
-  /* line 28, assets/sass/app/_member-card.sass */
-  .member-card h1 {
-    text-align: left;
-    color: #1daad1;
-    margin-bottom: 0.3em;
+  /* line 107, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .iphone-member-card-bg {
     padding: 0;
-  }
-  /* line 34, assets/sass/app/_member-card.sass */
-  .member-card h2 {
-    border: none;
-    font-size: 1.2em;
-    text-align: left;
-    padding: 0;
-    margin-bottom: 0.3em;
-  }
-  /* line 41, assets/sass/app/_member-card.sass */
-  .member-card .perks {
-    display: none;
-  }
-
-  /* line 44, assets/sass/app/_member-card.sass */
-  .mc-profile-pic {
-    display: block;
-    float: left;
-    width: 140px;
-    height: 140px;
-    border-radius: 70px;
-    margin-right: 1em;
-    margin-bottom: 1em;
-    background: no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background: none;
   }
 }
 @media screen and (max-width: 26em) {
-  /* line 61, assets/sass/app/_member-card.sass */
-  .member-info {
+  /* line 120, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .member-info {
     display: block;
     clear: left;
   }
-  /* line 65, assets/sass/app/_member-card.sass */
-  .member-info h1,
-  .member-info h2 {
+  /* line 124, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .member-info h1,
+  body.sc-page-member-card .member-info h2 {
     text-align: center;
   }
-
-  /* line 69, assets/sass/app/_member-card.sass */
-  .mc-profile-pic {
+  /* line 128, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .mc-profile-pic {
     margin: 0 auto 1em;
     float: none;
   }
 }
 @media screen and (min-width: 48em) {
-  /* line 76, assets/sass/app/_member-card.sass */
-  .member-card-info {
+  /* line 135, assets/sass/app/_member-card.sass */
+  body.sc-page-member-card .member-card-info {
     display: block;
   }
-  /* line 79, assets/sass/app/_member-card.sass */
-  .member-card-info h1 {
-    color: #434343;
-  }
-  /* line 82, assets/sass/app/_member-card.sass */
-  .member-card-info p {
-    text-align: center;
-  }
-  /* line 85, assets/sass/app/_member-card.sass */
-  .member-card-info div {
-    padding: 0 40px;
-  }
-
-  /* line 89, assets/sass/app/_member-card.sass */
-  body.sc-page-member-card .member-card {
-    display: none;
-  }
 }
+/* line 139, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card-info h1 {
+  color: #434343;
+  width: auto !important;
+}
+/* line 143, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card-info p {
+  text-align: center;
+}
+/* line 146, assets/sass/app/_member-card.sass */
+body.sc-page-member-card .member-card-info div {
+  padding: 0 40px;
+}
+
 /** IE 8 FIXES
  *=================================== */

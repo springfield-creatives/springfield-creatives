@@ -1,35 +1,21 @@
-
-// phone landscape
-+tablet
-
-	body.sc-page-member-card
-		background: #ededed url('assets/images/member-card-bg.png') no-repeat center center
-		-webkit-background-size: contain
-		-moz-background-size: contain
-		-o-background-size: contain
-		background-size: contain
-
-		// hide a bunch of stuff
-		.header--main,
-		.sponsors-stripe,
-		.footer--main,
-		.member-card-info,
-		.nav--menu,
-		#wpadminbar
-			display: none !important
-
+body.sc-page-member-card
 	.member-card
-		position: absolute
-		left: 0
-		top: 0
-		padding: 0 20px
-		background: none !important
+		position: relative
+		padding: 40px 20px
+		overflow: hidden
+		background: url('assets/images/iphone6-city-bg.jpg') no-repeat center center
+		-webkit-background-size: cover
+		-moz-background-size: cover
+		-o-background-size: cover
+		background-size: cover
+
 
 		h1
 			text-align: left
 			color: $color-blue
 			margin-bottom: .3em
 			padding: 0
+			font-size: 2em
 
 		h2
 			border: none
@@ -40,6 +26,35 @@
 
 		.perks
 			display: none
+
+	.iphone-wrap
+		background: transparent url('assets/images/iphone6.png') no-repeat
+		padding: 21px 74px 21px 76px
+		margin: 0 auto
+		width: 649px
+		height: 323px
+		transform: translateY(0)
+		-o-transition: 0.6s
+		-ms-transition: 0.6s
+		-moz-transition: 0.6s
+		-webkit-transition: 0.6s
+		/* ...and now for the proper property */
+		transition: 0.6s
+		transition-timing-function: ease
+
+		&.offscreen
+			transform: translateY(400px)
+
+	.iphone-member-card-bg
+		background: #ededed url('assets/images/member-card-bg.png') no-repeat center center
+		-webkit-background-size: contain
+		-moz-background-size: contain
+		-o-background-size: contain
+		background-size: contain
+		padding: 74px 20px 0
+		height: 281px
+
+
 
 	.mc-profile-pic
 		display: block
@@ -55,36 +70,78 @@
 		-o-background-size: cover
 		background-size: cover
 
+// phone landscape
++tablet
+
+	body.sc-page-member-card
+
+		// hide a bunch of stuff
+		.header--main,
+		.sponsors-stripe,
+		.footer--main,
+		.member-card-info,
+		.nav--menu,
+		#wpadminbar
+			display: none !important
+
+		.iphone-wrap
+			background: none
+			padding: 0
+			margin: 0
+			width: auto
+			height: auto
+
+			&.offscreen
+				transform: translateY(0)
+
+		.member-card
+			position: absolute
+			left: 0
+			top: 0
+			background: #ededed url('assets/images/member-card-bg.png') no-repeat center center
+			-webkit-background-size: contain
+			-moz-background-size: contain
+			-o-background-size: contain
+			background-size: contain
+
+		.iphone-member-card-bg
+			padding: 0
+			margin: 0
+			width: auto
+			height: auto
+			background: none
+
+
 //phone portrait
 +mq-max-mini
 
-	.member-info
-		display: block
-		clear: left
+	body.sc-page-member-card
 
-		h1,
-		h2
-			text-align: center
+		.member-info
+			display: block
+			clear: left
 
-	.mc-profile-pic
-		margin: 0 auto 1em
-		float: none
+			h1,
+			h2
+				text-align: center
+
+		.mc-profile-pic
+			margin: 0 auto 1em
+			float: none
 
 // everything else
-+mq-min-medium
+body.sc-page-member-card
 
 	.member-card-info
-		display: block
+		+mq-min-medium
+			display: block
 
 		h1
 			color: $color-dark-gray
+			width: auto !important
 
 		p
 			text-align: center
 
 		div
 			padding: 0 40px
-	
-	body.sc-page-member-card
-		.member-card
-			display: none

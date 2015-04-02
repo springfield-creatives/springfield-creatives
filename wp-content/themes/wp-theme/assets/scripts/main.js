@@ -176,6 +176,8 @@ jQuery(function($){
 	// hack for :nth-child(even) gravity forms sections
 	$('li.gsection').after('<li></li>');
 
+
+
 	// member card
 	var $memberCardBody = $('body.sc-page-member-card');
 
@@ -203,5 +205,11 @@ jQuery(function($){
 		sizeBody();
 		$win.resize(sizeBody);
 		setTimeout(sizeBody, 100);
+
+		// animate iphone in if on desktop
+		setTimeout(function(){
+			$('.iphone-wrap').removeClass('offscreen');
+		}, 500)
+
 	}
 });

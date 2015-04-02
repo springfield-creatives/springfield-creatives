@@ -35,23 +35,28 @@ if(current_user_can('member')){
 	
 	<section class="member-card">
 
-		<img class="mc-profile-pic" src="<?php echo $user_image ?>" title="<?php echo $user->display_name ?>" />
+		<div class="iphone-wrap offscreen">
+			<div class="iphone-member-card-bg">
 
-		<div class="member-info">
-			<h1 class="name"><?php echo $user->display_name ?></h1>
-			<h2>Since <?php echo $start_year ?></h2>
-			<h2>Expires <?php echo $end_date ?></h2>
-		</div>
+			<img class="mc-profile-pic" src="<?php echo $user_image ?>" title="<?php echo $user->display_name ?>" />
 
-		<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
+			<section class="member-info">
+				<h1 class="name"><?php echo $user->display_name ?></h1>
+				<h2>Since <?php echo $start_year ?></h2>
+				<h2>Expires <?php echo $end_date ?></h2>
+			</div>
+
+			<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
+
+		</div>			
 
 	</section>
 
 	<section class="member-card-info main">
 
 		<div class="middlifier">
-			<h1>Member Card</h1>
-			<p>To display your member card, visit this page on your mobile device after logging in.</p>
+			<h1>Membership Card</h1>
+			<p>To display your membership card, visit this page on your mobile device after logging in.</p>
 		</div>
 
 	</section>
