@@ -12,7 +12,7 @@ function sgf_creatives_scripts() {
 	wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 	
 	// main css
-	wp_enqueue_style( 'sc-css', get_template_directory_uri() . '/style.css', array(), '1.0.2' );
+	wp_enqueue_style( 'sc-css', get_template_directory_uri() . '/style.css', array(), '1.0.3' );
 
 
 

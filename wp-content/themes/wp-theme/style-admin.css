@@ -1,6 +1,7 @@
-/*THIRD-PARTY FONTS
+@charset "UTF-8";
+/** THIRD-PARTY FONTS
  *=================================== */
-/*UTILITIES
+/** UTILITIES
  *=================================== */
 /* line 157, assets/sass/mixins/_mix-general.sass */
 .member-thumbnail-image {
@@ -33,7 +34,7 @@ body > section {
 }
 /* line 7, assets/sass/app/_app.sass */
 body > section:nth-child(even) {
-  background-color: white;
+  background-color: #fff;
 }
 
 /* line 10, assets/sass/app/_app.sass */
@@ -47,7 +48,7 @@ h1 {
   font-size: 3.75em;
   text-align: center;
   line-height: 1.2em;
-  color: white;
+  color: #fff;
   width: 1280px;
   margin: 0 auto;
 }
@@ -216,7 +217,7 @@ footer .fb > i:hover {
 /* line 1, assets/sass/app/_admin.sass */
 html,
 body {
-  background: white;
+  background: #fff;
 }
 
 /* line 7, assets/sass/app/_admin.sass */
@@ -295,9 +296,9 @@ label,
   display: block !important;
 }
 
-/*CUSTOM POST TYPE ICONS
+/** CUSTOM POST TYPE ICONS
  *=================================== */
-/*FONTS
+/** FONTS
  *=================================== */
 @font-face {
   font-family: "icon-font";
@@ -306,7 +307,6 @@ label,
   font-weight: normal;
   font-style: normal;
 }
-
 /* line 58, assets/sass/modules/_fonts.sass */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "icon-font" !important;
@@ -324,12 +324,12 @@ label,
 
 /* line 63, assets/sass/modules/_fonts.sass */
 .icon-example-one:before {
-  content: "\e803";
+  content: "";
 }
 
 /* line 66, assets/sass/modules/_fonts.sass */
 .icon-example-two:before {
-  content: "\e805";
+  content: "";
 }
 
 /* line 11, assets/sass/app/_admin-menu.sass */
@@ -381,11 +381,11 @@ div.wp-menu-image:before {
   font-weight: bold !important;
 }
 
-/*ADMIN MENU SEPARATOR
+/** ADMIN MENU SEPARATOR
  *=================================== */
 /* line 27, assets/sass/app/_admin-menu.sass */
 #adminmenu li.wp-menu-separator {
-  background: #444444;
+  background: #444;
   border-color: rgba(255, 255, 255, 0.1);
   height: 5px;
   margin: 6px 0;
@@ -396,29 +396,47 @@ div.wp-menu-image:before {
   background: #ededed;
 }
 /* line 4, assets/sass/app/_admin-bar.sass */
+#wpadminbar a,
+#wpadminbar span {
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em;
+}
+/* line 9, assets/sass/app/_admin-bar.sass */
+#wpadminbar a {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+/* line 13, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a,
 #wpadminbar .quicklinks a span {
-  color: black !important;
+  color: #000 !important;
 }
-/* line 8, assets/sass/app/_admin-bar.sass */
+/* line 17, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a {
   font-family: "proxima-nova", sans-serif !important;
 }
-/* line 12, assets/sass/app/_admin-bar.sass */
+/* line 21, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper,
 #wpadminbar .ab-top-menu > li .ab-item:focus, #wpadminbar.nojq .quicklinks .ab-top-menu > li .ab-item:focus {
   background: #434343;
-  color: white !important;
+  color: #fff !important;
 }
-/* line 20, assets/sass/app/_admin-bar.sass */
+/* line 29, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper span,
 #wpadminbar .ab-top-menu > li .ab-item:focus span, #wpadminbar.nojq .quicklinks .ab-top-menu > li .ab-item:focus span {
   background: #434343;
-  color: white !important;
+  color: #fff !important;
+}
+
+/* line 35, assets/sass/app/_admin-bar.sass */
+.wp-admin #wpadminbar a,
+.wp-admin #wpadminbar span {
+  text-transform: none !important;
+  letter-spacing: inherit;
 }
 
 /* line 2, assets/sass/app/_admin-profile.sass */

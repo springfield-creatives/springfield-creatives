@@ -11,13 +11,20 @@
 
 jQuery(function($){
 
-	var hoveringOnUserNav = false;
-	$('.menu--user').hoverIntent( function(){
-		$('.menu--user ul:first').show();
-		hoveringOnUserNav = true;
-	}, function(){
-		$('.menu--user ul:first').hide();
-		hoveringOnUserNav = false;
+	// User Nav
+	var hoveringOnUserNav = false,
+		$navMenu = $('.nav--menu');
+
+	$('.menu--user').hoverIntent( {
+		over: function(){
+			$navMenu.addClass('open');
+			hoveringOnUserNav = true;
+		},
+		out: function(){
+			$navMenu.removeClass('open');
+			hoveringOnUserNav = false;
+		},
+		timeout: 50
 	});
 
 	$('.menu--user .toggle-menu').on('click', function(e) {
