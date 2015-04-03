@@ -19,7 +19,11 @@
 
 	&.signin
 		line-height: 30px
-		font-size: 1em
+		font-size: .9em
+		font-weight: normal
+
+		a
+			color: #fff !important
 
 	&.left
 		left: 0
@@ -30,22 +34,20 @@
 	&.open
 		background: rgba($color-dark-gray, 0.65)
 
-
-		
-
 		.menu--user
 			> ul
 				display: block
-
 
 			.toggle-menu
 				color: $color-almost-white
 				height: 32px
 
 
-
 	@media screen and (max-width: $mq-min-netbook)
-		background: rgba($color-dark-gray, 0.25)
+		background: rgba($color-dark-gray, 0.45)
+
+		.menu--user .toggle-menu span
+			color: $color-almost-white !important
 
 .menu--user
 	position: relative

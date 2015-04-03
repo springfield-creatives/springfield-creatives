@@ -1198,22 +1198,27 @@ a img.aligncenter {
 /* line 20, assets/sass/partials/_nav.sass */
 .nav--menu.signin {
   line-height: 30px;
-  font-size: 1em;
+  font-size: 0.9em;
+  font-weight: normal;
 }
-/* line 24, assets/sass/partials/_nav.sass */
+/* line 25, assets/sass/partials/_nav.sass */
+.nav--menu.signin a {
+  color: #fff !important;
+}
+/* line 28, assets/sass/partials/_nav.sass */
 .nav--menu.left {
   left: 0;
 }
-/* line 26, assets/sass/partials/_nav.sass */
+/* line 30, assets/sass/partials/_nav.sass */
 .nav--menu.right {
   right: 0;
   text-align: right;
 }
-/* line 30, assets/sass/partials/_nav.sass */
+/* line 34, assets/sass/partials/_nav.sass */
 .nav--menu.open {
   background: rgba(67, 67, 67, 0.65);
 }
-/* line 37, assets/sass/partials/_nav.sass */
+/* line 38, assets/sass/partials/_nav.sass */
 .nav--menu.open .menu--user > ul {
   display: block;
 }
@@ -1225,22 +1230,26 @@ a img.aligncenter {
 @media screen and (max-width: 37.5em) {
   /* line 7, assets/sass/partials/_nav.sass */
   .nav--menu {
-    background: rgba(67, 67, 67, 0.25);
+    background: rgba(67, 67, 67, 0.45);
+  }
+  /* line 49, assets/sass/partials/_nav.sass */
+  .nav--menu .menu--user .toggle-menu span {
+    color: #f9f8f8 !important;
   }
 }
 
-/* line 50, assets/sass/partials/_nav.sass */
+/* line 52, assets/sass/partials/_nav.sass */
 .menu--user {
   position: relative;
 }
-/* line 53, assets/sass/partials/_nav.sass */
+/* line 55, assets/sass/partials/_nav.sass */
 .menu--user .toggle-menu {
   line-height: 32px;
   height: 32px;
   color: #434343;
   display: block;
 }
-/* line 60, assets/sass/partials/_nav.sass */
+/* line 62, assets/sass/partials/_nav.sass */
 .menu--user img {
   width: 30px;
   height: 30px;
@@ -1249,11 +1258,11 @@ a img.aligncenter {
   position: relative;
   top: 1px;
 }
-/* line 68, assets/sass/partials/_nav.sass */
+/* line 70, assets/sass/partials/_nav.sass */
 .menu--user span {
   padding-left: 5px;
 }
-/* line 71, assets/sass/partials/_nav.sass */
+/* line 73, assets/sass/partials/_nav.sass */
 .menu--user ul {
   position: absolute;
   background: rgba(67, 67, 67, 0.65);
@@ -1266,33 +1275,33 @@ a img.aligncenter {
   padding: 0 10px;
   line-height: 1.7em;
 }
-/* line 83, assets/sass/partials/_nav.sass */
+/* line 85, assets/sass/partials/_nav.sass */
 .menu--user ul a {
   display: block;
   color: #fff;
   margin: 0.5em 0;
   text-align: right;
 }
-/* line 89, assets/sass/partials/_nav.sass */
+/* line 91, assets/sass/partials/_nav.sass */
 .menu--user ul li.section {
   border-top: 2px solid #979797;
 }
-/* line 96, assets/sass/partials/_nav.sass */
+/* line 98, assets/sass/partials/_nav.sass */
 .menu--user .toggle-menu {
   height: 46px !important;
   line-height: 46px;
 }
-/* line 100, assets/sass/partials/_nav.sass */
+/* line 102, assets/sass/partials/_nav.sass */
 .menu--user img {
   vertical-align: middle;
   top: -1px;
 }
-/* line 104, assets/sass/partials/_nav.sass */
+/* line 106, assets/sass/partials/_nav.sass */
 .menu--user ul {
   top: 46px;
 }
 
-/* line 111, assets/sass/partials/_nav.sass */
+/* line 113, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
   display: none;
@@ -1302,7 +1311,7 @@ a img.aligncenter {
   background: #ffffff;
   z-index: 1000;
 }
-/* line 121, assets/sass/partials/_nav.sass */
+/* line 123, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1316,27 +1325,27 @@ a img.aligncenter {
   height: 50px;
   line-height: 50px;
 }
-/* line 131, assets/sass/partials/_nav.sass */
+/* line 133, assets/sass/partials/_nav.sass */
 .nav--top ul a:hover {
   background: #1daad1;
   color: #fff;
 }
 @media only screen and (max-width: 568px) {
-  /* line 121, assets/sass/partials/_nav.sass */
+  /* line 123, assets/sass/partials/_nav.sass */
   .nav--top ul a {
     width: 100%;
   }
 }
-/* line 139, assets/sass/partials/_nav.sass */
+/* line 141, assets/sass/partials/_nav.sass */
 .nav--top ul.menu {
   display: block !important;
 }
-/* line 142, assets/sass/partials/_nav.sass */
+/* line 144, assets/sass/partials/_nav.sass */
 .nav--top li {
   display: inline-block;
   position: relative;
 }
-/* line 145, assets/sass/partials/_nav.sass */
+/* line 147, assets/sass/partials/_nav.sass */
 .nav--top li ul {
   width: auto;
   overflow: visible;
@@ -1352,24 +1361,24 @@ a img.aligncenter {
   top: 0;
   position: relative;
 }
-/* line 155, assets/sass/partials/_nav.sass */
+/* line 157, assets/sass/partials/_nav.sass */
 .nav--top li ul li {
   width: 100%;
 }
-/* line 157, assets/sass/partials/_nav.sass */
+/* line 159, assets/sass/partials/_nav.sass */
 .nav--top li ul li a {
   width: 100%;
 }
-/* line 165, assets/sass/partials/_nav.sass */
+/* line 167, assets/sass/partials/_nav.sass */
 .nav--top li ul li a {
   font-size: 1.5em;
   padding-left: 40px;
 }
-/* line 169, assets/sass/partials/_nav.sass */
+/* line 171, assets/sass/partials/_nav.sass */
 .nav--top li:hover ul {
   display: block;
 }
-/* line 172, assets/sass/partials/_nav.sass */
+/* line 174, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap {
   position: absolute;
   left: -50px;
@@ -1381,17 +1390,17 @@ a img.aligncenter {
   /* ...and now for the proper property */
   transition: left 0.3s;
 }
-/* line 183, assets/sass/partials/_nav.sass */
+/* line 185, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap img {
   width: 40px;
   height: auto;
   margin-bottom: 0;
 }
-/* line 188, assets/sass/partials/_nav.sass */
+/* line 190, assets/sass/partials/_nav.sass */
 .nav--top.pinned .springfield-creatives-logo-wrap {
   left: 10px;
 }
-/* line 191, assets/sass/partials/_nav.sass */
+/* line 193, assets/sass/partials/_nav.sass */
 .nav--top header {
   zoom: 1;
   display: none;
@@ -1407,36 +1416,36 @@ a img.aligncenter {
 .nav--top header:after {
   clear: both;
 }
-/* line 196, assets/sass/partials/_nav.sass */
+/* line 198, assets/sass/partials/_nav.sass */
 .nav--top header h3, .nav--top header a {
   display: inline-block;
   line-height: 40px;
 }
-/* line 199, assets/sass/partials/_nav.sass */
+/* line 201, assets/sass/partials/_nav.sass */
 .nav--top header h3 {
   float: left;
   margin-bottom: 0;
   color: #1DAAD1;
 }
-/* line 203, assets/sass/partials/_nav.sass */
+/* line 205, assets/sass/partials/_nav.sass */
 .nav--top header a {
   float: right;
 }
-/* line 211, assets/sass/partials/_nav.sass */
+/* line 213, assets/sass/partials/_nav.sass */
 .nav--top header {
   display: block;
 }
-/* line 213, assets/sass/partials/_nav.sass */
+/* line 215, assets/sass/partials/_nav.sass */
 .nav--top ul {
   background: #1daad1;
   text-align: left;
   font-size: 0.75em;
 }
-/* line 217, assets/sass/partials/_nav.sass */
+/* line 219, assets/sass/partials/_nav.sass */
 .nav--top ul li {
   display: block;
 }
-/* line 219, assets/sass/partials/_nav.sass */
+/* line 221, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   color: #fff;
   font-weight: normal;
@@ -1463,10 +1472,6 @@ a img.aligncenter {
 /* line 18, assets/sass/partials/_wysiwyg.sass */
 .content h3 {
   margin-bottom: 1em;
-}
-/* line 21, assets/sass/partials/_wysiwyg.sass */
-.content iframe {
-  max-width: 100% !important;
 }
 
 /* line 1, assets/sass/partials/_hero.sass */
@@ -2468,13 +2473,7 @@ footer .fb > i:hover {
   opacity: 1;
 }
 
-@media only screen and (max-width: 568px) {
-  /* line 1, assets/sass/app/_home.sass */
-  body.home {
-    padding-top: 45px;
-  }
-}
-/* line 6, assets/sass/app/_home.sass */
+/* line 3, assets/sass/app/_home.sass */
 body.home .post {
   margin-bottom: 70px;
 }
