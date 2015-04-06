@@ -11,6 +11,7 @@ $profile = array(
 	"featured_img" => 'http://sc.com/uploads/profile-pic.jpg', // required when logo is not supplied
 	"description" => "<p>Springfield Creatives is a collaborative group blah blah blah</p>",
 	"hours" => "Sunday: Closed <br />Monday: 8am-5pm <br/> etc...",
+	"edit-link" => "http://springfieldcreatives.com/wp-admin/edit.php",
 	"contact_links" => array(
 		'phone' => array(
 			'title' => '417.693.2229',
@@ -98,6 +99,10 @@ require('hero.php');
 <section class="profile-about main">
 	<div class="middlifier">
 		<article class="intro">
+			<?php
+			if(!empty($profile['edit-link']))
+				echo '<a class="secondary-button edit-link" href="' . $profile['edit-link'] . '">Edit Profile</a>';
+			?>
 			<h2><?php echo $profile['title'] ?></h2>
 			<h3><?php echo $profile['subhead'] ?></h3>
 		</article>

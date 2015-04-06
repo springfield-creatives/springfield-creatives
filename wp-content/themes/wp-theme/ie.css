@@ -3334,6 +3334,17 @@ body.single-post .post .content {
   }
 }
 /* line 32, assets/sass/app/_profile.sass */
+.profile-about .intro .edit-link {
+  float: right;
+  width: 180px;
+}
+@media only screen and (max-width: 568px) {
+  /* line 32, assets/sass/app/_profile.sass */
+  .profile-about .intro .edit-link {
+    display: none;
+  }
+}
+/* line 39, assets/sass/app/_profile.sass */
 .profile-about .links {
   height: 40px;
   width: 400px;
@@ -3342,19 +3353,19 @@ body.single-post .post .content {
   right: 0;
   text-align: center;
 }
-/* line 40, assets/sass/app/_profile.sass */
+/* line 47, assets/sass/app/_profile.sass */
 .profile-about .links a {
   color: #434343;
 }
-/* line 43, assets/sass/app/_profile.sass */
+/* line 50, assets/sass/app/_profile.sass */
 .profile-about .links a:hover {
   color: #1daad1;
 }
-/* line 46, assets/sass/app/_profile.sass */
+/* line 53, assets/sass/app/_profile.sass */
 .profile-about .links ul {
   padding: 0;
 }
-/* line 49, assets/sass/app/_profile.sass */
+/* line 56, assets/sass/app/_profile.sass */
 .profile-about .links li {
   list-style: none;
   display: inline-block;
@@ -3364,12 +3375,12 @@ body.single-post .post .content {
   margin-right: 10px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 49, assets/sass/app/_profile.sass */
+  /* line 56, assets/sass/app/_profile.sass */
   .profile-about .links li {
     font-size: 30px;
   }
 }
-/* line 61, assets/sass/app/_profile.sass */
+/* line 68, assets/sass/app/_profile.sass */
 .profile-about .featured {
   position: absolute;
   top: 60px;
@@ -3377,7 +3388,7 @@ body.single-post .post .content {
   width: 400px;
   max-height: 400px;
 }
-/* line 68, assets/sass/app/_profile.sass */
+/* line 75, assets/sass/app/_profile.sass */
 .profile-about .featured img,
 .profile-about .featured iframe {
   display: block;
@@ -3386,24 +3397,24 @@ body.single-post .post .content {
   max-height: 400px;
 }
 @media only screen and (max-width: 568px) {
-  /* line 68, assets/sass/app/_profile.sass */
+  /* line 75, assets/sass/app/_profile.sass */
   .profile-about .featured img,
   .profile-about .featured iframe {
     max-width: 100%;
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 61, assets/sass/app/_profile.sass */
+  /* line 68, assets/sass/app/_profile.sass */
   .profile-about .featured {
     margin: 10px auto 40px;
   }
-  /* line 81, assets/sass/app/_profile.sass */
+  /* line 88, assets/sass/app/_profile.sass */
   .profile-about .featured img {
     display: block;
     margin: 0 auto;
   }
 }
-/* line 86, assets/sass/app/_profile.sass */
+/* line 93, assets/sass/app/_profile.sass */
 .profile-about .contact-info {
   zoom: 1;
 }
@@ -3416,23 +3427,23 @@ body.single-post .post .content {
 .profile-about .contact-info:after {
   clear: both;
 }
-/* line 89, assets/sass/app/_profile.sass */
+/* line 96, assets/sass/app/_profile.sass */
 .profile-about .contact-info h4 {
   font-size: 1.25em;
 }
-/* line 92, assets/sass/app/_profile.sass */
+/* line 99, assets/sass/app/_profile.sass */
 .profile-about .contact-info ul {
   list-style: none;
   padding-left: 0;
 }
-/* line 96, assets/sass/app/_profile.sass */
+/* line 103, assets/sass/app/_profile.sass */
 .profile-about .contact-info .list {
   width: 50%;
   float: left;
   line-height: 1.3em;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 96, assets/sass/app/_profile.sass */
+  /* line 103, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     float: none;
     width: auto;
@@ -3440,28 +3451,28 @@ body.single-post .post .content {
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 96, assets/sass/app/_profile.sass */
+  /* line 103, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     width: 50%;
     float: left;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 96, assets/sass/app/_profile.sass */
+  /* line 103, assets/sass/app/_profile.sass */
   .profile-about .contact-info .list {
     float: none;
     width: auto;
     margin-bottom: 40px;
   }
 }
-/* line 116, assets/sass/app/_profile.sass */
+/* line 123, assets/sass/app/_profile.sass */
 .profile-about .intro,
 .profile-about .description,
 .profile-about .contact-info {
   padding-right: 440px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 116, assets/sass/app/_profile.sass */
+  /* line 123, assets/sass/app/_profile.sass */
   .profile-about .intro,
   .profile-about .description,
   .profile-about .contact-info {
@@ -3469,27 +3480,27 @@ body.single-post .post .content {
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 116, assets/sass/app/_profile.sass */
+  /* line 123, assets/sass/app/_profile.sass */
   .profile-about .intro,
   .profile-about .description,
   .profile-about .contact-info {
     padding-right: 0;
   }
 }
-/* line 128, assets/sass/app/_profile.sass */
+/* line 135, assets/sass/app/_profile.sass */
 .profile-about .links,
 .profile-about .featured {
   right: 60px;
 }
 @media only screen and (max-width: 1000px) {
-  /* line 128, assets/sass/app/_profile.sass */
+  /* line 135, assets/sass/app/_profile.sass */
   .profile-about .links,
   .profile-about .featured {
     width: 300px;
   }
 }
 @media only screen and (max-width: 829px) {
-  /* line 128, assets/sass/app/_profile.sass */
+  /* line 135, assets/sass/app/_profile.sass */
   .profile-about .links,
   .profile-about .featured {
     width: auto;
@@ -3499,19 +3510,19 @@ body.single-post .post .content {
   }
 }
 
-/* line 142, assets/sass/app/_profile.sass */
+/* line 149, assets/sass/app/_profile.sass */
 .mini-portfolio h2 {
   margin-bottom: 40px;
   font-size: 2em;
 }
-/* line 146, assets/sass/app/_profile.sass */
+/* line 153, assets/sass/app/_profile.sass */
 .mini-portfolio .slick-carousel {
   padding: 0 !important;
   display: block;
   margin: 0 auto;
   width: 80%;
 }
-/* line 152, assets/sass/app/_profile.sass */
+/* line 159, assets/sass/app/_profile.sass */
 .mini-portfolio img {
   padding: 1%;
 }

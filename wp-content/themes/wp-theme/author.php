@@ -1,18 +1,6 @@
 <?php
 
-if(!isset($_GET['preview'])){
-	$user_id = get_query_var('author');
-
-	// temporarily redirect to their configged URL
-	$url = get_the_author_meta( 'user_url', $user_id );
-
-	if(empty($url))
-		$url = 'https://www.google.com/#q=' . get_the_author_meta( 'user_firstname', $user_id ) . ' ' . get_the_author_meta( 'user_lastname', $user_id );
-
-	header('Location: ' . $url,true,301);
-	exit;
-}
-
+$cur_user = wp_get_current_user();
 
 // get user info
 $user_id = get_query_var('author');
@@ -45,6 +33,8 @@ $social_links = get_social_links_arr($user_id, true, $meta);
 // media
 $media = get_gallery_arr($user_id, true);
 
+//edit link
+$edit_link = ($cur_user->ID == $user_id) ? get_bloginfo('url') . '/wp-admin/profile.php' : '';
 
 // build the $profile var for the partial
 $profile = array(
@@ -55,7 +45,8 @@ $profile = array(
 	"description" => $user_desc,
 	"contact_links" => $contact_links,
 	"social_links" => $social_links,
-	"media" => $media
+	"media" => $media,
+	"edit-link" => $edit_link
 );
 
 require('partials/profile.php');
