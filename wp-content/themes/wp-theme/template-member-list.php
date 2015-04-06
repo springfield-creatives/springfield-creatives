@@ -19,7 +19,7 @@ include('partials/hero.php');
 <?php 
 
 // query and pagination
-$number     = 10;
+$number     = 12;
 $paged      = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $offset     = ($paged - 1) * $number;
 
@@ -58,7 +58,7 @@ require('partials/search-filter.php');
 if (!empty($members->results)) : ?>
     <section class="main">
         <div class="middlifier">
-            <ul class="directory column-2">
+            <ul class="directory column-3">
                 <?php
                 foreach ($members->results as $member) : 
                     render_person_item($member);
