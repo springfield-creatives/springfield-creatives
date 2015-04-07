@@ -1,6 +1,6 @@
-<section class="post page">
+<?php include('search-filter.php'); ?>
 
-    <?php include('search-filter.php'); ?>
+<section class="main page">
 
     <?php if (have_posts()) : ?>
 
