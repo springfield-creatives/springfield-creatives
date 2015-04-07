@@ -8,15 +8,6 @@ the_post();
 
 include('partials/hero.php');
 
-?>
-
-<section class="wysiwyg">
-    <div class="middlifier">
-        <?php the_content() ?>
-    </div>
-</section>
-
-<?php 
 
 // query and pagination
 $number     = 12;
@@ -92,5 +83,15 @@ if (!empty($members->results)) : ?>
     </section>
 <?php endif; 
 
+
+?>
+
+<section class="wysiwyg">
+    <div class="middlifier">
+        <?php the_content() ?>
+    </div>
+</section>
+
+<?php 
 get_footer();
 ?>
