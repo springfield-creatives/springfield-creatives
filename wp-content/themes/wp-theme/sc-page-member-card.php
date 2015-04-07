@@ -30,7 +30,7 @@ if(current_user_can('member')){
 	
 	// member dates
 	$start_year = date('M Y', strtotime($user->user_registered));
-	$end_date = date('M Y', strtotime($meta['membership_expiration']));
+	$end_date = !empty($meta['membership_expiration']) ? date('M Y', strtotime($meta['membership_expiration'])) : '';
 	?>
 	
 	<section class="member-card">
@@ -43,7 +43,13 @@ if(current_user_can('member')){
 			<section class="member-info">
 				<h1 class="name"><?php echo $user->display_name ?></h1>
 				<h2>Since <?php echo $start_year ?></h2>
-				<h2>Expires <?php echo $end_date ?></h2>
+				<?php
+				if(!empty($end_date)){
+					?>
+					<h2>Expires <?php echo $end_date ?></h2>
+					<?php
+				}
+				?>
 			</div>
 
 			<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>

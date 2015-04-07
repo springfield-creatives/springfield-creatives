@@ -227,7 +227,7 @@ jQuery(function($){
 			$memberCardBody.height($win.height());
 
 			$memberCard.css({
-				top: ($memberCardBody.height() / 2) - ($memberCard.height() / 2),
+				top: ($memberCardBody.height() / 2) - ($memberCard.outerHeight() / 2),
 				width: $memberCardBody.width()
 			});
 		}
