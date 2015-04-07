@@ -12,24 +12,22 @@
 jQuery(function($){
 
 	// User Nav
-	var hoveringOnUserNav = false,
-		$navMenu = $('.nav--menu');
+	var $navMenu = $('.nav--menu');
 
 	$('.menu--user').hoverIntent( {
 		over: function(){
 			$navMenu.addClass('open');
-			hoveringOnUserNav = true;
 		},
 		out: function(){
 			$navMenu.removeClass('open');
-			hoveringOnUserNav = false;
 		},
 		timeout: 50
 	});
 
-	$('.menu--user .toggle-menu').on('click', function(e) {
+	$('.menu--user .toggle-menu').on('touchstart click', function(e) {
+
 		// check if they're hovering (there's a cursor)
-		if(hoveringOnUserNav)
+		if(e.type !== 'touchstart')
 			return true;
 
 		// treat top link as a toggle for menu
