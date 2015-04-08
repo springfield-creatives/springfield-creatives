@@ -3386,10 +3386,9 @@ body.single-post .post .content {
   height: 36px;
   line-height: 36px;
   width: 140px;
-  margin-left: 16px;
   vertical-align: middle;
 }
-/* line 75, assets/sass/app/_sponsors.sass */
+/* line 74, assets/sass/app/_sponsors.sass */
 .sponsors-stripe ul {
   list-style: none;
   margin: 0 auto;
@@ -3406,27 +3405,27 @@ body.single-post .post .content {
 .sponsors-stripe ul:after {
   clear: both;
 }
-/* line 83, assets/sass/app/_sponsors.sass */
+/* line 82, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li {
   display: inline-block;
   margin: 0 2% 20px;
   width: 12.5%;
 }
 @media only screen and (max-width: 1319px) {
-  /* line 83, assets/sass/app/_sponsors.sass */
+  /* line 82, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li {
     margin: 0 2% 20px;
     width: 19.1%;
   }
 }
 @media only screen and (min-width: 1800px) {
-  /* line 83, assets/sass/app/_sponsors.sass */
+  /* line 82, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li {
     margin: 0 2% 20px;
     width: 8.5%;
   }
 }
-/* line 97, assets/sass/app/_sponsors.sass */
+/* line 96, assets/sass/app/_sponsors.sass */
 .sponsors-stripe li a {
   display: block;
   width: 100%;
@@ -3438,20 +3437,20 @@ body.single-post .post .content {
   background-size: contain;
 }
 @media only screen and (max-width: 829px) {
-  /* line 83, assets/sass/app/_sponsors.sass */
+  /* line 82, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li {
     width: 50%;
     float: left;
     margin: 0 0 20px;
   }
-  /* line 112, assets/sass/app/_sponsors.sass */
+  /* line 111, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     margin: 0 auto 20px;
     width: 80%;
   }
 }
 @media only screen and (max-width: 568px) {
-  /* line 117, assets/sass/app/_sponsors.sass */
+  /* line 116, assets/sass/app/_sponsors.sass */
   .sponsors-stripe li a {
     height: 100px;
   }
