@@ -394,28 +394,29 @@ div.wp-menu-image:before {
 /* line 1, assets/sass/app/_admin-bar.sass */
 #wpadminbar {
   background: #ededed;
+  border-bottom: 1px solid lightgray;
 }
-/* line 4, assets/sass/app/_admin-bar.sass */
+/* line 5, assets/sass/app/_admin-bar.sass */
 #wpadminbar a,
 #wpadminbar span {
   text-transform: uppercase !important;
   letter-spacing: 0.07em;
 }
-/* line 9, assets/sass/app/_admin-bar.sass */
+/* line 10, assets/sass/app/_admin-bar.sass */
 #wpadminbar a {
   padding-left: 12px !important;
   padding-right: 12px !important;
 }
-/* line 13, assets/sass/app/_admin-bar.sass */
+/* line 14, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a,
 #wpadminbar .quicklinks a span {
   color: #000 !important;
 }
-/* line 17, assets/sass/app/_admin-bar.sass */
+/* line 18, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a {
   font-family: "proxima-nova", sans-serif !important;
 }
-/* line 21, assets/sass/app/_admin-bar.sass */
+/* line 22, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper,
@@ -423,7 +424,7 @@ div.wp-menu-image:before {
   background: #434343;
   color: #fff !important;
 }
-/* line 29, assets/sass/app/_admin-bar.sass */
+/* line 30, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper span,
@@ -432,7 +433,7 @@ div.wp-menu-image:before {
   color: #fff !important;
 }
 
-/* line 35, assets/sass/app/_admin-bar.sass */
+/* line 36, assets/sass/app/_admin-bar.sass */
 .wp-admin #wpadminbar a,
 .wp-admin #wpadminbar span {
   text-transform: none !important;

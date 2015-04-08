@@ -1176,6 +1176,7 @@ a img.aligncenter {
   padding: 0 10px;
   position: fixed;
   top: 0;
+  right: 10px;
   z-index: 999991;
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1195,35 +1196,43 @@ a img.aligncenter {
 .nav--menu:after {
   clear: both;
 }
-/* line 20, assets/sass/partials/_nav.sass */
+/* line 21, assets/sass/partials/_nav.sass */
 .nav--menu.signin {
   line-height: 30px;
   font-size: 0.9em;
   font-weight: normal;
   background: rgba(67, 67, 67, 0.45);
 }
-/* line 26, assets/sass/partials/_nav.sass */
+/* line 27, assets/sass/partials/_nav.sass */
+.nav--menu.signin.right {
+  right: 5px;
+}
+/* line 31, assets/sass/partials/_nav.sass */
 .nav--menu.signin a {
   color: #fff !important;
 }
-/* line 29, assets/sass/partials/_nav.sass */
+/* line 34, assets/sass/partials/_nav.sass */
 .nav--menu.left {
   left: 0;
 }
-/* line 31, assets/sass/partials/_nav.sass */
+/* line 36, assets/sass/partials/_nav.sass */
 .nav--menu.right {
-  right: 0;
+  right: 10px;
   text-align: right;
 }
-/* line 35, assets/sass/partials/_nav.sass */
+/* line 40, assets/sass/partials/_nav.sass */
 .nav--menu.open {
   background: rgba(67, 67, 67, 0.65);
 }
-/* line 39, assets/sass/partials/_nav.sass */
+/* line 44, assets/sass/partials/_nav.sass */
 .nav--menu.open .menu--user > ul {
   display: block;
 }
-/* line 42, assets/sass/partials/_nav.sass */
+/* line 47, assets/sass/partials/_nav.sass */
+.nav--menu.open .menu--user img {
+  border: 2px solid #fff;
+}
+/* line 50, assets/sass/partials/_nav.sass */
 .nav--menu.open .menu--user .toggle-menu {
   color: #f9f8f8;
   height: 32px;
@@ -1233,37 +1242,44 @@ a img.aligncenter {
   .nav--menu {
     background: rgba(67, 67, 67, 0.45);
   }
-  /* line 50, assets/sass/partials/_nav.sass */
+  /* line 58, assets/sass/partials/_nav.sass */
   .nav--menu .menu--user .toggle-menu span {
     color: #f9f8f8 !important;
   }
 }
 
-/* line 53, assets/sass/partials/_nav.sass */
+/* line 61, assets/sass/partials/_nav.sass */
 .menu--user {
   position: relative;
 }
-/* line 56, assets/sass/partials/_nav.sass */
+/* line 64, assets/sass/partials/_nav.sass */
 .menu--user .toggle-menu {
   line-height: 32px;
   height: 32px;
   color: #434343;
   display: block;
 }
-/* line 63, assets/sass/partials/_nav.sass */
+/* line 71, assets/sass/partials/_nav.sass */
 .menu--user img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  border: 2px solid #bababa;
   vertical-align: top;
   position: relative;
   top: 1px;
+  -o-transition: all 0.1s;
+  -ms-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  /* ...and now for the proper property */
+  transition: all 0.1s;
 }
-/* line 71, assets/sass/partials/_nav.sass */
+/* line 87, assets/sass/partials/_nav.sass */
 .menu--user span {
   padding-left: 5px;
 }
-/* line 74, assets/sass/partials/_nav.sass */
+/* line 90, assets/sass/partials/_nav.sass */
 .menu--user ul {
   position: absolute;
   background: rgba(67, 67, 67, 0.65);
@@ -1276,33 +1292,33 @@ a img.aligncenter {
   padding: 0 10px;
   line-height: 1.7em;
 }
-/* line 86, assets/sass/partials/_nav.sass */
+/* line 102, assets/sass/partials/_nav.sass */
 .menu--user ul a {
   display: block;
   color: #fff;
   margin: 0.5em 0;
   text-align: right;
 }
-/* line 92, assets/sass/partials/_nav.sass */
+/* line 108, assets/sass/partials/_nav.sass */
 .menu--user ul li.section {
   border-top: 2px solid #979797;
 }
-/* line 99, assets/sass/partials/_nav.sass */
+/* line 115, assets/sass/partials/_nav.sass */
 .menu--user .toggle-menu {
   height: 46px !important;
   line-height: 46px;
 }
-/* line 103, assets/sass/partials/_nav.sass */
+/* line 119, assets/sass/partials/_nav.sass */
 .menu--user img {
   vertical-align: middle;
   top: -1px;
 }
-/* line 107, assets/sass/partials/_nav.sass */
+/* line 123, assets/sass/partials/_nav.sass */
 .menu--user ul {
   top: 46px;
 }
 
-/* line 114, assets/sass/partials/_nav.sass */
+/* line 130, assets/sass/partials/_nav.sass */
 .nav--top ul {
   display: block;
   display: none;
@@ -1312,7 +1328,7 @@ a img.aligncenter {
   background: #ffffff;
   z-index: 1000;
 }
-/* line 124, assets/sass/partials/_nav.sass */
+/* line 140, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   font-family: "proxima-nova", sans-serif;
   font-style: normal;
@@ -1326,27 +1342,27 @@ a img.aligncenter {
   height: 50px;
   line-height: 50px;
 }
-/* line 134, assets/sass/partials/_nav.sass */
+/* line 150, assets/sass/partials/_nav.sass */
 .nav--top ul a:hover {
   background: #1daad1;
   color: #fff;
 }
 @media only screen and (max-width: 568px) {
-  /* line 124, assets/sass/partials/_nav.sass */
+  /* line 140, assets/sass/partials/_nav.sass */
   .nav--top ul a {
     width: 100%;
   }
 }
-/* line 142, assets/sass/partials/_nav.sass */
+/* line 158, assets/sass/partials/_nav.sass */
 .nav--top ul.menu {
   display: block !important;
 }
-/* line 145, assets/sass/partials/_nav.sass */
+/* line 161, assets/sass/partials/_nav.sass */
 .nav--top li {
   display: inline-block;
   position: relative;
 }
-/* line 148, assets/sass/partials/_nav.sass */
+/* line 164, assets/sass/partials/_nav.sass */
 .nav--top li ul {
   width: auto;
   overflow: visible;
@@ -1362,24 +1378,24 @@ a img.aligncenter {
   top: 0;
   position: relative;
 }
-/* line 158, assets/sass/partials/_nav.sass */
+/* line 174, assets/sass/partials/_nav.sass */
 .nav--top li ul li {
   width: 100%;
 }
-/* line 160, assets/sass/partials/_nav.sass */
+/* line 176, assets/sass/partials/_nav.sass */
 .nav--top li ul li a {
   width: 100%;
 }
-/* line 168, assets/sass/partials/_nav.sass */
+/* line 184, assets/sass/partials/_nav.sass */
 .nav--top li ul li a {
   font-size: 1.5em;
   padding-left: 40px;
 }
-/* line 172, assets/sass/partials/_nav.sass */
+/* line 188, assets/sass/partials/_nav.sass */
 .nav--top li:hover ul {
   display: block;
 }
-/* line 175, assets/sass/partials/_nav.sass */
+/* line 191, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap {
   position: absolute;
   left: -50px;
@@ -1391,17 +1407,17 @@ a img.aligncenter {
   /* ...and now for the proper property */
   transition: left 0.3s;
 }
-/* line 186, assets/sass/partials/_nav.sass */
+/* line 202, assets/sass/partials/_nav.sass */
 .nav--top .springfield-creatives-logo-wrap img {
   width: 40px;
   height: auto;
   margin-bottom: 0;
 }
-/* line 191, assets/sass/partials/_nav.sass */
+/* line 207, assets/sass/partials/_nav.sass */
 .nav--top.pinned .springfield-creatives-logo-wrap {
   left: 10px;
 }
-/* line 194, assets/sass/partials/_nav.sass */
+/* line 210, assets/sass/partials/_nav.sass */
 .nav--top header {
   zoom: 1;
   display: none;
@@ -1417,36 +1433,36 @@ a img.aligncenter {
 .nav--top header:after {
   clear: both;
 }
-/* line 199, assets/sass/partials/_nav.sass */
+/* line 215, assets/sass/partials/_nav.sass */
 .nav--top header h3, .nav--top header a {
   display: inline-block;
   line-height: 40px;
 }
-/* line 202, assets/sass/partials/_nav.sass */
+/* line 218, assets/sass/partials/_nav.sass */
 .nav--top header h3 {
   float: left;
   margin-bottom: 0;
   color: #1DAAD1;
 }
-/* line 206, assets/sass/partials/_nav.sass */
+/* line 222, assets/sass/partials/_nav.sass */
 .nav--top header a {
   float: right;
 }
-/* line 214, assets/sass/partials/_nav.sass */
+/* line 230, assets/sass/partials/_nav.sass */
 .nav--top header {
   display: block;
 }
-/* line 216, assets/sass/partials/_nav.sass */
+/* line 232, assets/sass/partials/_nav.sass */
 .nav--top ul {
   background: #1daad1;
   text-align: left;
   font-size: 0.75em;
 }
-/* line 220, assets/sass/partials/_nav.sass */
+/* line 236, assets/sass/partials/_nav.sass */
 .nav--top ul li {
   display: block;
 }
-/* line 222, assets/sass/partials/_nav.sass */
+/* line 238, assets/sass/partials/_nav.sass */
 .nav--top ul a {
   color: #fff;
   font-weight: normal;
@@ -3095,28 +3111,29 @@ body.single-post .post .content {
 /* line 1, assets/sass/app/_admin-bar.sass */
 #wpadminbar {
   background: #ededed;
+  border-bottom: 1px solid lightgray;
 }
-/* line 4, assets/sass/app/_admin-bar.sass */
+/* line 5, assets/sass/app/_admin-bar.sass */
 #wpadminbar a,
 #wpadminbar span {
   text-transform: uppercase !important;
   letter-spacing: 0.07em;
 }
-/* line 9, assets/sass/app/_admin-bar.sass */
+/* line 10, assets/sass/app/_admin-bar.sass */
 #wpadminbar a {
   padding-left: 12px !important;
   padding-right: 12px !important;
 }
-/* line 13, assets/sass/app/_admin-bar.sass */
+/* line 14, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a,
 #wpadminbar .quicklinks a span {
   color: #000 !important;
 }
-/* line 17, assets/sass/app/_admin-bar.sass */
+/* line 18, assets/sass/app/_admin-bar.sass */
 #wpadminbar .quicklinks a {
   font-family: "proxima-nova", sans-serif !important;
 }
-/* line 21, assets/sass/app/_admin-bar.sass */
+/* line 22, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-item,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper,
@@ -3124,7 +3141,7 @@ body.single-post .post .content {
   background: #434343;
   color: #fff !important;
 }
-/* line 29, assets/sass/app/_admin-bar.sass */
+/* line 30, assets/sass/app/_admin-bar.sass */
 #wpadminbar .ab-top-menu > li.hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-item span,
 #wpadminbar .ab-top-menu > li:hover .ab-sub-wrapper span,
@@ -3133,7 +3150,7 @@ body.single-post .post .content {
   color: #fff !important;
 }
 
-/* line 35, assets/sass/app/_admin-bar.sass */
+/* line 36, assets/sass/app/_admin-bar.sass */
 .wp-admin #wpadminbar a,
 .wp-admin #wpadminbar span {
   text-transform: none !important;

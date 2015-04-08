@@ -10,6 +10,7 @@
 	padding: 0 10px
 	position: fixed
 	top: 0
+	right: 10px
 	z-index: 999991
 	+font("proxima")
 	text-transform: uppercase
@@ -23,13 +24,17 @@
 		font-weight: normal
 		background: rgba($color-dark-gray, 0.45)
 
+		&.right
+			right: 5px
+
+
 		a
 			color: #fff !important
 
 	&.left
 		left: 0
 	&.right
-		right: 0
+		right: 10px
 		text-align: right
 
 	&.open
@@ -38,6 +43,9 @@
 		.menu--user
 			> ul
 				display: block
+
+			img
+				border: 2px solid #fff
 
 			.toggle-menu
 				color: $color-almost-white
@@ -64,9 +72,17 @@
 		width: 30px
 		height: 30px
 		border-radius: 50%
+		border: 2px solid darken($color-light-gray, 20%)
 		vertical-align: top
 		position: relative
 		top: 1px
+
+		-o-transition: all .1s
+		-ms-transition: all .1s
+		-moz-transition: all .1s
+		-webkit-transition: all .1s
+		/* ...and now for the proper property */
+		transition: all .1s
 
 	span
 		padding-left: 5px
