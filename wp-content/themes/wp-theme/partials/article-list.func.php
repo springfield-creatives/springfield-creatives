@@ -76,7 +76,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		if(get_post_type() == 'jobs'){
 			$the_content = get_field('short_description');
 		}else{
-			$the_content = get_the_excerpt();
+			$the_content = apply_filters('the_content', get_the_excerpt());
 		}
 
 		?>
