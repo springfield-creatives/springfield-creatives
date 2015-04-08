@@ -3,8 +3,8 @@
  *=================================== */
 /** UTILITIES
  *=================================== */
-/* line 157, assets/sass/mixins/_mix-general.sass */
-.member-thumbnail-image {
+/* line 166, assets/sass/mixins/_mix-general.sass */
+.thumbnail-image {
   display: block;
   width: 140px;
   height: 140px;
@@ -15,9 +15,17 @@
   -o-background-size: cover;
   background-size: cover;
 }
+/* line 152, assets/sass/mixins/_mix-general.sass */
+.thumbnail-image.contain {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  border-radius: 0;
+}
 @media only screen and (max-width: 829px) {
-  /* line 157, assets/sass/mixins/_mix-general.sass */
-  .member-thumbnail-image {
+  /* line 166, assets/sass/mixins/_mix-general.sass */
+  .thumbnail-image {
     width: 90px;
     height: 90px;
     border-radius: 45px;

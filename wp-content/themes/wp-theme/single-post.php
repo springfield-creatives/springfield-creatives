@@ -19,7 +19,7 @@ $media = get_gallery_arr(get_the_ID());
 	<header class="top">
 		<span class="date">posted <?php the_time('F j, Y');?></span>
 		<span class="author">by <?php the_author_posts_link(); ?></span>
-		<?php echo '<a href="' .  get_author_posts_url(get_the_author_meta( 'ID' )) . '" class="member-thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>'; ?>
+		<?php echo '<a href="' .  get_author_posts_url(get_the_author_meta( 'ID' )) . '" class="thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>'; ?>
 	</header>
 
 

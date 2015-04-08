@@ -37,10 +37,11 @@ function return_directory_item_html($post_object = false, $subtitle = false){
 
   $link = get_permalink($post_object->ID);
 
-  $post_image_src = get_object_image_src($post_object->ID, $post_object->post_type);
+  $post_image_src = get_object_image_src($post_object->ID, $post_object->post_type, 'medium');
+
 
 	$to_return = '<li class="directory-list-item ' . $post_object->post_type . '">' .
-		'<a href="' .  $link . '" class="thumbnail-image" style="background-image: url(' . $post_image_src . ')"></a>' . 
+		'<a href="' .  $link . '" class="thumbnail-image contain" style="background-image: url(' . $post_image_src . ')"></a>' . 
 		'<h3><a href="' . $link . '">' . $name . '</a></h3>';
 
 	if(!empty($subtitle))

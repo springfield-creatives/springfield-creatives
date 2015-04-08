@@ -68,8 +68,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  *=================================== */
 /** UTILITIES
  *=================================== */
-/* line 157, assets/sass/mixins/_mix-general.sass */
-.member-thumbnail-image {
+/* line 166, assets/sass/mixins/_mix-general.sass */
+.thumbnail-image {
   display: block;
   width: 140px;
   height: 140px;
@@ -80,9 +80,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -o-background-size: cover;
   background-size: cover;
 }
+/* line 152, assets/sass/mixins/_mix-general.sass */
+.thumbnail-image.contain {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  border-radius: 0;
+}
 @media only screen and (max-width: 829px) {
-  /* line 157, assets/sass/mixins/_mix-general.sass */
-  .member-thumbnail-image {
+  /* line 166, assets/sass/mixins/_mix-general.sass */
+  .thumbnail-image {
     width: 90px;
     height: 90px;
     border-radius: 45px;
@@ -1745,38 +1753,21 @@ a img.aligncenter {
 }
 /* line 31, assets/sass/partials/_directory.sass */
 .directory-list-item .thumbnail-image {
-  display: block;
-  width: 140px;
-  height: 140px;
-  border-radius: 70px;
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: absolute;
   top: 0;
   left: 0;
 }
-@media only screen and (max-width: 829px) {
-  /* line 31, assets/sass/partials/_directory.sass */
-  .directory-list-item .thumbnail-image {
-    width: 90px;
-    height: 90px;
-    border-radius: 45px;
-  }
-}
-/* line 38, assets/sass/partials/_directory.sass */
+/* line 36, assets/sass/partials/_directory.sass */
 .directory-list-item h3 {
   font-size: 1.625em;
   line-height: 1em;
   margin-bottom: 0.3em;
 }
-/* line 43, assets/sass/partials/_directory.sass */
+/* line 41, assets/sass/partials/_directory.sass */
 .directory-list-item h3 a {
   color: #434343;
 }
-/* line 46, assets/sass/partials/_directory.sass */
+/* line 44, assets/sass/partials/_directory.sass */
 .directory-list-item h4 {
   color: #7b7b7b;
   font-size: 1.125em;
@@ -1784,7 +1775,7 @@ a img.aligncenter {
   margin-bottom: 0;
   letter-spacing: 0;
 }
-/* line 53, assets/sass/partials/_directory.sass */
+/* line 51, assets/sass/partials/_directory.sass */
 .directory-list-item .h5 {
   text-transform: uppercase;
   font-weight: bold;
@@ -1794,7 +1785,7 @@ a img.aligncenter {
   font-weight: bold;
   letter-spacing: 0.04em;
 }
-/* line 59, assets/sass/partials/_directory.sass */
+/* line 57, assets/sass/partials/_directory.sass */
 .directory-list-item .email {
   text-transform: uppercase;
   font-weight: bold;
@@ -1812,7 +1803,7 @@ a img.aligncenter {
     padding-left: 110px;
     padding-top: 9px;
   }
-  /* line 74, assets/sass/partials/_directory.sass */
+  /* line 72, assets/sass/partials/_directory.sass */
   .directory-list-item h3 {
     font-size: 1.4375em;
   }
@@ -1827,23 +1818,23 @@ a img.aligncenter {
     margin: 0 auto 40px;
     padding-top: 14px;
   }
-  /* line 86, assets/sass/partials/_directory.sass */
+  /* line 84, assets/sass/partials/_directory.sass */
   .directory-list-item h3,
   .directory-list-item h4 {
     font-size: 1.125em;
   }
 }
 
-/* line 91, assets/sass/partials/_directory.sass */
+/* line 89, assets/sass/partials/_directory.sass */
 .search-filter {
   text-align: right;
   margin-top: 45px !important;
 }
-/* line 95, assets/sass/partials/_directory.sass */
+/* line 93, assets/sass/partials/_directory.sass */
 .search-filter .search {
   float: none;
 }
-/* line 98, assets/sass/partials/_directory.sass */
+/* line 96, assets/sass/partials/_directory.sass */
 .search-filter .wrapper {
   display: inline-block;
 }
@@ -2812,7 +2803,7 @@ body.home .post {
 }
 /* line 25, assets/sass/app/_post.sass */
 .post > header img,
-.post > header .member-thumbnail-image {
+.post > header .thumbnail-image {
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -2885,7 +2876,7 @@ body.home .post {
 }
 /* line 92, assets/sass/app/_post.sass */
 .post.featured > header img,
-.post.featured > header .member-thumbnail-image {
+.post.featured > header .thumbnail-image {
   width: 300px;
   height: 300px;
   border-radius: 150px;
@@ -2979,7 +2970,7 @@ body.home .post {
 }
 /* line 168, assets/sass/app/_post.sass */
 .post.block > header img,
-.post.block > header .member-thumbnail-image {
+.post.block > header .thumbnail-image {
   margin: 30px auto;
 }
 /* line 172, assets/sass/app/_post.sass */
@@ -3051,7 +3042,7 @@ body.single-post .post .content {
     text-align: left;
   }
   /* line 237, assets/sass/app/_post.sass */
-  body.single-post .post > header .member-thumbnail-image,
+  body.single-post .post > header .thumbnail-image,
   body.single-post .post > header img {
     position: absolute;
     top: 0;

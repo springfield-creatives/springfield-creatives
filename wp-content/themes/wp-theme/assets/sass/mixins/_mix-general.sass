@@ -138,7 +138,7 @@
   +mobile
     width: 100%
 
-@mixin member-thumbnail-image
+@mixin thumbnail-image
   display: block
   width: 140px
   height: 140px
@@ -149,10 +149,19 @@
   -o-background-size: cover
   background-size: cover
 
+  &.contain
+    -webkit-background-size: contain
+    -moz-background-size: contain
+    -o-background-size: contain
+    background-size: contain
+    border-radius: 0
+
+
+
   +tablet
     width: 90px
     height: 90px
     border-radius: 45px
 
-.member-thumbnail-image
-  +member-thumbnail-image
+.thumbnail-image
+  +thumbnail-image
