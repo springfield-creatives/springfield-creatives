@@ -7,7 +7,7 @@ if(current_user_can('member')){
 
 		// https://gist.github.com/tfausak/2222823
 		?>
-		    <!-- Allow web app to be run in full-screen mode. -->
+    <!-- Allow web app to be run in full-screen mode. -->
     <meta name="apple-mobile-web-app-capable"
           content="yes">
  
@@ -60,6 +60,12 @@ if(current_user_can('member')){
 	 	<?php
 	}
 	add_action('wp_head', 'sc_member_card_head_meta');
+
+	// set title
+	function member_card_title(){
+		return 'Member Card';
+	}
+	add_filter( 'wp_title', 'member_card_title', 1000, 2 );
 
 	get_header();
 
