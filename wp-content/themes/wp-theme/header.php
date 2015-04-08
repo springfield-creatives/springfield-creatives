@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory') ?>/assets/images/favicon.ico" />
+    <link rel="icon" type="image/ico" href="<?php bloginfo('template_directory') ?>/assets/images/icons/favicon.ico" />
 
 	<title><?php wp_title('&raquo;','true','right'); ?> <?php bloginfo('name') ?></title>
 	

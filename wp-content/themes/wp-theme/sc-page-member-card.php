@@ -1,6 +1,66 @@
 <?php
 if(current_user_can('member')){
 
+	wp_dequeue_script('gforms_stripe_frontend');
+
+	function sc_member_card_head_meta(){
+
+		// https://gist.github.com/tfausak/2222823
+		?>
+		    <!-- Allow web app to be run in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+ 
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title"
+          content="SC Member Card">
+ 
+    <!-- Configure the status bar. -->
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="white">
+
+ 
+    <!-- ICONS -->
+ 
+    <!-- iPad retina icon -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-152x152.png"
+          sizes="152x152"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPad retina icon (iOS < 7) -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-144x144.png"
+          sizes="144x144"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPad non-retina icon -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-76x76.png"
+          sizes="76x76"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPad non-retina icon (iOS < 7) -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-72x72.png"
+          sizes="72x72"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPhone 6 Plus icon -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-180x180.png"
+          sizes="120x120"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPhone retina icon (iOS < 7) -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-114x114.png"
+          sizes="114x114"
+          rel="apple-touch-icon-precomposed">
+ 
+    <!-- iPhone non-retina icon (iOS < 7) -->
+    <link href="<?php bloginfo('template_directory') ?>/assets/images/icons/apple-touch-icon-57x57.png"
+          sizes="57x57"
+          rel="apple-touch-icon-precomposed">
+
+	 	<?php
+	}
+	add_action('wp_head', 'sc_member_card_head_meta');
+
 	get_header();
 
 	// get user info

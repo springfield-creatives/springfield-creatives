@@ -41,7 +41,7 @@
 	</footer>
 
 	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/vendor/jquery.pin.min.js" ></script>
-	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/main.js" ></script>
+	<script src="<?php bloginfo('template_directory') ?>/assets/scripts/main.js?v=1.0.0" ></script>
 
 	<?php if(is_user_logged_in()){ ?>
 		<!-- BugHerd -->
