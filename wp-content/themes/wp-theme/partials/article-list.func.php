@@ -41,32 +41,55 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		if($class == 'block' && ($block_count % 2) == 0)
 				$class .= ' new-row';
 
-		// set "date" text
-		if(get_post_type() == 'tribe_events')
-			$date_text = tribe_get_start_date();
+		// set link url
+		if(get_post_type() == 'jobs')
+			$the_link = get_field('apply_url');
 		else
-			$date_text = 'posted ' . get_the_time('F j, Y');
+			$the_link = get_permalink();
 
-		// determine photo to use. use hero unless it's not defined.
-		$hero_image = get_field( 'hero_image' );
-		if( !empty($hero_image) ){
-			$featured_img = '<a href="' .  get_the_permalink() . '" class="member-thumbnail-image" style="background-image: url(' . $hero_image['sizes']['square-medium'] . ')"></a>';
+		// set subtitle text
+		if(get_post_type() == 'tribe_events'){
+			$subtitle_text = tribe_get_start_date();
+		}else if(get_post_type() == 'jobs'){
+			$company = get_field('company');
+			$subtitle_text = $company->post_title;
 		}else{
-			$member_photo = get_wp_user_avatar_src( get_the_author_meta( 'ID' ), 300, null, get_the_author() );
-			$featured_img = '<a href="' .  get_the_permalink() . '" class="member-thumbnail-image" style="background-image: url(' . $member_photo . ')"></a>';
+			$subtitle_text = 'posted ' . get_the_time('F j, Y');
+		}
+
+		// determine photo to use.
+	  $post_image_src = get_object_image_src(get_the_ID(), get_post_type());
+
+	  if(!empty($post_image_src))
+			$featured_img = '<a href="' . $the_link . '" class="member-thumbnail-image" style="background-image: url(' . $post_image_src . ')"></a>';
+		else
+			$featured_img = '';
+
+		// link text
+		if(get_post_type() == 'jobs'){
+			$link_text = 'Learn More';
+		}else{
+			$link_text = "Read More";
+		}
+
+		// content
+		if(get_post_type() == 'jobs'){
+			$the_content = get_field('short_description');
+		}else{
+			$the_content = get_the_excerpt();
 		}
 
 		?>
 		<article class="post <?php echo $class . ' ' . get_post_type() ?>">
 			<header>
-				<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-				<span class="date"><?php echo $date_text ?></span>
+				<h3><a href="<?php echo $the_link ?>"><?php the_title() ?></a></h3>
+				<span class="date"><?php echo $subtitle_text ?></span>
 				<?php echo $featured_img ?>
 			</header>
 
 			<div class="content">
-				<?php the_excerpt() ?>
-				<a href="<?php the_permalink() ?>" class="read-more secondary-button">Read More</a>
+				<?php echo $the_content ?>
+				<a href="<?php echo $the_link ?>" class="read-more secondary-button"><?php echo $link_text ?></a>
 			</div>
 
 		</article>

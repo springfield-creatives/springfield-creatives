@@ -8,7 +8,6 @@ function register_taxonomies() {
 	register_taxonomy(
 		'industry', // taxononmy ID. Make this unique from CPTs and Pages to avoid URL rewrite headaches.
 		array(
-			'jobs',
 			'businesses'
 		),
 		array(

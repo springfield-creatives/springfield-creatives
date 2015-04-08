@@ -24,6 +24,63 @@ function get_user_business($user){
 }
 
 /**
+ * Returns thumbnail image for a given post
+ * @param  Integer $post_id
+ * @param  String $post_type
+ * @param  String|Integer $size
+ */
+
+function get_object_image_src($post_id, $post_type = false, $size = 'square-medium'){
+
+	// get post type if not supplied
+	if(!$post_type)
+		$post_type = get_post_type($post_id);
+
+	if($post_type == 'user'){
+		// change size default
+		if(!is_integer($size))
+			$size = 300;
+
+		// user photo
+		return get_wp_user_avatar_src( $post_id, $size, null );
+
+	}else if($post_type == 'jobs'){
+
+		// get connected business/organization and use that
+		return get_object_image_src(get_field('company', $post_id, false, $size));
+
+	}else if($post_type == 'organizations' || $post_type == 'businesses'){
+
+		// get connected business/organization and use that
+		$post_image = get_field( 'logo', $post_id );
+		if(!empty($post_image))
+			return $post_image['sizes'][$size];
+
+	}else{
+
+		// everything else
+		
+		// check if there's a featured image
+		if(has_post_thumbnail($post_id)){
+			$featured_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $size );
+			return is_array($featured_src) ? $featured_src[0] : $featured_src;
+		}
+		
+		// try hero image
+		$hero_image = get_field( 'hero_image' );
+		if( !empty($hero_image) )
+			return $hero_image['sizes'][$size];
+
+	}
+
+
+	// return default image
+	$default = get_field( 'default_' . $post_type . '_image', 'option');
+	return $default['sizes'][$size];
+
+}
+
+/**
  * Get an array for use in contact links
  * @param  Integer $id 		Post or author id
  * @param  string $type 

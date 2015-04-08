@@ -37,11 +37,7 @@ function return_directory_item_html($post_object = false, $subtitle = false){
 
   $link = get_permalink($post_object->ID);
 
-	$post_image = get_field( 'logo', $post_object->ID );
-	if(empty($post_image))
-		$post_image = get_field( 'default_' . $post_object->post_type . '_image', 'option');
-
-	$post_image_src = $post_image['sizes']['square-medium'];
+  $post_image_src = get_object_image_src($post_object->ID, $post_object->post_type);
 
 	$to_return = '<li class="directory-list-item ' . $post_object->post_type . '">' .
 		'<a href="' .  $link . '" class="thumbnail-image" style="background-image: url(' . $post_image_src . ')"></a>' . 
