@@ -857,7 +857,12 @@ section ul {
   /* ...and now for the proper property */
   transition: 0.3s;
 }
-/* line 424, assets/sass/modules/_input.sass */
+/* line 423, assets/sass/modules/_input.sass */
+.gform_footer input.wide,
+.primary-button.wide {
+  width: 250px;
+}
+/* line 426, assets/sass/modules/_input.sass */
 .gform_footer input:hover,
 .primary-button:hover {
   background: #22c5f2;
@@ -870,7 +875,7 @@ section ul {
   }
 }
 
-/* line 431, assets/sass/modules/_input.sass */
+/* line 433, assets/sass/modules/_input.sass */
 .secondary-button {
   display: block;
   margin: 0 auto;
@@ -904,13 +909,13 @@ section ul {
   background: #dbf3f9;
 }
 @media only screen and (max-width: 568px) {
-  /* line 431, assets/sass/modules/_input.sass */
+  /* line 433, assets/sass/modules/_input.sass */
   .secondary-button {
     width: 100%;
   }
 }
 
-/* line 434, assets/sass/modules/_input.sass */
+/* line 436, assets/sass/modules/_input.sass */
 input,
 textarea,
 .validation_error {
@@ -934,12 +939,12 @@ textarea,
   color: #434343;
 }
 
-/* line 452, assets/sass/modules/_input.sass */
+/* line 454, assets/sass/modules/_input.sass */
 textarea {
   height: 150px;
 }
 
-/* line 458, assets/sass/modules/_input.sass */
+/* line 460, assets/sass/modules/_input.sass */
 .validation_error {
   height: auto;
   clear: both;
@@ -951,18 +956,18 @@ textarea {
   text-align: center;
 }
 
-/* line 469, assets/sass/modules/_input.sass */
+/* line 471, assets/sass/modules/_input.sass */
 .gfield_error input,
 .gfield_error textarea {
   border-color: #ff8484;
 }
 
-/* line 473, assets/sass/modules/_input.sass */
+/* line 475, assets/sass/modules/_input.sass */
 .validation_message {
   display: none;
 }
 
-/* line 477, assets/sass/modules/_input.sass */
+/* line 479, assets/sass/modules/_input.sass */
 .gform_confirmation_wrapper {
   text-align: center;
 }

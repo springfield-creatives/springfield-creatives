@@ -11,6 +11,7 @@
             endwhile;
             ?>
         </ul>
+        
         <?php
         include('pagination.php');
         ?>
