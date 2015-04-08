@@ -53,6 +53,8 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		}else if(get_post_type() == 'jobs'){
 			$company = get_field('company');
 			$subtitle_text = $company->post_title;
+		}else if(get_post_type() == 'committee') {
+			$subtitle_text = '';
 		}else{
 			$subtitle_text = 'posted ' . get_the_time('F j, Y');
 		}
@@ -68,7 +70,7 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 		}
 
 		// link text
-		if(get_post_type() == 'jobs'){
+		if(get_post_type() == 'jobs' || get_post_type() == 'committee'){
 			$link_text = 'Learn More';
 		}else{
 			$link_text = "Read More";
@@ -76,7 +78,9 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 
 		// content
 		if(get_post_type() == 'jobs'){
-			$the_content = get_field('short_description');
+			$the_content = wpautop(get_field('short_description'));
+		}else if(get_post_type() == 'committee'){
+			$the_content = wpautop(get_field('description'));
 		}else{
 			$the_content = apply_filters('the_content', get_the_excerpt());
 		}

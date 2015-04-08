@@ -54,7 +54,9 @@ $profile = array(
 			'thumb' => "http://sc.com/uploads/thumbnail.jpg", // if omited, a placeholder will be used
 			'src' => "http://youtube.com/?v=123456" // required. can be full url to most popular video services
 		)
-	)
+	),
+
+	"additional-content" => 'arbitrary html content to go at the end'
 
 );
 
@@ -108,6 +110,12 @@ require('hero.php');
 		</article>
 		<article class="featured">
 			<?php
+
+			// echo a featured image
+			if(!empty($profile['featured_img']))
+				echo '<img src="' . $profile['featured_img'] . '" title="' . $profile['title'] . '" />';
+
+
 			if(!empty($profile['contact-links']['address'])){
 
 				// echo a map
@@ -119,12 +127,9 @@ require('hero.php');
 				echo '<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC9_2YM2sPM3qgTwlfEO9oYCotYT8ZlF3U&q=' . $safe_address . '" width="100%" height="350" frameborder="0" style="border:0"></iframe>';
 
 				
-			}else{
-
-				// echo a featured image
-				echo '<img src="' . $profile['featured_img'] . '" title="' . $profile['title'] . '" />';
-
 			}
+
+			
 			?>
 		</article>
 		<article class="description">
@@ -146,18 +151,22 @@ require('hero.php');
 			}
 
 			// Contact info
+			if(!empty($profile['contact_links'])){
+				?>
+				<div class="list">
+					<h4>Contact</h4>
+					<ul>
+						<?php
+						foreach($profile['contact_links'] as $key => $contact_info){
+							$class = isset($fa_icons[$key]) ? $fa_icons[$key] : '';
+							echo '<li class="' . $class . '"><a href="' . $contact_info['url'] .'">' . $contact_info['title'] . '</a><li>';
+						}
+						?>
+					</ul>
+				</div>
+				<?php
+			}
 			?>
-			<div class="list">
-				<h4>Contact</h4>
-				<ul>
-					<?php
-					foreach($profile['contact_links'] as $key => $contact_info){
-						$class = isset($fa_icons[$key]) ? $fa_icons[$key] : '';
-						echo '<li class="' . $class . '"><a href="' . $contact_info['url'] .'">' . $contact_info['title'] . '</a><li>';
-					}
-					?>
-				</ul>
-			</div>
 
 		</article>
 
@@ -202,6 +211,9 @@ if(!empty($profile['media'])){
 
 	<?php 
 }
+
+if(!empty($profile['additional-content']))
+	echo $profile['additional-content'];
 
 
 get_footer();
