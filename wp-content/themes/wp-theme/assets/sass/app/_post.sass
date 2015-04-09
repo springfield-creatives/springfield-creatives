@@ -64,6 +64,13 @@
 	.content
 		float: right
 		width: 530px
+		
+		+smallscreen
+			width: auto !important
+
+		+mobile
+			p
+				text-align: justify
 
 		.more
 			font-size: 1.2em
@@ -134,14 +141,6 @@
 			+smallscreen
 				float: none
 				width: 100%
-
-		.content
-			+smallscreen
-				width: auto !important
-
-			+mobile
-				p
-					text-align: justify
 
 
 

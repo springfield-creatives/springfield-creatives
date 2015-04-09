@@ -63,8 +63,8 @@ function sc_render_article_list($articles, $list_layout = "blocks") {
 	  $post_image_src = get_object_image_src(get_the_ID(), get_post_type());
 
 	  if(!empty($post_image_src)){
-	  	$class = get_post_type() == 'jobs' ? ' contain' : '';
-			$featured_img = '<a href="' . $the_link . '" class="thumbnail-image' . $class . '" style="background-image: url(' . $post_image_src . ')"></a>';
+	  	$img_class = get_post_type() == 'jobs' ? ' contain' : '';
+			$featured_img = '<a href="' . $the_link . '" class="thumbnail-image' . $img_class . '" style="background-image: url(' . $post_image_src . ')"></a>';
 		}else{
 			$featured_img = '';
 		}
