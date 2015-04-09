@@ -10,7 +10,7 @@ include('partials/hero.php');
 
 
 // query and pagination
-$number     = 12;
+$number     = 36;
 $paged      = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $offset     = ($paged - 1) * $number;
 
