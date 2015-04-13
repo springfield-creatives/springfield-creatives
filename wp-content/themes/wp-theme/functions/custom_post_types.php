@@ -202,7 +202,8 @@ function register_CPTs()
 			'title',
 			'editor',
 			'thumbnail',
-			'page-attributes'
+			'page-attributes',
+			'author'
 		)
 	);
 
