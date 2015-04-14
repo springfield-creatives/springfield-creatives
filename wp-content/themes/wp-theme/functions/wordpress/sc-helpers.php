@@ -125,10 +125,12 @@ function get_contact_links_arr($id, $is_user = false, $meta){
 	);
 
 	// phone
-	$contact_links['phone'] = array(
-		'title' => $meta['phone_number'],
-		'url' => 'tel:' . preg_replace('/\D+/', '', $meta['phone_number']) // just numbers
-	);
+	if(!empty($meta['phone_number'])){
+		$contact_links['phone'] = array(
+			'title' => $meta['phone_number'],
+			'url' => 'tel:' . preg_replace('/\D+/', '', $meta['phone_number']) // just numbers
+		);
+	}
 
 	// address
 	if(!empty($meta['address_one'])){
