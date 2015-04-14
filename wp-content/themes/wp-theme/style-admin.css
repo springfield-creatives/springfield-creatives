@@ -452,3 +452,10 @@ div.wp-menu-image:before {
 body.profile-php h3 {
   margin-top: 2em;
 }
+/* line 6, assets/sass/app/_admin-profile.sass */
+body.profile-php .user-url-wrap,
+body.profile-php .user-googleplus-wrap,
+body.profile-php .user-twitter-wrap,
+body.profile-php .user-facebook-wrap {
+  display: none;
+}

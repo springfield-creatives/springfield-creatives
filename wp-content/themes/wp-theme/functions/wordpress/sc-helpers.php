@@ -173,11 +173,15 @@ function get_social_links_arr($id, $is_user = false, $meta){
 			'key' => 'twitter',
 			'nice_name' => 'Twitter'
 		),
+		'linkedin_url' => array(
+			'key' => 'linkedin',
+			'nice_name' => 'LinkedIn'
+		),
 		'instagram_url' => array(
 			'key' => 'instagram',
 			'nice_name' => 'Instagram'
 		),
-		'google_url' => array(
+		'google_plus_url' => array(
 			'key' => 'google',
 			'nice_name' => 'Google+'
 		),

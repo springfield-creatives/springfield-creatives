@@ -68,6 +68,7 @@ $fa_icons = array(
 	'facebook' => 'fa-facebook',
 	'twitter' => 'fa-twitter',
 	'instagram' => 'fa-instagram',
+	'linkedin' => 'fa-linkedin',
 	'google' => 'fa-google-plus',
 	'dribbble' => 'fa-dribbble',
 	'youtube' => 'fa-youtube',
@@ -77,10 +78,10 @@ $fa_icons = array(
 	'medium' => 'fa-medium',
 
 	// contact
-	'website' => 'external-link',
-	'phone' => 'phone',
-	'email' => 'envelope',
-	'address' => 'map-marker',
+	'website' => 'fa-external-link',
+	'phone' => 'fa-phone',
+	'email' => 'fa-envelope-o',
+	'address' => 'fa-map-marker',
 
 );
 
@@ -97,14 +98,16 @@ get_header();
 require('hero.php');
 ?>
 
+
+<?php
+if(!empty($profile['edit-link']))
+	echo '<section><a class="secondary-button edit-link" href="' . $profile['edit-link'] . '">Edit Profile</a></section>';
+?>
+
 <!-- Main About Area -->
 <section class="profile-about main">
 	<div class="middlifier">
 		<article class="intro">
-			<?php
-			if(!empty($profile['edit-link']))
-				echo '<a class="secondary-button edit-link" href="' . $profile['edit-link'] . '">Edit Profile</a>';
-			?>
 			<h2><?php echo $profile['title'] ?></h2>
 			<h3><?php echo $profile['subhead'] ?></h3>
 		</article>
@@ -112,16 +115,16 @@ require('hero.php');
 			<?php
 
 			// echo a featured image
-			if(!empty($profile['featured_img']))
+			if(!empty($profile['featured_img'])){
+
 				echo '<img src="' . $profile['featured_img'] . '" title="' . $profile['title'] . '" />';
 
-
-			if(!empty($profile['contact-links']['address'])){
+			}else if(!empty($profile['contact_links']['address']['title'])){
 
 				// echo a map
 				$safe_address = urlencode(
 					str_replace('<br />', '',
-						str_replace('<br/>', '', $profile['contact-links']['address'])
+						str_replace('<br/>', '', $profile['contact_links']['address']['title'])
 					)
 				);
 				echo '<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyC9_2YM2sPM3qgTwlfEO9oYCotYT8ZlF3U&q=' . $safe_address . '" width="100%" height="350" frameborder="0" style="border:0"></iframe>';
@@ -133,7 +136,11 @@ require('hero.php');
 			?>
 		</article>
 		<article class="description">
-			<?php echo $profile['description']; ?>
+			<?php
+
+			echo $profile['description'];
+
+			?>
 		</article>
 		<article class="contact-info">
 			<?php
@@ -159,7 +166,7 @@ require('hero.php');
 						<?php
 						foreach($profile['contact_links'] as $key => $contact_info){
 							$class = isset($fa_icons[$key]) ? $fa_icons[$key] : '';
-							echo '<li class="' . $class . '"><a href="' . $contact_info['url'] .'">' . $contact_info['title'] . '</a><li>';
+							echo '<li><i class="fa ' . $class . '"></i><a href="' . $contact_info['url'] .'">' . $contact_info['title'] . '</a><li>';
 						}
 						?>
 					</ul>
@@ -171,7 +178,6 @@ require('hero.php');
 		</article>
 
 		<?php
-
 		// Social links
 		echo '<article class="links">';
 			echo '<ul>';
@@ -197,16 +203,15 @@ if(!empty($profile['media'])){
 
 
 	<section class="mini-portfolio main">
-		<h2 class="middlifier">Media Gallery</h2>
-		<ul class="slick-carousel">
+		<div class="slick-carousel">
 			<?php
 
 			foreach($media as $media_item){
-				echo '<li><img src="' . $media_item['thumb'] . '" title="' . $media_item['title'] . '" data-big="' . $media_item['src'] . '"/></li>';
+				echo '<div><img src="' . $media_item['thumb'] . '" title="' . $media_item['title'] . '" data-big="' . $media_item['src'] . '"/></div>';
 			}
 
 			?>
-		</ul>
+		</div>
 	</section>
 
 	<?php 

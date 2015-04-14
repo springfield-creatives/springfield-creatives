@@ -11,17 +11,26 @@ jQuery(function($){
 				h3Text = $el.html();
 
 			switch(h3Text){
+
+				// hide title
+				case 'Contact Info':
+
+					$el.hide();
+
+					break;
+
+				// hide entire section
+				case 'WordPress SEO settings':
 				case 'Personal Options':
 
-					// hide entire section
 					$el.hide()
 						.next().hide();
 
 					break;
 
+				// misc
 				case 'About Yourself':
 
-					// change title
 					$el.html('Change Password');
 					break;
 			}
