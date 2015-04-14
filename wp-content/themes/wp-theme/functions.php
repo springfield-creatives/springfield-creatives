@@ -46,7 +46,6 @@ include_once('functions/site/posts2posts.php');
 // Admin Customization
 include_once('functions/wordpress/admin-bar.php');
 include_once('functions/wordpress/admin-menu.php');
-include_once('functions/wordpress/customize-admin.php');
 include_once('functions/wordpress/customize-login.php');
 
 // Helpers
