@@ -221,6 +221,28 @@ jQuery(function($){
 		$memberCardBody.append('<style>html, html body{ margin-top: 0 !important }</style>');
 
 		// add to home popup
+		// encode user info in URL for saved to desktopness
+		var memberCardInfoHash = window.btoa($.param(window.memberCardInfo));
+
+		// only update URL if not already set
+		var mDataPresent = false;
+
+		var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == 'mdata') 
+        {
+        	mDataPresent = true;
+          break;
+        }
+    }
+
+		if(!mDataPresent)
+			history.replaceState('', window.document.title, document.location.href + (document.location.search ? '&' : '?' ) + 'mdata=' + memberCardInfoHash);
+
+		// Trigger popup
 		addToHomescreen({
 			maxDisplayCount: 2
 		});
