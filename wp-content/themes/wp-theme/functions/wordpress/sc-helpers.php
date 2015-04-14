@@ -119,10 +119,12 @@ function get_contact_links_arr($id, $is_user = false, $meta){
 	);
 
 	// website
-	$contact_links['website'] = array(
-		'title' => str_replace('http://', '', $meta['website_url']), // no http://
-		'url' => $meta['website_url']
-	);
+	if(!empty($meta['website_url'])){
+		$contact_links['website'] = array(
+			'title' => str_replace('http://', '', $meta['website_url']), // no http://
+			'url' => $meta['website_url']
+		);
+	}
 
 	// phone
 	if(!empty($meta['phone_number'])){

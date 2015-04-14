@@ -105,14 +105,18 @@ if(!empty($profile['edit-link']))
 ?>
 
 <!-- Main About Area -->
-<section class="profile-about main">
+<?php
+$soc_links_empty_class = empty($profile['social_links']) ? 'social-links-empty' : '';
+?>
+<section class="profile-about <?php echo $soc_links_empty_class ?> main">
 	<div class="middlifier">
 		<article class="intro">
 			<h2><?php echo $profile['title'] ?></h2>
 			<h3><?php echo $profile['subhead'] ?></h3>
 		</article>
-		<article class="featured">
-			<?php
+		<?php
+
+			echo '<article class="featured">';
 
 			// echo a featured image
 			if(!empty($profile['featured_img'])){
@@ -135,13 +139,7 @@ if(!empty($profile['edit-link']))
 			
 			?>
 		</article>
-		<article class="description">
-			<?php
 
-			echo $profile['description'];
-
-			?>
-		</article>
 		<article class="contact-info">
 			<?php
 
@@ -161,7 +159,6 @@ if(!empty($profile['edit-link']))
 			if(!empty($profile['contact_links'])){
 				?>
 				<div class="list">
-					<h4>Contact</h4>
 					<ul>
 						<?php
 						foreach($profile['contact_links'] as $key => $contact_info){
@@ -175,6 +172,14 @@ if(!empty($profile['edit-link']))
 			}
 			?>
 
+		</article>
+
+		<article class="description">
+			<?php
+
+			echo $profile['description'];
+
+			?>
 		</article>
 
 		<?php
