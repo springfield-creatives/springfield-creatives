@@ -7,8 +7,13 @@ if(!current_user_can('member') && empty($_GET['mdata'])){
 	exit;
 }
 
-wp_dequeue_script('gforms_stripe_frontend');
+// don't allow embedding of strip.js (throws error)
+function no_stripe_on_member_card() {
+	wp_dequeue_script('gforms_stripe_frontend');
+}
+add_action('wp_enqueue_scripts', 'no_stripe_on_member_card', 100);
 
+// mobile app specific stuff
 function sc_member_card_head_meta(){
 
 	// https://gist.github.com/tfausak/2222823
@@ -19,7 +24,7 @@ function sc_member_card_head_meta(){
 
   <!-- Make the app title different than the page title. -->
   <meta name="apple-mobile-web-app-title"
-        content="SC Member Card">
+        content="Member Card">
 
   <!-- Configure the status bar. -->
   <meta name="apple-mobile-web-app-status-bar-style"
@@ -165,6 +170,12 @@ if(!empty($_GET['mdata'])){
 		</div>
 
 		<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
+
+		<div id="inline-perks">
+			<?php
+
+			?>
+		</div>
 
 	</div>
 
