@@ -150,6 +150,47 @@ if(!empty($_GET['mdata'])){
 	};
 </script>
 
+<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
+
+<div id="inline-perks">
+	<?php
+	$perks = new WP_Query(array(
+		'post_type' => array('organizations', 'businesses'),
+		'meta_query' => array(
+			array(
+				'key'     => 'perks',
+				'value'   => '',
+				'compare' => '!=',
+			)
+		),
+	));
+
+	while($perks->have_posts()){
+		$perks->the_post();
+		$the_link = get_the_permalink();
+		$post_image_src = get_object_image_src(get_the_ID(), get_post_type());
+		?>
+
+		<article class="perk <?php echo get_post_type() ?>">
+			<header>
+				<?php
+				  echo '<a href="' . $the_link . '" class="thumbnail-image" style="background-image: url(' . $post_image_src . ')"></a>';
+			  ?>
+			</header>
+
+			<div class="content">
+				<h3><a href="<?php echo $the_link ?>"><?php the_title() ?></a></h3>
+				<?php the_field('perks') ?>
+			</div>
+
+		</article>
+
+		<?php
+	}
+	?>
+</div>
+
+
 <section class="member-card">
 
 	<div class="iphone-wrap offscreen">
@@ -166,14 +207,6 @@ if(!empty($_GET['mdata'])){
 				<h2>Expires <?php echo $card_info['end'] ?></h2>
 				<?php
 			}
-			?>
-		</div>
-
-		<a href="<?php echo get_bloginfo('url') ?>/member-perks/" class="perks secondary-button">Member Perks</a>
-
-		<div id="inline-perks">
-			<?php
-
 			?>
 		</div>
 

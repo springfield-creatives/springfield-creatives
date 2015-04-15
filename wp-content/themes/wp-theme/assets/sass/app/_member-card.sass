@@ -1,3 +1,4 @@
+// all breakpoints
 body.sc-page-member-card
 	.member-card
 		position: relative
@@ -24,8 +25,6 @@ body.sc-page-member-card
 			padding: 0
 			margin-bottom: 0.3em
 
-		.perks
-			display: none
 
 	.iphone-wrap
 		background: transparent url('assets/images/iphone6.png') no-repeat
@@ -69,6 +68,62 @@ body.sc-page-member-card
 		-moz-background-size: cover
 		-o-background-size: cover
 		background-size: cover
+
+	.member-card-info
+		+mq-min-medium
+			display: block
+
+		h1
+			color: $color-dark-gray
+			width: auto !important
+
+		p
+			text-align: center
+
+		div
+			padding: 0 40px
+
+	.perks
+		position: fixed
+		z-index: 11
+		bottom: 10px
+		right: 10px
+		width: 150px
+		font-size: 14px
+		height: 32px
+		line-height: 32px
+
+	#inline-perks
+		position: fixed
+		visibility: hidden
+		display: block
+		width: 80%
+		height: 80%
+		overflow: scroll
+		overflow-scrolling: touch
+		background: $color-white
+		top: 100%
+		padding: 20px
+		border-radius: 10px
+		border: 1px solid $color-gray
+
+		&.visible
+			top: 5%
+			left: 10%
+			visibility: visible
+			z-index: 10
+
+	.perk
+		+cf
+		margin-bottom: 40px
+
+		header
+			float: left
+			margin-right: 20px
+
+		.content
+			display: block
+			padding-top: 10px
 
 // phone landscape
 +tablet
@@ -131,20 +186,3 @@ body.sc-page-member-card
 		.mc-profile-pic
 			margin: 0 auto 1em
 			float: none
-
-// everything else
-body.sc-page-member-card
-
-	.member-card-info
-		+mq-min-medium
-			display: block
-
-		h1
-			color: $color-dark-gray
-			width: auto !important
-
-		p
-			text-align: center
-
-		div
-			padding: 0 40px

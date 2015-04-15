@@ -265,6 +265,13 @@ jQuery(function($){
 		$win.on('resize orientationchange', sizeBody);
 		setTimeout(sizeBody, 100);
 
+		// toggle perks
+		$('a.perks').click(function(e){
+			$('#inline-perks').toggleClass('visible');
+			e.preventDefault();
+			return false;
+		});
+
 		// animate iphone in if on desktop
 		setTimeout(function(){
 			$('.iphone-wrap').removeClass('offscreen');
