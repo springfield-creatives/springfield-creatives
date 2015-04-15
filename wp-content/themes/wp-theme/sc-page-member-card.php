@@ -90,48 +90,42 @@ if(!empty($_GET['mdata'])){
 	$userdata = array();
 	parse_str( $userdata_string, $userdata );
 
-	
-	$card_info = array(
-		'name' => $userdata['n'],
-		'start' => $userdata['s'],
-		'end' => $userdata['e'],
-		'img' => $userdata['i'],
-		'id' => $userdata['d']
-	);
+	$user_id = $userdata['d'];
 
 
 }else{
 
 	// load current user info
 	$user_id = get_current_user_id();
-	$user = get_user_by('id', $user_id);
-	$user_data = $user->data;
-
-	// load meta
-	$meta = get_user_meta($user_id);
-
-	// convert single-item array values to their first element
-	foreach($meta as $k=>$v){
-		if(is_array($v) && count($v) == 1)
-			$meta[$k] = $v[0];
-	}
-
-	// image
-	$user_image = get_wp_user_avatar_src( $user_id, 'large', null, $user_data->display_name );
-
-	// Dates
-	$start_date = date('M Y', strtotime($user->user_registered));
-	$end_date = !empty($meta['membership_expiration']) ? date('M Y', strtotime($meta['membership_expiration'])) : '';
-
-	$card_info = array(
-		'name' => $user->display_name,
-		'start' => $start_date,
-		'end' => $end_date,
-		'img' => $user_image,
-		'id' => $user_id
-	);
 
 }
+
+$user = get_user_by('id', $user_id);
+$user_data = $user->data;
+
+// load meta
+$meta = get_user_meta($user_id);
+
+// convert single-item array values to their first element
+foreach($meta as $k=>$v){
+	if(is_array($v) && count($v) == 1)
+		$meta[$k] = $v[0];
+}
+
+// image
+$user_image = get_wp_user_avatar_src( $user_id, 'large', null, $user_data->display_name );
+
+// Dates
+$start_date = date('M Y', strtotime($user->user_registered));
+$end_date = !empty($meta['membership_expiration']) ? date('M Y', strtotime($meta['membership_expiration'])) : '';
+
+$card_info = array(
+	'name' => $user->display_name,
+	'start' => $start_date,
+	'end' => $end_date,
+	'img' => $user_image,
+	'id' => $user_id
+);
 
 
 //////////////////
@@ -142,10 +136,6 @@ if(!empty($_GET['mdata'])){
 
 <script>
 	window.memberCardInfo = {
-		n: '<?php echo $card_info['name'] ?>',
-		s: '<?php echo $card_info['start'] ?>',
-		e: '<?php echo $card_info['end'] ?>',
-		i: '<?php echo $card_info['img'] ?>',
 		d: '<?php echo $card_info['id'] ?>',
 	};
 </script>
