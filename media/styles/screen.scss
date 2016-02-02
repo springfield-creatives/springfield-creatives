@@ -1,0 +1,475 @@
+@import "reset";
+@import "griddle";
+@import "compass";
+@import "font-awesome.css";
+ 
+/*
+-----------------------------------------------
+Springfield Creatives Styles
+----------------------------------------------- */
+
+$proxima: 'proxima-nova', Helvetica, Arial, Verdana, sans-serif;
+$helvetica: Helvetica, Arial, Verdana, sans-serif;
+$slate: #5C6569;
+$orange: #E7C144;
+$cream: #F2F1E4;
+$blue: #13344A;
+$grey: #333333;
+
+@mixin background-gradient($start, $end) {
+  background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end));
+}
+@mixin background-gradient-horizontal($start, $end) {
+  background-image: -moz-linear-gradient(left, $start 0%, $end 100%);
+  background-image: -webkit-gradient(linear, left top, right bottom, from($start), to($end));
+}
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url($file + '.' + $type);
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    & {
+      background-image: url($file + '@2x.' + $type);
+      background-size: $width $height;
+    }
+  }
+}
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin box-shadow($offset-x, $offset-y, $blur, $color) {
+  box-shadow: $offset-x $offset-y $blur $color;
+  -moz-box-shadow: $offset-x $offset-y $blur $color;
+  -webkit-box-shadow: $offset-x $offset-y $blur $color;
+}
+@mixin inner-box-shadow($offset, $blur, $color) {
+  box-shadow: inset 0 $offset $blur $color;
+  -moz-box-shadow: inset 0 $offset $blur $color;
+  -webkit-box-shadow: inset 0 $offset $blur $color;
+}
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+/* Grid and Special Classes
+----------------------------------------------- */
+@include griddle-build(2 3 4 5 6 12);
+@media all and (max-width: 1199px) {
+  @include griddle-build(1 2 3 4 5 6 12, '-lg');
+}
+@media all and (max-width: 1023px) {
+  @include griddle-build(1 2 3 4 5 6 12, '-md');
+}
+@media all and (max-width: 767px) {
+  @include griddle-build(1 2 3 4 5 6 12, '-sm');
+}
+.hidden {
+  display: none;
+}
+.hidden-lg {
+  @media all and (max-width: 1199px) {
+    display: none;
+  }
+}
+.hidden-md {
+  @media all and (max-width: 1023px) {
+    display: none;
+  }
+}
+.hidden-sm {
+  @media all and (max-width: 767px) {
+    display: none;
+  }
+}
+.visible-lg {
+  @media all and (max-width: 1199px) {
+    display: block;
+  }
+}
+.visible-md {
+  @media all and (max-width: 1023px) {
+    display: block;
+  }
+}
+.visible-sm {
+  @media all and (max-width: 767px) {
+    display: block;
+  }
+}
+.left {
+  float: left;
+}
+.left-md {
+  @media all and (min-width: 1024px) {
+    float: left;
+  }
+}
+.right {
+  float: right;
+}
+.right-md {
+  @media all and (min-width: 1024px) {
+    float: right;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.margin {
+  margin-bottom: 40px;
+  @media all and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+}
+.margin-double {
+  margin-bottom: 80px;
+  @media all and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+}
+.margin-half {
+  margin-bottom: 20px;
+  @media all and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+}
+.relative {
+  position: relative;
+}
+.invisible {
+  visibility: hidden;
+}
+.animated {
+  visibility: visible;
+}
+.unit-center {
+  vertical-align: middle;
+}
+.reverse {
+  direction: rtl;
+  div {
+    direction: ltr;
+  }
+}
+img {
+  &.full {
+    width: 100%;
+  }
+}
+b {
+  font-weight: 700;
+}
+
+/* Global
+----------------------------------------------- */
+body {
+  font-family: $helvetica;
+  font-style: normal;
+  font-weight: 400;
+  @media all and (max-width: 1024px) {
+    -webkit-text-size-adjust: none;
+  }
+  @media all and (max-width: 767px) {
+    padding: 0 0 40px 0;
+  }
+}
+a {
+  text-decoration: none;
+	&:hover {
+	  text-decoration: underline;
+  }
+}
+
+/* Header
+----------------------------------------------- */
+header {
+  @extend .clear;
+  background: $slate;
+  box-sizing: border-box;
+  padding: 20px 5%;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  &.open {
+    > span {
+      @media all and (max-width: 1023px) {
+        span {
+          background-color: transparent;
+          &:before {
+            top: 0;
+            transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+          &:after {
+            bottom: 0;
+            transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    nav {
+      @media all and (max-width: 1023px) {
+        right: 0;
+      }
+    }
+  }
+  &.alt {
+    background: transparent;
+    @media all and (max-width: 767px) {
+      background: $slate;
+    }
+    h2 {
+      a {
+        &:after {
+          opacity: 0;
+          @media all and (max-width: 767px) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  > span {
+    display: none;
+    @media all and (max-width: 1023px) {
+      cursor: pointer;
+      display: block;
+      height: 30px;
+      position: absolute;
+      right: 5%;
+      top: 15px;
+      width: 24px;
+      z-index: 100;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      span {
+        background: #fff;
+        display: block;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: 13px;
+        transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -webkit-transition: all 0.2s linear;
+        width: 24px;
+        &:before {
+          background: #fff;
+          content: '';
+          display: block;
+          height: 3px;
+          position: absolute;
+          top: -7px;
+          transition: all 0.2s linear;
+          -moz-transition: all 0.2s linear;
+          -webkit-transition: all 0.2s linear;
+          width: 24px;
+        }
+        &:after {
+          background: #fff;
+          bottom: -7px;
+          content: '';
+          display: block;
+          height: 3px;
+          position: absolute;
+          transition: all 0.2s linear;
+          -moz-transition: all 0.2s linear;
+          -webkit-transition: all 0.2s linear;
+          width: 24px;
+        }
+      }
+    }
+  }
+  h2 {
+    float: left;
+    a {
+      background: url(../images/logo-text.svg);
+      background-position: 85px center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      display: block;
+      font-size: 0;
+      height: 30px;
+      position: relative;
+      width: 190px;
+      @media all and (max-width: 767px) {
+        background-position: 60px center;
+        height: 20px;
+        width: 130px;
+      }
+      &:before {
+        content: url(../images/pencil.svg);
+        display: block;
+        height: 30px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        vertical-align: middle;
+        width: 75px;
+        @media all and (max-width: 767px) {
+          height: 20px;
+          width: 50px;
+        }
+      }
+      &:after {
+        content: url(../images/pencil-alt.svg);
+        display: block;
+        height: 30px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        vertical-align: middle;
+        width: 75px;
+        @media all and (max-width: 767px) {
+          height: 20px;
+          width: 50px;
+        }
+      }
+    }
+  }
+  nav {
+    float: right;
+    @media all and (max-width: 1023px) {
+      background: $slate;
+      box-sizing: border-box;
+      display: block;
+      float: none;
+      height: 100vh;
+      overflow: scroll;
+      padding: 10px 60px 100px 0;
+      position: fixed;
+      right: calc(-100vw - 60px);
+      text-align: left;
+      top: 0;
+      transition: right 0.2s linear;
+      -moz-transition: right 0.2s linear;
+      -webkit-transition: right 0.2s linear;
+      width: calc(60vw);
+      z-index: 99;
+    }
+    @media all and (max-width: 767px) {
+      width: calc(100vw);
+    }
+    a {
+      color: #fff;
+      display: inline-block;
+      font: 700 20px/30px $proxima;
+      margin: 0 0 0 30px;
+      @media all and (max-width: 1199px) {
+        margin-left: 20px;
+      }
+      @media all and (max-width: 1023px) {
+        display: block;
+        margin: 0;
+        padding: 10px 25px;
+      }
+      &:first-of-type {
+        margin: 0;
+      }
+      &.button {
+        background: #fff;
+        @include border-radius(5px);
+        color: $slate;
+        margin-bottom: -10px;
+        margin-left: 60px;
+        margin-top: -10px;
+        padding: 10px 25px;
+        @media all and (max-width: 1199px) {
+          margin-left: 30px;
+          padding: 10px 15px;
+        }
+        @media all and (max-width: 1023px) {
+          margin: 25px 25px 0 25px;
+          padding: 10px 25px;
+        }
+      }
+      &:hover {
+        color: $orange;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Content
+----------------------------------------------- */
+section {
+  position: relative;
+  &.hero {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    //min-height: 100vh;
+    text-align: center;
+    &:before {
+      background: rgba(92, 101, 105, 0.8);
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    article {
+      //@include vertical-align();
+      padding: 125px 0;
+      position: relative;
+      z-index: 10;
+    }
+  }
+  &:first-of-type {
+    padding-top: 60px;
+  }
+  article {
+    margin: 0 auto;
+    width: 1190px;
+    @media all and (max-width: 1199px) {
+      width: 90%;
+    }
+  }
+}
+
+/* Footer
+----------------------------------------------- */
+footer {
+  background: $slate;
+  padding: 50px 0;
+  div {
+    margin: 0 auto;
+    width: 1190px;
+    @media all and (max-width: 1199px) {
+      width: 90%;
+    }
+    h5 {
+      font: 700 20px/25px $proxima;
+      margin: 0 0 20px 0;
+    }
+    ul {
+      li {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        margin: 0 0 5px 0;
+      }
+    }
+    a {
+      color: #fff;
+    }
+  }
+}
