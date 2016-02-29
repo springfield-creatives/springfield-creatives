@@ -10,10 +10,12 @@ Springfield Creatives Styles
 
 $proxima: 'proxima-nova', Helvetica, Arial, Verdana, sans-serif;
 $helvetica: Helvetica, Arial, Verdana, sans-serif;
+$georgia: Georgia, "Times New Roman", Times, serif;
 $slate: #5C6569;
 $orange: #E7C144;
 $cream: #F2F1E4;
 $blue: #13344A;
+$red: #EA7750;
 $grey: #333333;
 
 @mixin background-gradient($start, $end) {
@@ -182,10 +184,11 @@ body {
     -webkit-text-size-adjust: none;
   }
   @media all and (max-width: 767px) {
-    padding: 0 0 40px 0;
+    padding-bottom: 40px;
   }
 }
 a {
+  color: $orange;
   text-decoration: none;
 	&:hover {
 	  text-decoration: underline;
@@ -198,13 +201,19 @@ header {
   @extend .clear;
   background: $slate;
   box-sizing: border-box;
+  left: 0;
   padding: 20px 5%;
   position: absolute;
+  top: 0;
   width: 100%;
   z-index: 100;
+  @media all and (max-width: 1023px) {
+    position: fixed;
+  }
   &.open {
     > span {
       @media all and (max-width: 1023px) {
+        position: fixed;
         span {
           background-color: transparent;
           &:before {
@@ -408,23 +417,27 @@ header {
 /* Content
 ----------------------------------------------- */
 section {
+  color: $slate;
   position: relative;
   &.hero {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
+    color: #fff;
     //min-height: 100vh;
     text-align: center;
-    &:before {
-      background: rgba(92, 101, 105, 0.8);
-      content: '';
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
+    &.overlay {
+      &:before {
+        background: rgba(92, 101, 105, 0.8);
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
     }
     article {
       //@include vertical-align();
@@ -433,14 +446,87 @@ section {
       z-index: 10;
     }
   }
+  &.alt {
+    background: $cream;
+    color: $blue;
+    article {
+      a {
+        color: $red;
+      }
+    }
+  }
+  &.narrow {
+    article {
+      padding: 25px 0;
+    }
+  }
   &:first-of-type {
-    padding-top: 60px;
+    padding-top: 70px;
+    @media all and (max-width: 1023px) {
+      padding-top: 60px;
+    }
   }
   article {
     margin: 0 auto;
+    padding: 75px 0;
     width: 1190px;
     @media all and (max-width: 1199px) {
       width: 90%;
+    }
+    h1,
+    h2 {
+      font-size: 56px;
+      line-height: 60px;
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 45px;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 0 0 24px 0;
+      &.clean {
+        margin: 0;
+      }
+      &.callout {
+        font-size: 20px;
+        font-family: $georgia;
+        font-style: italic;
+        line-height: 30px;
+      }
+    }
+    ol {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 0 0 24px 0;
+      li {
+        margin: 0 0 0 25px;
+      }
+    }
+    ul {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 0 0 24px 0;
+      li {
+        margin: 0 0 0 25px;
+      }
+    }
+    a {
+      &.button {
+        background: $orange;
+        color: #fff;
+        display: inline-block;
+        padding: 10px 30px;
+        &:hover {
+          background: $red;
+          text-decoration: none;
+        }
+      }
     }
   }
 }

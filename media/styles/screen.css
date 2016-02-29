@@ -864,11 +864,12 @@ body {
 }
 @media all and (max-width: 767px) {
   body {
-    padding: 0 0 40px 0;
+    padding-bottom: 40px;
   }
 }
 
 a {
+  color: #E7C144;
   text-decoration: none;
 }
 a:hover {
@@ -880,12 +881,22 @@ a:hover {
 header {
   background: #5C6569;
   box-sizing: border-box;
+  left: 0;
   padding: 20px 5%;
   position: absolute;
+  top: 0;
   width: 100%;
   z-index: 100;
 }
 @media all and (max-width: 1023px) {
+  header {
+    position: fixed;
+  }
+}
+@media all and (max-width: 1023px) {
+  header.open > span {
+    position: fixed;
+  }
   header.open > span span {
     background-color: transparent;
   }
@@ -1108,6 +1119,7 @@ header nav a:hover {
 /* Content
 ----------------------------------------------- */
 section {
+  color: #5C6569;
   position: relative;
 }
 section.hero {
@@ -1115,9 +1127,10 @@ section.hero {
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
+  color: #fff;
   text-align: center;
 }
-section.hero:before {
+section.hero.overlay:before {
   background: rgba(92, 101, 105, 0.8);
   content: '';
   display: block;
@@ -1132,17 +1145,86 @@ section.hero article {
   position: relative;
   z-index: 10;
 }
+section.alt {
+  background: #F2F1E4;
+  color: #13344A;
+}
+section.alt article a {
+  color: #EA7750;
+}
+section.narrow article {
+  padding: 25px 0;
+}
 section:first-of-type {
-  padding-top: 60px;
+  padding-top: 70px;
+}
+@media all and (max-width: 1023px) {
+  section:first-of-type {
+    padding-top: 60px;
+  }
 }
 section article {
   margin: 0 auto;
+  padding: 75px 0;
   width: 1190px;
 }
 @media all and (max-width: 1199px) {
   section article {
     width: 90%;
   }
+}
+section article h1,
+section article h2 {
+  font-size: 56px;
+  line-height: 60px;
+}
+section article h3 {
+  font-size: 40px;
+  line-height: 45px;
+}
+section article h3 {
+  font-size: 24px;
+  line-height: 30px;
+}
+section article p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+section article p.clean {
+  margin: 0;
+}
+section article p.callout {
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  line-height: 30px;
+}
+section article ol {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+section article ol li {
+  margin: 0 0 0 25px;
+}
+section article ul {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+section article ul li {
+  margin: 0 0 0 25px;
+}
+section article a.button {
+  background: #E7C144;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+}
+section article a.button:hover {
+  background: #EA7750;
+  text-decoration: none;
 }
 
 /* Footer
