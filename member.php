@@ -24,7 +24,7 @@
       <div class="unit-1-2 unit-1-1-md margin">
         <p class="margin-double"><img src="media/images/placeholder.png" /></p>
         <div class="grid">
-          <div class="unit-1-2 unit-1-1-sm">
+          <div class="unit-1-2 unit-1-1-lg">
             <h3>Skillset</h3>
             <ul>
               <li>Photography</li>
@@ -40,7 +40,7 @@
               <li>Food styling</li>
             </ul>
           </div>
-          <div class="unit-1-2 unit-1-1-sm">
+          <div class="unit-1-2 unit-1-1-lg">
             <h3>Availability</h3>
             <ul>
               <li>Currently Employed</li>
