@@ -311,6 +311,9 @@ img {
   text-rendering: optimizespeed;
   /* 4 */
 }
+.grid.small {
+  margin: 0 -10px;
+}
 
 /**
  * Opera hack
@@ -341,7 +344,7 @@ img {
  * 4. Keeps content correctly aligned with the grid direction.
  * 5. Reset text defaults.
  */
-.grid-cell, [class*="unit-"] {
+[class*="unit-"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -360,6 +363,11 @@ img {
   /* 5 */
   text-rendering: auto;
   /* 5 */
+}
+
+.grid.small [class*="unit-"] {
+  padding: 0 10px;
+  /* 2 */
 }
 
 /* Grid modifiers
@@ -432,7 +440,7 @@ Springfield Creatives Styles
  * Primarily for, but not limited to, use with `.grid__cell` components.
  * Intentional redundancy build into each set of unit classes.
  */
-.unit-1-2, .unit-2-4, .unit-3-6, .unit-6-12 {
+.unit-1-2, .unit-2-4, .unit-3-6, .unit-4-8, .unit-5-10, .unit-6-12 {
   width: 50%;
 }
 
@@ -444,27 +452,27 @@ Springfield Creatives Styles
   width: 66.66667%;
 }
 
-.unit-1-4, .unit-3-12 {
+.unit-1-4, .unit-2-8, .unit-3-12 {
   width: 25%;
 }
 
-.unit-3-4, .unit-9-12 {
+.unit-3-4, .unit-6-8, .unit-9-12 {
   width: 75%;
 }
 
-.unit-1-5 {
+.unit-1-5, .unit-2-10 {
   width: 20%;
 }
 
-.unit-2-5 {
+.unit-2-5, .unit-4-10 {
   width: 40%;
 }
 
-.unit-3-5 {
+.unit-3-5, .unit-6-10 {
   width: 60%;
 }
 
-.unit-4-5 {
+.unit-4-5, .unit-8-10 {
   width: 80%;
 }
 
@@ -474,6 +482,38 @@ Springfield Creatives Styles
 
 .unit-5-6, .unit-10-12 {
   width: 83.33333%;
+}
+
+.unit-1-8 {
+  width: 12.5%;
+}
+
+.unit-3-8 {
+  width: 37.5%;
+}
+
+.unit-5-8 {
+  width: 62.5%;
+}
+
+.unit-7-8 {
+  width: 87.5%;
+}
+
+.unit-1-10 {
+  width: 10%;
+}
+
+.unit-3-10 {
+  width: 30%;
+}
+
+.unit-7-10 {
+  width: 70%;
+}
+
+.unit-9-10 {
+  width: 90%;
 }
 
 .unit-1-12 {
@@ -508,7 +548,7 @@ Springfield Creatives Styles
     width: 0%;
   }
 
-  .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-6-12-lg {
+  .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-4-8-lg, .unit-5-10-lg, .unit-6-12-lg {
     width: 50%;
   }
 
@@ -520,27 +560,27 @@ Springfield Creatives Styles
     width: 66.66667%;
   }
 
-  .unit-1-4-lg, .unit-3-12-lg {
+  .unit-1-4-lg, .unit-2-8-lg, .unit-3-12-lg {
     width: 25%;
   }
 
-  .unit-3-4-lg, .unit-9-12-lg {
+  .unit-3-4-lg, .unit-6-8-lg, .unit-9-12-lg {
     width: 75%;
   }
 
-  .unit-1-5-lg {
+  .unit-1-5-lg, .unit-2-10-lg {
     width: 20%;
   }
 
-  .unit-2-5-lg {
+  .unit-2-5-lg, .unit-4-10-lg {
     width: 40%;
   }
 
-  .unit-3-5-lg {
+  .unit-3-5-lg, .unit-6-10-lg {
     width: 60%;
   }
 
-  .unit-4-5-lg {
+  .unit-4-5-lg, .unit-8-10-lg {
     width: 80%;
   }
 
@@ -550,6 +590,38 @@ Springfield Creatives Styles
 
   .unit-5-6-lg, .unit-10-12-lg {
     width: 83.33333%;
+  }
+
+  .unit-1-8-lg {
+    width: 12.5%;
+  }
+
+  .unit-3-8-lg {
+    width: 37.5%;
+  }
+
+  .unit-5-8-lg {
+    width: 62.5%;
+  }
+
+  .unit-7-8-lg {
+    width: 87.5%;
+  }
+
+  .unit-1-10-lg {
+    width: 10%;
+  }
+
+  .unit-3-10-lg {
+    width: 30%;
+  }
+
+  .unit-7-10-lg {
+    width: 70%;
+  }
+
+  .unit-9-10-lg {
+    width: 90%;
   }
 
   .unit-1-12-lg {
@@ -584,7 +656,7 @@ Springfield Creatives Styles
     width: 0%;
   }
 
-  .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-6-12-md {
+  .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-4-8-md, .unit-5-10-md, .unit-6-12-md {
     width: 50%;
   }
 
@@ -596,27 +668,27 @@ Springfield Creatives Styles
     width: 66.66667%;
   }
 
-  .unit-1-4-md, .unit-3-12-md {
+  .unit-1-4-md, .unit-2-8-md, .unit-3-12-md {
     width: 25%;
   }
 
-  .unit-3-4-md, .unit-9-12-md {
+  .unit-3-4-md, .unit-6-8-md, .unit-9-12-md {
     width: 75%;
   }
 
-  .unit-1-5-md {
+  .unit-1-5-md, .unit-2-10-md {
     width: 20%;
   }
 
-  .unit-2-5-md {
+  .unit-2-5-md, .unit-4-10-md {
     width: 40%;
   }
 
-  .unit-3-5-md {
+  .unit-3-5-md, .unit-6-10-md {
     width: 60%;
   }
 
-  .unit-4-5-md {
+  .unit-4-5-md, .unit-8-10-md {
     width: 80%;
   }
 
@@ -626,6 +698,38 @@ Springfield Creatives Styles
 
   .unit-5-6-md, .unit-10-12-md {
     width: 83.33333%;
+  }
+
+  .unit-1-8-md {
+    width: 12.5%;
+  }
+
+  .unit-3-8-md {
+    width: 37.5%;
+  }
+
+  .unit-5-8-md {
+    width: 62.5%;
+  }
+
+  .unit-7-8-md {
+    width: 87.5%;
+  }
+
+  .unit-1-10-md {
+    width: 10%;
+  }
+
+  .unit-3-10-md {
+    width: 30%;
+  }
+
+  .unit-7-10-md {
+    width: 70%;
+  }
+
+  .unit-9-10-md {
+    width: 90%;
   }
 
   .unit-1-12-md {
@@ -660,7 +764,7 @@ Springfield Creatives Styles
     width: 0%;
   }
 
-  .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-6-12-sm {
+  .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-4-8-sm, .unit-5-10-sm, .unit-6-12-sm {
     width: 50%;
   }
 
@@ -672,27 +776,27 @@ Springfield Creatives Styles
     width: 66.66667%;
   }
 
-  .unit-1-4-sm, .unit-3-12-sm {
+  .unit-1-4-sm, .unit-2-8-sm, .unit-3-12-sm {
     width: 25%;
   }
 
-  .unit-3-4-sm, .unit-9-12-sm {
+  .unit-3-4-sm, .unit-6-8-sm, .unit-9-12-sm {
     width: 75%;
   }
 
-  .unit-1-5-sm {
+  .unit-1-5-sm, .unit-2-10-sm {
     width: 20%;
   }
 
-  .unit-2-5-sm {
+  .unit-2-5-sm, .unit-4-10-sm {
     width: 40%;
   }
 
-  .unit-3-5-sm {
+  .unit-3-5-sm, .unit-6-10-sm {
     width: 60%;
   }
 
-  .unit-4-5-sm {
+  .unit-4-5-sm, .unit-8-10-sm {
     width: 80%;
   }
 
@@ -702,6 +806,38 @@ Springfield Creatives Styles
 
   .unit-5-6-sm, .unit-10-12-sm {
     width: 83.33333%;
+  }
+
+  .unit-1-8-sm {
+    width: 12.5%;
+  }
+
+  .unit-3-8-sm {
+    width: 37.5%;
+  }
+
+  .unit-5-8-sm {
+    width: 62.5%;
+  }
+
+  .unit-7-8-sm {
+    width: 87.5%;
+  }
+
+  .unit-1-10-sm {
+    width: 10%;
+  }
+
+  .unit-3-10-sm {
+    width: 30%;
+  }
+
+  .unit-7-10-sm {
+    width: 70%;
+  }
+
+  .unit-9-10-sm {
+    width: 90%;
   }
 
   .unit-1-12-sm {
@@ -842,6 +978,9 @@ Springfield Creatives Styles
   direction: ltr;
 }
 
+img {
+  max-width: 100%;
+}
 img.full {
   width: 100%;
 }
@@ -862,18 +1001,14 @@ body {
     -webkit-text-size-adjust: none;
   }
 }
-@media all and (max-width: 767px) {
-  body {
-    padding-bottom: 40px;
-  }
-}
 
 a {
   color: #E7C144;
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: #EA7750;
+  text-decoration: none;
 }
 
 /* Header
@@ -882,18 +1017,23 @@ header {
   background: #5C6569;
   box-sizing: border-box;
   left: 0;
-  padding: 20px 5%;
+  padding: 50px 5% 20px 5%;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 100;
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1199px) {
+  header {
+    padding: 20px 5%;
+  }
+}
+@media all and (max-width: 767px) {
   header {
     position: fixed;
   }
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1199px) {
   header.open > span {
     position: fixed;
   }
@@ -913,7 +1053,7 @@ header {
     -webkit-transform: rotate(45deg);
   }
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1199px) {
   header.open nav {
     right: 0;
   }
@@ -937,18 +1077,25 @@ header.alt h2 a:after {
 header > span {
   display: none;
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1199px) {
   header > span {
     cursor: pointer;
     display: block;
     height: 30px;
     position: absolute;
     right: 5%;
-    top: 15px;
+    top: 20px;
     width: 24px;
     z-index: 100;
     -webkit-tap-highlight-color: transparent;
   }
+}
+@media all and (max-width: 1199px) and (max-width: 767px) {
+  header > span {
+    top: 15px;
+  }
+}
+@media all and (max-width: 1199px) {
   header > span span {
     background: #fff;
     display: block;
@@ -1008,7 +1155,7 @@ header h2 a {
   }
 }
 header h2 a:before {
-  content: url(../images/pencil.svg);
+  content: url(../images/pencil-alt.svg);
   display: block;
   height: 30px;
   left: 0;
@@ -1042,7 +1189,7 @@ header h2 a:after {
 header nav {
   float: right;
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 1199px) {
   header nav {
     background: #5C6569;
     box-sizing: border-box;
@@ -1050,7 +1197,7 @@ header nav {
     float: none;
     height: 100vh;
     overflow: scroll;
-    padding: 10px 60px 100px 0;
+    padding: 20px 60px 100px 0;
     position: fixed;
     right: calc(-100vw - 60px);
     text-align: left;
@@ -1067,53 +1214,140 @@ header nav {
     width: calc(100vw);
   }
 }
-header nav a {
-  color: #fff;
-  display: inline-block;
-  font: 700 20px/30px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
-  margin: 0 0 0 30px;
+header nav ul.primary {
+  font-size: 0;
+  margin: 0 -15px 0 0;
 }
 @media all and (max-width: 1199px) {
-  header nav a {
-    margin-left: 20px;
+  header nav ul.primary {
+    margin: 0;
   }
 }
-@media all and (max-width: 1023px) {
-  header nav a {
+header nav ul.primary > li {
+  display: inline-block;
+  margin: 0 0 0 5px;
+  position: relative;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li {
     display: block;
     margin: 0;
-    padding: 10px 25px;
   }
 }
-header nav a:first-of-type {
-  margin: 0;
+header nav ul.primary > li:hover > a {
+  background: #5C6569;
+  color: #E7C144;
 }
-header nav a.button {
-  background: #fff;
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li:hover > a {
+    color: #fff;
+  }
+}
+header nav ul.primary > li:hover ul {
+  display: block;
+}
+header nav ul.primary > li > a {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  color: #5C6569;
-  margin-bottom: -10px;
-  margin-left: 60px;
-  margin-top: -10px;
-  padding: 10px 25px;
+  color: #fff;
+  display: block;
+  font: 700 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  padding: 10px 15px;
 }
 @media all and (max-width: 1199px) {
-  header nav a.button {
-    margin-left: 30px;
-    padding: 10px 15px;
+  header nav ul.primary > li > a {
+    padding: 15px 25px;
   }
 }
-@media all and (max-width: 1023px) {
-  header nav a.button {
-    margin: 25px 25px 0 25px;
-    padding: 10px 25px;
+header nav ul.primary > li > a:first-of-type {
+  margin: 0;
+}
+header nav ul.primary > li > a.button {
+  background: #fff;
+  color: #5C6569;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li > a.button {
+    display: inline-block;
+    margin: 0 0 0 -10px;
+    padding-left: 35px;
   }
 }
-header nav a:hover {
+header nav ul.primary > li > a.button:hover {
+  background: #fff;
+  color: #E7C144;
+}
+header nav ul.primary > li > a:hover {
+  background: #5C6569;
   color: #E7C144;
   text-decoration: none;
+}
+header nav ul.primary > li > a.current {
+  color: #E7C144;
+}
+header nav ul.primary ul {
+  background: #5C6569;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: none;
+  left: 0;
+  min-width: calc(100% + 40px);
+  padding: 20px 20px 10px 20px;
+  position: absolute;
+  top: calc(100% - 10px);
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary ul {
+    display: block;
+    padding: 0;
+    position: static;
+  }
+}
+header nav ul.primary ul li {
+  display: block;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary ul li {
+    padding: 0 25px;
+  }
+}
+header nav ul.primary ul li a {
+  color: #fff;
+  font: 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+header nav ul.primary ul li a:hover {
+  color: #E7C144;
+  text-decoration: none;
+}
+header nav ul.primary ul li a.current {
+  color: #E7C144;
+}
+header nav ul.secondary {
+  position: absolute;
+  right: 5%;
+  top: 10px;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.secondary {
+    margin: 25px 0 0 25px;
+    position: static;
+  }
+}
+header nav ul.secondary li {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 0 15px;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.secondary li {
+    display: block;
+    margin: 0 0 10px 0;
+  }
 }
 
 /* Content
@@ -1130,7 +1364,7 @@ section.hero {
   color: #fff;
   text-align: center;
 }
-section.hero.overlay:before {
+section.hero:before {
   background: rgba(92, 101, 105, 0.8);
   content: '';
   display: block;
@@ -1145,20 +1379,71 @@ section.hero article {
   position: relative;
   z-index: 10;
 }
+@media all and (max-width: 767px) {
+  section.hero article {
+    padding: 75px 0;
+  }
+}
+section.hero article h1,
+section.hero article h2 {
+  color: #fff;
+  font-size: 70px;
+  line-height: 80px;
+  text-transform: none;
+}
+@media all and (max-width: 767px) {
+  section.hero article h1,
+  section.hero article h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+section.hero article p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  font-style: italic;
+  line-height: 40px;
+}
+@media all and (max-width: 767px) {
+  section.hero article p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+section.hero article p a.button {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  padding: 15px 30px;
+}
+@media all and (max-width: 767px) {
+  section.hero article p a.button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
 section.alt {
   background: #F2F1E4;
   color: #13344A;
 }
-section.alt article a {
-  color: #EA7750;
+section.inverse {
+  background: #5C6569;
+  color: #fff;
 }
-section.narrow article {
+section.inverse h1,
+section.inverse h2,
+section.inverse h3,
+section.inverse h4,
+section.inverse p {
+  color: #fff;
+}
+section.thin article {
   padding: 25px 0;
 }
 section:first-of-type {
-  padding-top: 70px;
+  padding-top: 100px;
 }
-@media all and (max-width: 1023px) {
+@media all and (max-width: 767px) {
   section:first-of-type {
     padding-top: 60px;
   }
@@ -1173,32 +1458,87 @@ section article {
     width: 90%;
   }
 }
+@media all and (max-width: 767px) {
+  section article {
+    padding: 40px 0;
+  }
+}
+section article h1 {
+  color: #000;
+}
 section article h1,
 section article h2 {
-  font-size: 56px;
-  line-height: 60px;
+  font: 700 60px/70px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+@media all and (max-width: 767px) {
+  section article h1,
+  section article h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
 }
 section article h3 {
-  font-size: 40px;
-  line-height: 45px;
+  color: #000;
+  font: 700 40px/45px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
 }
-section article h3 {
-  font-size: 24px;
-  line-height: 30px;
+@media all and (max-width: 767px) {
+  section article h3 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+section article h3.clean {
+  margin: 0;
+}
+section article h4 {
+  color: #000;
+  font: 700 24px/30px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+@media all and (max-width: 767px) {
+  section article h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+section article h4 i.fa {
+  color: #E7C144;
 }
 section article p {
   font-size: 18px;
   line-height: 24px;
   margin: 0 0 24px 0;
 }
+@media all and (max-width: 767px) {
+  section article p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+}
 section article p.clean {
   margin: 0;
 }
 section article p.callout {
-  font-size: 20px;
+  font-size: 25px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  line-height: 30px;
+  line-height: 35px;
+}
+@media all and (max-width: 767px) {
+  section article p.callout {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+section article p i {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+section article img.rounded {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 section article ol {
   font-size: 18px;
@@ -1213,6 +1553,23 @@ section article ul {
   line-height: 24px;
   margin: 0 0 24px 0;
 }
+section article ul.social li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+section article ul.social li a {
+  background: #000;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  display: block;
+  font-size: 28px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
 section article ul li {
   margin: 0 0 0 25px;
 }
@@ -1220,9 +1577,131 @@ section article a.button {
   background: #E7C144;
   color: #fff;
   display: inline-block;
-  padding: 10px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+@media all and (max-width: 767px) {
+  section article a.button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
 }
 section article a.button:hover {
+  background: #EA7750;
+  text-decoration: none;
+}
+section article form label {
+  display: block;
+  margin: 0 0 30px 0;
+}
+section article form label input {
+  background: #fff;
+  border: none;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  section article form label input {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+section article form div.checkbox {
+  margin: 0 0 10px 0;
+}
+section article form div.checkbox input[type=checkbox] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+section article form div.checkbox input[type=checkbox] + label {
+  background-image: url("../images/checkboxes.png");
+  cursor: pointer;
+  display: inline-block;
+  font: normal 16px/24px Helvetica, Arial, Verdana, sans-serif;
+  margin: 5px 40px 5px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  vertical-align: middle;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  section article form div.checkbox input[type=checkbox] + label {
+    background-image: url("../images/checkboxes@2x.png");
+    background-size: 16px 32px;
+  }
+}
+section article form div.checkbox input[type=checkbox] + label:before {
+  background: #fff;
+  content: '';
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: -1px;
+  width: 24px;
+}
+section article form div.checkbox input[type=checkbox]:checked + label:after {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  font-size: 20px;
+  height: 24px;
+  left: 0;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 24px;
+}
+section article form select {
+  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 30px 0;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  section article form select {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+section article form button {
+  background: #E7C144;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+section article form button:hover {
   background: #EA7750;
   text-decoration: none;
 }
@@ -1233,25 +1712,55 @@ footer {
   background: #5C6569;
   padding: 50px 0;
 }
-footer div {
+footer > div {
   margin: 0 auto;
   width: 1190px;
 }
 @media all and (max-width: 1199px) {
-  footer div {
+  footer > div {
     width: 90%;
   }
 }
-footer div h5 {
+footer > div h5 {
   font: 700 20px/25px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0 0 10px 0;
+}
+footer > div p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
   margin: 0 0 20px 0;
 }
-footer div ul li {
+footer > div p.callout {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+footer > div ul {
+  margin: 0 0 20px 0;
+}
+footer > div ul.social li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+footer > div ul.social li a {
+  background: #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #5C6569;
+  display: block;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+footer > div ul li {
   display: block;
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 5px 0;
 }
-footer div a {
+footer > div a {
   color: #fff;
 }

@@ -12,7 +12,7 @@ $proxima: 'proxima-nova', Helvetica, Arial, Verdana, sans-serif;
 $helvetica: Helvetica, Arial, Verdana, sans-serif;
 $georgia: Georgia, "Times New Roman", Times, serif;
 $slate: #5C6569;
-$orange: #E7C144;
+$gold: #E7C144;
 $cream: #F2F1E4;
 $blue: #13344A;
 $red: #EA7750;
@@ -61,15 +61,15 @@ $grey: #333333;
 
 /* Grid and Special Classes
 ----------------------------------------------- */
-@include griddle-build(2 3 4 5 6 12);
+@include griddle-build(2 3 4 5 6 8 10 12);
 @media all and (max-width: 1199px) {
-  @include griddle-build(1 2 3 4 5 6 12, '-lg');
+  @include griddle-build(1 2 3 4 5 6 8 10 12, '-lg');
 }
 @media all and (max-width: 1023px) {
-  @include griddle-build(1 2 3 4 5 6 12, '-md');
+  @include griddle-build(1 2 3 4 5 6 8 10 12, '-md');
 }
 @media all and (max-width: 767px) {
-  @include griddle-build(1 2 3 4 5 6 12, '-sm');
+  @include griddle-build(1 2 3 4 5 6 8 10 12, '-sm');
 }
 .hidden {
   display: none;
@@ -166,6 +166,7 @@ $grey: #333333;
   }
 }
 img {
+  max-width: 100%;
   &.full {
     width: 100%;
   }
@@ -183,15 +184,13 @@ body {
   @media all and (max-width: 1024px) {
     -webkit-text-size-adjust: none;
   }
-  @media all and (max-width: 767px) {
-    padding-bottom: 40px;
-  }
 }
 a {
-  color: $orange;
+  color: $gold;
   text-decoration: none;
 	&:hover {
-	  text-decoration: underline;
+  	color: $red;
+	  text-decoration: none;
   }
 }
 
@@ -202,17 +201,20 @@ header {
   background: $slate;
   box-sizing: border-box;
   left: 0;
-  padding: 20px 5%;
+  padding: 50px 5% 20px 5%;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 100;
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 1199px) {
+    padding: 20px 5%;
+  }
+  @media all and (max-width: 767px) {
     position: fixed;
   }
   &.open {
     > span {
-      @media all and (max-width: 1023px) {
+      @media all and (max-width: 1199px) {
         position: fixed;
         span {
           background-color: transparent;
@@ -232,7 +234,7 @@ header {
       }
     }
     nav {
-      @media all and (max-width: 1023px) {
+      @media all and (max-width: 1199px) {
         right: 0;
       }
     }
@@ -255,16 +257,19 @@ header {
   }
   > span {
     display: none;
-    @media all and (max-width: 1023px) {
+    @media all and (max-width: 1199px) {
       cursor: pointer;
       display: block;
       height: 30px;
       position: absolute;
       right: 5%;
-      top: 15px;
+      top: 20px;
       width: 24px;
       z-index: 100;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      @media all and (max-width: 767px) {
+        top: 15px;
+      }
       span {
         background: #fff;
         display: block;
@@ -321,7 +326,7 @@ header {
         width: 130px;
       }
       &:before {
-        content: url(../images/pencil.svg);
+        content: url(../images/pencil-alt.svg);
         display: block;
         height: 30px;
         left: 0;
@@ -352,14 +357,14 @@ header {
   }
   nav {
     float: right;
-    @media all and (max-width: 1023px) {
+    @media all and (max-width: 1199px) {
       background: $slate;
       box-sizing: border-box;
       display: block;
       float: none;
       height: 100vh;
       overflow: scroll;
-      padding: 10px 60px 100px 0;
+      padding: 20px 60px 100px 0;
       position: fixed;
       right: calc(-100vw - 60px);
       text-align: left;
@@ -373,42 +378,121 @@ header {
     @media all and (max-width: 767px) {
       width: calc(100vw);
     }
-    a {
-      color: #fff;
-      display: inline-block;
-      font: 700 20px/30px $proxima;
-      margin: 0 0 0 30px;
-      @media all and (max-width: 1199px) {
-        margin-left: 20px;
-      }
-      @media all and (max-width: 1023px) {
-        display: block;
-        margin: 0;
-        padding: 10px 25px;
-      }
-      &:first-of-type {
-        margin: 0;
-      }
-      &.button {
-        background: #fff;
-        @include border-radius(5px);
-        color: $slate;
-        margin-bottom: -10px;
-        margin-left: 60px;
-        margin-top: -10px;
-        padding: 10px 25px;
+    ul {
+      &.primary {
+        font-size: 0;
+        margin: 0 -15px 0 0;
         @media all and (max-width: 1199px) {
-          margin-left: 30px;
-          padding: 10px 15px;
+          margin: 0;
         }
-        @media all and (max-width: 1023px) {
-          margin: 25px 25px 0 25px;
-          padding: 10px 25px;
+        > li {
+          display: inline-block;
+          margin: 0 0 0 5px;
+          position: relative;
+          @media all and (max-width: 1199px) {
+            display: block;
+            margin: 0;
+          }
+          &:hover {
+            > a {
+              background: $slate;
+              color: $gold;
+              @media all and (max-width: 1199px) {
+                color: #fff;
+              }
+            }
+            ul {
+              display: block;
+            }
+          }
+          > a {
+            @include border-radius(5px);
+            color: #fff;
+            display: block;
+            font: 700 18px/24px $proxima;
+            padding: 10px 15px;
+            @media all and (max-width: 1199px) {
+              padding: 15px 25px;
+            }
+            &:first-of-type {
+              margin: 0;
+            }
+            &.button {
+              background: #fff;
+              color: $slate;
+              @media all and (max-width: 1199px) {
+                display: inline-block;
+                margin: 0 0 0 -10px;
+                padding-left: 35px;
+              }
+              &:hover {
+                background: #fff;
+                color: $gold;
+              }
+            }
+            &:hover {
+              background: $slate;
+              color: $gold;
+              text-decoration: none;
+            }
+            &.current {
+              color: $gold;
+            }
+          }
+        }
+        ul {
+          background: $slate;
+          @include border-radius(5px);
+          display: none;
+          left: 0;
+          min-width: calc(100% + 40px);
+          padding: 20px 20px 10px 20px;
+          position: absolute;
+          top: calc(100% - 10px);
+          @media all and (max-width: 1199px) {
+            display: block;
+            padding: 0;
+            position: static;
+          }
+          li {
+            display: block;
+            margin: 0 0 10px 0;
+            white-space: nowrap;
+            @media all and (max-width: 1199px) {
+              padding: 0 25px;
+            }
+            a {
+              color: #fff;
+              font: 18px/24px $proxima;
+              &:hover {
+                color: $gold;
+                text-decoration: none;
+              }
+              &.current {
+                color: $gold;
+              }
+            }
+          }
         }
       }
-      &:hover {
-        color: $orange;
-        text-decoration: none;
+      &.secondary {
+        position: absolute;
+        right: 5%;
+        top: 10px;
+        @media all and (max-width: 1199px) {
+          margin: 25px 0 0 25px;
+          position: static;
+        }
+        li {
+          display: inline-block;
+          font-size: 14px;
+          line-height: 20px;
+          margin: 0 0 0 15px;
+          @media all and (max-width: 1199px) {
+            display: block;
+            margin: 0 0 10px 0;
+          }
+        }
       }
     }
   }
@@ -425,44 +509,80 @@ section {
     background-size: cover;
     box-sizing: border-box;
     color: #fff;
-    //min-height: 100vh;
     text-align: center;
-    &.overlay {
-      &:before {
-        background: rgba(92, 101, 105, 0.8);
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
+    &:before {
+      background: rgba(92, 101, 105, 0.8);
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
     article {
-      //@include vertical-align();
       padding: 125px 0;
+      @media all and (max-width: 767px) {
+        padding: 75px 0;
+      }
       position: relative;
       z-index: 10;
+      h1,
+      h2 {
+        color: #fff;
+        font-size: 70px;
+        line-height: 80px;
+        text-transform: none;
+        @media all and (max-width: 767px) {
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+      p {
+        font-family: $georgia;
+        font-size: 30px;
+        font-style: italic;
+        line-height: 40px;
+        @media all and (max-width: 767px) {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        a.button {
+          font-family: $helvetica;
+          font-size: 20px;
+          font-style: normal;
+          padding: 15px 30px;
+          @media all and (max-width: 767px) {
+            font-size: 18px;
+            padding: 15px 25px;
+          }
+        }
+      }
     }
   }
   &.alt {
     background: $cream;
     color: $blue;
-    article {
-      a {
-        color: $red;
-      }
+  }
+  &.inverse {
+    background: $slate;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      color: #fff;
     }
   }
-  &.narrow {
+  &.thin {
     article {
       padding: 25px 0;
     }
   }
   &:first-of-type {
-    padding-top: 70px;
-    @media all and (max-width: 1023px) {
+    padding-top: 100px;
+    @media all and (max-width: 767px) {
       padding-top: 60px;
     }
   }
@@ -473,31 +593,73 @@ section {
     @media all and (max-width: 1199px) {
       width: 90%;
     }
+    @media all and (max-width: 767px) {
+      padding: 40px 0;
+    }
+    h1 {
+      color: #000;
+    }
     h1,
     h2 {
-      font-size: 56px;
-      line-height: 60px;
+      font: 700 60px/70px $proxima;
+      @media all and (max-width: 767px) {
+        font-size: 40px;
+        line-height: 50px;
+      }
     }
     h3 {
-      font-size: 40px;
-      line-height: 45px;
+      color: #000;
+      font: 700 40px/45px $proxima;
+      margin: 0 0 20px 0;
+      text-transform: uppercase;
+      @media all and (max-width: 767px) {
+        font-size: 30px;
+        line-height: 35px;
+      }
+      &.clean {
+        margin: 0;
+      }
     }
-    h3 {
-      font-size: 24px;
-      line-height: 30px;
+    h4 {
+      color: #000;
+      font: 700 24px/30px $proxima;
+      @media all and (max-width: 767px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      i.fa {
+        color: $gold;
+      }
     }
     p {
       font-size: 18px;
       line-height: 24px;
       margin: 0 0 24px 0;
+      @media all and (max-width: 767px) {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 20px;
+      }
       &.clean {
         margin: 0;
       }
       &.callout {
-        font-size: 20px;
+        font-size: 25px;
         font-family: $georgia;
         font-style: italic;
-        line-height: 30px;
+        line-height: 35px;
+        @media all and (max-width: 767px) {
+          font-size: 20px;
+          line-height: 26px;
+        }
+      }
+      i {
+        font-family: $georgia;
+      }
+    }
+    img {
+      &.rounded {
+        @include border-radius(50%);
       }
     }
     ol {
@@ -512,16 +674,145 @@ section {
       font-size: 18px;
       line-height: 24px;
       margin: 0 0 24px 0;
+      &.social {
+        li {
+          display: inline-block;
+          margin: 0 10px 0 0;
+          a {
+            background: #000;
+            @include border-radius(50%);
+            color: #fff;
+            display: block;
+            font-size: 28px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            width: 50px;
+          }
+        }
+      }
       li {
         margin: 0 0 0 25px;
       }
     }
     a {
       &.button {
-        background: $orange;
+        background: $gold;
         color: #fff;
         display: inline-block;
-        padding: 10px 30px;
+        font-size: 22px;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        padding: 20px 50px;
+        text-transform: uppercase;
+        @media all and (max-width: 767px) {
+          font-size: 18px;
+          padding: 15px 25px;
+        }
+        &:hover {
+          background: $red;
+          text-decoration: none;
+        }
+      }
+    }
+    form {
+      label {
+        display: block;
+        margin: 0 0 30px 0;
+        input {
+          background: #fff;
+          border: none;
+          box-sizing: border-box;
+          color: #000;
+          display: block;
+          font-size: 24px;
+          line-height: 30px;
+          padding: 15px 20px;
+          width: 100%;
+          @media all and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 24px;
+            padding: 10px 20px;
+          }
+        }
+      }
+      div.checkbox {
+        margin: 0 0 10px 0;
+        input[type=checkbox] {
+          border: 0;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          overflow: hidden;
+          margin: -1px;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+        input[type=checkbox] + label {
+          @include background-image-retina('../images/checkboxes', 'png', 16px, 32px);
+          cursor: pointer;
+          display: inline-block;
+          font: normal 16px/24px $helvetica;
+          margin: 5px 40px 5px 0;
+          padding: 0 0 0 34px;
+          position: relative;
+          vertical-align: middle;
+          &:before {
+            background: #fff;
+            content: '';
+            height: 24px;
+            left: 0;
+            position: absolute;
+            top: -1px;
+            width: 24px;
+          }
+        }
+        input[type=checkbox]:checked + label {
+          &:after{
+            content: '\f00c';
+            font-family: "FontAwesome";
+            font-size: 20px;
+            height: 24px;
+            left: 0;
+            line-height: 24px;
+            position: absolute;
+            text-align: center;
+            top: -1px;
+            width: 24px;
+          }
+        }
+      }
+      select {
+        appearance: button;
+        -moz-appearance: button;
+        -webkit-appearance: button;
+        background: #fff;
+        border: none;
+        @include border-radius(0);
+        box-sizing: border-box;
+        color: #000;
+        display: block;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 0 0 30px 0;
+        padding: 15px 20px;
+        width: 100%;
+        @media all and (max-width: 767px) {
+          font-size: 18px;
+          line-height: 24px;
+          padding: 10px 20px;
+        }
+      }
+      button {
+        background: $gold;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 20px 50px;
+        text-transform: uppercase;
         &:hover {
           background: $red;
           text-decoration: none;
@@ -536,7 +827,7 @@ section {
 footer {
   background: $slate;
   padding: 50px 0;
-  div {
+  > div {
     margin: 0 auto;
     width: 1190px;
     @media all and (max-width: 1199px) {
@@ -544,9 +835,37 @@ footer {
     }
     h5 {
       font: 700 20px/25px $proxima;
+      margin: 0 0 10px 0;
+    }
+    p {
+      color: #fff;
+      font-size: 14px;
+      line-height: 20px;
       margin: 0 0 20px 0;
+      &.callout {
+        font-family: $georgia;
+        font-style: italic;
+      }
     }
     ul {
+      margin: 0 0 20px 0;
+      &.social {
+        li {
+          display: inline-block;
+          margin: 0 10px 0 0;
+          a {
+            background: #fff;
+            @include border-radius(50%);
+            color: $slate;
+            display: block;
+            font-size: 24px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            width: 40px;
+          }
+        }
+      }
       li {
         display: block;
         font-size: 16px;

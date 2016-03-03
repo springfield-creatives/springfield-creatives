@@ -27,12 +27,40 @@
       <div>
         <h2><a href="">Springfield Creatives</a></h2>
         <nav>
-          <a<?php if($subpage == 'Automation') echo ' class="current"'; ?> href="">About Us</a>             
-          <a<?php if($subpage == 'Automation') echo ' class="current"'; ?> href="">Directory</a>           
-          <a<?php if($subpage == 'Automation') echo ' class="current"'; ?> href="">Jobs Board</a>            
-          <a<?php if($subpage == 'Automation') echo ' class="current"'; ?> href="">Project Board</a>
-          <a class="button<?php if($subpage == 'Automation') echo ' current'; ?>" href="">Sign Up</a>
-          <a<?php if($subpage == 'Automation') echo ' class="current"'; ?> href="">Log In</a>
+          <!-- Append "current" class to links for active state -->
+          <ul class="primary">
+            <li>
+              <a href="">About Us</a>
+              <ul>
+                <li><a href="">Events</a></li>
+                <li><a href="">Board</a></li>
+                <li><a href="">Committees</a></li>
+                <li><a href="">Handbook</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+            </li>          
+            <li>
+              <a href="">Directory</a>
+              <ul>
+                <li><a href="">Business Directory</a></li>
+                <li><a href="">Members Directory</a></li>
+              </ul>
+            </li>       
+            <li>
+              <a href="">Jobs Board</a>
+              <ul>
+                <li><a href="">Post A Job</a></li>
+              </ul>
+            </li>         
+            <li><a href="">Membership</a></li>
+            <li><a href="">Sponsorship</a></li>
+            <li><a class="button" href="">Become A Member</a></li>
+          </ul>
+          <ul class="secondary">
+            <li><a href="">Blog</a></li>
+            <li><a href="">Gear</a></li>
+            <li><a href="">Login</a></li>
+          </ul>
         </nav>
       </div>
     </header>

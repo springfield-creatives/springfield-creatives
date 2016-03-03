@@ -48,6 +48,9 @@ $grid-gutter: 40px !default; // can be px, em, or %
     text-align: $grid-direction; /* 2 */
     letter-spacing: -0.31em; /* 3 */
     text-rendering: optimizespeed; /* 4 */
+    &.small {
+      margin: 0 -0.25 * $grid-gutter
+    }
 }
 
 /**
@@ -81,7 +84,7 @@ $grid-gutter: 40px !default; // can be px, em, or %
  * 5. Reset text defaults.
  */
 
-.grid-cell, [class*="unit-"] {
+[class*="unit-"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
@@ -93,6 +96,11 @@ $grid-gutter: 40px !default; // can be px, em, or %
     letter-spacing: normal; /* 5 */
     word-spacing: normal; /* 5 */
     text-rendering: auto; /* 5 */
+}
+.grid.small {
+  [class*="unit-"] {
+    padding: 0 0.25 * $grid-gutter; /* 2 */
+  }
 }
 
 /* Grid modifiers

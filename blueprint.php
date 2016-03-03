@@ -48,6 +48,11 @@
       <li>Unordered List Item</li>
     </ol>
     <p><a class="button" href="">Example Button</a></p>
+    <form>
+      <label>
+        <input type="text" />
+      </label>
+    </form>
   </article>
 </section>
 
