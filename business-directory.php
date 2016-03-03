@@ -36,7 +36,7 @@
           <h3>or, Narrow By Services</h3>
           <form>
             <div class="grid">
-              <div class="unit-1-2 unit-1-1-sm">
+              <div class="unit-1-2 unit-1-1-lg">
                 <div class="checkbox">
                   <input id="label-1" type="checkbox" />
                   <label for="label-1">Photography App Development</label>
@@ -66,7 +66,7 @@
                   <label for="label-7">Branding Animation</label>
                 </div>
               </div>
-              <div class="unit-1-2 unit-1-1-sm">
+              <div class="unit-1-2 unit-1-1-lg">
                 <div class="checkbox">
                   <input id="label-8" type="checkbox" />
                   <label for="label-8">Software Engineering Typography</label>
