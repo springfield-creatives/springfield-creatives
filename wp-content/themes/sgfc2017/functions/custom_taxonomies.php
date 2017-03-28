@@ -6,29 +6,62 @@
 function register_taxonomies()
 {
 
-/*
-
-
-register_taxonomy(
-	'market', // taxononmy ID. Make this unique from CPTs and Pages to avoid URL rewrite headaches.
-	array(
-		'portfolio' // applicable post type
-	),
-	array(
-		'hierarchical' => true,
-		'show_ui' => true,
-		'public' => true,
-		'label' => __('Market'),
-		'show_in_nav_menus' => true,
-		'labels' => array(
-			'add_new_item' => 'Add New Market'
+	register_taxonomy(
+		'position', 
+		array(
+			'jobs'
 		),
-		'query_var' => true,
-	)
-);
+		array(
+			'hierarchical' => false,
+			'show_ui' => true,
+			'public' => true,
+			'label' => __('Position'),
+			'show_in_nav_menus' => true,
+			'labels' => array(
+				'add_new_item' => 'Add New Position',
+				'all_items' => 'Position'
+			),
+			'query_var' => true,
+		)
+	);
 
-
-*/
+	register_taxonomy(
+		'industry', 
+		array(
+			'businesses'
+		),
+		array(
+			'hierarchical' => true,
+			'show_ui' => true,
+			'public' => true,
+			'label' => __('Industry'),
+			'show_in_nav_menus' => true,
+			'labels' => array(
+				'add_new_item' => 'Add New Industry',
+				'all_items' => 'Industries'
+			),
+			'query_var' => true,
+		)
+	);
+	
+	register_taxonomy(
+		'organization-type', 
+		array(
+			'organizations'
+		),
+		array(
+			'hierarchical' => true,
+			'show_ui' => true,
+			'public' => true,
+			'label' => __('Organization Type'),
+			'show_in_nav_menus' => true,
+			'labels' => array(
+				'add_new_item' => 'Add New Type',
+				'all_items' => 'Organization Types'
+			),
+			'query_var' => true,
+		)
+	);
 
 
 }

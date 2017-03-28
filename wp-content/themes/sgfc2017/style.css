@@ -7,7 +7,7 @@
  *  Version: 0.01 */
 /* Reset
 ----------------------------------------------- */
-@import url(font-awesome.css);
+@import url(media/styles/font-awesome.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -547,14 +547,6 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
-  .unit-1-1-lg {
-    width: 100%;
-  }
-
-  .unit-0-1-lg {
-    width: 0%;
-  }
-
   .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-4-8-lg, .unit-5-10-lg, .unit-6-12-lg {
     width: 50%;
   }
@@ -655,14 +647,6 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
-  .unit-1-1-md {
-    width: 100%;
-  }
-
-  .unit-0-1-md {
-    width: 0%;
-  }
-
   .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-4-8-md, .unit-5-10-md, .unit-6-12-md {
     width: 50%;
   }
@@ -763,14 +747,6 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
-  .unit-1-1-sm {
-    width: 100%;
-  }
-
-  .unit-0-1-sm {
-    width: 0%;
-  }
-
   .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-4-8-sm, .unit-5-10-sm, .unit-6-12-sm {
     width: 50%;
   }
@@ -1010,18 +986,18 @@ body {
 }
 
 a {
-  color: #E7C144;
+  color: #e7c144;
   text-decoration: none;
 }
 a:hover {
-  color: #EA7750;
+  color: #ea7750;
   text-decoration: none;
 }
 
 /* Header
 ----------------------------------------------- */
 header {
-  background: #5C6569;
+  background: #5c6569;
   box-sizing: border-box;
   left: 0;
   padding: 50px 5% 20px 5%;
@@ -1070,7 +1046,7 @@ header.alt {
 }
 @media all and (max-width: 767px) {
   header.alt {
-    background: #5C6569;
+    background: #5c6569;
   }
 }
 header.alt h2 a:after {
@@ -1094,15 +1070,8 @@ header > span {
     top: 20px;
     width: 24px;
     z-index: 100;
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-}
-@media all and (max-width: 1199px) and (max-width: 767px) {
-  header > span {
-    top: 15px;
-  }
-}
-@media all and (max-width: 1199px) {
   header > span span {
     background: #fff;
     display: block;
@@ -1138,6 +1107,11 @@ header > span {
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     width: 24px;
+  }
+}
+@media all and (max-width: 1199px) and (max-width: 767px) {
+  header > span {
+    top: 15px;
   }
 }
 header h2 {
@@ -1198,7 +1172,7 @@ header nav {
 }
 @media all and (max-width: 1199px) {
   header nav {
-    background: #5C6569;
+    background: #5c6569;
     box-sizing: border-box;
     display: block;
     float: none;
@@ -1242,8 +1216,8 @@ header nav ul.primary > li {
   }
 }
 header nav ul.primary > li:hover > a {
-  background: #5C6569;
-  color: #E7C144;
+  background: #5c6569;
+  color: #e7c144;
 }
 @media all and (max-width: 1199px) {
   header nav ul.primary > li:hover > a {
@@ -1271,16 +1245,16 @@ header nav ul.primary > li > a:first-of-type {
   margin: 0;
 }
 header nav ul.primary > li > a:hover {
-  background: #5C6569;
-  color: #E7C144;
+  background: #5c6569;
+  color: #e7c144;
   text-decoration: none;
 }
 header nav ul.primary > li > a.current {
-  color: #E7C144;
+  color: #e7c144;
 }
 header nav ul.primary > li.button a {
   background: #fff;
-  color: #5C6569;
+  color: #5c6569;
 }
 @media all and (max-width: 1199px) {
   header nav ul.primary > li.button a {
@@ -1291,10 +1265,10 @@ header nav ul.primary > li.button a {
 }
 header nav ul.primary > li.button a:hover {
   background: #fff;
-  color: #E7C144;
+  color: #e7c144;
 }
 header nav ul.primary ul {
-  background: #5C6569;
+  background: #5c6569;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1327,11 +1301,11 @@ header nav ul.primary ul li a {
   font: 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
 }
 header nav ul.primary ul li a:hover {
-  color: #E7C144;
+  color: #e7c144;
   text-decoration: none;
 }
 header nav ul.primary ul li a.current {
-  color: #E7C144;
+  color: #e7c144;
 }
 header nav ul.secondary {
   position: absolute;
@@ -1360,7 +1334,7 @@ header nav ul.secondary li {
 /* Content
 ----------------------------------------------- */
 section {
-  color: #5C6569;
+  color: #5c6569;
   position: relative;
 }
 section.hero {
@@ -1430,11 +1404,11 @@ section.hero article p a.button {
   }
 }
 section.alt {
-  background: #F2F1E4;
-  color: #13344A;
+  background: #f2f1e4;
+  color: #13344a;
 }
 section.inverse {
-  background: #5C6569;
+  background: #5c6569;
   color: #fff;
 }
 section.inverse h1,
@@ -1510,7 +1484,7 @@ section article h4 {
   }
 }
 section article h4 i.fa {
-  color: #E7C144;
+  color: #e7c144;
 }
 section article p {
   font-size: 18px;
@@ -1581,7 +1555,7 @@ section article ul li {
   margin: 0 0 0 25px;
 }
 section article a.button {
-  background: #E7C144;
+  background: #e7c144;
   color: #fff;
   display: inline-block;
   font-size: 22px;
@@ -1597,7 +1571,7 @@ section article a.button {
   }
 }
 section article a.button:hover {
-  background: #EA7750;
+  background: #ea7750;
   text-decoration: none;
 }
 section article form label {
@@ -1698,7 +1672,7 @@ section article form select {
   }
 }
 section article form button {
-  background: #E7C144;
+  background: #e7c144;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -1709,14 +1683,14 @@ section article form button {
   text-transform: uppercase;
 }
 section article form button:hover {
-  background: #EA7750;
+  background: #ea7750;
   text-decoration: none;
 }
 
 /* Footer
 ----------------------------------------------- */
 footer {
-  background: #5C6569;
+  background: #5c6569;
   padding: 50px 0;
 }
 footer > div {
@@ -1754,7 +1728,7 @@ footer > div ul.social li a {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  color: #5C6569;
+  color: #5c6569;
   display: block;
   font-size: 24px;
   height: 40px;

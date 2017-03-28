@@ -58,11 +58,13 @@ function register_my_menu() {
 include_once('functions/custom_post_types.php');
 include_once('functions/custom_taxonomies.php');
 include_once('functions/custom_sidebars.php');
+include_once('functions/custom_shortcodes.php');
 
 // CUSTOM FUNCTIONS
 include_once('functions/wordpress/utility.php');
 include_once('functions/wordpress/js_site_settings.php');
 include_once('functions/site/sponsor-helpers.php');
+include_once('functions/site/sc-helpers.php');
 include_once('functions/site/acf.php');
 
 

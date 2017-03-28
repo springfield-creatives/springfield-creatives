@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(function($) {
   
   /* Mobile Navigation */
   $('header > span').click(function() {
@@ -13,7 +13,7 @@ $(document).ready(function() {
   $('section.hero').prev('header').addClass('alt');
   
   /* Toggle */
-  $('div.collapsible').hide();
+  $('div.collapsible').not('[data-open]').hide();
   $('a.toggle').click(function() {
     if($(this).hasClass('on')) {
       $(this).removeClass('on').find('i.fa').removeClass('fa-angle-up').addClass('fa-angle-down');
