@@ -20,85 +20,54 @@ the_post()
 </section>
 <section class="inverse thin">
   <article>
-    <h4 class="clean text-center"><a class="toggle" href="">Refine Results <i class="fa fa-angle-down"></i></a></h4>
-    <div class="collapsible">
+    
+    <?php
+    if(!$empty_search_query):
+      ?>
+      <h4 class="clean text-center"><a class="toggle" href="">Refine Results <i class="fa fa-angle-down"></i></a></h4>
+      <?php
+    endif;
+    ?>
+
+    <div class="collapsible" <?php echo $empty_search_query ? 'data-open' : '' ?>>
       <div class="grid margin-double">
         <div class="margin"></div>
         <div class="unit-1-2 unit-1-1-sm margin">
           <form>
             <h3>Find A Business</h3>
             <label>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" name="business_name" value="<?php echo !empty($_GET['business_name']) ? $_GET['business_name'] : '' ?>" />
             </label>
             <label>
-              <input type="text" placeholder="Keyword" />
+              <input type="text" placeholder="Keyword"  name="business_keyword" value="<?php echo !empty($_GET['business_keyword']) ? $_GET['business_keyword'] : '' ?>" />
             </label>
             <button>Search</button>
           </form>
         </div>
         <div class="unit-1-2 unit-1-1-sm">
-          <h3>or, Narrow By Services</h3>
+          <h3>or, Narrow By Industry</h3>
+          <?php
+          $industry = get_terms(array(
+            'taxonomy' => 'industry'
+          ));
+          ?>
           <form>
             <div class="grid">
               <div class="unit-1-2 unit-1-1-lg">
-                <div class="checkbox">
-                  <input id="label-1" type="checkbox" />
-                  <label for="label-1">Photography App Development</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-2" type="checkbox" />
-                  <label for="label-2">Graphic Design Illustration</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-3" type="checkbox" />
-                  <label for="label-3">Web Design Craftsmaking</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-4" type="checkbox" />
-                  <label for="label-4">Web Development Art Direction</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-5" type="checkbox" />
-                  <label for="label-5">Copywriting Videography</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-6" type="checkbox" />
-                  <label for="label-6">Marketing Motion Graphics</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-7" type="checkbox" />
-                  <label for="label-7">Branding Animation</label>
-                </div>
-              </div>
-              <div class="unit-1-2 unit-1-1-lg">
-                <div class="checkbox">
-                  <input id="label-8" type="checkbox" />
-                  <label for="label-8">Software Engineering Typography</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-9" type="checkbox" />
-                  <label for="label-9">Copywriting Videography</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-10" type="checkbox" />
-                  <label for="label-10">Marketing Motion Graphics</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-11" type="checkbox" />
-                  <label for="label-11">Branding Animation</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-12" type="checkbox" />
-                  <label for="label-12">Software Engineering Typography</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-13" type="checkbox" />
-                  <label for="label-13">Branding Animation</label>
-                </div>
-                <div class="checkbox">
-                  <input id="label-14" type="checkbox" />
-                  <label for="label-14">Software Engineering Typography</label>
-                </div>
+                <?php
+                $midpoint = round(count($industry)/2);
+                foreach($industry as $ind => $cur_ind):
+                  if($ind == $midpoint)
+                    echo '</div><div class="unit-1-2 unit-1-1-lg">';
+
+                  ?>
+                  <div class="checkbox">
+                    <input id="label-1" type="checkbox" name="business_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['business_industry']) && in_array($cur_ind->term_id, $_GET['business_industry']) ? 'checked ' : '' ?>/>
+                    <label for="label-1"><?php echo $cur_ind->name ?></label>
+                  </div>
+                <?php
+                endforeach;
+                ?>
               </div>
             </div>
             <button>Filter</button>
@@ -106,44 +75,59 @@ the_post()
         </div>
       </div>
       <div class="text-center">
-        <h3 class="margin"><a href="">A</a> <a href="">B</a> <a href="">C</a> <a href="">D</a> <a href="">E</a> <a href="">F</a> <a href="">G</a> <a href="">H</a> <a href="">I</a> <a href="">J</a> <a href="">K</a> <a href="">L</a> <a href="">M</a> <a href="">N</a> <a href="">O</a> <a href="">P</a> <a href="">Q</a> <a href="">R</a> <a href="">S</a> <a href="">T</a> <a href="">U</a> <a href="">V</a> <a href="">W</a> <a href="">X</a> <a href="">Y</a> <a href="">Z</a></h3>
-        <p><a href="">View All</a></p>
+        <h3 class="margin">
+          <?php
+          $abc = 'abcdefghijklmnopqrstuvwxyz';
+          $abc = str_split($abc, 1);
+          foreach($abc as $letter)
+            echo '<a href="?business_view=' . $letter . '">' . ucfirst($letter) . '</a> ';
+          ?>
+        </h3>
+        <p><a href="?business_view=all">View All</a></p>
       </div>
     </div>
   </article>
 </section>
-<section class="alt thin margin-half">
-  <article>
-    <div class="grid">
-      <div class="unit-1-4 unit-1-1-sm">
-        <p><img class="full rounded" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/placeholder.png" /></p>
+
+<?php
+if(!$empty_search_query){
+  $business_results = sgfc_get_business_results('businesses');
+}
+
+
+if(!empty($business_results) && !empty($business_results['results_featured'])):
+  ?>
+  <section class="alt thin margin-half">
+    <article>
+      <div class="grid">
+        <?php
+        foreach($business_results['results_featured'] as $business):
+          render_directory_item($business, true);
+        endforeach;
+        ?>
       </div>
-      <div class="unit-3-4 unit-1-1-sm">
-        <h2>Marlin</h2>
-        <h3>Advertising Agency</h3>
-        <p><a href="">marlinco.com</a><br /><a href="">View Profile</a> | <a href="">Email</a></p>
-        <p>Marlin is a full-service advertising agency who are experts at food service. With cllients such as Starbucks, Bush’s Beans, French’s and Unilever, more stu about Marlin. Marlin is a full-service advertising agency.</p>
+    </article>
+  </section>
+  <?php
+endif;
+
+if(!empty($business_results) && !empty($business_results['results_reg'])):
+  ?>
+  <section>
+    <article>
+      <div class="grid small">
+        <?php
+        foreach($business_results['results_reg'] as $business):
+          render_directory_item($business, false);
+        endforeach;
+        ?>
       </div>
-    </div>
-  </article>
-</section>
-<section>
-  <article>
-    <div class="grid small">
-      <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
-        <div class="grid">
-          <div class="unit-1-3">
-            <p><img class="full rounded" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/placeholder.png" /></p>
-          </div>
-          <div class="unit-2-3">
-            <h4>Departika</h4>
-            <p>Digital Creative Studio<br /><a href="">View Profile</a> | <a href="">Email</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-</section>
+    </article>
+  </section>
+  <?php
+endif;
+?>
+
 <section class="inverse">
   <article class="text-center">
     <h3><?php the_field('membership_dir_title') ?></h3>

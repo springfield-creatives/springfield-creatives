@@ -120,11 +120,13 @@ $empty_search_query = count($_GET) == 0;
   <article>
     <div class="grid small">
       <?php
-      $member_results = sgfc_get_member_results();
+      if(!$empty_search_query){
+        $member_results = sgfc_get_member_results();
 
-      foreach($member_results['results'] as $member):
-        render_person_item($member);
-      endforeach;
+        foreach($member_results['results'] as $member):
+          render_person_item($member);
+        endforeach;
+      }
       ?>
     </div>
   </article>

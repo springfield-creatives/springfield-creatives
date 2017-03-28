@@ -13,15 +13,7 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
   if(!$post_type)
     $post_type = get_post_type($post_id);
 
-  if($post_type == 'user'){
-    // change size default
-    if(!is_integer($size))
-      $size = 300;
-
-    // user photo
-    return get_wp_user_avatar_src( $post_id, $size, null );
-
-  }else if($post_type == 'jobs'){
+  if($post_type == 'jobs'){
 
     // get connected business/organization and use that
     return get_object_image_src(get_field('company', $post_id, false, $size));
@@ -52,8 +44,9 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
 
 
   // return default image
-  $default = get_field( 'default_' . $post_type . '_image', 'option');
-  return $default['sizes'][$size];
+  // $default = get_field( 'default_' . $post_type . '_image', 'option');
+  // return $default['sizes'][$size];
+  return get_stylesheet_directory_uri() . '/media/images/placeholder.png';;
 
 }
 
@@ -527,7 +520,6 @@ function sgfc_get_member_results(){
         );
       }
       
-    }
 
     $args['meta_query'] = $meta_query;
 
@@ -539,6 +531,8 @@ function sgfc_get_member_results(){
     $result_data['count'] = $members->total_users;
     $result_data['pages'] = ceil($total_users / $number);
 
+    }
+
   }
   
   return $result_data;
@@ -546,94 +540,139 @@ function sgfc_get_member_results(){
 
 
 
-function sgfc_get_business_results(){
-  $results = array();
+function sgfc_get_business_results($type = 'businesses'){
+  global $post, $wpdb;
+
+  $meta_query = array();
+
+  $result_data = array(
+    'results_featured' => array(),
+    'results_reg' => array(),
+    'count' => 0,
+    'pages' => 1
+  );
 
 
   // build query
   $wp_query_args = array(
-    'post_type' => 'person',
+    'post_type' => $type,
     'posts_per_page' => -1,
-    'orderby' => 'meta_value',
+    'orderby' => 'title',
     'order' => 'ASC',
-    'meta_key' => 'last_name',
-    'meta_query' => array(),
-    'tax_query' => array()
-    );
+    'meta_query' => array()
+  );
 
 
-  // advanced search or dictionary?
-  if(!empty($_GET['dict'])){
+  if(!empty($_GET['business_view']) && $_GET['business_view'] !== 'all'){
 
+    // BY ALPHABET
     $safe_query = $wpdb->prepare( 
       "
-      SELECT * FROM $wpdb->posts 
+      SELECT *, $wpdb->postmeta.meta_value as sponsor FROM $wpdb->posts 
       INNER JOIN $wpdb->postmeta
       ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id )
       WHERE 1=1
       AND 
       ( 
-      ( $wpdb->postmeta.meta_key = 'last_name' AND CAST($wpdb->postmeta.meta_value AS CHAR) LIKE %s )
+      ( CAST(post_title AS CHAR) LIKE %s )
       )
-      AND $wpdb->posts.post_type = 'person'
+      AND $wpdb->posts.post_type = %s
       AND ($wpdb->posts.post_status = 'publish')
-      GROUP BY $wpdb->posts.ID
-      ORDER BY $wpdb->postmeta.meta_value ASC
+      AND ($wpdb->postmeta.meta_key = 'is_sponsor')
+      GROUP BY $wpdb->postmeta.meta_value DESC
+      ORDER BY $wpdb->posts.post_title ASC
       ", 
-      $_GET['dict'] . '%'
-      );
+      $_GET['business_view'] . '%',
+      $type
+    );
+
     $posts_array = $wpdb->get_results($safe_query);
+
+    // sort into featured and non
+    foreach($posts_array as $post){
+      if($post->sponsor)
+        $result_data['results_featured'][] = $post;
+      else
+        $result_data['results_reg'][] = $post;
+    }
+
+    $result_data['count'] = count($posts_array);
+    $result_data['pages'] = 1;
+
+    return $result_data;
 
   }else{
 
-    $query_vars = array(
-      'first_name' => !empty($_GET['first_name']) ? $_GET['first_name'] : false,
-      'last_name' => !empty($_GET['last_name']) ? $_GET['last_name'] : false,
-      'practice' => !empty($_GET['practice-id']) ? $_GET['practice-id'] : false,
-      'school' => !empty($_GET['school-id']) ? $_GET['school-id'] : false,
-      'location' => !empty($_GET['location-id']) ? $_GET['location-id'] : false,
-      'language' => !empty($_GET['language-id']) ? $_GET['language-id'] : false
+
+    if(!empty($_GET['business_industry'])){
+
+
+      $wp_query_args['tax_query'] = array(
+        'taxonomy' => 'industry',
+        'value' => $_GET['business_industry'],
       );
 
-    $meta_keys = array('first_name', 'last_name');
-    $taxonomy_keys = array('practice', 'school', 'location', 'language');
+    }else{
 
-
-    // meta fields
-    foreach($meta_keys as $cur_meta_key):
-
-      if($query_vars[$cur_meta_key] == false)
-        continue;
-
-      $wp_query_args['meta_query'][] = array(
-        'key' => $cur_meta_key,
-        'value' => $query_vars[$cur_meta_key],
-        'compare' => 'LIKE'
-        );
-
-      endforeach;
-
-
-    // taxonomies
-      foreach($taxonomy_keys as $cur_tax_key):
-
-        if($query_vars[$cur_tax_key] === false)
-          continue;
-
-        $wp_query_args['tax_query'][] = array(
-          'taxonomy' => $cur_tax_key,
-          'field'    => 'term_id',
-          'terms'    => $query_vars[$cur_tax_key]
-          );
-
-        endforeach;
-
+      if(!empty($_GET['business_name'])){
+        $wp_query_args['title_contains'] = $_GET['business_name'];
       }
 
+      if(!empty($_GET['business_keyword'])){
+        $meta_query[] = array(
+          'key' => 'about',
+          'value' => $_GET['business_keyword'],
+          'compare' => 'LIKE'
+        );
+        $meta_query[] = array(
+          'key' => 'short_description',
+          'value' => $_GET['business_keyword'],
+          'compare' => 'LIKE'
+        );
+        $meta_query['relation'] = 'OR';
 
-  return $results;
+        $wp_query_args['meta_query'] = $meta_query;
+
+        $wp_query_args['s'] = $_GET['business_keyword'];
+      }
+
+    }
+
+    $results = new WP_Query($wp_query_args);
+    // var_dump($results);die;
+    while($results->have_posts()): $results->the_post();
+      if(get_field('is_sponsor'))
+        $result_data['results_featured'][] = $post;
+      else
+        $result_data['results_reg'][] = $post;
+    endwhile;
+
+    wp_reset_query();
+
+    $result_data['count'] = $results->found_posts;
+    $result_data['pages'] = $results->max_num_pages;
+
+  }
+
+
+  return $result_data;
 }
 
+
+add_filter( 'posts_where', 'sc_title_wp_query_filter', 10, 2 );
+function sc_title_wp_query_filter($where, &$wp_query){
+    global $wpdb;
+    
+    $search_term = $wp_query->get( 'title_contains' );
+
+    if(!empty($search_term)){
+      $search_term = $wpdb->esc_like($search_term);
+      $search_term = ' \'%' . $search_term . '%\'';
+      $where .= ' AND ' . $wpdb->posts . '.post_title LIKE '.$search_term;
+    }
+
+    return $where;
+}
 
 
 add_filter( 'user_search_columns', 'sc_search_display_name', 10, 3 );
@@ -641,4 +680,129 @@ add_filter( 'user_search_columns', 'sc_search_display_name', 10, 3 );
 function sc_search_display_name( $search_columns, $search, $this ) {
     $search_columns[] = 'display_name';
     return $search_columns;
+}
+
+
+
+/*
+Returns HTML for a post item that is either business, or organization
+$post: $post object returned by WP or ACF. Defaults to current $post
+$subtitle: override subtitle default for that post type
+*/
+
+function return_directory_item_html($post_object = false, $is_featured = false){
+  global $post;
+
+  if($post_object === false)
+    $post_object = $post;
+
+  if($post_object->post_type == 'businesses')
+    $tax = 'industry';
+  else if($post_object->post_type == 'organizations')
+    $tax = 'organization-type';
+
+  $terms = get_the_terms( $post->ID, $tax );
+  if ( $terms && ! is_wp_error( $terms ) ) {
+    $subtitles = array();
+      foreach ( $terms as $term ) {
+      $subtitles[] = $term->name;
+    }
+    $subtitle = join( ", ", $subtitles );
+  } else {
+    $subtitle = false;
+  }
+
+  $name = $post_object->post_title;
+
+  $website = get_field('website', $post_object->ID);
+
+  $short_desc = get_field('short_description', $post_object->ID);
+
+  $email = get_field('email', $post_object->ID);
+
+  $link = get_permalink($post_object->ID);
+
+  $post_image_src = get_object_image_src($post_object->ID, $post_object->post_type, 'medium');
+
+  ob_start();
+
+  if($is_featured){
+    
+
+    // FEATURED
+    // 
+    ?>
+
+    <div class="unit-1-4 unit-1-1-sm">
+      <p><img class="full rounded" src="<?php echo $post_image_src ?>" /></p>
+    </div>
+    <div class="unit-3-4 unit-1-1-sm">
+      <h2><?php echo $name ?></h2>
+
+      <?php
+      if(!empty($subtitle))
+        echo '<h3>' . $subtitle . '</h3>';
+      ?>
+      
+      <p>
+        <?php
+        if(!empty($website)){
+          $simple_url = str_replace('http://', '', $website);
+          $simple_url = str_replace('https://', '', $simple_url);
+          echo '<a href="' . $website . '">' . $simple_url . '</a><br />';
+        }
+        ?>
+        <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+      </p>
+      
+      <?php
+      if(!empty($short_desc))
+        echo '<p>' . $short_desc . '</p>';
+      ?>
+    </div>
+
+    <?php
+  }else{
+
+
+    // REGULAR
+    // 
+    ?>
+
+    <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
+      <div class="grid">
+        <div class="unit-1-3">
+          <p><img class="full rounded" src="<?php echo $post_image_src ?>" /></p>
+        </div>
+        <div class="unit-2-3">
+          
+          <h4><?php echo $name ?></h4>
+          
+          <p>
+            <?php
+            if(!empty($subtitle))
+              echo '<h3>' . $subtitle . '</h3><br />';
+            ?>
+            <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <?php
+  }
+
+  $to_return = ob_get_contents();
+  ob_clean();
+  return $to_return;
+}
+
+
+/*
+$post: $post array returned by WP or ACF
+$subtitle: override subtitle default of company
+*/
+function render_directory_item($post = false, $is_featured = false){
+  echo return_directory_item_html($post, $is_featured);
 }
