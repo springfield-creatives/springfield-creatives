@@ -2,21 +2,26 @@
       <article>
         <h2 class="margin text-center">Sponsors</h2>
         <div class="grid grid-center margin">
-          <div class="unit-1-5 unit-1-3-sm unit-center margin">
-            <img class="full rounded" src="media/images/placeholder.png" />
-          </div>
-          <div class="unit-1-5 unit-1-3-sm unit-center margin">
-            <img class="full rounded" src="media/images/placeholder.png" />
-          </div>
-          <div class="unit-1-5 unit-1-3-sm unit-center margin">
-            <img class="full rounded" src="media/images/placeholder.png" />
-          </div>
-          <div class="unit-1-5 unit-1-3-sm unit-center margin">
-            <img class="full rounded" src="media/images/placeholder.png" />
-          </div>
-          <div class="unit-1-5 unit-1-3-sm unit-center margin">
-            <img class="full rounded" src="media/images/placeholder.png" />
-          </div>
+        	<?php
+
+					// get all sponsor posts level 3 and up
+					$stripe_sponsors = get_sponsors(3);
+
+					foreach($stripe_sponsors as $level){
+						foreach($level as $sponsor){
+							?>
+							<div class="unit-1-5 unit-1-3-sm unit-center margin">
+								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
+									<img class="full" src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" />
+								</a>
+							</div>	
+							<?php
+					    }
+					}
+
+					wp_reset_postdata();
+
+					?>
         </div>
         <p class="text-center"><a class="button" href="<?php the_field('sponsor_signup_url', 'options') ?>">Become A Sponsor</a></p>
       </article>
@@ -27,38 +32,30 @@
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
             <h5><a href="<?php the_field('footer_col1_link', 'options') ?>"><?php the_field('footer_col1_title', 'options') ?></a></h5>
             <ul>
-              <li><a href="">Events</a></li>
-              <li><a href="">Board</a></li>
-              <li><a href="">Committees</a></li>
-              <li><a href="">Handbook</a></li>
-              <li><a href="">Blog</a></li>
+							<?php wp_nav_menu( array('theme_location' => 'footer1', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
             <h5><a href="<?php the_field('footer_col2_link', 'options') ?>"><?php the_field('footer_col2_title', 'options') ?></a></h5>
             <ul>
-              <li><a href="">Business</a></li>
-              <li><a href="">Members</a></li>
+							<?php wp_nav_menu( array('theme_location' => 'footer2', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
             <h5><a href="<?php the_field('footer_col3_link', 'options') ?>"><?php the_field('footer_col3_title', 'options') ?></a></h5>
             <ul>
-              <li><a href="">Post A Job</a></li>
+							<?php wp_nav_menu( array('theme_location' => 'footer3', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
             <h5><a href="<?php the_field('footer_col3_link2', 'options') ?>"><?php the_field('footer_col3_title2', 'options') ?></a></h5>
             <h5><a href="<?php the_field('footer_col3_link3', 'options') ?>"><?php the_field('footer_col3_title3', 'options') ?></a></h5>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
             <ul>
-              <li><a href="">Login</a></li>
-              <li><a href="">Gear</a></li>
-              <li><a href="">Blog</a></li>
-              <li><a href="">Member Card</a></li>
+							<?php wp_nav_menu( array('theme_location' => 'footer4', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-2-sm text-center">
-            <p><img class="full" src="media/images/logo-inverse.svg" /></p>
+            <p><img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/logo-inverse.svg" /></p>
             <p class="callout"><?php the_field('footer_col5_callout', 'options') ?></p>
           </div>
         </div>

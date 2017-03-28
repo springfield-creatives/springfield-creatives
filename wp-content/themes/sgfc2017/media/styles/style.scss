@@ -9,7 +9,7 @@
 @import "reset";
 @import "griddle";
 @import "compass";
-@import "font-awesome.css";
+@import "media/styles/font-awesome.css";
  
 /*
 -----------------------------------------------
@@ -319,7 +319,7 @@ header {
   h2 {
     float: left;
     a {
-      background: url(../images/logo-text.svg);
+      background: url(media/images/logo-text.svg);
       background-position: 85px center;
       background-repeat: no-repeat;
       background-size: auto 100%;
@@ -334,7 +334,7 @@ header {
         width: 130px;
       }
       &:before {
-        content: url(../images/pencil-alt.svg);
+        content: url(media/images/pencil-alt.svg);
         display: block;
         height: 30px;
         left: 0;
@@ -348,7 +348,7 @@ header {
         }
       }
       &:after {
-        content: url(../images/pencil-alt.svg);
+        content: url(media/images/pencil-alt.svg);
         display: block;
         height: 30px;
         left: 0;
@@ -425,25 +425,26 @@ header {
             &:first-of-type {
               margin: 0;
             }
-            &.button {
-              background: #fff;
-              color: $slate;
-              @media all and (max-width: 1199px) {
-                display: inline-block;
-                margin: 0 0 0 -10px;
-                padding-left: 35px;
-              }
-              &:hover {
-                background: #fff;
-                color: $gold;
-              }
-            }
             &:hover {
               background: $slate;
               color: $gold;
               text-decoration: none;
             }
             &.current {
+              color: $gold;
+            }
+          }
+
+          &.button a {
+            background: #fff;
+            color: $slate;
+            @media all and (max-width: 1199px) {
+              display: inline-block;
+              margin: 0 0 0 -10px;
+              padding-left: 35px;
+            }
+            &:hover {
+              background: #fff;
               color: $gold;
             }
           }
@@ -757,7 +758,7 @@ section {
           width: 1px;
         }
         input[type=checkbox] + label {
-          @include background-image-retina('../images/checkboxes', 'png', 16px, 32px);
+          @include background-image-retina('media/images/checkboxes', 'png', 16px, 32px);
           cursor: pointer;
           display: inline-block;
           font: normal 16px/24px $helvetica;

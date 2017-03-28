@@ -1,0 +1,1773 @@
+/*!
+ *  Theme Name: SGFC 2017
+ *  Theme URL: http://www.sgfcreatives.com/
+ *  Description: Custom WordPress site.
+ *  Author: Chad Spencer, Charlie Rosenbury, Jessica Spencer, John Manhart
+ *  Author URI: http://www.sgfcreatives.com
+ *  Version: 0.01 */
+/* Reset
+----------------------------------------------- */
+@import url(font-awesome.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+dfn {
+  font-style: italic;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+:focus {
+  outline: 0;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+optgroup {
+  font-weight: 500;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.clear, header {
+  zoom: 1;
+}
+.clear:before, header:before, .clear:after, header:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clear:after, header:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+/*
+ * Example uses:
+ *
+ * <div class="grid">
+ *     <div class="grid-cell unit-1-2"></div>
+ *     <div class="grid-cell unit-1-2"></div>
+ *     <div class="grid-cell unit-1-3"></div>
+ *     <div class="grid-cell unit-1-3"></div>
+ * </div>
+ *
+ * <div class="grid grid-center">
+ *     <div class="grid-cell unit-1-3"></div>
+ *     <div class="grid-cell unit-1-3"></div>
+ * </div>
+ */
+/* Grid core
+   ========================================================================== */
+/**
+ * Grid container
+ * Must only contain `.grid` or `.grid-cell` components as children.
+ *
+ * 1. Adjustment for child element margins.
+ * 2. Ensure consistent default alignment/
+ * 3. Remove inter-unit whitespace that appears between `inline-block` child
+ *    elements. Work for all non-monospace font-families.  If you're using a
+ *    monospace base font, you will need to set the `grid` font-family to
+ *   `sans-serif` and then redeclare the monospace font on the `grid-cell`
+ *    objects.
+ * 4. Protect against WebKit bug with optimizelegibility.
+ */
+.grid {
+  display: block;
+  padding: 0;
+  margin: 0 -20px;
+  /* 1 */
+  text-align: left;
+  /* 2 */
+  letter-spacing: -0.31em;
+  /* 3 */
+  text-rendering: optimizespeed;
+  /* 4 */
+}
+.grid.small {
+  margin: 0 -10px;
+}
+
+/**
+ * Opera hack
+ */
+.opera:-o-prefocus,
+.grid {
+  word-spacing: -0.43em;
+  /* 3 */
+}
+
+/**
+ * Child `grid` object adjustments
+ * Used for more complex fixed-fluid hybrid grids.
+ */
+.grid > .grid {
+  overflow: hidden;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/**
+ * Grid units
+ * No explicit width by default. Apply `.unit-x-y` classes.
+ *
+ * 1. Fundamentals of the non-float grid layout mechanism.
+ * 2. Apply grid gutter.
+ * 3. Controls vertical positioning of units.
+ * 4. Keeps content correctly aligned with the grid direction.
+ * 5. Reset text defaults.
+ */
+[class*="unit-"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+  /* 1 */
+  margin: 0;
+  padding: 0 20px;
+  /* 2 */
+  vertical-align: top;
+  /* 3 */
+  text-align: left;
+  /* 4 */
+  letter-spacing: normal;
+  /* 5 */
+  word-spacing: normal;
+  /* 5 */
+  text-rendering: auto;
+  /* 5 */
+}
+
+.grid.small [class*="unit-"] {
+  padding: 0 10px;
+  /* 2 */
+}
+
+/* Grid modifiers
+   ========================================================================== */
+/**
+ * Modifier: horizontally center all grid units
+ * Allows for automatic unit centering irrespective of the number of
+ * units in the grid.
+ */
+.grid-center {
+  text-align: center;
+}
+
+/**
+ * Modifier: align horizontally all grid units to the left
+ */
+.grid-left {
+  text-align: left;
+}
+
+/**
+ * Modifier: align horizontally all grid units to the right
+ */
+.grid-right {
+  text-align: right;
+}
+
+/* Grid cell modifiers
+   ========================================================================== */
+/**
+ * Modifier: horizontally center one unit
+ * Set a specific unit to be horizontally centered. Doesn't affect
+ * any other units. Can still contain a child `grid` object.
+ */
+.grid-cell-center {
+  display: block;
+  margin: 0 auto;
+}
+
+/**
+ * Modifier: align horizontally one unit to the left
+ * Set a specific unit to be horizontally on the left. Doesn't affect
+ * any other units. Can still contain a child `grid` object.
+ */
+.grid-cell-left {
+  display: block;
+  margin-right: auto;
+}
+
+/**
+ * Modifier: align horizontally one unit to the right
+ * Set a specific unit to be horizontally on the right. Doesn't affect
+ * any other units. Can still contain a child `grid` object.
+ */
+.grid-cell-right {
+  display: block;
+  margin-left: auto;
+}
+
+/*
+-----------------------------------------------
+Springfield Creatives Styles
+----------------------------------------------- */
+/* Grid and Special Classes
+----------------------------------------------- */
+/* Proportional units
+   ========================================================================== */
+/*
+ * Specify the proportional width of an object.
+ * Primarily for, but not limited to, use with `.grid__cell` components.
+ * Intentional redundancy build into each set of unit classes.
+ */
+.unit-1-2, .unit-2-4, .unit-3-6, .unit-4-8, .unit-5-10, .unit-6-12 {
+  width: 50%;
+}
+
+.unit-1-3, .unit-2-6, .unit-4-12 {
+  width: 33.33333%;
+}
+
+.unit-2-3, .unit-4-6, .unit-8-12 {
+  width: 66.66667%;
+}
+
+.unit-1-4, .unit-2-8, .unit-3-12 {
+  width: 25%;
+}
+
+.unit-3-4, .unit-6-8, .unit-9-12 {
+  width: 75%;
+}
+
+.unit-1-5, .unit-2-10 {
+  width: 20%;
+}
+
+.unit-2-5, .unit-4-10 {
+  width: 40%;
+}
+
+.unit-3-5, .unit-6-10 {
+  width: 60%;
+}
+
+.unit-4-5, .unit-8-10 {
+  width: 80%;
+}
+
+.unit-1-6, .unit-2-12 {
+  width: 16.66667%;
+}
+
+.unit-5-6, .unit-10-12 {
+  width: 83.33333%;
+}
+
+.unit-1-8 {
+  width: 12.5%;
+}
+
+.unit-3-8 {
+  width: 37.5%;
+}
+
+.unit-5-8 {
+  width: 62.5%;
+}
+
+.unit-7-8 {
+  width: 87.5%;
+}
+
+.unit-1-10 {
+  width: 10%;
+}
+
+.unit-3-10 {
+  width: 30%;
+}
+
+.unit-7-10 {
+  width: 70%;
+}
+
+.unit-9-10 {
+  width: 90%;
+}
+
+.unit-1-12 {
+  width: 8.33333%;
+}
+
+.unit-5-12 {
+  width: 41.66667%;
+}
+
+.unit-7-12 {
+  width: 58.33333%;
+}
+
+.unit-11-12 {
+  width: 91.66667%;
+}
+
+@media all and (max-width: 1199px) {
+  /* Proportional units
+     ========================================================================== */
+  /*
+   * Specify the proportional width of an object.
+   * Primarily for, but not limited to, use with `.grid__cell` components.
+   * Intentional redundancy build into each set of unit classes.
+   */
+  .unit-1-1-lg {
+    width: 100%;
+  }
+
+  .unit-0-1-lg {
+    width: 0%;
+  }
+
+  .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-4-8-lg, .unit-5-10-lg, .unit-6-12-lg {
+    width: 50%;
+  }
+
+  .unit-1-3-lg, .unit-2-6-lg, .unit-4-12-lg {
+    width: 33.33333%;
+  }
+
+  .unit-2-3-lg, .unit-4-6-lg, .unit-8-12-lg {
+    width: 66.66667%;
+  }
+
+  .unit-1-4-lg, .unit-2-8-lg, .unit-3-12-lg {
+    width: 25%;
+  }
+
+  .unit-3-4-lg, .unit-6-8-lg, .unit-9-12-lg {
+    width: 75%;
+  }
+
+  .unit-1-5-lg, .unit-2-10-lg {
+    width: 20%;
+  }
+
+  .unit-2-5-lg, .unit-4-10-lg {
+    width: 40%;
+  }
+
+  .unit-3-5-lg, .unit-6-10-lg {
+    width: 60%;
+  }
+
+  .unit-4-5-lg, .unit-8-10-lg {
+    width: 80%;
+  }
+
+  .unit-1-6-lg, .unit-2-12-lg {
+    width: 16.66667%;
+  }
+
+  .unit-5-6-lg, .unit-10-12-lg {
+    width: 83.33333%;
+  }
+
+  .unit-1-8-lg {
+    width: 12.5%;
+  }
+
+  .unit-3-8-lg {
+    width: 37.5%;
+  }
+
+  .unit-5-8-lg {
+    width: 62.5%;
+  }
+
+  .unit-7-8-lg {
+    width: 87.5%;
+  }
+
+  .unit-1-10-lg {
+    width: 10%;
+  }
+
+  .unit-3-10-lg {
+    width: 30%;
+  }
+
+  .unit-7-10-lg {
+    width: 70%;
+  }
+
+  .unit-9-10-lg {
+    width: 90%;
+  }
+
+  .unit-1-12-lg {
+    width: 8.33333%;
+  }
+
+  .unit-5-12-lg {
+    width: 41.66667%;
+  }
+
+  .unit-7-12-lg {
+    width: 58.33333%;
+  }
+
+  .unit-11-12-lg {
+    width: 91.66667%;
+  }
+}
+@media all and (max-width: 1023px) {
+  /* Proportional units
+     ========================================================================== */
+  /*
+   * Specify the proportional width of an object.
+   * Primarily for, but not limited to, use with `.grid__cell` components.
+   * Intentional redundancy build into each set of unit classes.
+   */
+  .unit-1-1-md {
+    width: 100%;
+  }
+
+  .unit-0-1-md {
+    width: 0%;
+  }
+
+  .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-4-8-md, .unit-5-10-md, .unit-6-12-md {
+    width: 50%;
+  }
+
+  .unit-1-3-md, .unit-2-6-md, .unit-4-12-md {
+    width: 33.33333%;
+  }
+
+  .unit-2-3-md, .unit-4-6-md, .unit-8-12-md {
+    width: 66.66667%;
+  }
+
+  .unit-1-4-md, .unit-2-8-md, .unit-3-12-md {
+    width: 25%;
+  }
+
+  .unit-3-4-md, .unit-6-8-md, .unit-9-12-md {
+    width: 75%;
+  }
+
+  .unit-1-5-md, .unit-2-10-md {
+    width: 20%;
+  }
+
+  .unit-2-5-md, .unit-4-10-md {
+    width: 40%;
+  }
+
+  .unit-3-5-md, .unit-6-10-md {
+    width: 60%;
+  }
+
+  .unit-4-5-md, .unit-8-10-md {
+    width: 80%;
+  }
+
+  .unit-1-6-md, .unit-2-12-md {
+    width: 16.66667%;
+  }
+
+  .unit-5-6-md, .unit-10-12-md {
+    width: 83.33333%;
+  }
+
+  .unit-1-8-md {
+    width: 12.5%;
+  }
+
+  .unit-3-8-md {
+    width: 37.5%;
+  }
+
+  .unit-5-8-md {
+    width: 62.5%;
+  }
+
+  .unit-7-8-md {
+    width: 87.5%;
+  }
+
+  .unit-1-10-md {
+    width: 10%;
+  }
+
+  .unit-3-10-md {
+    width: 30%;
+  }
+
+  .unit-7-10-md {
+    width: 70%;
+  }
+
+  .unit-9-10-md {
+    width: 90%;
+  }
+
+  .unit-1-12-md {
+    width: 8.33333%;
+  }
+
+  .unit-5-12-md {
+    width: 41.66667%;
+  }
+
+  .unit-7-12-md {
+    width: 58.33333%;
+  }
+
+  .unit-11-12-md {
+    width: 91.66667%;
+  }
+}
+@media all and (max-width: 767px) {
+  /* Proportional units
+     ========================================================================== */
+  /*
+   * Specify the proportional width of an object.
+   * Primarily for, but not limited to, use with `.grid__cell` components.
+   * Intentional redundancy build into each set of unit classes.
+   */
+  .unit-1-1-sm {
+    width: 100%;
+  }
+
+  .unit-0-1-sm {
+    width: 0%;
+  }
+
+  .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-4-8-sm, .unit-5-10-sm, .unit-6-12-sm {
+    width: 50%;
+  }
+
+  .unit-1-3-sm, .unit-2-6-sm, .unit-4-12-sm {
+    width: 33.33333%;
+  }
+
+  .unit-2-3-sm, .unit-4-6-sm, .unit-8-12-sm {
+    width: 66.66667%;
+  }
+
+  .unit-1-4-sm, .unit-2-8-sm, .unit-3-12-sm {
+    width: 25%;
+  }
+
+  .unit-3-4-sm, .unit-6-8-sm, .unit-9-12-sm {
+    width: 75%;
+  }
+
+  .unit-1-5-sm, .unit-2-10-sm {
+    width: 20%;
+  }
+
+  .unit-2-5-sm, .unit-4-10-sm {
+    width: 40%;
+  }
+
+  .unit-3-5-sm, .unit-6-10-sm {
+    width: 60%;
+  }
+
+  .unit-4-5-sm, .unit-8-10-sm {
+    width: 80%;
+  }
+
+  .unit-1-6-sm, .unit-2-12-sm {
+    width: 16.66667%;
+  }
+
+  .unit-5-6-sm, .unit-10-12-sm {
+    width: 83.33333%;
+  }
+
+  .unit-1-8-sm {
+    width: 12.5%;
+  }
+
+  .unit-3-8-sm {
+    width: 37.5%;
+  }
+
+  .unit-5-8-sm {
+    width: 62.5%;
+  }
+
+  .unit-7-8-sm {
+    width: 87.5%;
+  }
+
+  .unit-1-10-sm {
+    width: 10%;
+  }
+
+  .unit-3-10-sm {
+    width: 30%;
+  }
+
+  .unit-7-10-sm {
+    width: 70%;
+  }
+
+  .unit-9-10-sm {
+    width: 90%;
+  }
+
+  .unit-1-12-sm {
+    width: 8.33333%;
+  }
+
+  .unit-5-12-sm {
+    width: 41.66667%;
+  }
+
+  .unit-7-12-sm {
+    width: 58.33333%;
+  }
+
+  .unit-11-12-sm {
+    width: 91.66667%;
+  }
+}
+.hidden {
+  display: none;
+}
+
+@media all and (max-width: 1199px) {
+  .hidden-lg {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .hidden-md {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .visible-lg {
+    display: block;
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .visible-md {
+    display: block;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .visible-sm {
+    display: block;
+  }
+}
+
+.left {
+  float: left;
+}
+
+@media all and (min-width: 1024px) {
+  .left-md {
+    float: left;
+  }
+}
+
+.right {
+  float: right;
+}
+
+@media all and (min-width: 1024px) {
+  .right-md {
+    float: right;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.margin {
+  margin-bottom: 40px;
+}
+@media all and (max-width: 767px) {
+  .margin {
+    margin-bottom: 20px;
+  }
+}
+
+.margin-double {
+  margin-bottom: 80px;
+}
+@media all and (max-width: 767px) {
+  .margin-double {
+    margin-bottom: 40px;
+  }
+}
+
+.margin-half {
+  margin-bottom: 20px;
+}
+@media all and (max-width: 767px) {
+  .margin-half {
+    margin-bottom: 10px;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.animated {
+  visibility: visible;
+}
+
+.unit-center {
+  vertical-align: middle;
+}
+
+.reverse {
+  direction: rtl;
+}
+.reverse div {
+  direction: ltr;
+}
+
+img {
+  max-width: 100%;
+}
+img.full {
+  width: 100%;
+}
+
+b {
+  font-weight: 700;
+}
+
+/* Global
+----------------------------------------------- */
+body {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+@media all and (max-width: 1024px) {
+  body {
+    -webkit-text-size-adjust: none;
+  }
+}
+
+a {
+  color: #E7C144;
+  text-decoration: none;
+}
+a:hover {
+  color: #EA7750;
+  text-decoration: none;
+}
+
+/* Header
+----------------------------------------------- */
+header {
+  background: #5C6569;
+  box-sizing: border-box;
+  left: 0;
+  padding: 50px 5% 20px 5%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+@media all and (max-width: 1199px) {
+  header {
+    padding: 20px 5%;
+  }
+}
+@media all and (max-width: 767px) {
+  header {
+    position: fixed;
+  }
+}
+@media all and (max-width: 1199px) {
+  header.open > span {
+    position: fixed;
+  }
+  header.open > span span {
+    background-color: transparent;
+  }
+  header.open > span span:before {
+    top: 0;
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  header.open > span span:after {
+    bottom: 0;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
+@media all and (max-width: 1199px) {
+  header.open nav {
+    right: 0;
+  }
+}
+header.alt {
+  background: transparent;
+}
+@media all and (max-width: 767px) {
+  header.alt {
+    background: #5C6569;
+  }
+}
+header.alt h2 a:after {
+  opacity: 0;
+}
+@media all and (max-width: 767px) {
+  header.alt h2 a:after {
+    opacity: 1;
+  }
+}
+header > span {
+  display: none;
+}
+@media all and (max-width: 1199px) {
+  header > span {
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    width: 24px;
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+@media all and (max-width: 1199px) and (max-width: 767px) {
+  header > span {
+    top: 15px;
+  }
+}
+@media all and (max-width: 1199px) {
+  header > span span {
+    background: #fff;
+    display: block;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    top: 13px;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    width: 24px;
+  }
+  header > span span:before {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    top: -7px;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    width: 24px;
+  }
+  header > span span:after {
+    background: #fff;
+    bottom: -7px;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    width: 24px;
+  }
+}
+header h2 {
+  float: left;
+}
+header h2 a {
+  background: url(media/images/logo-text.svg);
+  background-position: 85px center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: block;
+  font-size: 0;
+  height: 30px;
+  position: relative;
+  width: 190px;
+}
+@media all and (max-width: 767px) {
+  header h2 a {
+    background-position: 60px center;
+    height: 20px;
+    width: 130px;
+  }
+}
+header h2 a:before {
+  content: url(media/images/pencil-alt.svg);
+  display: block;
+  height: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  width: 75px;
+}
+@media all and (max-width: 767px) {
+  header h2 a:before {
+    height: 20px;
+    width: 50px;
+  }
+}
+header h2 a:after {
+  content: url(media/images/pencil-alt.svg);
+  display: block;
+  height: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  vertical-align: middle;
+  width: 75px;
+}
+@media all and (max-width: 767px) {
+  header h2 a:after {
+    height: 20px;
+    width: 50px;
+  }
+}
+header nav {
+  float: right;
+}
+@media all and (max-width: 1199px) {
+  header nav {
+    background: #5C6569;
+    box-sizing: border-box;
+    display: block;
+    float: none;
+    height: 100vh;
+    overflow: scroll;
+    padding: 20px 60px 100px 0;
+    position: fixed;
+    right: calc(-100vw - 60px);
+    text-align: left;
+    top: 0;
+    transition: right 0.2s linear;
+    -moz-transition: right 0.2s linear;
+    -webkit-transition: right 0.2s linear;
+    width: calc(60vw);
+    z-index: 99;
+  }
+}
+@media all and (max-width: 767px) {
+  header nav {
+    width: calc(100vw);
+  }
+}
+header nav ul.primary {
+  font-size: 0;
+  margin: 0 -15px 0 0;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary {
+    margin: 0;
+  }
+}
+header nav ul.primary > li {
+  display: inline-block;
+  margin: 0 0 0 5px;
+  position: relative;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li {
+    display: block;
+    margin: 0;
+  }
+}
+header nav ul.primary > li:hover > a {
+  background: #5C6569;
+  color: #E7C144;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li:hover > a {
+    color: #fff;
+  }
+}
+header nav ul.primary > li:hover ul {
+  display: block;
+}
+header nav ul.primary > li > a {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #fff;
+  display: block;
+  font: 700 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  padding: 10px 15px;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li > a {
+    padding: 15px 25px;
+  }
+}
+header nav ul.primary > li > a:first-of-type {
+  margin: 0;
+}
+header nav ul.primary > li > a:hover {
+  background: #5C6569;
+  color: #E7C144;
+  text-decoration: none;
+}
+header nav ul.primary > li > a.current {
+  color: #E7C144;
+}
+header nav ul.primary > li.button a {
+  background: #fff;
+  color: #5C6569;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary > li.button a {
+    display: inline-block;
+    margin: 0 0 0 -10px;
+    padding-left: 35px;
+  }
+}
+header nav ul.primary > li.button a:hover {
+  background: #fff;
+  color: #E7C144;
+}
+header nav ul.primary ul {
+  background: #5C6569;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: none;
+  left: 0;
+  min-width: calc(100% + 40px);
+  padding: 20px 20px 10px 20px;
+  position: absolute;
+  top: calc(100% - 10px);
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary ul {
+    display: block;
+    padding: 0;
+    position: static;
+  }
+}
+header nav ul.primary ul li {
+  display: block;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.primary ul li {
+    padding: 0 25px;
+  }
+}
+header nav ul.primary ul li a {
+  color: #fff;
+  font: 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+header nav ul.primary ul li a:hover {
+  color: #E7C144;
+  text-decoration: none;
+}
+header nav ul.primary ul li a.current {
+  color: #E7C144;
+}
+header nav ul.secondary {
+  position: absolute;
+  right: 5%;
+  top: 10px;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.secondary {
+    margin: 25px 0 0 25px;
+    position: static;
+  }
+}
+header nav ul.secondary li {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 0 15px;
+}
+@media all and (max-width: 1199px) {
+  header nav ul.secondary li {
+    display: block;
+    margin: 0 0 10px 0;
+  }
+}
+
+/* Content
+----------------------------------------------- */
+section {
+  color: #5C6569;
+  position: relative;
+}
+section.hero {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+}
+section.hero:before {
+  background: rgba(92, 101, 105, 0.8);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+section.hero article {
+  padding: 125px 0;
+  position: relative;
+  z-index: 10;
+}
+@media all and (max-width: 767px) {
+  section.hero article {
+    padding: 75px 0;
+  }
+}
+section.hero article h1,
+section.hero article h2 {
+  color: #fff;
+  font-size: 70px;
+  line-height: 80px;
+  text-transform: none;
+}
+@media all and (max-width: 767px) {
+  section.hero article h1,
+  section.hero article h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+section.hero article p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  font-style: italic;
+  line-height: 40px;
+}
+@media all and (max-width: 767px) {
+  section.hero article p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+section.hero article p a.button {
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  padding: 15px 30px;
+}
+@media all and (max-width: 767px) {
+  section.hero article p a.button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+section.alt {
+  background: #F2F1E4;
+  color: #13344A;
+}
+section.inverse {
+  background: #5C6569;
+  color: #fff;
+}
+section.inverse h1,
+section.inverse h2,
+section.inverse h3,
+section.inverse h4,
+section.inverse p {
+  color: #fff;
+}
+section.thin article {
+  padding: 25px 0;
+}
+section:first-of-type {
+  padding-top: 100px;
+}
+@media all and (max-width: 767px) {
+  section:first-of-type {
+    padding-top: 60px;
+  }
+}
+section article {
+  margin: 0 auto;
+  padding: 75px 0;
+  width: 1190px;
+}
+@media all and (max-width: 1199px) {
+  section article {
+    width: 90%;
+  }
+}
+@media all and (max-width: 767px) {
+  section article {
+    padding: 40px 0;
+  }
+}
+section article h1 {
+  color: #000;
+}
+section article h1,
+section article h2 {
+  font: 700 60px/70px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+@media all and (max-width: 767px) {
+  section article h1,
+  section article h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+section article h3 {
+  color: #000;
+  font: 700 40px/45px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+@media all and (max-width: 767px) {
+  section article h3 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+section article h3.clean {
+  margin: 0;
+}
+section article h4 {
+  color: #000;
+  font: 700 24px/30px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+}
+@media all and (max-width: 767px) {
+  section article h4 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+section article h4 i.fa {
+  color: #E7C144;
+}
+section article p {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+@media all and (max-width: 767px) {
+  section article p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+}
+section article p.clean {
+  margin: 0;
+}
+section article p.callout {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  line-height: 35px;
+}
+@media all and (max-width: 767px) {
+  section article p.callout {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+section article p i {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+section article img.rounded {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+section article ol {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+section article ol li {
+  margin: 0 0 0 25px;
+}
+section article ul {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px 0;
+}
+section article ul.social li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+section article ul.social li a {
+  background: #000;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  display: block;
+  font-size: 28px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
+section article ul li {
+  margin: 0 0 0 25px;
+}
+section article a.button {
+  background: #E7C144;
+  color: #fff;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+@media all and (max-width: 767px) {
+  section article a.button {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+}
+section article a.button:hover {
+  background: #EA7750;
+  text-decoration: none;
+}
+section article form label {
+  display: block;
+  margin: 0 0 30px 0;
+}
+section article form label input {
+  background: #fff;
+  border: none;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  section article form label input {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+section article form div.checkbox {
+  margin: 0 0 10px 0;
+}
+section article form div.checkbox input[type=checkbox] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+section article form div.checkbox input[type=checkbox] + label {
+  background-image: url("media/images/checkboxes.png");
+  cursor: pointer;
+  display: inline-block;
+  font: normal 16px/24px Helvetica, Arial, Verdana, sans-serif;
+  margin: 5px 40px 5px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  vertical-align: middle;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  section article form div.checkbox input[type=checkbox] + label {
+    background-image: url("media/images/checkboxes@2x.png");
+    background-size: 16px 32px;
+  }
+}
+section article form div.checkbox input[type=checkbox] + label:before {
+  background: #fff;
+  content: '';
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: -1px;
+  width: 24px;
+}
+section article form div.checkbox input[type=checkbox]:checked + label:after {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  font-size: 20px;
+  height: 24px;
+  left: 0;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 24px;
+}
+section article form select {
+  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 30px 0;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  section article form select {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+section article form button {
+  background: #E7C144;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+section article form button:hover {
+  background: #EA7750;
+  text-decoration: none;
+}
+
+/* Footer
+----------------------------------------------- */
+footer {
+  background: #5C6569;
+  padding: 50px 0;
+}
+footer > div {
+  margin: 0 auto;
+  width: 1190px;
+}
+@media all and (max-width: 1199px) {
+  footer > div {
+    width: 90%;
+  }
+}
+footer > div h5 {
+  font: 700 20px/25px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  margin: 0 0 10px 0;
+}
+footer > div p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 20px 0;
+}
+footer > div p.callout {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+footer > div ul {
+  margin: 0 0 20px 0;
+}
+footer > div ul.social li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+footer > div ul.social li a {
+  background: #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #5C6569;
+  display: block;
+  font-size: 24px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+footer > div ul li {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 0 5px 0;
+}
+footer > div a {
+  color: #fff;
+}

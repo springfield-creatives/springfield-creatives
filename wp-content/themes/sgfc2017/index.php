@@ -20,68 +20,41 @@ if(empty($banner_img))
     $banner_img = get_field('default_banner', 'options');
 
 ?>
-<div id="content">
+<section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
+  <article>
+    <h1><?php echo $title ?></h1>
+  </article>
+</section>
+<section>
+  <article>
+    <?php
 
-    <div class="hero-banner">
+    if($is_single){
 
-        <div class="wrapper">
+      the_content();
 
-            <img src="<?php echo $banner_img ?>" alt="" />
+    }else{
+      while(have_posts()): the_post();
+        ?>
+        <div class="post">
 
-        </div><!-- .wrapper -->
+          <div class="details">
 
-    </div><!-- .hero-banner -->
+            <h3>
+              <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+            </h3>
 
-    <div class="wrapper">
+            <p><?php the_excerpt() ?> <em>Read more</em></p>
 
-        <div class="primary-content">
-	        
-	        <?php
+          </div>
 
-	        if($is_single){
-
-              echo '<h2>' . get_the_title() . '</h2>';
-
-
-	            the_content();
-
-
-	        }else{
-	            while(have_posts()): the_post();
-	                
-              		?>
-                  <div class="post">
-
-                      <div class="photo"><img src="<?php echo $thumb ?>" alt="" /></div>
-
-                      <div class="details">
-
-                          <h3>
-	                          <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-	                        </h3>
-
-                          <p><?php the_excerpt() ?> <em>Read more</em></p>
-
-                      </div>
-
-                  </div>
-                  <?php
-	                
-	            endwhile;
-	        }
-	        ?>
-
-        </div><!-- .primary-content -->
-
-        <div class="secondary-content">
-
-        <?php dynamic_sidebar('global') ?>
-
-        </div><!-- .secondary-content -->
-
-    </div><!-- .wrapper -->
-
-</div><!-- #content -->
+        </div>
+        <?php
+      endwhile;
+    }
+    ?>
+  </article>
+</section>
 <?php
 get_footer();
 ?>
