@@ -55,15 +55,19 @@ the_post()
             <div class="grid">
               <div class="unit-1-2 unit-1-1-lg">
                 <?php
+                $ind_count = 0;
                 $midpoint = round(count($industry)/2);
                 foreach($industry as $ind => $cur_ind):
+                
+                  $ind_count++;
+
                   if($ind == $midpoint)
                     echo '</div><div class="unit-1-2 unit-1-1-lg">';
 
                   ?>
                   <div class="checkbox">
-                    <input id="label-1" type="checkbox" name="business_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['business_industry']) && in_array($cur_ind->term_id, $_GET['business_industry']) ? 'checked ' : '' ?>/>
-                    <label for="label-1"><?php echo $cur_ind->name ?></label>
+                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="business_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['business_industry']) && in_array($cur_ind->term_id, $_GET['business_industry']) ? 'checked ' : '' ?>/>
+                    <label for="label-<?php echo $ind_count ?>"><?php echo $cur_ind->name ?></label>
                   </div>
                 <?php
                 endforeach;

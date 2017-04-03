@@ -146,25 +146,9 @@ if(!empty($profile['edit-link'])){
       </div>
       <div class="unit-1-2 unit-1-1-md margin">
         <p class="margin-double"><img src="<?php echo $profile['featured_img'] ?>" /></p>
-        
-        <?php
-        // MAP
-        if(!empty($profile['contact_links']['address']['title'])){
-
-					// echo a map
-					$safe_address = urlencode(
-						str_replace('<br />', '',
-							str_replace('<br/>', '', $profile['contact_links']['address']['title'])
-						)
-					);
-					echo '<iframe class="margin-double" src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCiddn9bKV6xJLFEm8sTQ4k6LtUTAO9RGg&q=' . $safe_address . '" width="100%" height="350" frameborder="0" style="border:0"></iframe>';
-
-					
-				}
-				?>
 
 
-        <div class="grid">
+        <div class="grid margin-double">
 
           <?php if(!empty($profile['skills'])): ?>
 	          <div class="unit-1-2 unit-1-1-lg">
@@ -201,7 +185,24 @@ if(!empty($profile['edit-link'])){
 							</div>
 						</div>
 	        <?php endif; ?>
+        
       </div>
+      
+      <?php
+      // MAP
+      if(!empty($profile['contact_links']['address']['title'])){
+
+				// echo a map
+				$safe_address = urlencode(
+					str_replace('<br />', '',
+						str_replace('<br/>', '', $profile['contact_links']['address']['title'])
+					)
+				);
+				echo '<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCiddn9bKV6xJLFEm8sTQ4k6LtUTAO9RGg&q=' . $safe_address . '" width="100%" height="350" frameborder="0" style="border:0"></iframe>';
+
+				
+			}
+			?>
     </div>
   </article>
 </section>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  *  Theme Name: SGFC 2017
  *  Theme URL: http://www.sgfcreatives.com/
@@ -260,16 +261,16 @@ img {
   vertical-align: middle;
 }
 
-.clear, header, div.product {
+.clear, .site-header, div.product {
   zoom: 1;
 }
-.clear:before, header:before, div.product:before, .clear:after, header:after, div.product:after {
+.clear:before, .site-header:before, div.product:before, .clear:after, .site-header:after, div.product:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
-.clear:after, header:after, div.product:after {
+.clear:after, .site-header:after, div.product:after {
   clear: both;
 }
 
@@ -434,6 +435,104 @@ img {
   margin-left: auto;
 }
 
+/**
+ * Featherlight - ultra slim jQuery lightbox
+ * Version 1.5.0 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2016, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+  .featherlight {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483647;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #333;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  .featherlight:last-of-type {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .featherlight:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -.25em;
+  }
+
+  .featherlight .featherlight-content {
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    padding: 25px 25px 0;
+    border-bottom: 25px solid transparent;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    background: #fff;
+    cursor: auto;
+    white-space: normal;
+  }
+
+  .featherlight .featherlight-inner {
+    display: block;
+  }
+
+  .featherlight .featherlight-close-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    line-height: 25px;
+    width: 25px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial,sans-serif;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+  }
+
+  .featherlight .featherlight-image {
+    width: 100%;
+  }
+
+  .featherlight-iframe .featherlight-content {
+    border-bottom: 0;
+    padding: 0;
+  }
+
+  .featherlight iframe {
+    border: 0;
+  }
+
+  .featherlight * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .featherlight .featherlight-content {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 98%;
+    padding: 10px 10px 0;
+    border-bottom: 10px solid transparent;
+  }
+}
 /*
 -----------------------------------------------
 Springfield Creatives Styles
@@ -996,7 +1095,7 @@ a:hover {
 
 /* Header
 ----------------------------------------------- */
-header {
+.site-header {
   background: #5c6569;
   box-sizing: border-box;
   left: 0;
@@ -1007,37 +1106,37 @@ header {
   z-index: 100;
 }
 @media all and (max-width: 1199px) {
-  header {
+  .site-header {
     padding: 20px 5%;
   }
 }
 @media all and (max-width: 767px) {
-  header {
+  .site-header {
     position: fixed;
   }
 }
-body.admin-bar header {
+body.admin-bar .site-header {
   padding-top: 82px;
 }
 @media all and (max-width: 1199px) {
-  body.admin-bar header {
+  body.admin-bar .site-header {
     padding-top: 66px;
   }
 }
 @media all and (max-width: 1199px) {
-  header.open > span {
+  .site-header.open > span {
     position: fixed;
   }
-  header.open > span span {
+  .site-header.open > span span {
     background-color: transparent;
   }
-  header.open > span span:before {
+  .site-header.open > span span:before {
     top: 0;
     transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
-  header.open > span span:after {
+  .site-header.open > span span:after {
     bottom: 0;
     transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -1045,31 +1144,31 @@ body.admin-bar header {
   }
 }
 @media all and (max-width: 1199px) {
-  header.open nav {
+  .site-header.open nav {
     right: 0;
   }
 }
-header.alt {
+.site-header.alt {
   background: transparent;
 }
 @media all and (max-width: 767px) {
-  header.alt {
+  .site-header.alt {
     background: #5c6569;
   }
 }
-header.alt h2 a:after {
+.site-header.alt h2 a:after {
   opacity: 0;
 }
 @media all and (max-width: 767px) {
-  header.alt h2 a:after {
+  .site-header.alt h2 a:after {
     opacity: 1;
   }
 }
-header > span {
+.site-header > span {
   display: none;
 }
 @media all and (max-width: 1199px) {
-  header > span {
+  .site-header > span {
     cursor: pointer;
     display: block;
     height: 30px;
@@ -1080,10 +1179,10 @@ header > span {
     z-index: 100;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-  body.admin-bar header > span {
+  body.admin-bar .site-header > span {
     top: 66px;
   }
-  header > span span {
+  .site-header > span span {
     background: #fff;
     display: block;
     height: 3px;
@@ -1095,7 +1194,7 @@ header > span {
     -webkit-transition: all 0.2s linear;
     width: 24px;
   }
-  header > span span:before {
+  .site-header > span span:before {
     background: #fff;
     content: '';
     display: block;
@@ -1107,7 +1206,7 @@ header > span {
     -webkit-transition: all 0.2s linear;
     width: 24px;
   }
-  header > span span:after {
+  .site-header > span span:after {
     background: #fff;
     bottom: -7px;
     content: '';
@@ -1121,14 +1220,14 @@ header > span {
   }
 }
 @media all and (max-width: 1199px) and (max-width: 767px) {
-  header > span {
+  .site-header > span {
     top: 15px;
   }
 }
-header h2 {
+.site-header h2 {
   float: left;
 }
-header h2 a {
+.site-header h2 a {
   background: url(media/images/logo-text.svg);
   background-position: 85px center;
   background-repeat: no-repeat;
@@ -1140,13 +1239,13 @@ header h2 a {
   width: 190px;
 }
 @media all and (max-width: 767px) {
-  header h2 a {
+  .site-header h2 a {
     background-position: 60px center;
     height: 20px;
     width: 130px;
   }
 }
-header h2 a:before {
+.site-header h2 a:before {
   content: url(media/images/pencil-alt.svg);
   display: block;
   height: 30px;
@@ -1157,12 +1256,12 @@ header h2 a:before {
   width: 75px;
 }
 @media all and (max-width: 767px) {
-  header h2 a:before {
+  .site-header h2 a:before {
     height: 20px;
     width: 50px;
   }
 }
-header h2 a:after {
+.site-header h2 a:after {
   content: url(media/images/pencil-alt.svg);
   display: block;
   height: 30px;
@@ -1173,16 +1272,16 @@ header h2 a:after {
   width: 75px;
 }
 @media all and (max-width: 767px) {
-  header h2 a:after {
+  .site-header h2 a:after {
     height: 20px;
     width: 50px;
   }
 }
-header nav {
+.site-header nav {
   float: right;
 }
 @media all and (max-width: 1199px) {
-  header nav {
+  .site-header nav {
     background: #5c6569;
     box-sizing: border-box;
     display: block;
@@ -1202,46 +1301,46 @@ header nav {
   }
 }
 @media all and (max-width: 767px) {
-  header nav {
+  .site-header nav {
     width: calc(100vw);
   }
 }
-header nav ul.primary {
+.site-header nav ul.primary {
   font-size: 0;
   margin: 0 -15px 0 0;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary {
+  .site-header nav ul.primary {
     margin: 0;
   }
-  body.admin-bar header nav ul.primary {
+  body.admin-bar .site-header nav ul.primary {
     padding-top: 46px;
   }
 }
-header nav ul.primary > li {
+.site-header nav ul.primary > li {
   display: inline-block;
   margin: 0 0 0 5px;
   position: relative;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary > li {
+  .site-header nav ul.primary > li {
     display: block;
     margin: 0;
   }
 }
-header nav ul.primary > li:hover > a {
+.site-header nav ul.primary > li:hover > a {
   background: #5c6569;
   color: #e7c144;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary > li:hover > a {
+  .site-header nav ul.primary > li:hover > a {
     color: #fff;
   }
 }
-header nav ul.primary > li:hover ul {
+.site-header nav ul.primary > li:hover ul {
   display: block;
 }
-header nav ul.primary > li > a {
+.site-header nav ul.primary > li > a {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1251,37 +1350,37 @@ header nav ul.primary > li > a {
   padding: 10px 15px;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary > li > a {
+  .site-header nav ul.primary > li > a {
     padding: 15px 25px;
   }
 }
-header nav ul.primary > li > a:first-of-type {
+.site-header nav ul.primary > li > a:first-of-type {
   margin: 0;
 }
-header nav ul.primary > li > a:hover {
+.site-header nav ul.primary > li > a:hover {
   background: #5c6569;
   color: #e7c144;
   text-decoration: none;
 }
-header nav ul.primary > li > a.current {
+.site-header nav ul.primary > li > a.current {
   color: #e7c144;
 }
-header nav ul.primary > li.button a {
+.site-header nav ul.primary > li.button a {
   background: #fff;
   color: #5c6569;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary > li.button a {
+  .site-header nav ul.primary > li.button a {
     display: inline-block;
     margin: 0 0 0 -10px;
     padding-left: 35px;
   }
 }
-header nav ul.primary > li.button a:hover {
+.site-header nav ul.primary > li.button a:hover {
   background: #fff;
   color: #e7c144;
 }
-header nav ul.primary ul {
+.site-header nav ul.primary ul {
   background: #5c6569;
   border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1294,61 +1393,61 @@ header nav ul.primary ul {
   top: calc(100% - 10px);
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary ul {
+  .site-header nav ul.primary ul {
     display: block;
     padding: 0;
     position: static;
   }
 }
-header nav ul.primary ul li {
+.site-header nav ul.primary ul li {
   display: block;
   margin: 0 0 10px 0;
   white-space: nowrap;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.primary ul li {
+  .site-header nav ul.primary ul li {
     padding: 0 25px;
   }
 }
-header nav ul.primary ul li a {
+.site-header nav ul.primary ul li a {
   color: #fff;
   font: 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
 }
-header nav ul.primary ul li a:hover {
+.site-header nav ul.primary ul li a:hover {
   color: #e7c144;
   text-decoration: none;
 }
-header nav ul.primary ul li a.current {
+.site-header nav ul.primary ul li a.current {
   color: #e7c144;
 }
-header nav ul.secondary {
+.site-header nav ul.secondary {
   position: absolute;
   right: 5%;
   top: 10px;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.secondary {
+  .site-header nav ul.secondary {
     margin: 25px 0 0 25px;
     position: static;
   }
 }
-header nav ul.secondary li {
+.site-header nav ul.secondary li {
   display: inline-block;
   font-size: 14px;
   line-height: 20px;
   margin: 0 0 0 15px;
 }
 @media all and (max-width: 1199px) {
-  header nav ul.secondary li {
+  .site-header nav ul.secondary li {
     display: block;
     margin: 0 0 10px 0;
   }
 }
-body.admin-bar header nav ul.secondary {
+body.admin-bar .site-header nav ul.secondary {
   top: 42px;
 }
 @media all and (max-width: 1199px) {
-  body.admin-bar header nav ul.secondary {
+  body.admin-bar .site-header nav ul.secondary {
     top: 56px;
   }
 }
@@ -1359,9 +1458,10 @@ form label {
   display: block;
   margin: 0 0 30px 0;
 }
-form input {
+form input,
+form textarea {
   background: #fff;
-  border: none;
+  border: 1px solid #5c6569;
   box-sizing: border-box;
   color: #000;
   display: block;
@@ -1371,16 +1471,24 @@ form input {
   width: 100%;
 }
 @media all and (max-width: 767px) {
-  form input {
+  form input,
+  form textarea {
     font-size: 18px;
     line-height: 24px;
     padding: 10px 20px;
   }
 }
-form div.checkbox {
+form input[type=file],
+form textarea[type=file] {
+  font-size: 16px;
+  line-height: 16px;
+}
+form div.checkbox,
+form div.radio {
   margin: 0 0 10px 0;
 }
-form div.checkbox input[type=checkbox] {
+form div.checkbox input,
+form div.radio input {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1390,8 +1498,8 @@ form div.checkbox input[type=checkbox] {
   position: absolute;
   width: 1px;
 }
-form div.checkbox input[type=checkbox] + label {
-  background-image: url("media/images/checkboxes.png");
+form div.checkbox input + label,
+form div.radio input + label {
   cursor: pointer;
   display: inline-block;
   font: normal 16px/24px Helvetica, Arial, Verdana, sans-serif;
@@ -1400,14 +1508,10 @@ form div.checkbox input[type=checkbox] + label {
   position: relative;
   vertical-align: middle;
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  form div.checkbox input[type=checkbox] + label {
-    background-image: url("media/images/checkboxes@2x.png");
-    background-size: 16px 32px;
-  }
-}
-form div.checkbox input[type=checkbox] + label:before {
+form div.checkbox input + label:before,
+form div.radio input + label:before {
   background: #fff;
+  border: 1px solid #5c6569;
   content: '';
   height: 24px;
   left: 0;
@@ -1415,7 +1519,9 @@ form div.checkbox input[type=checkbox] + label:before {
   top: -1px;
   width: 24px;
 }
-form div.checkbox input[type=checkbox]:checked + label:after {
+form div.checkbox input:checked + label:after,
+form div.radio input:checked + label:after {
+  color: #000;
   content: '\f00c';
   font-family: "FontAwesome";
   font-size: 20px;
@@ -1427,12 +1533,17 @@ form div.checkbox input[type=checkbox]:checked + label:after {
   top: -1px;
   width: 24px;
 }
+form div.radio input + label:before {
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
 form select {
   appearance: button;
   -moz-appearance: button;
   -webkit-appearance: button;
   background: #fff;
-  border: none;
+  border: 1px solid #5c6569;
   border-radius: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -1452,6 +1563,11 @@ form select {
     padding: 10px 20px;
   }
 }
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
 form button {
   background: #e7c144;
   border: none;
@@ -1463,9 +1579,256 @@ form button {
   padding: 20px 50px;
   text-transform: uppercase;
 }
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
 form button:hover {
   background: #ea7750;
   text-decoration: none;
+}
+
+/* Calendar
+----------------------------------------------- */
+div.calendar {
+  background: #f2f1e4;
+  padding: 10px;
+}
+div.calendar .controls {
+  display: block;
+  font-size: 0;
+  padding: 20px 0;
+  position: relative;
+}
+@media all and (max-width: 767px) {
+  div.calendar .controls {
+    padding: 5px 0;
+  }
+}
+div.calendar .controls span {
+  background: #e7c144;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+  height: 40px;
+  line-height: 40px;
+  margin: -20px 0 0 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 40px;
+}
+@media all and (max-width: 767px) {
+  div.calendar .controls span {
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+  }
+}
+div.calendar .controls span:hover {
+  background-color: #000;
+  color: #fff;
+}
+div.calendar .controls span:first-of-type {
+  left: 20px;
+}
+@media all and (max-width: 767px) {
+  div.calendar .controls span:first-of-type {
+    left: 0;
+  }
+}
+div.calendar .controls span:last-of-type {
+  right: 20px;
+}
+@media all and (max-width: 767px) {
+  div.calendar .controls span:last-of-type {
+    right: 0;
+  }
+}
+div.calendar .controls span.inactive {
+  display: none;
+}
+div.calendar .controls h2 {
+  display: block;
+  font-size: 26px;
+  line-height: 40px;
+  text-align: center;
+}
+@media all and (max-width: 767px) {
+  div.calendar .controls h2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+div.calendar .days-container {
+  display: block;
+}
+div.calendar .days-container > ul {
+  display: table;
+  font-weight: bold;
+  margin: 20px 0;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  div.calendar .days-container > ul {
+    margin: 10px 0;
+  }
+}
+div.calendar .days-container > ul li {
+  display: table-cell;
+  text-align: center;
+}
+div.calendar .days-container .days .day,
+div.calendar .days-container .days .empty {
+  background: #fff;
+  border-left: 1px solid #f2f1e4;
+  border-right: 1px solid #f2f1e4;
+  box-sizing: border-box;
+  color: #333333;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0 0 5px 0;
+  position: relative;
+  text-align: center;
+  width: calc(100% / 7);
+}
+@media all and (max-width: 767px) {
+  div.calendar .days-container .days .day,
+  div.calendar .days-container .days .empty {
+    font-size: 16px;
+  }
+}
+div.calendar .days-container .days .day:before,
+div.calendar .days-container .days .empty:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+div.calendar .days-container .days .day.event,
+div.calendar .days-container .days .empty.event {
+  cursor: pointer;
+  position: relative;
+}
+div.calendar .days-container .days .day.event.open,
+div.calendar .days-container .days .empty.event.open {
+  cursor: default;
+}
+@media all and (max-width: 767px) {
+  div.calendar .days-container .days .day.event.open:after,
+  div.calendar .days-container .days .empty.event.open:after {
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+  }
+}
+div.calendar .days-container .days .day.event.open ul,
+div.calendar .days-container .days .empty.event.open ul {
+  display: block;
+}
+div.calendar .days-container .days .day.adjacent-month,
+div.calendar .days-container .days .empty.adjacent-month {
+  color: rgba(0, 0, 0, 0.3);
+}
+div.calendar .days-container .days .day b,
+div.calendar .days-container .days .empty b {
+  display: block;
+  font-weight: normal;
+  left: 0;
+  margin: -10px 0 0 0;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+div.calendar .days-container .days .day b.event,
+div.calendar .days-container .days .empty b.event {
+  color: #fff;
+  z-index: 10;
+}
+div.calendar .days-container .days .day ul,
+div.calendar .days-container .days .empty ul {
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  color: #333333;
+  display: none;
+  left: 20%;
+  padding: 20px;
+  position: absolute;
+  text-align: left;
+  top: 20%;
+  width: 300px;
+  z-index: 30;
+}
+@media all and (max-width: 767px) {
+  div.calendar .days-container .days .day ul,
+  div.calendar .days-container .days .empty ul {
+    left: 50%;
+    margin: 0 0 0 -150px;
+    position: fixed;
+    top: 20%;
+  }
+}
+div.calendar .days-container .days .day ul p,
+div.calendar .days-container .days .empty ul p {
+  font-weight: bold;
+  margin: 0;
+}
+div.calendar .days-container .days .day ul li,
+div.calendar .days-container .days .empty ul li {
+  display: block;
+  margin: 5px 0 0 0;
+}
+div.calendar .days-container .days .day ul span,
+div.calendar .days-container .days .empty ul span {
+  background: #e7c144;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #fff;
+  cursor: pointer !important;
+  font-size: 12px;
+  font-weight: 700;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  top: 10px;
+  width: 20px;
+}
+div.calendar .days-container .days .day > span,
+div.calendar .days-container .days .empty > span {
+  pointer-events: none;
+  background-color: #5c6569;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: block;
+  height: 60%;
+  left: 20%;
+  position: absolute;
+  top: 20%;
+  width: 60%;
+}
+div.calendar .days-container .days .day > span.official,
+div.calendar .days-container .days .empty > span.official {
+  background-color: #ea7750;
 }
 
 /* Content
@@ -1555,6 +1918,20 @@ section.inverse h4,
 section.inverse p {
   color: #fff;
 }
+section.inverse h1 a,
+section.inverse h2 a,
+section.inverse h3 a,
+section.inverse h4 a,
+section.inverse p a {
+  color: #e7c144;
+}
+section.inverse h1 a:hover,
+section.inverse h2 a:hover,
+section.inverse h3 a:hover,
+section.inverse h4 a:hover,
+section.inverse p a:hover {
+  color: #ea7750;
+}
 section.thin article {
   padding: 25px 0;
 }
@@ -1595,6 +1972,10 @@ section article h2 {
     line-height: 50px;
   }
 }
+section article h1 a,
+section article h2 a {
+  color: #000;
+}
 section article h3 {
   color: #000;
   font: 700 40px/45px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
@@ -1610,6 +1991,9 @@ section article h3 {
 section article h3.clean {
   margin: 0;
 }
+section article h3 a {
+  color: #000;
+}
 section article h4 {
   color: #000;
   font: 700 24px/30px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
@@ -1619,6 +2003,9 @@ section article h4 {
     font-size: 18px;
     line-height: 24px;
   }
+}
+section article h4 a {
+  color: #000;
 }
 section article h4 i.fa {
   color: #e7c144;
@@ -1715,6 +2102,7 @@ section article a.button {
 section article a.button:hover {
   background: #ea7750;
   text-decoration: none;
+  color: #fff;
 }
 
 /* Woocommerce
@@ -1728,6 +2116,118 @@ section article a.button:hover {
 .woocommerce button.button.alt,
 .woocommerce input.button.alt {
   background-color: #e7c144;
+}
+
+.woocommerce #respond input#submit.disabled,
+.woocommerce #respond input#submit:disabled,
+.woocommerce #respond input#submit:disabled[disabled],
+.woocommerce a.button.disabled,
+.woocommerce a.button:disabled,
+.woocommerce a.button:disabled[disabled],
+.woocommerce button.button.disabled,
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled],
+.woocommerce input.button.disabled,
+.woocommerce input.button:disabled,
+.woocommerce input.button:disabled[disabled],
+.woocommerce #respond input#submit.alt.disabled,
+.woocommerce #respond input#submit.alt.disabled:hover,
+.woocommerce #respond input#submit.alt:disabled,
+.woocommerce #respond input#submit.alt:disabled:hover,
+.woocommerce #respond input#submit.alt:disabled[disabled],
+.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
+.woocommerce a.button.alt.disabled,
+.woocommerce a.button.alt.disabled:hover,
+.woocommerce a.button.alt:disabled,
+.woocommerce a.button.alt:disabled:hover,
+.woocommerce a.button.alt:disabled[disabled],
+.woocommerce a.button.alt:disabled[disabled]:hover,
+.woocommerce button.button.alt.disabled,
+.woocommerce button.button.alt.disabled:hover,
+.woocommerce button.button.alt:disabled,
+.woocommerce button.button.alt:disabled:hover,
+.woocommerce button.button.alt:disabled[disabled],
+.woocommerce button.button.alt:disabled[disabled]:hover,
+.woocommerce input.button.alt.disabled,
+.woocommerce input.button.alt.disabled:hover,
+.woocommerce input.button.alt:disabled,
+.woocommerce input.button.alt:disabled:hover,
+.woocommerce input.button.alt:disabled[disabled],
+.woocommerce input.button.alt:disabled[disabled]:hover {
+  padding: 20px 50px;
+  background-color: #5c6569;
+  color: #fff;
+}
+
+.woocommerce div.product form.cart .reset_variations {
+  display: block;
+  margin-top: -29px;
+}
+
+.woocommerce ul.products li.product .add_to_cart_button {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.woocommerce ul.products li.product h3 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 1.3em;
+}
+
+.woocommerce div.product p.stock {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.product_meta > span {
+  display: block;
+  line-height: 24px;
+}
+
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce table.my_account_orders,
+.woocommerce address,
+.shop_table {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.shop_table .actions input.button[type="submit"] {
+  width: auto !important;
+}
+.shop_table .actions .coupon input.button {
+  width: auto;
+  min-width: 45%;
+}
+.shop_table .actions .coupon input#coupon_code {
+  width: auto !important;
+  min-width: 45%;
+  padding: 15px 20px;
+}
+
+.cart_totals h2,
+.woocommerce-MyAccount-content h2,
+.woocommerce-MyAccount-content legend {
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-Address-title h3 {
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-FormRow label {
+  margin-bottom: 0;
+}
+
+.woocommerce-MyAccount-content fieldset {
+  margin-top: 40px;
+  margin-bottom: 0;
 }
 
 /* Footer

@@ -84,14 +84,18 @@ $empty_search_query = count($_GET) == 0;
               <div class="unit-1-2 unit-1-1-lg">
                 <?php
                 $midpoint = round(count($industry)/2);
+                $ind_count = 0;
                 foreach($industry as $ind => $cur_ind):
+                
+                  $ind_count++;
+
                   if($ind == $midpoint)
                     echo '</div><div class="unit-1-2 unit-1-1-lg">';
 
                   ?>
                   <div class="checkbox">
-                    <input id="label-1" type="checkbox" name="member_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['member_industry']) && in_array($cur_ind->term_id, $_GET['member_industry']) ? 'checked ' : '' ?>/>
-                    <label for="label-1"><?php echo $cur_ind->name ?></label>
+                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="member_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['member_industry']) && in_array($cur_ind->term_id, $_GET['member_industry']) ? 'checked ' : '' ?>/>
+                    <label for="label-<?php echo $ind_count ?>"><?php echo $cur_ind->name ?></label>
                   </div>
                 <?php
                 endforeach;

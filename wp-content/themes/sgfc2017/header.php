@@ -12,7 +12,7 @@
     <![endif]-->
   </head>
 	<body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
-    <header>
+    <header class="site-header">
       <span>
         <span></span>
       </span>
