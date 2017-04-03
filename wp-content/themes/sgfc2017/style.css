@@ -260,16 +260,16 @@ img {
   vertical-align: middle;
 }
 
-.clear, header {
+.clear, header, div.product {
   zoom: 1;
 }
-.clear:before, header:before, .clear:after, header:after {
+.clear:before, header:before, div.product:before, .clear:after, header:after, div.product:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
 }
-.clear:after, header:after {
+.clear:after, header:after, div.product:after {
   clear: both;
 }
 
@@ -879,7 +879,7 @@ Springfield Creatives Styles
   }
 }
 
-.left {
+.left, .alignleft {
   float: left;
 }
 
@@ -889,7 +889,7 @@ Springfield Creatives Styles
   }
 }
 
-.right {
+.right, .alignright {
   float: right;
 }
 
@@ -1016,6 +1016,14 @@ header {
     position: fixed;
   }
 }
+body.admin-bar header {
+  padding-top: 82px;
+}
+@media all and (max-width: 1199px) {
+  body.admin-bar header {
+    padding-top: 66px;
+  }
+}
 @media all and (max-width: 1199px) {
   header.open > span {
     position: fixed;
@@ -1071,6 +1079,9 @@ header > span {
     width: 24px;
     z-index: 100;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  body.admin-bar header > span {
+    top: 66px;
   }
   header > span span {
     background: #fff;
@@ -1203,6 +1214,9 @@ header nav ul.primary {
   header nav ul.primary {
     margin: 0;
   }
+  body.admin-bar header nav ul.primary {
+    padding-top: 46px;
+  }
 }
 header nav ul.primary > li {
   display: inline-block;
@@ -1329,6 +1343,129 @@ header nav ul.secondary li {
     display: block;
     margin: 0 0 10px 0;
   }
+}
+body.admin-bar header nav ul.secondary {
+  top: 42px;
+}
+@media all and (max-width: 1199px) {
+  body.admin-bar header nav ul.secondary {
+    top: 56px;
+  }
+}
+
+/* Forms
+----------------------------------------------- */
+form label {
+  display: block;
+  margin: 0 0 30px 0;
+}
+form input {
+  background: #fff;
+  border: none;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  form input {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+form div.checkbox {
+  margin: 0 0 10px 0;
+}
+form div.checkbox input[type=checkbox] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+form div.checkbox input[type=checkbox] + label {
+  background-image: url("media/images/checkboxes.png");
+  cursor: pointer;
+  display: inline-block;
+  font: normal 16px/24px Helvetica, Arial, Verdana, sans-serif;
+  margin: 5px 40px 5px 0;
+  padding: 0 0 0 34px;
+  position: relative;
+  vertical-align: middle;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  form div.checkbox input[type=checkbox] + label {
+    background-image: url("media/images/checkboxes@2x.png");
+    background-size: 16px 32px;
+  }
+}
+form div.checkbox input[type=checkbox] + label:before {
+  background: #fff;
+  content: '';
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: -1px;
+  width: 24px;
+}
+form div.checkbox input[type=checkbox]:checked + label:after {
+  content: '\f00c';
+  font-family: "FontAwesome";
+  font-size: 20px;
+  height: 24px;
+  left: 0;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: -1px;
+  width: 24px;
+}
+form select {
+  appearance: button;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 30px 0;
+  padding: 15px 20px;
+  width: 100%;
+}
+@media all and (max-width: 767px) {
+  form select {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+form button {
+  background: #e7c144;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+form button:hover {
+  background: #ea7750;
+  text-decoration: none;
 }
 
 /* Content
@@ -1554,6 +1691,11 @@ section article ul.social li a {
 section article ul li {
   margin: 0 0 0 25px;
 }
+section article .contact {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
 section article a.button {
   background: #e7c144;
   color: #fff;
@@ -1574,117 +1716,18 @@ section article a.button:hover {
   background: #ea7750;
   text-decoration: none;
 }
-section article form label {
-  display: block;
-  margin: 0 0 30px 0;
+
+/* Woocommerce
+----------------------------------------------- */
+.woocommerce-tabs {
+  display: none;
 }
-section article form label input {
-  background: #fff;
-  border: none;
-  box-sizing: border-box;
-  color: #000;
-  display: block;
-  font-size: 24px;
-  line-height: 30px;
-  padding: 15px 20px;
-  width: 100%;
-}
-@media all and (max-width: 767px) {
-  section article form label input {
-    font-size: 18px;
-    line-height: 24px;
-    padding: 10px 20px;
-  }
-}
-section article form div.checkbox {
-  margin: 0 0 10px 0;
-}
-section article form div.checkbox input[type=checkbox] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  overflow: hidden;
-  margin: -1px;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-section article form div.checkbox input[type=checkbox] + label {
-  background-image: url("media/images/checkboxes.png");
-  cursor: pointer;
-  display: inline-block;
-  font: normal 16px/24px Helvetica, Arial, Verdana, sans-serif;
-  margin: 5px 40px 5px 0;
-  padding: 0 0 0 34px;
-  position: relative;
-  vertical-align: middle;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  section article form div.checkbox input[type=checkbox] + label {
-    background-image: url("media/images/checkboxes@2x.png");
-    background-size: 16px 32px;
-  }
-}
-section article form div.checkbox input[type=checkbox] + label:before {
-  background: #fff;
-  content: '';
-  height: 24px;
-  left: 0;
-  position: absolute;
-  top: -1px;
-  width: 24px;
-}
-section article form div.checkbox input[type=checkbox]:checked + label:after {
-  content: '\f00c';
-  font-family: "FontAwesome";
-  font-size: 20px;
-  height: 24px;
-  left: 0;
-  line-height: 24px;
-  position: absolute;
-  text-align: center;
-  top: -1px;
-  width: 24px;
-}
-section article form select {
-  appearance: button;
-  -moz-appearance: button;
-  -webkit-appearance: button;
-  background: #fff;
-  border: none;
-  border-radius: 0;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  box-sizing: border-box;
-  color: #000;
-  display: block;
-  font-size: 24px;
-  line-height: 30px;
-  margin: 0 0 30px 0;
-  padding: 15px 20px;
-  width: 100%;
-}
-@media all and (max-width: 767px) {
-  section article form select {
-    font-size: 18px;
-    line-height: 24px;
-    padding: 10px 20px;
-  }
-}
-section article form button {
-  background: #e7c144;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 20px 50px;
-  text-transform: uppercase;
-}
-section article form button:hover {
-  background: #ea7750;
-  text-decoration: none;
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: #e7c144;
 }
 
 /* Footer

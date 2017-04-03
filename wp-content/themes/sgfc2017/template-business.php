@@ -13,7 +13,7 @@ the_post()
     <div class="grid grid-center">
       <div class="unit-2-3 unit-1-1-md text-center">
         <p class="margin-double"><?php the_field('intro') ?></p>
-        <p><a class="button" href="">Feature Your Business</a> <a class="button" href="">Add Your Business</a></p>
+        <p><a class="button" href="">Add Your Business</a></p>
       </div>
     </div>
   </article>

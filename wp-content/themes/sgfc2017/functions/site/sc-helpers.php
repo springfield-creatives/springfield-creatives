@@ -57,7 +57,7 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
  * @param  Array $meta    Meta values if already loaded
  * @return Array
  */
-function get_contact_links_arr($id, $is_user = false, $meta){
+function get_contact_links_arr($id, $is_user = false, $meta = array()){
 
   $contact_links = array();
 
@@ -134,7 +134,7 @@ function get_contact_links_arr($id, $is_user = false, $meta){
  * @param  Array $meta    Meta values if already loaded
  * @return Array
  */
-function get_social_links_arr($id, $is_user = false, $meta){
+function get_social_links_arr($id, $is_user = false, $meta = array()){
 
   $social_links = array();
 
@@ -263,7 +263,41 @@ function get_gallery_arr($id, $is_user = false){
   return $media;
 }
 
+function get_user_business_data($user_id){
+  $positions_arr = array();
+  $position_data = get_field('position_at_company', 'user_' . $user_id);
+  if($position_data != false){
+    
+    if(!is_array($position_data))
+      $position_data = array($position_data);
 
+    foreach($position_data as $pos)
+      $positions_arr[] = $pos->name;
+
+  }
+
+  $positions = implode(', ', $positions_arr);
+
+  $businesses_arr = array();
+  $business_data = get_field('company', 'user_' . $user_id);
+  if($business_data != false){
+    
+    if(!is_array($business_data))
+      $business_data = array($business_data);
+
+    foreach($business_data as $biz)
+      $businesses_arr[] = '<a href="' . get_permalink($biz->ID) . '">'  . $biz->post_title . '</a>';
+
+  }
+
+  $businesses = implode(', ', $businesses_arr);
+
+  return array(
+    'positions' => $positions,
+    'businesses' => $businesses
+  );
+
+}
 
 /*
 $user: $user array returned by WP or ACF
@@ -298,33 +332,9 @@ function return_person_item_html($user){
     'size' => 300
   ));
 
-  $positions_arr = array();
-  $position_data = get_field('position_at_company', 'user_' . $user->ID);
-  if($position_data != false){
-    
-    if(!is_array($position_data))
-      $position_data = array($position_data);
-
-    foreach($position_data as $pos)
-      $positions_arr[] = $pos->name;
-
-  }
-
-  $positions = implode(', ', $positions_arr);
-
-  $businesses_arr = array();
-  $business_data = get_field('company', 'user_' . $user->ID);
-  if($business_data != false){
-    
-    if(!is_array($business_data))
-      $business_data = array($business_data);
-
-    foreach($business_data as $biz)
-      $businesses_arr[] = '<a href="' . get_permalink($biz->ID) . '">'  . $biz->post_title . '</a>';
-
-  }
-
-  $businesses = implode(', ', $businesses_arr);
+  $user_business_data = get_user_business_data($user->ID);
+  $positions = $user_business_data['positions'];
+  $businesses = $user_business_data['businesses'];
 
   ob_start();
   ?>
@@ -335,7 +345,32 @@ function return_person_item_html($user){
       </div>
       <div class="unit-2-3">
         <h4><?php echo $name ?></h4>
-        <p><?php echo $positions ?><br /><i><?php echo $businesses ?></i><br /><a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a></p>
+        <p>
+          <?php
+          if(empty($positions) && empty($businesses)){
+
+
+            $start_date = date('F Y', strtotime($user->user_registered));
+            echo '<i>Member Since<br>';
+            echo $start_date . '</i><br/>';
+
+          }else{
+
+            if(!empty($positions))
+              echo $positions;
+
+            echo '<br />';
+
+
+            if(!empty($businesses))
+              echo '<i>' . $businesses . '</i>';
+
+            echo '<br />';
+
+          }
+          ?>
+          <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+        </p>
       </div>
     </div>
   </div>
@@ -639,7 +674,7 @@ function sgfc_get_business_results($type = 'businesses'){
     }
 
     $results = new WP_Query($wp_query_args);
-    // var_dump($results);die;
+
     while($results->have_posts()): $results->the_post();
       if(get_field('is_sponsor'))
         $result_data['results_featured'][] = $post;
@@ -714,7 +749,7 @@ function return_directory_item_html($post_object = false, $is_featured = false){
 
   $name = $post_object->post_title;
 
-  $website = get_field('website', $post_object->ID);
+  $website = get_field('website_url', $post_object->ID);
 
   $short_desc = get_field('short_description', $post_object->ID);
 

@@ -212,6 +212,14 @@ header {
   @media all and (max-width: 767px) {
     position: fixed;
   }
+
+  & body.admin-bar {
+    padding-top: 82px;
+    
+    @media all and (max-width: 1199px) {
+      padding-top: 66px;
+    }
+  }
   &.open {
     > span {
       @media all and (max-width: 1199px) {

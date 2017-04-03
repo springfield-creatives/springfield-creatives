@@ -112,7 +112,7 @@ $grey: #333333;
     display: block;
   }
 }
-.left {
+.left, .alignleft {
   float: left;
 }
 .left-md {
@@ -120,7 +120,7 @@ $grey: #333333;
     float: left;
   }
 }
-.right {
+.right, .alignright {
   float: right;
 }
 .right-md {
@@ -220,6 +220,16 @@ header {
   @media all and (max-width: 767px) {
     position: fixed;
   }
+
+
+  body.admin-bar & {
+    padding-top: 82px;
+    
+    @media all and (max-width: 1199px) {
+      padding-top: 66px;
+    }
+  }
+
   &.open {
     > span {
       @media all and (max-width: 1199px) {
@@ -278,6 +288,11 @@ header {
       @media all and (max-width: 767px) {
         top: 15px;
       }
+
+      body.admin-bar & {
+        top: 66px;
+      }
+
       span {
         background: #fff;
         display: block;
@@ -392,6 +407,10 @@ header {
         margin: 0 -15px 0 0;
         @media all and (max-width: 1199px) {
           margin: 0;
+
+          body.admin-bar & {
+            padding-top: 46px;
+          }
         }
         > li {
           display: inline-block;
@@ -502,7 +521,124 @@ header {
             margin: 0 0 10px 0;
           }
         }
+
+        body.admin-bar & {
+          top: 42px;
+          
+          @media all and (max-width: 1199px) {
+            top: 56px;
+          }
+        }
+
       }
+    }
+  }
+}
+
+
+/* Forms
+----------------------------------------------- */
+form {
+  label {
+    display: block;
+    margin: 0 0 30px 0;
+  }
+  input {
+    background: #fff;
+    border: none;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-size: 24px;
+    line-height: 30px;
+    padding: 15px 20px;
+    width: 100%;
+    @media all and (max-width: 767px) {
+      font-size: 18px;
+      line-height: 24px;
+      padding: 10px 20px;
+    }
+  }
+  div.checkbox {
+    margin: 0 0 10px 0;
+    input[type=checkbox] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      overflow: hidden;
+      margin: -1px;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    input[type=checkbox] + label {
+      @include background-image-retina('media/images/checkboxes', 'png', 16px, 32px);
+      cursor: pointer;
+      display: inline-block;
+      font: normal 16px/24px $helvetica;
+      margin: 5px 40px 5px 0;
+      padding: 0 0 0 34px;
+      position: relative;
+      vertical-align: middle;
+      &:before {
+        background: #fff;
+        content: '';
+        height: 24px;
+        left: 0;
+        position: absolute;
+        top: -1px;
+        width: 24px;
+      }
+    }
+    input[type=checkbox]:checked + label {
+      &:after{
+        content: '\f00c';
+        font-family: "FontAwesome";
+        font-size: 20px;
+        height: 24px;
+        left: 0;
+        line-height: 24px;
+        position: absolute;
+        text-align: center;
+        top: -1px;
+        width: 24px;
+      }
+    }
+  }
+  select {
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    background: #fff;
+    border: none;
+    @include border-radius(0);
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 0 30px 0;
+    padding: 15px 20px;
+    width: 100%;
+    @media all and (max-width: 767px) {
+      font-size: 18px;
+      line-height: 24px;
+      padding: 10px 20px;
+    }
+  }
+  button {
+    background: $gold;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px 50px;
+    text-transform: uppercase;
+    &:hover {
+      background: $red;
+      text-decoration: none;
     }
   }
 }
@@ -704,6 +840,13 @@ section {
         margin: 0 0 0 25px;
       }
     }
+
+    .contact {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+
     a {
       &.button {
         background: $gold;
@@ -724,111 +867,25 @@ section {
         }
       }
     }
-    form {
-      label {
-        display: block;
-        margin: 0 0 30px 0;
-        input {
-          background: #fff;
-          border: none;
-          box-sizing: border-box;
-          color: #000;
-          display: block;
-          font-size: 24px;
-          line-height: 30px;
-          padding: 15px 20px;
-          width: 100%;
-          @media all and (max-width: 767px) {
-            font-size: 18px;
-            line-height: 24px;
-            padding: 10px 20px;
-          }
-        }
-      }
-      div.checkbox {
-        margin: 0 0 10px 0;
-        input[type=checkbox] {
-          border: 0;
-          clip: rect(0 0 0 0);
-          height: 1px;
-          overflow: hidden;
-          margin: -1px;
-          padding: 0;
-          position: absolute;
-          width: 1px;
-        }
-        input[type=checkbox] + label {
-          @include background-image-retina('media/images/checkboxes', 'png', 16px, 32px);
-          cursor: pointer;
-          display: inline-block;
-          font: normal 16px/24px $helvetica;
-          margin: 5px 40px 5px 0;
-          padding: 0 0 0 34px;
-          position: relative;
-          vertical-align: middle;
-          &:before {
-            background: #fff;
-            content: '';
-            height: 24px;
-            left: 0;
-            position: absolute;
-            top: -1px;
-            width: 24px;
-          }
-        }
-        input[type=checkbox]:checked + label {
-          &:after{
-            content: '\f00c';
-            font-family: "FontAwesome";
-            font-size: 20px;
-            height: 24px;
-            left: 0;
-            line-height: 24px;
-            position: absolute;
-            text-align: center;
-            top: -1px;
-            width: 24px;
-          }
-        }
-      }
-      select {
-        appearance: button;
-        -moz-appearance: button;
-        -webkit-appearance: button;
-        background: #fff;
-        border: none;
-        @include border-radius(0);
-        box-sizing: border-box;
-        color: #000;
-        display: block;
-        font-size: 24px;
-        line-height: 30px;
-        margin: 0 0 30px 0;
-        padding: 15px 20px;
-        width: 100%;
-        @media all and (max-width: 767px) {
-          font-size: 18px;
-          line-height: 24px;
-          padding: 10px 20px;
-        }
-      }
-      button {
-        background: $gold;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 22px;
-        font-weight: bold;
-        padding: 20px 50px;
-        text-transform: uppercase;
-        &:hover {
-          background: $red;
-          text-decoration: none;
-        }
-      }
-    }
   }
+}
+
+/* Woocommerce
+----------------------------------------------- */
+
+div.product {
+  @extend .clear;
+}
+
+.woocommerce-tabs {
+  display: none;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: $gold;
 }
 
 /* Footer

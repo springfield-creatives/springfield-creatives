@@ -31,7 +31,7 @@ function register_taxonomies()
 			'businesses'
 		),
 		array(
-			'hierarchical' => true,
+			'hierarchical' => false,
 			'show_ui' => true,
 			'public' => true,
 			'label' => __('Industry'),
@@ -43,6 +43,25 @@ function register_taxonomies()
 			'query_var' => true,
 		)
 	);
+
+	register_taxonomy(
+		'skills', 
+		array(
+			'businesses'
+		),
+		array(
+			'hierarchical' => false,
+			'show_ui' => true,
+			'public' => true,
+			'label' => __('Skill/Service'),
+			'show_in_nav_menus' => true,
+			'labels' => array(
+				'add_new_item' => 'Add New Skill/Service',
+				'all_items' => 'Skills/Services'
+			),
+			'query_var' => true,
+		)
+	);
 	
 	register_taxonomy(
 		'organization-type', 
@@ -50,7 +69,7 @@ function register_taxonomies()
 			'organizations'
 		),
 		array(
-			'hierarchical' => true,
+			'hierarchical' => false,
 			'show_ui' => true,
 			'public' => true,
 			'label' => __('Organization Type'),

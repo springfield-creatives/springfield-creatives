@@ -67,21 +67,9 @@ include_once('functions/site/sponsor-helpers.php');
 include_once('functions/site/sc-helpers.php');
 include_once('functions/site/acf.php');
 
+// Author slug rewrite
+include_once('functions/site/author-slug-rewrite.php');
 
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
 
-
-
-function better_thumbnail($post_id = null, $size = 'large'){
-
-  $thumb_id = get_post_thumbnail_id($post_id);
-
-  if(!empty($thumb_id))
-    $src = wp_get_attachment_url( $thumb_id, 'large' );
-  else
-    $src = get_stylesheet_directory_uri() . '/images/amp_logo.png';
-
-  return $src;
-
-}
