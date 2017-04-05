@@ -2,7 +2,7 @@
 get_header();
 
 $no_hero = false;
-if(is_archive() || is_taxonomy()){
+if(is_archive()){
 
   $title = 'SGFC Shop';
 	$banner_img = get_field('shop_hero', 'options')['url'];
@@ -14,15 +14,13 @@ if(is_archive() || is_taxonomy()){
 if(empty($banner_img))
 	$banner_img = get_stylesheet_directory_uri() . '/media/images/hero.jpg';
 
-if(!$no_hero):
+if(!$no_hero){
+  require('partial-hero.php');
+} else {
   ?>
-  <section class="hero overlay" style="background-image: url(<?php echo $banner_img ?>);">
-    <article>
-      <h1><?php echo $title ?></h1>
-    </article>
-  </section>
+  <div class="hero-buffer"></div>
   <?php
-endif;
+}
 ?>
 
 <section>

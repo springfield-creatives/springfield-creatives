@@ -6,6 +6,8 @@ Template Name: Members Directory
 get_header();
 the_post();
 $empty_search_query = count($_GET) == 0;
+
+require('partial-hero.php');
 ?>
 
 <section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">

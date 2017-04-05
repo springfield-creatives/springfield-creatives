@@ -4,19 +4,10 @@ Template Name: Directory Landing
  */
 
 get_header();
-the_post()
-?>
+the_post();
 
-<section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
-  <article>
-    <h1 class="margin text-center">Springfield Creatives Directory</h1>
-    <div class="grid grid-center">
-      <div class="unit-2-3 unit-1-1-md text-center">
-        <p><?php the_field('intro') ?></p>
-      </div>
-    </div>
-  </article>
-</section>
+require('partial-hero.php');
+?>
 <section >
   <article>
     <div class="grid grid-center">

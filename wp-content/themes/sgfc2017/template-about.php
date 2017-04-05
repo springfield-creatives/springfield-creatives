@@ -4,15 +4,10 @@ Template Name: About
  */
 
 get_header();
-the_post()
-?>
+the_post();
 
-<section class="hero" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
-  <article>
-    <h1><?php the_field('headline') ?></h1>
-  </article>
-</section>
-\
+require('partial-hero.php');
+?>
 <section>
   <article>
     <div class="grid">

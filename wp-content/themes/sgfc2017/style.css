@@ -1831,6 +1831,15 @@ div.calendar .days-container .days .empty > span.official {
   background-color: #ea7750;
 }
 
+#tribe-events-pg-template {
+  padding-top: 150px;
+}
+@media all and (max-width: 767px) {
+  #tribe-events-pg-template {
+    padding-top: 110px;
+  }
+}
+
 /* Content
 ----------------------------------------------- */
 section {
