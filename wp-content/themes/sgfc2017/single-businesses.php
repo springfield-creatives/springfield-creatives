@@ -17,9 +17,9 @@ $edit_link = '';
 
 // build the $profile var for the partial
 $profile = array(
-	"title" => get_the_title(), //required
-	"subhead" => $user_business_data['positions'],
-	"callout" => $user_business_data['businesses'],
+	"title" => get_the_title(),
+	"subhead" => '', // TODO
+	"callout" => '', // TODO
 	"featured_img" => get_field('logo')['url'],
 	"description" => get_field('about'),
 	"contact_links" => $contact_links,

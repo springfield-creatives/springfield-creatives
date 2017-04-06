@@ -55,7 +55,7 @@
 <section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
   <article>
     <h1 class="margin text-center"><?php echo $hero_title ?></h1>
-    <?php if(!empty($hero_intro) || !empty($hero_intro) || !empty($hero_intro)): ?>
+    <?php if(!empty($hero_intro) || !empty($button_label)): ?>
 	    <div class="grid grid-center">
 	      <div class="unit-2-3 unit-1-1-md text-center">
 	      	
@@ -66,7 +66,7 @@
 	      	<?php if(!empty($button_label)): ?>
 		        <p><a class="button" href="<?php echo $button_link ?>"><?php echo $button_label ?></a></p>
 		      <?php endif; ?>
-		        
+
 	      </div>
 	    </div>
     <?php endif; ?>

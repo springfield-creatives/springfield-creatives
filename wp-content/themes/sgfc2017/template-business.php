@@ -1,12 +1,39 @@
 <?php
 /*
-Template Name: Business Directory
+Template Name: Business & Organization Directory
  */
 
 get_header();
 the_post();
 
 require('partial-hero.php');
+
+if(get_field('type') == 'businesses'){
+
+  $post_type_data = array(
+    'singular' => 'Business',
+    'plural' => 'Businesses',
+    'tax' => array(
+      'tax' => 'industry',
+      'label' => 'Industry',
+      'query_name' => 'business_industry'
+    )
+  );
+
+}else{
+
+  $post_type_data = array(
+    'singular' => 'Organization',
+    'plural' => 'Organizations',
+    'tax' => array(
+      'tax' => 'organization-type',
+      'label' => 'Organization Type',
+      'query_name' => 'business_org_type'
+    )
+  );
+
+}
+
 ?>
 
 <section class="inverse thin">
@@ -25,7 +52,7 @@ require('partial-hero.php');
         <div class="margin"></div>
         <div class="unit-1-2 unit-1-1-sm margin">
           <form>
-            <h3>Find A Business</h3>
+            <h3>Find A <?php echo $post_type_data['singular'] ?></h3>
             <label>
               <input type="text" placeholder="Name" name="business_name" value="<?php echo !empty($_GET['business_name']) ? $_GET['business_name'] : '' ?>" />
             </label>
@@ -36,10 +63,10 @@ require('partial-hero.php');
           </form>
         </div>
         <div class="unit-1-2 unit-1-1-sm">
-          <h3>or, Narrow By Industry</h3>
+          <h3>or, Narrow By <?php echo $post_type_data['tax']['label'] ?></h3>
           <?php
           $industry = get_terms(array(
-            'taxonomy' => 'industry'
+            'taxonomy' => $post_type_data['tax']['tax']
           ));
           ?>
           <form>
@@ -57,7 +84,7 @@ require('partial-hero.php');
 
                   ?>
                   <div class="checkbox">
-                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="business_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['business_industry']) && in_array($cur_ind->term_id, $_GET['business_industry']) ? 'checked ' : '' ?>/>
+                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="<?php echo $post_type_data['tax']['query_name'] ?>[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET[ $post_type_data['tax']['query_name'] ]) && in_array($cur_ind->term_id, $_GET[ $post_type_data['tax']['query_name'] ]) ? 'checked ' : '' ?>/>
                     <label for="label-<?php echo $ind_count ?>"><?php echo $cur_ind->name ?></label>
                   </div>
                 <?php
@@ -86,7 +113,7 @@ require('partial-hero.php');
 
 <?php
 if(!$empty_search_query){
-  $business_results = sgfc_get_business_results('businesses');
+  $business_results = sgfc_get_business_results(get_field('type'));
 }
 
 

@@ -149,8 +149,8 @@ function register_CPTs()
 	);
 	$args = array(
 		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
+		'public' => false,
+		'publicly_queryable' => false,
 		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
@@ -159,7 +159,7 @@ function register_CPTs()
 			'slug' => 'committees'
 		),
 		'capability_type' => 'committee',
-		'has_archive' => true,
+		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 21,
 		'supports' => array(

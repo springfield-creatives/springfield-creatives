@@ -10,16 +10,6 @@ $empty_search_query = count($_GET) == 0;
 require('partial-hero.php');
 ?>
 
-<section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
-  <article>
-    <h1 class="margin text-center"><?php the_title() ?></h1>
-    <div class="grid grid-center">
-      <div class="unit-2-3 unit-1-1-md text-center">
-        <?php the_field('intro') ?>
-      </div>
-    </div>
-  </article>
-</section>
 <section class="inverse thin">
   <article>
     

@@ -299,17 +299,9 @@ function get_user_business_data($user_id){
 
 }
 
-/*
-$user: $user array returned by WP or ACF
-$subtitle: override subtitle default of company
-*/
 
-function return_person_item_html($user){
-
-  if(empty($user))
-    return false;
-
-  // convert array to object
+function sgfc_prep_user_data($user){
+    // convert array to object
   if(is_array($user)){
     $user_object = new stdClass();
 
@@ -336,40 +328,77 @@ function return_person_item_html($user){
   $positions = $user_business_data['positions'];
   $businesses = $user_business_data['businesses'];
 
+  $start_date = date('F Y', strtotime($user->user_registered));
+
+  // default subtitle
+  ob_start();
+  if(empty($positions) && empty($businesses)){
+
+    echo '<i>Member Since<br>';
+    echo $start_date . '</i><br/>';
+
+  }else{
+
+    if(!empty($positions))
+      echo $positions;
+
+    echo '<br />';
+
+
+    if(!empty($businesses))
+      echo '<i>' . $businesses . '</i>';
+
+    echo '<br />';
+
+  }
+  $subtitle = ob_get_contents();
+  ob_clean();
+
+  return array(
+    'user' => $user,
+    'link' => $link,
+    'name' => $name,
+    'email' => $email,
+    'image' => $user_image,
+    'business_data' => $user_business_data,
+    'positions' => $positions,
+    'businesses' => $businesses,
+    'start_date' => $start_date,
+    'subtitle' => $subtitle
+  );
+}
+
+
+
+/*
+$user: $user array returned by WP or ACF
+$subtitle: override subtitle default of company
+*/
+
+function return_person_item_html($user, $subtitle = ''){
+
+  if(empty($user))
+    return false;
+
+  $user_data = sgfc_prep_user_data($user);
+
   ob_start();
   ?>
   <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
     <div class="grid">
       <div class="unit-1-3">
-        <p><img class="full rounded" src="<?php echo $user_image ?>" /></p>
+        <p><img class="full rounded" src="<?php echo $user_data['image'] ?>" /></p>
       </div>
       <div class="unit-2-3">
-        <h4><?php echo $name ?></h4>
+        <h4><?php echo $user_data['name'] ?></h4>
         <p>
           <?php
-          if(empty($positions) && empty($businesses)){
-
-
-            $start_date = date('F Y', strtotime($user->user_registered));
-            echo '<i>Member Since<br>';
-            echo $start_date . '</i><br/>';
-
-          }else{
-
-            if(!empty($positions))
-              echo $positions;
-
-            echo '<br />';
-
-
-            if(!empty($businesses))
-              echo '<i>' . $businesses . '</i>';
-
-            echo '<br />';
-
-          }
+          if(empty($subtitle))
+            echo $user_data['subtitle'];
+          else
+            echo $subtitle;
           ?>
-          <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+          <a href="<?php echo $user_data['link'] ?>">View Profile</a> | <a href="mailto:<?php echo $user_data['email'] ?>">Email</a>
         </p>
       </div>
     </div>
@@ -643,8 +672,22 @@ function sgfc_get_business_results($type = 'businesses'){
 
 
       $wp_query_args['tax_query'] = array(
-        'taxonomy' => 'industry',
-        'value' => $_GET['business_industry'],
+          array(
+            'taxonomy' => 'industry',
+            'field'    => 'term_id',
+            'value' => $_GET['business_industry']
+          )
+      );
+
+    }else if(!empty($_GET['business_org_type'])){
+
+
+      $wp_query_args['tax_query'] = array(
+          array(
+            'taxonomy' => 'organization-type',
+            'field'    => 'term_id',
+            'value' => $_GET['business_org_type']
+          )
       );
 
     }else{
@@ -782,12 +825,17 @@ function return_directory_item_html($post_object = false, $is_featured = false){
       <p>
         <?php
         if(!empty($website)){
-          $simple_url = str_replace('http://', '', $website);
-          $simple_url = str_replace('https://', '', $simple_url);
+          $simple_url = sgfc_get_simple_url($website);
           echo '<a href="' . $website . '">' . $simple_url . '</a><br />';
         }
         ?>
-        <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+        
+        <a href="<?php echo $link ?>">View Profile</a>
+        
+        <?php
+        if(!empty($email))
+          echo ' | <a href="mailto:' . $email . '">Email</a>';
+        ?>
       </p>
       
       <?php
@@ -816,9 +864,15 @@ function return_directory_item_html($post_object = false, $is_featured = false){
           <p>
             <?php
             if(!empty($subtitle))
-              echo '<h3>' . $subtitle . '</h3><br />';
+              echo $subtitle . '<br />';
             ?>
-            <a href="<?php echo $link ?>">View Profile</a> | <a href="mailto:<?php echo $email ?>">Email</a>
+            
+            <a href="<?php echo $link ?>">View Profile</a>
+            
+            <?php
+            if(!empty($email))
+              echo ' | <a href="mailto:' . $email . '">Email</a>';
+            ?>
           </p>
 
         </div>
@@ -831,6 +885,13 @@ function return_directory_item_html($post_object = false, $is_featured = false){
   $to_return = ob_get_contents();
   ob_clean();
   return $to_return;
+}
+
+function sgfc_get_simple_url($website){
+  $simple_url = str_replace('http://', '', $website);
+  $simple_url = str_replace('https://', '', $simple_url);
+
+  return $simple_url;
 }
 
 
