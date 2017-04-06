@@ -36,7 +36,7 @@ $social_links = get_social_links_arr($user_id, true, $meta);
 $media = get_gallery_arr($user_id, true);
 
 //edit link
-$edit_link = ($cur_user->ID == $user_id) ? get_bloginfo('url') . '/wp-admin/profile.php' : '';
+$edit_link = ($cur_user->ID == $user_id) ? get_bloginfo('url') . '/my-account/member-profile/' : '';
 
 // expired? TODO
 $expired = user_can( $user_id, 'expired' );

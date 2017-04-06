@@ -2234,9 +2234,58 @@ section article a.button:hover {
   margin-bottom: 0;
 }
 
+.woocommerce-MyAccount-navigation li {
+  font-size: 24px;
+  list-style: none;
+  line-height: 32px;
+}
+.woocommerce-MyAccount-navigation li.is-active {
+  font-style: italic;
+}
+
 .woocommerce-MyAccount-content fieldset {
   margin-top: 40px;
   margin-bottom: 0;
+}
+.woocommerce-MyAccount-content strong {
+  font-weight: bold;
+}
+.woocommerce-MyAccount-content .wpua-edit-container h3,
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-undo-button-existing,
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-edit-attachment-existing {
+  display: none;
+}
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-images-existing {
+  width: 50%;
+  padding-right: 20px;
+}
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-messages-existing,
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-button-existing {
+  float: right;
+  clear: right;
+  width: 50%;
+}
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-messages-existing span,
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-button-existing span {
+  display: block;
+}
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-messages-existing button,
+.woocommerce-MyAccount-content .wpua-edit-container #wpua-upload-button-existing button {
+  margin-top: 10px;
+}
+
+/* ACF Frontend Override
+----------------------------------------------- */
+.acf-fields.acf-fields > .acf-field {
+  padding-bottom: 40px;
+  border-top: none;
+}
+.acf-fields.acf-fields > .acf-field.acf-field-58da6a7ccaaed {
+  display: none;
+}
+.acf-fields.acf-fields .acf-checkbox-list input {
+  width: auto;
+  display: inline-block;
 }
 
 /* Footer

@@ -1,7 +1,16 @@
 <?php
 get_header();
 
-if(is_home() || is_archive()){
+$no_hero = false;
+
+
+// What type of page is this?
+if(function_exists('is_account_page') && is_account_page()){
+
+  $no_hero = true;
+  $is_single = true;
+
+}else if(is_home() || is_archive()){
 
   $title = 'News';
 	$banner_img = get_field('news_banner', 'options');
@@ -16,15 +25,15 @@ if(is_home() || is_archive()){
 
 }
 
-if(empty($banner_img))
-    $banner_img = get_field('default_banner', 'options');
-
+// herotown, USA
+if(!$no_hero){
+  require('partial-hero.php');
+} else {
+  ?>
+  <div class="hero-buffer"></div>
+  <?php
+}
 ?>
-<section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
-  <article>
-    <h1><?php echo $title ?></h1>
-  </article>
-</section>
 <section>
   <article>
     <?php

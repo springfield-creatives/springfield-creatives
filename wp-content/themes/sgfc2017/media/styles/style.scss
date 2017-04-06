@@ -1258,10 +1258,82 @@ div.product {
   margin-bottom: 0;
 }
 
-.woocommerce-MyAccount-content fieldset {
-  margin-top: 40px;
-  margin-bottom: 0;
+.woocommerce-MyAccount-navigation {
+
+  li {
+    font-size: 24px;
+    list-style: none;
+    line-height: 32px;
+
+    &.is-active {
+      font-style: italic;
+    }
+  }
 }
+
+.woocommerce-MyAccount-content {
+  fieldset {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  .wpua-edit-container {
+    h3,
+    #wpua-undo-button-existing,
+    #wpua-edit-attachment-existing {
+      display: none;
+    }
+
+    #wpua-images-existing {
+      width: 50%;
+      padding-right: 20px;
+    }
+
+    #wpua-upload-messages-existing,
+    #wpua-upload-button-existing {
+      float: right;
+      clear: right;
+      width: 50%;
+
+      span {
+        display: block;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+
+
+/* ACF Frontend Override
+----------------------------------------------- */
+.acf-fields.acf-fields {
+  > .acf-field {
+    padding-bottom: 40px;
+    border-top: none;
+
+    &.acf-field-58da6a7ccaaed {
+      display: none; // hide "other company" field on my profile
+    }
+  }
+
+  .acf-checkbox-list{
+    input {
+      width: auto;
+      display: inline-block;
+    }
+  }
+
+}
+
+
 
 /* Footer
 ----------------------------------------------- */

@@ -1,14 +1,13 @@
 <?php
 get_header();
 
-$no_hero = false;
+$no_hero = true;
 if(is_archive()){
 
   $title = 'SGFC Shop';
-	$banner_img = get_field('shop_hero', 'options')['url'];
+  $banner_img = get_field('shop_hero', 'options')['url'];
+  $no_hero = false;
 
-}else if(is_single()){
-	$no_hero = true;
 }
 
 if(empty($banner_img))

@@ -66,6 +66,7 @@ include_once('functions/wordpress/js_site_settings.php');
 include_once('functions/site/sponsor-helpers.php');
 include_once('functions/site/sc-helpers.php');
 include_once('functions/site/acf.php');
+include_once('functions/site/profile_editor_frontend.php');
 
 // Author slug rewrite
 include_once('functions/site/author-slug-rewrite.php');
