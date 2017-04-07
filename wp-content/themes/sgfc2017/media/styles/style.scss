@@ -566,6 +566,7 @@ form {
       }
   }
   div.checkbox,
+  .gfield_checkbox,
   div.radio {
       margin: 0 0 10px 0;
       input {
@@ -647,6 +648,7 @@ form {
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
+.gform_button,
 form button {
   background: $gold;
   border: none;
@@ -657,9 +659,72 @@ form button {
   font-weight: bold;
   padding: 20px 50px;
   text-transform: uppercase;
+  width: auto;
+
   &:hover {
-      background: $red;
-      text-decoration: none;
+    background: $red;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// Gravity Forms
+.gfield_label { display: none }
+.gfield {
+  list-style: none;
+  display: none;
+  margin: 0 0 25px 0;
+  width: 100%;
+  position: relative;
+
+  &.gfield_visibility_visible {
+    display: inline-block;
+  }
+
+  &.gf_left_half {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  &.gf_right_half {
+    width: 50%;
+    padding-left: 20px;
+  }
+
+}
+
+.gfield_checkbox {
+  list-style: none;
+  text-align: left;
+
+  li:first-child{
+    margin-left: 0
+  }
+}
+
+// error message/validation
+.validation_error {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 0 40px;
+  text-align: left;
+  color: #a00;
+}
+
+.gfield_error {
+  margin-bottom: 45px;
+  input {
+    border-color: #a00;
+  }
+}
+
+.gfield_description {
+  text-align: left;
+  position: absolute;
+  bottom: -25px;
+
+  &.validation_message {
+    color: #a00;
   }
 }
 

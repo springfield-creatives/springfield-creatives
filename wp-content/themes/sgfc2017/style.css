@@ -1484,10 +1484,12 @@ form textarea[type=file] {
   line-height: 16px;
 }
 form div.checkbox,
+form .gfield_checkbox,
 form div.radio {
   margin: 0 0 10px 0;
 }
 form div.checkbox input,
+form .gfield_checkbox input,
 form div.radio input {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1499,6 +1501,7 @@ form div.radio input {
   width: 1px;
 }
 form div.checkbox input + label,
+form .gfield_checkbox input + label,
 form div.radio input + label {
   cursor: pointer;
   display: inline-block;
@@ -1509,6 +1512,7 @@ form div.radio input + label {
   vertical-align: middle;
 }
 form div.checkbox input + label:before,
+form .gfield_checkbox input + label:before,
 form div.radio input + label:before {
   background: #fff;
   border: 1px solid #5c6569;
@@ -1520,6 +1524,7 @@ form div.radio input + label:before {
   width: 24px;
 }
 form div.checkbox input:checked + label:after,
+form .gfield_checkbox input:checked + label:after,
 form div.radio input:checked + label:after {
   color: #000;
   content: '\f00c';
@@ -1568,6 +1573,7 @@ form select {
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
+.gform_button,
 form button {
   background: #e7c144;
   border: none;
@@ -1578,14 +1584,72 @@ form button {
   font-weight: bold;
   padding: 20px 50px;
   text-transform: uppercase;
+  width: auto;
 }
 .woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover,
+.gform_button:hover,
 form button:hover {
   background: #ea7750;
   text-decoration: none;
+  color: white;
+}
+
+.gfield_label {
+  display: none;
+}
+
+.gfield {
+  list-style: none;
+  display: none;
+  margin: 0 0 25px 0;
+  width: 100%;
+  position: relative;
+}
+.gfield.gfield_visibility_visible {
+  display: inline-block;
+}
+.gfield.gf_left_half {
+  width: 50%;
+  padding-right: 20px;
+}
+.gfield.gf_right_half {
+  width: 50%;
+  padding-left: 20px;
+}
+
+.gfield_checkbox {
+  list-style: none;
+  text-align: left;
+}
+.gfield_checkbox li:first-child {
+  margin-left: 0;
+}
+
+.validation_error {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 0 40px;
+  text-align: left;
+  color: #a00;
+}
+
+.gfield_error {
+  margin-bottom: 45px;
+}
+.gfield_error input {
+  border-color: #a00;
+}
+
+.gfield_description {
+  text-align: left;
+  position: absolute;
+  bottom: -25px;
+}
+.gfield_description.validation_message {
+  color: #a00;
 }
 
 /* Calendar

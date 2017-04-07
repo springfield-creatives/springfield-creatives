@@ -51,22 +51,7 @@ require('partial-hero.php');
     </article>
 </section>
 
-<section class="inverse">
-    <article class="text-center">
-        <h3><?php the_field('more_section_title') ?></h3>
-        
-        <p class="callout">
-          <?php
-          $link_html_els = array();
-          $more_links = get_field('more_section_links');
-          foreach($more_links as $link)
-            $link_html_els[] = '<a href="' . $link['URL'] . '">' . $link['title'] . '</a>';
+<?php require('partial-more-links.php'); ?>
 
-          echo join(' | ', $link_html_els);
-          ?>
-        </p>
-        
-    </article>
-</section>
 <?php
 get_footer();
