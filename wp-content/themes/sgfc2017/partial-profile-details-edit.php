@@ -2,8 +2,7 @@
 define('SGFC_MEMBER_PROFILE_ACF_ID', 2814);
 define('SGFC_GALLERY_ACF_ID', 813);
 
-global $current_user;
-get_currentuserinfo();
+$current_user = wp_get_current_user();
 ?>
 
 <form method="post">

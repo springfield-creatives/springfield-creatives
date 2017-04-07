@@ -118,23 +118,26 @@ function sgfc_my_account_profile_form_submission(){
 	if($_POST['sgfc_profile_edit'] != 1)
 		return;
 
-	global $user_ID, $update_notice_added_already;
-	get_currentuserinfo();
+	global $update_notice_added_already;
+	$current_user = wp_get_current_user();
 
 	// save ACF stuff
-	$post_id = 'user_' . $user_ID;
+	$post_id = 'user_' . $current_user->ID;
 	do_action('acf/save_post', $post_id);
 
 	// save user stuff (name only at this time)
 	$userdata = array(
+		'ID' => $current_user->ID,
 		'first_name' => $_POST['sgfc_fname'],
 		'last_name' => $_POST['sgfc_lname'],
-		'diplay_name' => $_POST['sgfc_fname'] . ' ' . $_POST['sgfc_lname']
+		'display_name' => $_POST['sgfc_fname'] . ' ' . $_POST['sgfc_lname']
 	);
+	wp_update_user($userdata);
 
+	// add notice
 	if(!$update_notice_added_already)
 		wc_add_notice('Profile updated!');
 
-	$update_notice_added_already = true; // super hacky
+	$update_notice_added_already = true; // super hacky :(
 }
 add_action('wp_loaded', 'sgfc_my_account_profile_form_submission');
