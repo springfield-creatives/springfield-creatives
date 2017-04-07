@@ -567,6 +567,7 @@ form {
   }
   div.checkbox,
   .gfield_checkbox,
+  .gfield_radio,
   div.radio {
       margin: 0 0 10px 0;
       input {
@@ -614,7 +615,8 @@ form {
           }
       }
   }
-  div.radio {
+  div.radio,
+  .gfield_radio {
       input + label {
           &:before {
               @include border-radius(50%);
@@ -644,6 +646,7 @@ form {
   }
 }
 
+// buttons
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
@@ -669,7 +672,20 @@ form button {
 }
 
 // Gravity Forms
-.gfield_label { display: none }
+
+// hide label
+.gfield_label {
+  display: none;
+
+  // ...except theese
+  .input-type-creditcard &,
+  .input-type-radio &,
+  .input-type-select &,
+  .input-type-product & {
+    display: block;
+  }
+}
+
 .gfield {
   list-style: none;
   display: none;
@@ -684,21 +700,28 @@ form button {
   &.gf_left_half {
     width: 50%;
     padding-right: 20px;
+    vertical-align: top;
   }
 
   &.gf_right_half {
     width: 50%;
     padding-left: 20px;
+    vertical-align: top;
   }
 
 }
 
-.gfield_checkbox {
+.gfield_checkbox,
+.gfield_radio {
   list-style: none;
   text-align: left;
 
-  li:first-child{
-    margin-left: 0
+  li {
+    display: inline-block;
+
+    &:first-child{
+      margin-left: 0
+    }
   }
 }
 
@@ -726,6 +749,110 @@ form button {
   &.validation_message {
     color: #a00;
   }
+}
+
+.gfield_required { display: none }
+
+/* Gravity Forms Credit Card
+----------------------------------------------- */
+
+.gform_wrapper .gform_card_icon_container {
+    margin: 8px 0 6px 0;
+    height: 32px;
+}
+.gform_wrapper div.gform_card_icon {
+    margin-right: 4px;
+    text-indent: -9000px;
+    background-image: url(media/images/gf-creditcard-icons.png);
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 32px;
+    float: left;
+}
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_visa { background-position: 0 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_visa { background-position: 0 -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_visa { background-position: 0 -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_mastercard { background-position: -36px 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_mastercard { background-position: -36px -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_mastercard { background-position: -36px -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_amex { background-position: -72px 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_amex { background-position: -72px -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_amex { background-position: -72px -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_discover { background-position: -108px 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_discover { background-position: -108px -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_discover { background-position: -108px -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_maestro { background-position: -144px 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_maestro { background-position: -144px -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_maestro { background-position: -144px -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_jcb { background-position: -180px 0 }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_jcb { background-position: -180px -32px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style1 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_jcb { background-position: -180px -64px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_visa { background-position: 0 -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_visa { background-position: 0 -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_visa { background-position: 0 -256px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_mastercard { background-position: -36px -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_mastercard { background-position: -36px -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_mastercard { background-position: -36px -256px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_amex { background-position: -72px -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_amex { background-position: -72px -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_amex { background-position: -72px -256px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_discover { background-position: -108px -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_discover { background-position: -108px -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_discover { background-position: -108px -256px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_maestro { background-position: -144px -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_maestro { background-position: -144px -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_maestro { background-position: -144px -256px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_jcb { background-position: -180px -192px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_selected.gform_card_icon_jcb { background-position: -180px -224px }
+.gform_wrapper .gform_card_icon_container.gform_card_icon_style2 div.gform_card_icon.gform_card_icon_inactive.gform_card_icon_jcb { background-position: -180px -256px }
+.gform_card_icon_container input[type=radio]#gform_payment_method_creditcard {
+    float: left;
+    position: relative;
+    top: 4px!important;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_left, .gform_wrapper .ginput_complex .ginput_cardinfo_right {
+    min-height: 43px;
+    position: relative;
+    float: left;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_left {
+    width: 50%;
+    margin-right: 1%;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_right { min-width: 85px !important }
+.gform_wrapper .ginput_complex .ginput_cardinfo_left label, .gform_wrapper .ginput_complex .ginput_cardinfo_right label { white-space: nowrap !important }
+.gform_wrapper .ginput_complex span.ginput_cardextras {
+    display: block;
+    overflow: hidden;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_left span.ginput_card_expiration_container {
+    position: relative;
+    display: block;
+    min-width: 160px !important;
+}
+.gform_wrapper .ginput_complex select.ginput_card_expiration.ginput_card_expiration_month, .gform_wrapper .ginput_complex select.ginput_card_expiration.ginput_card_expiration_year {
+    width: 47% !important;
+    display: -moz-inline-stack;
+    display: inline-block;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_left select.ginput_card_expiration.ginput_card_expiration_month { margin-right: 4px }
+.gform_wrapper .ginput_complex .ginput_cardinfo_right input.ginput_card_security_code { max-width: 50% !important }
+.gform_wrapper .ginput_complex .ginput_cardinfo_right span.ginput_card_security_code_icon {
+    width: 32px;
+    height: 23px;
+    background-image: url(media/images/gf-creditcard-icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 -128px;
+    display: -moz-inline-stack;
+    display: inline-block;
+}
+.gform_wrapper .ginput_complex .ginput_cardinfo_right span.ginput_card_security_code_icon {
+  display: none;
+}
+.ginput_cardinfo_left select,
+.ginput_cardinfo_right input,
+.ginput_container_creditcard input {
+  margin-bottom: 10px;
 }
 
 /* Calendar
@@ -1307,6 +1434,7 @@ div.product {
 .cart_totals h2,
 .woocommerce-MyAccount-content h2,
 .woocommerce-MyAccount-content legend,
+.gfield_label,
 div.acf-fields > .acf-field > .acf-label label {
   font-family: $proxima;
   font-weight: bold;

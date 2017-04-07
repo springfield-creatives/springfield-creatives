@@ -97,3 +97,13 @@ include_once('functions/site/author-slug-rewrite.php');
 // SECURITY STUFF
 define('DISALLOW_FILE_EDIT', true);
 
+
+
+
+add_filter( 'gform_pre_render', 'add_input_type_gravity_forms' );
+function add_input_type_gravity_forms( $form ) {
+  foreach ( $form['fields'] as $f => $field )
+    $form['fields'][$f]['cssClass'] .= ' input-type-' . $field['type'];
+
+  return $form;
+}
