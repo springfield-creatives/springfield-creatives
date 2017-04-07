@@ -121,8 +121,16 @@ function sgfc_my_account_profile_form_submission(){
 	global $user_ID, $update_notice_added_already;
 	get_currentuserinfo();
 
+	// save ACF stuff
 	$post_id = 'user_' . $user_ID;
 	do_action('acf/save_post', $post_id);
+
+	// save user stuff (name only at this time)
+	$userdata = array(
+		'first_name' => $_POST['sgfc_fname'],
+		'last_name' => $_POST['sgfc_lname'],
+		'diplay_name' => $_POST['sgfc_fname'] . ' ' . $_POST['sgfc_lname']
+	);
 
 	if(!$update_notice_added_already)
 		wc_add_notice('Profile updated!');

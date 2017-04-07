@@ -2282,10 +2282,15 @@ section article a.button:hover {
 
 .cart_totals h2,
 .woocommerce-MyAccount-content h2,
-.woocommerce-MyAccount-content legend {
+.woocommerce-MyAccount-content legend,
+div.acf-fields > .acf-field > .acf-label label {
+  font-family: "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
+  font-weight: bold;
   font-size: 40px;
   line-height: 46px;
   margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .woocommerce-Address-title h3 {
@@ -2301,10 +2306,15 @@ section article a.button:hover {
 .woocommerce-MyAccount-navigation li {
   font-size: 24px;
   list-style: none;
-  line-height: 32px;
+  line-height: 36px;
 }
-.woocommerce-MyAccount-navigation li.is-active {
-  font-style: italic;
+.woocommerce-MyAccount-navigation li.is-active a {
+  color: #ea7750;
+}
+
+.woocommerce-EditAccountForm .woocommerce-FormRow--first,
+.woocommerce-EditAccountForm .woocommerce-FormRow--last {
+  display: none;
 }
 
 .woocommerce-MyAccount-content fieldset {
@@ -2313,6 +2323,10 @@ section article a.button:hover {
 }
 .woocommerce-MyAccount-content strong {
   font-weight: bold;
+}
+.woocommerce-MyAccount-content .wc-social-login-profile.wc-social-login-profile {
+  margin-top: 45px;
+  border-top: none;
 }
 .woocommerce-MyAccount-content .wpua-edit-container h3,
 .woocommerce-MyAccount-content .wpua-edit-container #wpua-undo-button-existing,
@@ -2341,7 +2355,7 @@ section article a.button:hover {
 /* ACF Frontend Override
 ----------------------------------------------- */
 .acf-fields.acf-fields > .acf-field {
-  padding-bottom: 40px;
+  padding: 0 0 60px 0;
   border-top: none;
 }
 .acf-fields.acf-fields > .acf-field.acf-field-58da6a7ccaaed {
@@ -2350,6 +2364,10 @@ section article a.button:hover {
 .acf-fields.acf-fields .acf-checkbox-list input {
   width: auto;
   display: inline-block;
+}
+
+.screen-reader-text {
+  display: none;
 }
 
 /* Footer

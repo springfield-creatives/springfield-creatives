@@ -1306,10 +1306,15 @@ div.product {
 // things that should look like H3
 .cart_totals h2,
 .woocommerce-MyAccount-content h2,
-.woocommerce-MyAccount-content legend {
+.woocommerce-MyAccount-content legend,
+div.acf-fields > .acf-field > .acf-label label {
+  font-family: $proxima;
+  font-weight: bold;
   font-size: 40px;
   line-height: 46px;
   margin-bottom: 20px;
+  color: #000;
+  text-transform: uppercase;
 }
 
 // things that should look like H4
@@ -1323,16 +1328,25 @@ div.product {
   margin-bottom: 0;
 }
 
+
 .woocommerce-MyAccount-navigation {
 
   li {
     font-size: 24px;
     list-style: none;
-    line-height: 32px;
+    line-height: 36px;
 
-    &.is-active {
-      font-style: italic;
+    &.is-active a {
+      color: $red;
     }
+  }
+}
+
+// hide first & last name on account page
+.woocommerce-EditAccountForm {
+  .woocommerce-FormRow--first,
+  .woocommerce-FormRow--last{
+    display: none;
   }
 }
 
@@ -1344,6 +1358,11 @@ div.product {
 
   strong {
     font-weight: bold;
+  }
+
+  .wc-social-login-profile.wc-social-login-profile {
+    margin-top: 45px;
+    border-top: none;
   }
 
   .wpua-edit-container {
@@ -1381,7 +1400,7 @@ div.product {
 ----------------------------------------------- */
 .acf-fields.acf-fields {
   > .acf-field {
-    padding-bottom: 40px;
+    padding: 0 0 60px 0;
     border-top: none;
 
     &.acf-field-58da6a7ccaaed {
@@ -1398,6 +1417,7 @@ div.product {
 
 }
 
+.screen-reader-text { display: none }
 
 
 /* Footer

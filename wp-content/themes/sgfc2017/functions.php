@@ -2,6 +2,29 @@
 
 define('SGFC_EVENT_MEETINGS_CAT', 4);
 
+global $fa_icons;
+$fa_icons = array(
+
+  // social 
+  'facebook' => 'fa-facebook',
+  'twitter' => 'fa-twitter',
+  'instagram' => 'fa-instagram',
+  'linkedin' => 'fa-linkedin',
+  'google' => 'fa-google-plus',
+  'dribbble' => 'fa-dribbble',
+  'youtube' => 'fa-youtube',
+  'tumblr' => 'fa-tumblr',
+  'vimeo' => 'fa-vimeo-square',
+  'soundcloud' => 'fa-soundcloud',
+  'medium' => 'fa-medium',
+
+  // contact
+  'website' => 'fa-external-link',
+  'phone' => 'fa-phone',
+  'email' => 'fa-envelope-o',
+  'address' => 'fa-map-marker',
+
+);
 
 
 // Enqueue theme custom scripts

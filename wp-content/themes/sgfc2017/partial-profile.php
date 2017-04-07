@@ -67,29 +67,6 @@ $profile = array(
 */
 
 
-$fa_icons = array(
-
-	// social 
-	'facebook' => 'fa-facebook',
-	'twitter' => 'fa-twitter',
-	'instagram' => 'fa-instagram',
-	'linkedin' => 'fa-linkedin',
-	'google' => 'fa-google-plus',
-	'dribbble' => 'fa-dribbble',
-	'youtube' => 'fa-youtube',
-	'tumblr' => 'fa-tumblr',
-	'vimeo' => 'fa-vimeo-square',
-	'soundcloud' => 'fa-soundcloud',
-	'medium' => 'fa-medium',
-
-	// contact
-	'website' => 'fa-external-link',
-	'phone' => 'fa-phone',
-	'email' => 'fa-envelope-o',
-	'address' => 'fa-map-marker',
-
-);
-
 get_header();
 
 ?>
@@ -116,6 +93,7 @@ if(!empty($profile['edit-link'])){
           <div class="contact">
           	
 						<?php
+						global $fa_icons;
 						foreach($profile['contact_links'] as $key => $contact_info){
 							
 							if(empty($contact_info['title']))
