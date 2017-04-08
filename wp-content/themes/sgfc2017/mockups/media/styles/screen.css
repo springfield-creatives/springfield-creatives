@@ -795,7 +795,7 @@ header {
       top: 15px; } }
     @media all and (max-width: 1199px) {
         header > span span {
-          background: #fff;
+          background: #E7C144;
           display: block;
           height: 3px;
           left: 0;
@@ -806,7 +806,7 @@ header {
           -webkit-transition: all 0.2s linear;
           width: 24px; }
           header > span span:before {
-            background: #fff;
+            background: #E7C144;
             content: '';
             display: block;
             height: 3px;
@@ -817,7 +817,7 @@ header {
             -webkit-transition: all 0.2s linear;
             width: 24px; }
           header > span span:after {
-            background: #fff;
+            background: #E7C144;
             bottom: -7px;
             content: '';
             display: block;
@@ -1151,10 +1151,33 @@ section {
             line-height: 26px; } }
       section article p i {
         font-family: Georgia, "Times New Roman", Times, serif; }
+    section article hr {
+      background: #F2F1E4;
+      border: none;
+      display: block;
+      height: 1px;
+      margin: 40px 0;
+      width: 100%; }
     section article img.rounded {
       border-radius: 50%;
       -moz-border-radius: 50%;
       -webkit-border-radius: 50%; }
+    section article blockquote {
+      border-left: 3px solid #efefef;
+      color: #E7C144;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-style: italic;
+      line-height: 36px;
+      margin: 0 0 24px 0;
+      padding: 0 0 0 20px; }
+    section article figcaption {
+      background: #efefef;
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0 0 24px 0;
+      padding: 10px;
+      text-align: center; }
     section article ol {
       font-size: 18px;
       line-height: 24px;
