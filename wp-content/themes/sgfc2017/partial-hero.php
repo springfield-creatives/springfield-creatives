@@ -30,26 +30,35 @@
 		$credit_html = '';
 	}
 
+	if(empty($hero_title)){
+	
+		// set Hero title
+		if(is_search()){
+			
+			// general search
+			$cpt = is_post_type_archive() ? post_type_archive_title('', false) . ' ' : '';
+			$hero_title = $cpt . "Search Results";
 
-	// set Hero title
-	if(is_search()){
-		
-		// general search
-		$cpt = is_post_type_archive() ? post_type_archive_title('', false) . ' ' : '';
-		$hero_title = $cpt . "Search Results";
-
-	}else{
-		$hero_title = !empty($hero_title) ? $hero_title : get_field('hero_text');
-		if(strlen($hero_title) === 0)
-			$hero_title = empty($hero_page_option_prefix) ? get_the_title() :  get_field($hero_page_option_prefix . '_hero_text', 'options');
+		}else{
+			$hero_title = !empty($hero_title) ? $hero_title : get_field('hero_text');
+			if(strlen($hero_title) === 0)
+				$hero_title = empty($hero_page_option_prefix) ? get_the_title() :  get_field($hero_page_option_prefix . '_hero_text', 'options');
+		}
+	
 	}
 
+
 	// hero intro
-	$hero_intro = get_field('hero_intro');
+	if(empty($hero_intro))
+		$hero_intro = get_field('hero_intro');
 
 	// button label/link
-	$button_label = get_field('hero_button_label');
-	$button_link = get_field('hero_button_label');
+	if(empty($button_label))
+		$button_label = get_field('hero_button_label');
+
+	if(empty($button_link))
+		$button_link = get_field('hero_button_label');
+
 ?>
 
 <section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">

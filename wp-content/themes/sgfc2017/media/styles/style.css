@@ -1648,7 +1648,7 @@ body.admin-bar .site-header {
     top: 66px;
   }
   .site-header > span span {
-    background: #fff;
+    background: #e7c144;
     display: block;
     height: 3px;
     left: 0;
@@ -1660,7 +1660,7 @@ body.admin-bar .site-header {
     width: 24px;
   }
   .site-header > span span:before {
-    background: #fff;
+    background: #e7c144;
     content: '';
     display: block;
     height: 3px;
@@ -1672,7 +1672,7 @@ body.admin-bar .site-header {
     width: 24px;
   }
   .site-header > span span:after {
-    background: #fff;
+    background: #e7c144;
     bottom: -7px;
     content: '';
     display: block;
@@ -1830,20 +1830,34 @@ body.admin-bar .site-header {
 .site-header nav ul.primary > li > a.current {
   color: #e7c144;
 }
-.site-header nav ul.primary > li.button a {
+.site-header nav ul.primary > li.button > a {
   background: #fff;
   color: #5c6569;
 }
 @media all and (max-width: 1199px) {
-  .site-header nav ul.primary > li.button a {
+  .site-header nav ul.primary > li.button > a {
     display: inline-block;
     margin: 0 0 0 -10px;
     padding-left: 35px;
   }
 }
-.site-header nav ul.primary > li.button a:hover {
+.site-header nav ul.primary > li.button > a:hover {
   background: #fff;
   color: #e7c144;
+}
+.site-header nav ul.primary > li.button ul {
+  background: #fff;
+  left: auto;
+  right: -1px;
+  border-right: 1px solid #5c6569;
+  border-left: 1px solid #5c6569;
+  border-bottom: 1px solid #5c6569;
+  border-top-right-radius: 0;
+}
+.site-header nav ul.primary > li.button ul a {
+  color: #e7c144;
+  text-align: right;
+  display: block;
 }
 .site-header nav ul.primary ul {
   background: #5c6569;
@@ -2846,10 +2860,36 @@ section article p.callout {
 section article p i {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+section article hr {
+  background: #f2f1e4;
+  border: none;
+  display: block;
+  height: 1px;
+  margin: 40px 0;
+  width: 100%;
+}
 section article img.rounded {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
+}
+section article blockquote {
+  border-left: 3px solid #efefef;
+  color: #e7c144;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 36px;
+  margin: 0 0 24px 0;
+  padding: 0 0 0 20px;
+}
+section article figcaption {
+  background: #efefef;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 24px 0;
+  padding: 10px;
+  text-align: center;
 }
 section article ol {
   font-size: 18px;
@@ -3038,12 +3078,12 @@ div.acf-fields > .acf-field > .acf-label label {
   margin-bottom: 0;
 }
 
-.woocommerce-MyAccount-navigation li {
+.woocommerce .woocommerce-MyAccount-navigation li {
   font-size: 24px;
   list-style: none;
   line-height: 36px;
 }
-.woocommerce-MyAccount-navigation li.is-active a {
+.woocommerce .woocommerce-MyAccount-navigation li.is-active a {
   color: #ea7750;
 }
 

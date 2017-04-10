@@ -51,7 +51,7 @@ if(!empty($meeting_date)):
         </div>
         <div class="unit-4-8 unit-4-6-md unit-3-4-sm unit-center">
           <h4><?php echo $meeting_date ?>: <?php echo $meeting_title ?></h4>
-          <p class="clean"><a href="<?php echo $meeting_link ?>">More Information ›</a></p>
+          <p class="clean"><a href="<?php echo $meeting_link ?>">Attend our next monthly meeting ›</a></p>
         </div>
       </div>
     </article>
@@ -79,6 +79,7 @@ endif;
     </div>
   </article>
 </section>
+
 <section class="alt">
   <article>
     <div class="grid">
@@ -91,30 +92,74 @@ endif;
       </div>
   </article>
 </section>
+
+<section class="inverse">
+  <article>
+    <h3 class="clean text-center">Latest News and Updates</h3>
+    <p class="text-center margin-double"><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ) ?>">View latest news and updates ›</a></p>
+    <div class="grid grid-center">
+
+      <?php
+      $news_q = new WP_Query(array(
+        'post_type' => 'post',
+        'posts_per_page' => 3
+      ));
+      while($news_q->have_posts()): $news_q->the_post();
+        $image = get_the_post_thumbnail_url();
+        if(empty($image))
+          $image = get_field('hero_image')['sizes']['large'];
+        ?>
+        <div class="unit-1-3 unit-1-1-sm margin">
+          <p><a href="<?php the_permalink() ?>"><img src="<?php echo $image ?>" /></a></p>
+          <p class="clean"><?php echo get_the_date() ?></p>
+          <h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+          <p><?php the_excerpt() ?></p>
+        </div>
+        <?php
+      endwhile;
+
+      wp_reset_query();
+      ?>
+
+    </div>
+  </article>
+</section>
+
 <section>
   <article>
+    <div class="grid grid-center margin">
+      <div class="unit-3-4 unit-1-1-md text-center">
+        <h3>What We Do</h3>
+        <p class="callout"><?php the_field('what_we_do_details') ?></p>
+      </div>
+    </div>
+    
     <div class="grid">
       <div class="unit-1-2 unit-1-1-sm">
-        <h3>What We Do</h3>
-        <p class="callout"><?php the_field('what_we_do_headline') ?></p>
-        <?php the_field('what_we_do_details') ?>
-      </div>
-      <div class="unit-1-2 unit-1-1-sm">
-      	<?php
-      	$features = get_field('what_we_do_features');
-      	foreach($features as $feature):
-      		?>
-	        <div class="grid small">
-	          <div class="unit-1-5 margin">
-	            <img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $feature['icon'] ?>.svg" />
-	          </div>
-	          <div class="unit-4-5 margin">
-	            <h4><?php echo $feature['title'] ?></h4>
-	            <p><?php echo $feature['info'] ?></p>
-	            <p class="clean"><a href="<?php echo $feature['link'] ?>"><?php echo $feature['button_label'] ?></a></p>
-	          </div>
-	        </div>
-	        <?php
+        <?php
+        $features = get_field('what_we_do_features');
+        $mid_point = round( count($features) / 2 );
+
+        foreach($features as $feature_count=>$feature):
+          if($feature_count == $mid_point):
+            ?>
+            </div>
+            <div class="unit-1-2 unit-1-1-sm">
+            <?php
+          endif;
+
+          ?>
+          <div class="grid small">
+            <div class="unit-1-5 margin">
+              <img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $feature['icon'] ?>.svg" />
+            </div>
+            <div class="unit-4-5 margin">
+              <h4><?php echo $feature['title'] ?></h4>
+              <p><?php echo $feature['info'] ?></p>
+              <p class="clean"><a href="<?php echo $feature['link'] ?>"><?php echo $feature['button_label'] ?></a></p>
+            </div>
+          </div>
+          <?php
         endforeach;
         ?>
       </div>
