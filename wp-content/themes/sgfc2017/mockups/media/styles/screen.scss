@@ -17,6 +17,7 @@ $cream: #F2F1E4;
 $blue: #13344A;
 $red: #EA7750;
 $grey: #333333;
+$light-grey: #efefef;
 
 @mixin background-gradient($start, $end) {
     background-image: -moz-linear-gradient(top, $start 0%, $end 100%);
@@ -271,7 +272,7 @@ header {
                 top: 15px;
             }
             span {
-                background: #fff;
+                background: $gold;
                 display: block;
                 height: 3px;
                 left: 0;
@@ -282,7 +283,7 @@ header {
                 -webkit-transition: all 0.2s linear;
                 width: 24px;
                 &:before {
-                    background: #fff;
+                    background: $gold;
                     content: '';
                     display: block;
                     height: 3px;
@@ -294,7 +295,7 @@ header {
                     width: 24px;
                 }
                 &:after {
-                    background: #fff;
+                    background: $gold;
                     bottom: -7px;
                     content: '';
                     display: block;
@@ -672,10 +673,36 @@ section {
                 font-family: $georgia;
             }
         }
+        hr {
+          background: $cream;
+          border: none;
+          display: block;
+          height: 1px;
+          margin: 40px 0;
+          width: 100%;
+        }
         img {
             &.rounded {
                 @include border-radius(50%);
             }
+        }
+        blockquote {
+            border-left: 3px solid $light-grey;
+            color: $gold;
+            font-family: $georgia;
+            font-size: 24px;
+            font-style: italic;
+            line-height: 36px;
+            margin: 0 0 24px 0;
+            padding: 0 0 0 20px;
+        }
+        figcaption {
+            background: $light-grey;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0 0 24px 0;
+            padding: 10px;
+            text-align: center;
         }
         ol {
             font-size: 18px;
