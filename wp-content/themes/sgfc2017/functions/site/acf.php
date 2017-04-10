@@ -3,12 +3,17 @@
 $sgfc_icons = array(
 	'find' => 'Map Pin on Yellow',
 	'member' => 'Map Pin on Orange',
-	'hire' => 'Person - Blue',
-	'business' => 'Person - Orange',
+	'hire' => 'Alien Person - Blue',
+	'business' => 'Alien Person - Orange',
 	'job' => 'Website',
 	'calendar' => 'Calendar',
 	'pencil' => 'Pencil - Black',
-	'pencil-alt' => 'Pencil - Yellow'
+	'pencil-alt' => 'Pencil - Yellow',
+	'megaphone' => 'Megaphone',
+	'network' => 'Network',
+	'outreach' => 'Broadcast Tower (Outreach)',
+	'pro' => 'Person',
+	'student' => 'Student'
 );
 
 if(function_exists('acf_add_options_page')) { 

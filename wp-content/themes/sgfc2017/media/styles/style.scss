@@ -11,6 +11,7 @@
 @import "compass";
 @import "media/styles/font-awesome.css";
 @import "lightbox";
+@import "chosen";
  
 /*
 -----------------------------------------------
@@ -679,12 +680,18 @@ form button {
 
   // ...except theese
   .input-type-creditcard &,
+  .show-label & {
+    display: block;
+    margin-top: 40px;
+  }
   .input-type-radio &,
   .input-type-select &,
   .input-type-product & {
     display: block;
+    margin-top: 40px;
   }
 }
+
 
 .gfield {
   list-style: none;
@@ -692,6 +699,14 @@ form button {
   margin: 0 0 25px 0;
   width: 100%;
   position: relative;
+
+  &.gsection {
+    margin-top: 60px;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
 
   &.gfield_visibility_visible {
     display: inline-block;
@@ -707,6 +722,7 @@ form button {
     width: 50%;
     padding-left: 20px;
     vertical-align: top;
+    float: right;
   }
 
 }
@@ -723,6 +739,10 @@ form button {
       margin-left: 0
     }
   }
+}
+
+.ginput_container_fileupload input {
+  height: 62px;
 }
 
 // error message/validation
@@ -1435,6 +1455,7 @@ div.product {
 .woocommerce-MyAccount-content h2,
 .woocommerce-MyAccount-content legend,
 .gfield_label,
+.gsection_title,
 div.acf-fields > .acf-field > .acf-label label {
   font-family: $proxima;
   font-weight: bold;

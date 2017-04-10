@@ -6,7 +6,7 @@ require('partial-hero.php');
 
 $business = get_field('company');
 $website = get_field('website_url', $business->ID);
-$image = get_field('logo', $business->ID)['url'];
+$image = get_the_post_thumbnail_url();
 $job_type = get_field('job_type')['label'];
 
 global $fa_icons;
