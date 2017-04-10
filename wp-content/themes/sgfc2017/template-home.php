@@ -47,7 +47,7 @@ if(!empty($meeting_date)):
     <article>
       <div class="grid grid-center">
         <div class="unit-1-8 unit-1-6-md unit-1-4-sm unit-center">
-          <img src="<?php echo get_stylesheet_directory_uri() ?>/media/images/calendar.svg" />
+          <img src="<?php echo get_stylesheet_directory_uri() ?>/media/images/calendar2.svg" />
         </div>
         <div class="unit-4-8 unit-4-6-md unit-3-4-sm unit-center">
           <h4><?php echo $meeting_date ?>: <?php echo $meeting_title ?></h4>
