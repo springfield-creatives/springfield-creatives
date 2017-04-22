@@ -902,3 +902,88 @@ $subtitle: override subtitle default of company
 function render_directory_item($post = false, $is_featured = false){
   echo return_directory_item_html($post, $is_featured);
 }
+
+
+
+function sgfc_has_editor_permission($post_id, $user_id = false){
+
+  if(!$user_id){
+    $current_user = wp_get_current_user();
+    $user_id = $current_user->ID;
+  }
+
+  $author = get_the_author_meta('ID', $user_id);
+  $editors = get_field('editors', $post_id);
+
+  if($author == $user_id)
+    return true;
+
+  if(in_array($user_id, $editors))
+    return true;
+
+  return false;
+
+}
+
+
+function sgfc_get_editable_posts($user_id, $post_type, $post_name){
+  $posts = array();
+
+  // by author
+  $user_jobs_author = new WP_Query(array(
+    'post_type' => $post_type,
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC',
+    'author' => $user_id
+  ));
+  while($user_jobs_author->have_posts()): $user_jobs_author->the_post();
+    $posts[] = array(
+      'id' => get_the_ID(),
+      'title' => get_the_title()
+    );
+  endwhile;
+
+  wp_reset_query();
+
+  // by ACF
+  $user_jobs_acf = new WP_Query(array(
+    'post_type' => $post_type,
+    'posts_per_page' => -1,
+    'orderby' => 'title',
+    'order' => 'ASC',
+    'meta_query' => array(
+      array(
+        'key' => 'editors',
+        'value' => '"' . $user_id . '"',
+        'compare' => 'LIKE'
+      )
+    )
+  ));
+  while($user_jobs_acf->have_posts()): $user_jobs_acf->the_post();
+    $posts[] = array(
+      'id' => get_the_ID(),
+      'title' => get_the_title()
+    );
+  endwhile;
+
+  wp_reset_query();
+
+  // sort
+  function sgfc_sort_these_posts(){
+    if ($a['title'] == $b['title']) {
+        return 0;
+    }
+    return ($a['title'] < $b['title']) ? -1 : 1;
+  }
+
+  usort($posts, "sgfc_sort_these_posts");
+
+  echo '<h2>Select a ' . $post_name . '</h2>';
+  echo '<ul>';
+  
+  foreach($posts as $cur_post)
+    echo '<li><a href="?entry-id=' . $cur_post['id'] . '">' . $cur_post['title'] . '</a></li>';
+
+  echo '</ul>';
+}

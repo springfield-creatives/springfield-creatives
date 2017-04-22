@@ -35,6 +35,10 @@ while($job_query->have_posts()): $job_query->the_post();
 
   $post_type = get_field('post_type');
   $business = get_field('company');
+
+  if(is_string($business))
+    $business = get_post($business);
+
   $job_data = array(
     'title' => get_the_title(),
     'url' => get_the_permalink(),

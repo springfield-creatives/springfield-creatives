@@ -7,6 +7,9 @@
 function sgfc_my_account_profile_endpoints() {
 	add_rewrite_endpoint( 'member-profile', EP_ROOT | EP_PAGES );
 	add_rewrite_endpoint( 'member-avatar', EP_ROOT | EP_PAGES );
+	add_rewrite_endpoint( 'jobs', EP_ROOT | EP_PAGES );
+	add_rewrite_endpoint( 'businesses', EP_ROOT | EP_PAGES );
+	add_rewrite_endpoint( 'organizations', EP_ROOT | EP_PAGES );
 }
 
 add_action( 'init', 'sgfc_my_account_profile_endpoints' );
@@ -24,6 +27,9 @@ add_action( 'init', 'sgfc_my_account_profile_endpoints' );
 function sgfc_my_account_profile_custom_query_vars( $vars ) {
 	$vars[] = 'member-profile';
 	$vars[] = 'member-avatar';
+	$vars[] = 'jobs';
+	$vars[] = 'businesses';
+	$vars[] = 'organizations';
 
 	return $vars;
 }
@@ -54,6 +60,9 @@ function sgfc_my_account_profile_link( $items ) {
 	// add custom sections
 	$new_items['member-avatar'] = 'Profile Picture';
 	$new_items['member-profile'] = 'Profile Details';
+	$new_items['jobs'] = 'Job Postings';
+	$new_items['businesses'] = 'Business Profiles';
+	$new_items['organizations'] = 'Organization Profiles';
 
 	// remove downloads
 	unset($items['downloads']);
@@ -76,14 +85,27 @@ add_filter( 'woocommerce_account_menu_items', 'sgfc_my_account_profile_link' );
 function sgfc_my_account_profile_endpoint_content() {
 	require(TEMPLATEPATH . '/partial-profile-details-edit.php');
 }
-
 add_action( 'woocommerce_account_member-profile_endpoint', 'sgfc_my_account_profile_endpoint_content' );
 
 function sgfc_my_account_profile_picture_endpoint_content() {
 	require(TEMPLATEPATH . '/partial-profile-picture-edit.php');
 }
-
 add_action( 'woocommerce_account_member-avatar_endpoint', 'sgfc_my_account_profile_picture_endpoint_content' );
+
+function sgfc_my_account_jobs_endpoint_content() {
+	require(TEMPLATEPATH . '/partial-jobs-edit.php');
+}
+add_action( 'woocommerce_account_jobs_endpoint', 'sgfc_my_account_jobs_endpoint_content' );
+
+function sgfc_my_account_organizations_endpoint_content() {
+	require(TEMPLATEPATH . '/partial-organizations-edit.php');
+}
+add_action( 'woocommerce_account_organizations_endpoint', 'sgfc_my_account_organizations_endpoint_content' );
+
+function sgfc_my_account_businesses_endpoint_content() {
+	require(TEMPLATEPATH . '/partial-businesses-edit.php');
+}
+add_action( 'woocommerce_account_businesses_endpoint', 'sgfc_my_account_businesses_endpoint_content' );
 
 
 
@@ -111,7 +133,7 @@ function sgfc_my_account_profile_endpoint_title( $title ) {
 
 add_filter( 'the_title', 'sgfc_my_account_profile_endpoint_title' );
 
-
+$update_notice_added_already = false;
 
 // Process My Account form submission
 function sgfc_my_account_profile_form_submission(){
@@ -141,3 +163,84 @@ function sgfc_my_account_profile_form_submission(){
 	$update_notice_added_already = true; // super hacky :(
 }
 add_action('wp_loaded', 'sgfc_my_account_profile_form_submission');
+
+
+// Process Job form submission
+function sgfc_my_account_job_profile_form_submission(){
+	if($_POST['sgfc_job_profile_edit'] != 1)
+		return;
+
+	global $update_notice_added_already;
+
+	// save ACF stuff
+	$post_id = $_POST['sgfc_job_profile_id'];
+	do_action('acf/save_post', $post_id);
+
+	// save user stuff (name only at this time)
+	$post = array(
+		'ID' => $post_id,
+		'post_title' => $_POST['sgfc_title']
+	);
+	wp_update_post($post);
+
+	// add notice
+	if(!$update_notice_added_already)
+		wc_add_notice('Job Posting updated!');
+
+	$update_notice_added_already = true; // super hacky :(
+}
+add_action('wp_loaded', 'sgfc_my_account_job_profile_form_submission');
+
+
+// Process Business form submission
+function sgfc_my_account_business_profile_form_submission(){
+	if($_POST['sgfc_business_profile_edit'] != 1)
+		return;
+
+	global $update_notice_added_already;
+
+	// save ACF stuff
+	$post_id = $_POST['sgfc_business_profile_id'];
+	do_action('acf/save_post', $post_id);
+
+	// save user stuff (name only at this time)
+	$post = array(
+		'ID' => $post_id,
+		'post_title' => $_POST['sgfc_title']
+	);
+	wp_update_post($post);
+
+	// add notice
+	if(!$update_notice_added_already)
+		wc_add_notice('Business Profile updated!');
+
+	$update_notice_added_already = true; // super hacky :(
+}
+add_action('wp_loaded', 'sgfc_my_account_business_profile_form_submission');
+
+
+// Process Organization form submission
+function sgfc_my_account_organzation_profile_form_submission(){
+	if($_POST['sgfc_organization_profile_edit'] != 1)
+		return;
+
+	global $update_notice_added_already;
+
+	// save ACF stuff
+	$post_id = $_POST['sgfc_organization_profile_id'];
+	do_action('acf/save_post', $post_id);
+
+	// save user stuff (name only at this time)
+	$post = array(
+		'ID' => $post_id,
+		'post_title' => $_POST['sgfc_title']
+	);
+	wp_update_post($post);
+
+	// add notice
+	if(!$update_notice_added_already)
+		wc_add_notice('Organization Profile updated!');
+
+	$update_notice_added_already = true; // super hacky :(
+}
+add_action('wp_loaded', 'sgfc_my_account_organzation_profile_form_submission');

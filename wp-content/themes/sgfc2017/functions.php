@@ -2,6 +2,14 @@
 
 define('SGFC_EVENT_MEETINGS_CAT', 4);
 
+define('SGFC_EDITORS_ACF_ID', 3021);
+define('SGFC_MEMBER_PROFILE_ACF_ID', 2814);
+define('SGFC_GALLERY_ACF_ID', 813);
+define('SGFC_JOB_ACF_ID', 2912);
+define('SGFC_BUSINESS_ACF_ID', 410);
+define('SGFC_ORGANIZATION_ACF_ID', 410);
+define('SGFC_CONTACT_ACF_ID', 2828);
+
 global $fa_icons;
 $fa_icons = array(
 

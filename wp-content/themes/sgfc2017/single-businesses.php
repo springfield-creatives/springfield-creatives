@@ -12,8 +12,11 @@ $social_links = get_social_links_arr(get_the_ID());
 
 $media = get_gallery_arr(get_the_ID());
 
-//edit link TODO
+//edit link
 $edit_link = '';
+
+if(sgfc_has_editor_permission(get_the_ID()))
+	$edit_link = get_bloginfo('wpurl') . '/my-account/' . get_post_type() . '/?entry-id=' . get_the_ID();
 
 // build the $profile var for the partial
 $profile = array(

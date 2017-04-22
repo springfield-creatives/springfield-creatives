@@ -113,7 +113,7 @@ endif;
           <p><a href="<?php the_permalink() ?>"><img src="<?php echo $image ?>" /></a></p>
           <p class="clean"><?php echo get_the_date() ?></p>
           <h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-          <p><?php the_excerpt() ?></p>
+          <?php the_excerpt() ?>
         </div>
         <?php
       endwhile;

@@ -1,7 +1,4 @@
 <?php
-define('SGFC_MEMBER_PROFILE_ACF_ID', 2814);
-define('SGFC_GALLERY_ACF_ID', 813);
-
 $current_user = wp_get_current_user();
 ?>
 
@@ -25,6 +22,12 @@ $current_user = wp_get_current_user();
 
 	acf_form(array(
 		'field_groups' => array(SGFC_MEMBER_PROFILE_ACF_ID), // the ID of the field group
+		'post_id' => 'user_' . $current_user->ID,
+		'form' => false
+	));
+
+	acf_form(array(
+		'field_groups' => array(SGFC_CONTACT_ACF_ID), // the ID of the field group
 		'post_id' => 'user_' . $current_user->ID,
 		'form' => false
 	));

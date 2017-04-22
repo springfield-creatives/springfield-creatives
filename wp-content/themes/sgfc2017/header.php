@@ -10,6 +10,22 @@
     <!--[if lt IE 9]>
       <script src="/workspace/media/scripts/ie.js" type="text/javascript"></script>
     <![endif]-->
+
+    <?php
+    if( current_user_can('debugger') && defined('SGFC_BUGHERD_KEY') ):
+      ?>
+      <script type='text/javascript'>
+        (function (d, t) {
+          var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          bh.type = 'text/javascript';
+          bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey=<?php echo SGFC_BUGHERD_KEY ?>';
+          s.parentNode.insertBefore(bh, s);
+          })(document, 'script');
+      </script>
+      <?php
+    endif;
+    ?>
+
   </head>
 	<body <?php body_class(); ?> id="<?php echo get_template_name(); ?>">
     <header class="site-header">
