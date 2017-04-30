@@ -34,7 +34,7 @@ function register_CPTs()
 			'slug' => 'job'
 		),
 		'capability_type' => 'job',
-		'has_archive' => true,
+		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 21,
 		'supports' => array(

@@ -40,32 +40,29 @@
 						<?php
             wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'items_wrap' => '%3$s' ));
 
-            if(is_user_logged_in()){
-              $nav_button_link = get_bloginfo('wpurl') . '/my-account/';
-              $nav_button_label = 'My Account';
-            }else{
-              $nav_button_link = get_field('');
-              $nav_button_label = 'Become a Member';
-            }
+            $nav_button_link = get_bloginfo('wpurl') . '/become-a-member/';
+            $nav_button_label = 'Become a Member';
 
             echo '<li class="button menu-item">';
             echo '<a href="' . $nav_button_link . '">' . $nav_button_label . '</a>';
-
-            woocommerce_account_navigation();
 
             echo '</li>';
             ?>
           </ul>
           <ul class="secondary">
 						<?php
-            wp_nav_menu( array('theme_location' => 'utility', 'container' => false, 'items_wrap' => '%3$s' ));
 
             // login link (if not logged in already)
-            if(!is_user_logged_in()):
-              ?>
-              <li class="menu-item"><a href="<?php bloginfo('wpurl') ?>/my-account">Become a Member</a></li>
-              <?php
-            endif;
+            if(is_user_logged_in()){
+              echo '<li class="menu-item">';
+                echo '<a href="' . get_bloginfo('wpurl') . '/my-account">My Account</a>';
+                // woocommerce_account_navigation();
+              echo '</li>';
+            } else {
+              echo '<li class="menu-item"><a href="' . get_bloginfo('wpurl') . '/my-account">Login</a></li>';
+            }
+            
+            wp_nav_menu( array('theme_location' => 'utility', 'container' => false, 'items_wrap' => '%3$s' ));
 
             // Cart
             global $woocommerce;

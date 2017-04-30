@@ -1,50 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 231 234" style="enable-background:new 0 0 231 234;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#5D6264;}
-	.st1{fill:#E87855;}
-	.st2{fill:#E1AC4F;}
-	.st3{fill:#F3F1E5;}
-	.st4{fill:#EFC419;}
-	.st5{fill:#9CD8D5;}
-	.st6{fill:#7E8588;}
-	.st7{fill:#FFFFFF;}
-	.st8{fill:#EFC41A;}
-	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#5D6264;}
-	.st11{opacity:0.48;}
-	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#7E8588;}
-	.st13{fill:#E6C045;}
-	.st14{fill:#5D666A;}
-	.st15{fill:none;stroke:#CFCFCE;stroke-width:0.5;stroke-miterlimit:10;}
-	.st16{fill:#9AD7D4;}
-	.st17{fill:#E87855;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st18{fill:#9CD8D5;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st19{fill:#EFC419;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st20{fill:#9CD8D5;stroke:#5D6264;stroke-width:5;stroke-miterlimit:10;}
-</style>
-<g>
-	<g>
-		<path class="st3" d="M186,191.2H43.7c-7.1,0-12.9-5.8-12.9-12.9V61.8c0-7.1,5.8-12.9,12.9-12.9H186c7.1,0,12.9,5.8,12.9,12.9
-			v116.4C198.9,185.4,193.1,191.1,186,191.2"/>
-		<path class="st16" d="M30.8,81.2V61.8c0-7.1,5.8-12.9,12.9-12.9H186c7.1,0,12.9,5.8,12.9,12.9v19.4L30.8,81.2L30.8,81.2z"/>
-		<path class="st14" d="M186,197.6H43.7c-10.7,0-19.4-8.7-19.4-19.4V61.8c0-10.7,8.7-19.4,19.4-19.4H186c10.7,0,19.4,8.7,19.4,19.4
-			v116.4C205.4,188.9,196.7,197.6,186,197.6z M43.7,55.3c-3.6,0-6.5,2.9-6.5,6.5v116.4c0,3.6,2.9,6.5,6.5,6.5H186
-			c3.6,0,6.5-2.9,6.5-6.5V61.8c0-3.6-2.9-6.5-6.5-6.5H43.7z"/>
-		<path class="st14" d="M63.1,68.2c0,3.6-2.9,6.5-6.5,6.5s-6.5-2.9-6.5-6.5c0-3.6,2.9-6.5,6.5-6.5S63.1,64.7,63.1,68.2
-			C63.1,68.2,63.1,68.2,63.1,68.2"/>
-		<path class="st14" d="M82.5,68.2c0,3.6-2.9,6.5-6.5,6.5s-6.5-2.9-6.5-6.5c0-3.6,2.9-6.5,6.5-6.5S82.5,64.7,82.5,68.2
-			C82.5,68.2,82.5,68.2,82.5,68.2"/>
-		<path class="st14" d="M101.9,68.2c0,3.6-2.9,6.5-6.5,6.5S89,71.8,89,68.2c0-3.6,2.9-6.5,6.5-6.5C99,61.8,101.9,64.7,101.9,68.2"/>
-		<rect x="30.8" y="81.2" class="st14" width="168.1" height="12.9"/>
-		<path class="st14" d="M173,74.7h-51.7c-3.6,0-6.5-2.9-6.5-6.5s2.9-6.5,6.5-6.5c0,0,0,0,0,0H173c3.6,0,6.5,2.9,6.5,6.5
-			C179.5,71.8,176.6,74.7,173,74.7C173,74.7,173,74.7,173,74.7"/>
-		<rect x="50.2" y="107.1" class="st14" width="129.3" height="12.9"/>
-		<rect x="50.2" y="126.5" class="st14" width="25.9" height="45.3"/>
-		<rect x="82.5" y="126.5" class="st14" width="25.9" height="45.3"/>
-		<rect x="114.8" y="126.5" class="st14" width="64.7" height="45.3"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="182px" height="156px" viewBox="0 0 182 156" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>newspaper</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="newspaper" fill-rule="nonzero">
+            <path d="M162,149.2 L19.7,149.2 C12.6,149.2 6.8,143.4 6.8,136.3 L6.8,19.8 C6.8,12.7 12.6,6.9 19.7,6.9 L162,6.9 C169.1,6.9 174.9,12.7 174.9,19.8 L174.9,136.2 C174.9,143.4 169.1,149.1 162,149.2" id="Shape" fill="#F3F1E5"></path>
+            <path d="M6.8,39.2 L6.8,19.8 C6.8,12.7 12.6,6.9 19.7,6.9 L162,6.9 C169.1,6.9 174.9,12.7 174.9,19.8 L174.9,39.2 L6.8,39.2 L6.8,39.2 Z" id="Shape" fill="#9AD7D4"></path>
+            <path d="M162,155.6 L19.7,155.6 C9,155.6 0.3,146.9 0.3,136.2 L0.3,19.8 C0.3,9.1 9,0.4 19.7,0.4 L162,0.4 C172.7,0.4 181.4,9.1 181.4,19.8 L181.4,136.2 C181.4,146.9 172.7,155.6 162,155.6 Z M19.7,13.3 C16.1,13.3 13.2,16.2 13.2,19.8 L13.2,136.2 C13.2,139.8 16.1,142.7 19.7,142.7 L162,142.7 C165.6,142.7 168.5,139.8 168.5,136.2 L168.5,19.8 C168.5,16.2 165.6,13.3 162,13.3 L19.7,13.3 Z" id="Shape" fill="#5D666A"></path>
+            <path d="M39.1,26.2 C39.1,29.8 36.2,32.7 32.6,32.7 C29,32.7 26.1,29.8 26.1,26.2 C26.1,22.6 29,19.7 32.6,19.7 C36.2,19.7 39.1,22.7 39.1,26.2 L39.1,26.2" id="Shape" fill="#5D666A"></path>
+            <path d="M58.5,26.2 C58.5,29.8 55.6,32.7 52,32.7 C48.4,32.7 45.5,29.8 45.5,26.2 C45.5,22.6 48.4,19.7 52,19.7 C55.6,19.7 58.5,22.7 58.5,26.2 L58.5,26.2" id="Shape" fill="#5D666A"></path>
+            <path d="M77.9,26.2 C77.9,29.8 75,32.7 71.4,32.7 C67.8,32.7 65,29.8 65,26.2 C65,22.6 67.9,19.7 71.5,19.7 C75,19.8 77.9,22.7 77.9,26.2" id="Shape" fill="#5D666A"></path>
+            <rect id="Rectangle-path" fill="#5D666A" x="6.8" y="39.2" width="168.1" height="12.9"></rect>
+            <path d="M149,32.7 L97.3,32.7 C93.7,32.7 90.8,29.8 90.8,26.2 C90.8,22.6 93.7,19.7 97.3,19.7 L97.3,19.7 L149,19.7 C152.6,19.7 155.5,22.6 155.5,26.2 C155.5,29.8 152.6,32.7 149,32.7 L149,32.7" id="Shape" fill="#5D666A"></path>
+            <rect id="Rectangle-path" fill="#5D666A" x="26.2" y="65.1" width="129.3" height="12.9"></rect>
+            <rect id="Rectangle-path" fill="#5D666A" x="26.2" y="84.5" width="25.9" height="45.3"></rect>
+            <rect id="Rectangle-path" fill="#5D666A" x="58.5" y="84.5" width="25.9" height="45.3"></rect>
+            <rect id="Rectangle-path" fill="#5D666A" x="90.8" y="84.5" width="64.7" height="45.3"></rect>
+        </g>
+    </g>
 </svg>

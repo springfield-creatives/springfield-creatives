@@ -23,28 +23,28 @@ require('partial-hero.php');
         <h3><?php the_field('why_title') ?></h3>
         <p class="callout"><?php the_field('why_sgfc_blurb') ?></p>
       </div>
-      <h3 class="text-center"><?php the_field('features_title') ?></h3>
-      <div class="grid">
-        <div class="unit-1-2 unit-1-1-sm">
-        	<?php
-        	$features = get_field('what_we_do_features');
-        	foreach($features as $feature):
-        		?>
-  	        <div class="grid small">
-  	          <div class="unit-1-5 margin">
-  	            <img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $feature['icon'] ?>.svg" />
-  	          </div>
-  	          <div class="unit-4-5 margin">
-  	            <h4><?php echo $feature['title'] ?></h4>
-  	            <p><?php echo $feature['info'] ?></p>
-  	            <p class="clean"><a href="<?php echo $feature['link'] ?>"><?php echo $feature['button_label'] ?></a></p>
-  	          </div>
-  	        </div>
-  	        <?php
-          endforeach;
-          ?>
-        </div>
-      </div>
+    </div>
+    <h3 class="text-center"><?php the_field('features_title') ?></h3>
+    <div class="grid">
+    	<?php
+    	$features = get_field('what_we_do_features');
+    	foreach($features as $feature):
+    		?>
+    		<div class="unit-1-2 unit-1-1-sm">
+	        <div class="grid small">
+	          <div class="unit-1-5 margin">
+	            <img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $feature['icon'] ?>.svg" />
+	          </div>
+	          <div class="unit-4-5 margin">
+	            <h4><?php echo $feature['title'] ?></h4>
+	            <p><?php echo $feature['info'] ?></p>
+	            <p class="clean"><a href="<?php echo $feature['link'] ?>"><?php echo $feature['button_label'] ?></a></p>
+	          </div>
+	        </div>
+	      </div>
+        <?php
+      endforeach;
+      ?>
     </div>
     <p class="text-center"><a class="button" href="<?php the_field('member_signup_link') ?>">Sign Me Up</a></p>
   </article>
@@ -59,11 +59,11 @@ require('partial-hero.php');
             </div>
         </div>
         <div class="grid">
-          <div class="unit-1-2 unit-1-1-sm">
-            <?php
-            $features = get_field('student_features_what_we_do_features');
-            foreach($features as $feature):
-              ?>
+          <?php
+          $features = get_field('student_features_what_we_do_features');
+          foreach($features as $feature):
+            ?>
+            <div class="unit-1-2 unit-1-1-sm">
               <div class="grid small">
                 <div class="unit-1-5 margin">
                   <img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $feature['icon'] ?>.svg" />
@@ -74,10 +74,10 @@ require('partial-hero.php');
                   <p class="clean"><a href="<?php echo $feature['link'] ?>"><?php echo $feature['button_label'] ?></a></p>
                 </div>
               </div>
-              <?php
-            endforeach;
-            ?>
-          </div>
+            </div>
+            <?php
+          endforeach;
+          ?>
         </div>
         <p class="text-center"><a class="button" href="<?php the_field('student_signup_link') ?>">Sign Me Up</a></p>
     </article>

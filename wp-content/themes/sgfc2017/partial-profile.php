@@ -197,7 +197,7 @@ if(!empty($profile['media']) && !$expired):
 
 				foreach($media as $media_item){
 		      echo '<div class="unit-1-5 unit-1-3-md unit-1-2-sm margin-half">';
-					echo '<a href="#" data-featherlight="' . $media_item['src'] . '"><img src="' . $media_item['thumb'] . '" alt="' . htmlentities($media_item['title']) . '" /></a>';
+					echo '<a class="gallery" href="' . $media_item['src'] . '"><img src="' . $media_item['thumb'] . '" alt="' . htmlentities($media_item['title']) . '" /></a>';
 					echo '</div>';
 				}
 

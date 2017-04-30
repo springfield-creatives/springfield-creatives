@@ -1,42 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 231 234" style="enable-background:new 0 0 231 234;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#5D6264;}
-	.st1{fill:#E87855;}
-	.st2{fill:#E1AC4F;}
-	.st3{fill:#F3F1E5;}
-	.st4{fill:#EFC419;}
-	.st5{fill:#9CD8D5;}
-	.st6{fill:#7E8588;}
-	.st7{fill:#FFFFFF;}
-	.st8{fill:#EFC41A;}
-	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-	.st10{fill-rule:evenodd;clip-rule:evenodd;fill:#5D6264;}
-	.st11{opacity:0.48;}
-	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#7E8588;}
-	.st13{fill:#E6C045;}
-	.st14{fill:#5D666A;}
-	.st15{fill:none;stroke:#CFCFCE;stroke-width:0.5;stroke-miterlimit:10;}
-	.st16{fill:#9AD7D4;}
-	.st17{fill:#E87855;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st18{fill:#9CD8D5;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st19{fill:#EFC419;stroke:#5D666A;stroke-width:12;stroke-miterlimit:10;}
-	.st20{fill:#9CD8D5;stroke:#5D6264;stroke-width:5;stroke-miterlimit:10;}
-</style>
-<g>
-	<circle class="st20" cx="115.5" cy="117" r="93.2"/>
-	<polygon class="st1" points="67,110.3 67,140.9 87.1,155.3 109.4,163.2 147.2,151.4 151.8,110.3 	"/>
-	<polygon class="st4" points="59.7,99.4 108.8,76.7 157.9,99.4 108.8,122 	"/>
-	<g>
-		<path class="st0" d="M115.5,14.4C58.8,14.4,12.9,60.6,12.9,117s45.9,102.6,102.6,102.6S218.1,173.7,218.1,117
-			S172.2,14.4,115.5,14.4z M22.1,117c0-51.6,42.1-93.4,93.4-93.4s93.4,41.7,93.4,93.4s-41.7,93.4-93.4,93.4S22.1,168.6,22.1,117z"/>
-		<path class="st0" d="M175.4,98.2v-0.3v-0.3c-0.3-0.6-0.3-1-1-1.6c0,0,0,0,0-0.3l-0.3-0.3l0,0c-0.3-0.3-1-0.6-1.6-1L111.7,66
-			c-1.3-0.6-2.9-0.6-4.1,0L46.4,94.4c-1.9,1-2.9,2.5-2.9,4.5c0,1.9,1.3,3.8,2.9,4.5l21,9.6v30.6c0,12.7,18.2,22.3,42.4,22.3
-			s42.4-9.6,42.4-22.3v-30.6l13.7-6.4v42.7c0,2.9,2.2,5.1,5.1,5.1c2.9,0,5.1-2.2,5.1-5.1v-51l0,0C175.4,98.5,175.4,98.5,175.4,98.2z
-			 M109.5,156.2c-19.8,0-32.2-7.3-32.2-12.1V118l30,14c0.6,0.3,1.3,0.3,2.2,0.3c0.6,0,1.6,0,2.2-0.3l30-14v26.1
-			C141.6,148.9,128.9,156.2,109.5,156.2z M109.5,121.8L60.4,99.2l49.1-22.6l49.1,22.6L109.5,121.8z"/>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="207px" height="206px" viewBox="0 0 207 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>student</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="student" fill-rule="nonzero">
+            <circle id="Oval" stroke="#5D6264" stroke-width="5" fill="#9CD8D5" cx="103.5" cy="103" r="93.2"></circle>
+            <polygon id="Shape" fill="#E87855" points="55 96.3 55 126.9 75.1 141.3 97.4 149.2 135.2 137.4 139.8 96.3"></polygon>
+            <polygon id="Shape" fill="#EFC419" points="47.7 85.4 96.8 62.7 145.9 85.4 96.8 108"></polygon>
+            <g id="Group" fill="#5D6264">
+                <path d="M103.5,0.4 C46.8,0.4 0.9,46.6 0.9,103 C0.9,159.4 46.8,205.6 103.5,205.6 C160.2,205.6 206.1,159.7 206.1,103 C206.1,46.3 160.2,0.4 103.5,0.4 Z M10.1,103 C10.1,51.4 52.2,9.6 103.5,9.6 C154.8,9.6 196.9,51.3 196.9,103 C196.9,154.7 155.2,196.4 103.5,196.4 C51.8,196.4 10.1,154.6 10.1,103 Z" id="Shape"></path>
+                <path d="M163.4,84.2 L163.4,83.9 L163.4,83.6 C163.1,83 163.1,82.6 162.4,82 C162.4,82 162.4,82 162.4,81.7 L162.1,81.4 L162.1,81.4 C161.8,81.1 161.1,80.8 160.5,80.4 L99.7,52 C98.4,51.4 96.8,51.4 95.6,52 L34.4,80.4 C32.5,81.4 31.5,82.9 31.5,84.9 C31.5,86.8 32.8,88.7 34.4,89.4 L55.4,99 L55.4,129.6 C55.4,142.3 73.6,151.9 97.8,151.9 C122,151.9 140.2,142.3 140.2,129.6 L140.2,99 L153.9,92.6 L153.9,135.3 C153.9,138.2 156.1,140.4 159,140.4 C161.9,140.4 164.1,138.2 164.1,135.3 L164.1,84.3 L164.1,84.3 C163.4,84.5 163.4,84.5 163.4,84.2 Z M97.5,142.2 C77.7,142.2 65.3,134.9 65.3,130.1 L65.3,104 L95.3,118 C95.9,118.3 96.6,118.3 97.5,118.3 C98.1,118.3 99.1,118.3 99.7,118 L129.7,104 L129.7,130.1 C129.6,134.9 116.9,142.2 97.5,142.2 Z M97.5,107.8 L48.4,85.2 L97.5,62.6 L146.6,85.2 L97.5,107.8 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -14,7 +14,7 @@ require('partial-hero.php');
     <div class="grid grid-center">
       <div class="unit-2-3 unit-1-1-md text-center">
         <p class="callout"><?php the_field('post_a_job_blurb') ?></p>
-        <p><a class="button" href="<?php the_field('post_a_job_url', 'options') ?>">Add Job</a></p>
+        <p><a class="button" href="<?php the_field('post_a_job_url') ?>">Add Job</a></p>
       </div>
     </div>
   </article>
@@ -64,15 +64,22 @@ foreach($featured_jobs as $job):
   <section class="alt thin margin-half">
     <article>
       <div class="grid">
-        <div class="unit-1-4 unit-1-1-sm">
-          <p><a href="<?php echo $job['url'] ?>"><img class="full rounded" src="<?php echo $job['image'] ?>" /></a></p>
-        </div>
-        <div class="unit-3-4 unit-1-1-sm">
+        <?php if($job['image']): ?>
+          <div class="unit-1-5 unit-1-1-sm unit-center">
+            <p><a href="<?php echo $job['url'] ?>"><img class="full" src="<?php echo $job['image'] ?>" /></a></p>
+          </div>
+        <?php endif; ?>
+        <?php if(!$job['image']): ?>
+          <div class="unit-1-5 unit-1-1-sm unit-center">
+            <p><a href="<?php echo $job['url'] ?>"><img class="full" src="/wp-content/uploads/2017/04/agency.svg" /></a></p>
+          </div>
+        <?php endif; ?>
+        <div class="unit-4-5 unit-1-1-sm unit-center">
           <h2><a href="<?php echo $job['url'] ?>"><?php echo $job['title'] ?></h2>
-          <h3 class="clean"><?php echo $job['business'] ?></h3>
-          <p><a target="_blank" href="<?php echo $job['business_website'] ?>"><?php echo sgfc_get_simple_url( $job['business_website'] ) ?></a> | <a href="<?php echo $job['business_link'] ?>">View Profile</a></p>
+          <h3 class="clean"><a href="<?php echo $job['business_link'] ?>"><?php echo $job['business'] ?></a></h3>
+          <p><a target="_blank" href="<?php echo $job['business_website'] ?>"><?php echo sgfc_get_simple_url( $job['business_website'] ) ?></a></p>
           <p><?php echo $job['short_desc'] ?></p>
-          <p><a class="button" href="<?php echo $job['apply'] ?>">Apply</a> <a class="button" href="<?php echo $job['url'] ?>">Learn More</a> </p>
+          <p><a class="button" href="<?php echo $job['url'] ?>">View Details</a> </p>
         </div>
       </div>
     </article>
@@ -83,20 +90,33 @@ endforeach;
 
 <section>
     <article>
-      <div class="grid small">
+      <div class="grid">
 
         <?php
         foreach($regular_jobs as $job):
           ?>
-          <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
+          <div class="unit-1-2 unit-1-1-sm margin">
             <div class="grid">
-              <div class="unit-1-3">
-                <p><a href="<?php echo $job['url'] ?>"><img class="full rounded" src="<?php echo $job['image'] ?>" /></a></p>
+              <div class="unit-1-4">
+                <?php if($job['image']): ?>
+                  <p>
+                    <a href="<?php echo $job['url'] ?>">
+                      <img class="full" src="<?php echo $job['image'] ?>" />
+                    </a>
+                  </p>
+                <?php endif; ?>
+                <?php if(!$job['image']): ?>
+                  <p>
+                    <a href="<?php echo $job['url'] ?>">
+                      <img class="full" src="/wp-content/uploads/2017/04/agency.svg" />
+                    </a>
+                  </p>
+                <?php endif; ?>
               </div>
-              <div class="unit-2-3">
+              <div class="unit-3-4">
                 <h4><a href="<?php echo $job['url'] ?>"><?php echo $job['title'] ?></a></h4>
-                <p class="clean"><?php echo $job['business'] ?></p>
-                <p><a target="_blank" href="<?php echo $job['business_website'] ?>"><?php echo sgfc_get_simple_url( $job['business_website'] ) ?></a> | <a href="<?php echo $job['business_link'] ?>">View Profile</a><br /><a href="<?php echo $job['url'] ?>">Learn More</a></p>
+                <p class="clean"><a href="<?php echo $job['business_link'] ?>"><?php echo $job['business'] ?></a></p>
+                <p><a href="<?php echo $job['url'] ?>">View Details</a></p>
               </div>
             </div>
           </div>

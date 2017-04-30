@@ -34,7 +34,7 @@ while($committees_q->have_posts()): $committees_q->the_post();
 
 					$email = get_field('email');
 					if(!empty($email))
-						echo '<p class="text-center"><a class="button" href="mailto:' . $email . '">Email Committee Members</a></p>';
+						echo '<p class="text-center"><a class="button" href="mailto:' . $email . '">Contact</a></p>';
 
 					?>
 				</div>

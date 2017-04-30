@@ -18,7 +18,7 @@ require('partial-hero.php');
                 <p><?php the_field('intro_paragraph') ?></p>
             </div>
         </div>
-        <div class="grid small">
+        <div class="grid">
             
             <?php
             $members = get_field('board_members');
@@ -42,13 +42,19 @@ require('partial-hero.php');
             endforeach;
             ?>
             
-            <div class="unit-1-2 unit-1-1-md margin">
-                <h3 class="clean"><?php the_field('callout_title') ?></h3>
-                <p class="callout"><?php the_field('callout_blurb') ?></p>
-                <p><a class="button" href="<?php the_field('callout_button_link') ?>"><?php the_field('callout_button_label') ?></a></p>
-            </div>
         </div>
     </article>
+</section>
+<section class="alt">
+  <article>
+    <div class="grid grid-center">
+      <div class="unit-3-5 unit-1-1-md text-center">
+          <h3 class="clean"><?php the_field('callout_title') ?></h3>
+          <p class="callout"><?php the_field('callout_blurb') ?></p>
+          <p><a class="button" href="<?php the_field('callout_button_link') ?>"><?php the_field('callout_button_label') ?></a></p>
+      </div>
+    </div>
+  </article>
 </section>
 
 <?php require('partial-more-links.php'); ?>

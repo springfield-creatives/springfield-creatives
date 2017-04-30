@@ -68,10 +68,10 @@ endif;
     	foreach($callouts as $callout):
     		?>
 	      <div class="unit-1-3 unit-1-1-sm margin text-center">
-	        <p><img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $callout['icon'] ?>.svg" height="225" /></p>
+	        <p><img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/<?php echo $callout['icon'] ?>.svg" height="200" /></p>
 	        <h4><?php echo $callout['title'] ?></h4>
 	        <p><?php echo $callout['cta'] ?></p>
-	        <p class="clean"><a href="<?php echo $callout['link'] ?>"><?php echo $callout['button_label'] ?><i class="fa fa-angle-right"></i></a></p>
+	        <p class="clean"><a href="<?php echo $callout['link'] ?>"><?php echo $callout['button_label'] ?></a></p>
 	      </div>
 	      <?php
       endforeach;
@@ -110,7 +110,7 @@ endif;
           $image = get_field('hero_image')['sizes']['large'];
         ?>
         <div class="unit-1-3 unit-1-1-sm margin">
-          <p><a href="<?php the_permalink() ?>"><img src="<?php echo $image ?>" /></a></p>
+          <p><a href="<?php the_permalink() ?>"><img class="full" src="<?php echo $image ?>" /></a></p>
           <p class="clean"><?php echo get_the_date() ?></p>
           <h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
           <?php the_excerpt() ?>

@@ -42,7 +42,7 @@ if(get_field('type') == 'businesses'){
     <?php
     if(!$empty_search_query):
       ?>
-      <h4 class="clean text-center"><a class="toggle" href="">Refine Results <i class="fa fa-angle-down"></i></a></h4>
+      <h4 class="clean text-center"><a class="toggle" href="">Find A Business <i class="fa fa-angle-down"></i></a></h4>
       <?php
     endif;
     ?>
@@ -119,17 +119,17 @@ if(!$empty_search_query){
 
 if(!empty($business_results) && !empty($business_results['results_featured'])):
   ?>
-  <section class="alt thin margin-half">
-    <article>
-      <div class="grid">
-        <?php
+  <?php
         foreach($business_results['results_featured'] as $business):
+  echo '<section class="alt thin margin-half">';
+    echo '<article>';
+      echo '<div class="grid">';
           render_directory_item($business, true);
-        endforeach;
-        ?>
-      </div>
-    </article>
-  </section>
+      echo '</div>';
+    echo '</article>';
+  echo '</section>';
+  endforeach;
+  ?>
   <?php
 endif;
 

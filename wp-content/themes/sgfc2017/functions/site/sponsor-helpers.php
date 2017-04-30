@@ -5,7 +5,7 @@
  * @param  array   $args      Additional WP_Query arguments
  * @return array              Array of Sponsor data by level
  */
-function get_sponsors($min_level = 1, $user_args = array()) {
+function get_sponsors($min_level = 1, $range = '>=', $user_args = array()) {
 
 	global $post;
 
@@ -16,7 +16,7 @@ function get_sponsors($min_level = 1, $user_args = array()) {
 		'order' => 'ASC',
 		'meta_query' => array(
 			array(
-				'compare' => '>=',
+				'compare' => $range,
 				'key' => 'sponsor_level',
 				'value' => $min_level,
 				'type' => 'numeric'
@@ -38,13 +38,15 @@ function get_sponsors($min_level = 1, $user_args = array()) {
 
 	while($sponsors_query->have_posts()): $sponsors_query->the_post();
 
-		$sponsor_logo = get_field('sponsor_logo');
+		$sponsor_logo = get_field('logo');
 
+/*
 		if(empty($sponsor_logo))
 			$sponsor_logo = get_field('logo');
 
 		if(empty($sponsor_logo))
 			$sponsor_logo = get_field( 'default_' . get_post_type() . '_image', 'option');
+*/
 
 		$sponsor_url = get_field('sponsor_url');
 

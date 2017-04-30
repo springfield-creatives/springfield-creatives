@@ -46,7 +46,7 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
   // return default image
   // $default = get_field( 'default_' . $post_type . '_image', 'option');
   // return $default['sizes'][$size];
-  return get_stylesheet_directory_uri() . '/media/images/placeholder.png';;
+  return get_stylesheet_directory_uri() . '/media/images/agency.svg';;
 
 }
 
@@ -387,10 +387,10 @@ function return_person_item_html($user, $subtitle = ''){
   <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
     <div class="grid">
       <div class="unit-1-3">
-        <p><img class="full rounded" src="<?php echo $user_data['image'] ?>" /></p>
+        <p><a href="<?php echo $user_data['link'] ?>"><img class="full rounded" src="<?php echo $user_data['image'] ?>" /></a></p>
       </div>
       <div class="unit-2-3">
-        <h4><?php echo $user_data['name'] ?></h4>
+        <h4><a href="<?php echo $user_data['link'] ?>"><?php echo $user_data['name'] ?></a></h4>
         <p>
           <?php
           if(empty($subtitle))
@@ -811,10 +811,10 @@ function return_directory_item_html($post_object = false, $is_featured = false){
     // 
     ?>
 
-    <div class="unit-1-4 unit-1-1-sm">
-      <p><img class="full rounded" src="<?php echo $post_image_src ?>" /></p>
+    <div class="unit-1-5 unit-1-1-sm">
+      <p><img class="full" src="<?php echo $post_image_src ?>" /></p>
     </div>
-    <div class="unit-3-4 unit-1-1-sm">
+    <div class="unit-4-5 unit-1-1-sm">
       <h2><?php echo $name ?></h2>
 
       <?php
@@ -852,10 +852,10 @@ function return_directory_item_html($post_object = false, $is_featured = false){
     // 
     ?>
 
-    <div class="unit-1-3 unit-1-2-md unit-1-1-sm margin">
+    <div class="unit-1-2 unit-1-1-sm margin">
       <div class="grid">
         <div class="unit-1-3">
-          <p><img class="full rounded" src="<?php echo $post_image_src ?>" /></p>
+          <p><img class="full" src="<?php echo $post_image_src ?>" /></p>
         </div>
         <div class="unit-2-3">
           
@@ -926,7 +926,7 @@ function sgfc_has_editor_permission($post_id, $user_id = false){
 }
 
 
-function sgfc_get_editable_posts($user_id, $post_type, $post_name){
+function sgfc_get_editable_posts($user_id, $post_type, $action_post_name){
   $posts = array();
 
   // by author
@@ -979,7 +979,7 @@ function sgfc_get_editable_posts($user_id, $post_type, $post_name){
 
   usort($posts, "sgfc_sort_these_posts");
 
-  echo '<h2>Select a ' . $post_name . '</h2>';
+  echo '<h2>' . $action_post_name . '</h2>';
   echo '<ul>';
   
   foreach($posts as $cur_post)

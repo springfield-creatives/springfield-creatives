@@ -12,6 +12,15 @@ jQuery(function($) {
   /* Header Swap */
   $('section.hero').prev('header').addClass('alt');
   
+  $('.gallery').featherlightGallery({
+		gallery: {
+			fadeIn: 300,
+			fadeOut: 300
+		},
+		openSpeed:    300,
+		closeSpeed:   300
+	});
+  
   /* Toggle */
   $('div.collapsible').not('[data-open]').hide();
   $('a.toggle').click(function() {

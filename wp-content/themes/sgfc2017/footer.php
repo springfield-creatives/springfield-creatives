@@ -1,55 +1,60 @@
-    <section class="alt">
-      <article>
-        <h2 class="margin text-center">Sponsors</h2>
-        <div class="grid grid-center margin">
-        	<?php
-
-					// get all sponsor posts level 3 and up
-					$stripe_sponsors = get_sponsors(3);
-
-					foreach($stripe_sponsors as $level){
-						foreach($level as $sponsor){
-							?>
-							<div class="unit-1-5 unit-1-3-sm unit-center margin">
-								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
-									<img class="full" src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" />
-								</a>
-							</div>	
-							<?php
-					    }
-					}
-
-					wp_reset_postdata();
-
-					?>
-        </div>
-        <p class="text-center"><a class="button" href="<?php the_field('sponsor_signup_url', 'options') ?>">Become A Sponsor</a></p>
-      </article>
-    </section>
+    <?php global $post; ?>
+    <?php if ($post->ID != 194): ?>
+      <section class="alt">
+        <article>
+          <h2 class="clean text-center">Silver and Gold Level Sponsors</h2>
+          <p class="text-center callout"><?php the_field('sponsorship_blurb', 'options') ?></p>
+          <p class="margin text-center"><a href="<?php bloginfo('url') ?>/sponsorship/">View All Sponsors</a></p>
+          <div class="grid grid-center margin">
+          	<?php
+  
+  					// get all sponsor posts level 3 and up
+  					$stripe_sponsors = get_sponsors(3);
+  
+  					foreach($stripe_sponsors as $level){
+  						foreach($level as $sponsor){
+  							?>
+  							<div class="unit-1-8 unit-1-4-sm unit-center margin">
+  								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
+  									<img class="full" src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" />
+  								</a>
+  							</div>	
+  							<?php
+  					    }
+  					}
+  
+  					wp_reset_postdata();
+  
+  					?>
+          </div>
+          <p class="text-center"><a class="button" href="<?php the_field('sponsor_signup_url', 'options') ?>">Become A Sponsor</a></p>
+        </article>
+      </section>
+    <?php endif ?>
     <footer>
       <div>
         <div class="grid grid-center">
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
-            <h5><a href="<?php the_field('footer_col1_link', 'options') ?>"><?php the_field('footer_col1_title', 'options') ?></a></h5>
+            <h5><a href="<?php the_field('footer_col_1_link', 'options') ?>"><?php the_field('footer_col_1_title', 'options') ?></a></h5>
             <ul>
 							<?php wp_nav_menu( array('theme_location' => 'footer1', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
-            <h5><a href="<?php the_field('footer_col2_link', 'options') ?>"><?php the_field('footer_col2_title', 'options') ?></a></h5>
+            <h5><a href="<?php the_field('footer_col_2_link', 'options') ?>"><?php the_field('footer_col_2_title', 'options') ?></a></h5>
             <ul>
 							<?php wp_nav_menu( array('theme_location' => 'footer2', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
-            <h5><a href="<?php the_field('footer_col3_link', 'options') ?>"><?php the_field('footer_col3_title', 'options') ?></a></h5>
+            <h5><a href="<?php the_field('footer_col_3_link', 'options') ?>"><?php the_field('footer_col_3_title', 'options') ?></a></h5>
             <ul>
 							<?php wp_nav_menu( array('theme_location' => 'footer3', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>
-            <h5><a href="<?php the_field('footer_col3_link2', 'options') ?>"><?php the_field('footer_col3_title2', 'options') ?></a></h5>
-            <h5><a href="<?php the_field('footer_col3_link3', 'options') ?>"><?php the_field('footer_col3_title3', 'options') ?></a></h5>
           </div>
           <div class="unit-1-5 unit-1-4-md unit-1-1-sm margin hidden-sm">
+            <h5><a href="<?php the_field('footer_col_3_link2', 'options') ?>"><?php the_field('footer_col_3_title2', 'options') ?></a></h5>
+            <h5><a href="<?php the_field('footer_col_3_link3', 'options') ?>"><?php the_field('footer_col_3_title3', 'options') ?></a></h5>
             <ul>
 							<?php wp_nav_menu( array('theme_location' => 'footer4', 'container' => false, 'items_wrap' => '%3$s' )); ?>
             </ul>

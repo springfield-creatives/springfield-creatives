@@ -6,7 +6,7 @@ $entry_id = $_GET['entry-id'];
 // list or detail?
 if(empty($entry_id)){
 
-	sgfc_get_editable_posts($current_user->ID, 'businesses', 'Business Profile');
+	sgfc_get_editable_posts($current_user->ID, 'businesses', 'Update a Business Profile');
 
 }else{
 
@@ -19,7 +19,7 @@ if(empty($entry_id)){
 	// make sure user has permissions to edit this post
 	if(!sgfc_has_editor_permission($entry_id, $current_user->ID)){
 	
-		echo '<h2>You do not have permission to edit this entry</h2>';
+		echo '<h2>You do not have permission to edit this entry.</h2>';
 
 	}else{
 		

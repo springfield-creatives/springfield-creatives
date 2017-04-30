@@ -16,7 +16,7 @@ require('partial-hero.php');
     <?php
     if(!$empty_search_query):
       ?>
-      <h4 class="clean text-center"><a class="toggle" href="">Refine Results <i class="fa fa-angle-down"></i></a></h4>
+      <h4 class="clean text-center"><a class="toggle" href="">Find A Member <i class="fa fa-angle-down"></i></a></h4>
       <?php
     endif;
     ?>
@@ -26,7 +26,7 @@ require('partial-hero.php');
         <div class="margin"></div>
         <div class="unit-1-2 unit-1-1-sm margin">
           <form>
-            <h3>Find A Member</h3>
+            <h3>Member Search</h3>
             <label>
               <input type="text" placeholder="First Name" name="member_fname" value="<?php echo !empty($_GET['member_fname']) ? $_GET['member_fname'] : '' ?>" />
             </label>
@@ -65,14 +65,14 @@ require('partial-hero.php');
           </form>
         </div>
         <div class="unit-1-2 unit-1-1-sm">
-          <h3>or, Narrow By Industry</h3>
+          <h3>or, Narrow By Skillset</h3>
           <?php
           $industry = get_terms(array(
             'taxonomy' => 'industry'
           ));
           ?>
           <form>
-            <div class="grid">
+            <div class="grid margin-half">
               <div class="unit-1-2 unit-1-1-lg">
                 <?php
                 $midpoint = round(count($industry)/2);
@@ -116,14 +116,16 @@ require('partial-hero.php');
   <article>
     <div class="grid small">
       <?php
-      if(!$empty_search_query){
         $member_results = sgfc_get_member_results();
 
         foreach($member_results['results'] as $member):
           render_person_item($member);
         endforeach;
-      }
       ?>
+    </div>
+    <hr />
+    <div class="text-center">
+        <h3><a class="left" href="">← Previous</a><a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> <a class="right" href="">Next →</a></h3>
     </div>
   </article>
 </section>
