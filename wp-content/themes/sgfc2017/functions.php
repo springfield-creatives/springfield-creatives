@@ -79,6 +79,7 @@ add_action( 'after_setup_theme', 'register_my_menu' );
 function register_my_menu() {
   register_nav_menu( 'primary', 'Primary Menu' );
   register_nav_menu( 'utility', 'Utility Menu' );
+  register_nav_menu( 'handbook', 'Handbook Menu' );
   register_nav_menu( 'footer1', 'Footer Column 1 Menu' );
   register_nav_menu( 'footer2', 'Footer Column 2 Menu' );
   register_nav_menu( 'footer3', 'Footer Column 3 Menu' );

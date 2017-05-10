@@ -13,7 +13,9 @@ $sgfc_icons = array(
 	'network' => 'Network',
 	'outreach' => 'Broadcast Tower (Outreach)',
 	'pro' => 'Person',
-	'student' => 'Student'
+	'student' => 'Student',
+	'agency' => 'Building',
+	'briefcase' => 'Briefcase'
 );
 
 if(function_exists('acf_add_options_page')) { 

@@ -811,10 +811,10 @@ function return_directory_item_html($post_object = false, $is_featured = false){
     // 
     ?>
 
-    <div class="unit-1-5 unit-1-1-sm">
-      <p><img class="full" src="<?php echo $post_image_src ?>" /></p>
+    <div class="unit-1-5 unit-1-1-sm unit-center">
+      <div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div>
     </div>
-    <div class="unit-4-5 unit-1-1-sm">
+    <div class="unit-4-5 unit-1-1-sm unit-center">
       <h2><?php echo $name ?></h2>
 
       <?php
@@ -854,10 +854,10 @@ function return_directory_item_html($post_object = false, $is_featured = false){
 
     <div class="unit-1-2 unit-1-1-sm margin">
       <div class="grid">
-        <div class="unit-1-3">
-          <p><img class="full" src="<?php echo $post_image_src ?>" /></p>
+        <div class="unit-1-3 unit-center">
+          <div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div>
         </div>
-        <div class="unit-2-3">
+        <div class="unit-2-3 unit-center">
           
           <h4><?php echo $name ?></h4>
           

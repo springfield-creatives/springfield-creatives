@@ -2788,6 +2788,30 @@ section article ul {
   line-height: 24px;
   margin: 0 0 24px 0;
 }
+section article ul.sidebar {
+  border-top: 1px solid #efefef;
+  margin: 0;
+  padding: 0;
+}
+section article ul.sidebar li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+section article ul.sidebar li a {
+  border-bottom: 1px solid #efefef;
+  border-top: none;
+  box-sizing: border-box;
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 15px 10px;
+}
+section article ul.sidebar li.current-menu-item a {
+  background: #5C6569;
+  color: #fff;
+}
 section article ul.social li {
   display: inline-block;
   margin: 0 10px 0 0;
@@ -2810,6 +2834,42 @@ section article ul.social li a i {
 }
 section article ul li {
   margin: 0 0 0 25px;
+}
+section article .circle {
+  background: #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+section article .circle.border {
+  border: 3px solid #5c6569;
+}
+section article .circle:after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+section article .circle span {
+  display: block;
+  height: 50%;
+  left: 10%;
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  width: 80%;
+}
+section article .circle span img {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%)
 }
 section article .contact {
   font-size: 18px;

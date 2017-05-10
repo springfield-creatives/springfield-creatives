@@ -51,7 +51,9 @@
           </ul>
           <ul class="secondary">
 						<?php
-
+            
+            wp_nav_menu( array('theme_location' => 'utility', 'container' => false, 'items_wrap' => '%3$s' ));
+            
             // login link (if not logged in already)
             if(is_user_logged_in()){
               echo '<li class="menu-item">';
@@ -61,8 +63,6 @@
             } else {
               echo '<li class="menu-item"><a href="' . get_bloginfo('wpurl') . '/my-account">Login</a></li>';
             }
-            
-            wp_nav_menu( array('theme_location' => 'utility', 'container' => false, 'items_wrap' => '%3$s' ));
 
             // Cart
             global $woocommerce;

@@ -21,6 +21,11 @@ require('partial-hero.php');
         <h3><a href="<?php the_field('business_directory_url', 'options') ?>">Business Directory</a></h3>
         <p><?php the_field('business_dir_desc') ?></p>
       </div>
+      <div class="unit-1-3 unit-1-1-sm margin text-center">
+        <p><a href="<?php the_field('organization_directory_url', 'options') ?>"><img class="full" src="<?php echo get_stylesheet_directory_uri() ?>/media/images/outreach.svg" height="225" /></a></p>
+        <h3><a href="<?php the_field('organization_directory_url', 'options') ?>">Organization Directory</a></h3>
+        <p><?php the_field('organization_dir_desc') ?></p>
+      </div>
     </div>
   </article>
 </section>

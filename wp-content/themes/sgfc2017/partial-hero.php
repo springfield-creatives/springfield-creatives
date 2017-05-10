@@ -3,6 +3,14 @@
  * A hero banner
 */
 
+// Updates hero
+if(is_home()){
+	$updates_page_id =  get_option( 'page_for_posts' );
+	$hero_img = get_field('hero_image', $updates_page_id);
+	$hero_intro = get_field('hero_intro', $updates_page_id);
+	$buttons = get_field('hero_buttons', $updates_page_id);
+}
+
 $hero_img = !empty($hero_img) ? $hero_img : get_field('hero_image');
 if(empty($hero_img) || !empty($hero_page_option_prefix)){
 	// allow containing template to choose with ACF option field to use for hero image
@@ -48,7 +56,6 @@ if(empty($hero_title)){
 
 }
 
-
 // hero intro
 if(empty($hero_intro))
 	$hero_intro = get_field('hero_intro');
@@ -59,7 +66,7 @@ if(empty($button_label))
 
 ?>
 
-<section class="hero overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/media/images/hero.jpg);">
+<section class="hero overlay" style="background-image: url(<?php echo $hero_img['sizes']['large'] ?>);">
   <article>
     <h1 class="margin text-center"><?php echo $hero_title ?></h1>
     <?php if(!empty($hero_intro) || !empty($button_label)): ?>

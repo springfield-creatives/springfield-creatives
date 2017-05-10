@@ -70,7 +70,7 @@ if(get_field('type') == 'businesses'){
           ));
           ?>
           <form>
-            <div class="grid">
+            <div class="grid margin-half">
               <div class="unit-1-2 unit-1-1-lg">
                 <?php
                 $ind_count = 0;
