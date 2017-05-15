@@ -42,7 +42,7 @@ if(get_field('type') == 'businesses'){
     <?php
     if(!$empty_search_query):
       ?>
-      <h4 class="clean text-center"><a class="toggle" href="">Find A Business <i class="fa fa-angle-down"></i></a></h4>
+      <h4 class="clean text-center"><a class="toggle" href="">Find A <?php echo $post_type_data['singular'] ?> <i class="fa fa-angle-down"></i></a></h4>
       <?php
     endif;
     ?>
@@ -140,7 +140,7 @@ if(!empty($business_results) && !empty($business_results['results_reg'])):
       <div class="grid small">
         <?php
         foreach($business_results['results_reg'] as $business):
-          render_directory_item($business, false);
+          render_directory_item($business, false, sgfc_is_sponsor($business));
         endforeach;
         ?>
       </div>

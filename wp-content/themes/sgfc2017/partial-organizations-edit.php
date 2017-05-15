@@ -11,7 +11,7 @@ if(empty($entry_id)){
 }else{
 
 	$job_query = new WP_Query(array(
-		'post_type' => 'businesses',
+		'post_type' => 'organizations',
 		'p' => $entry_id
 	));
 	$job_query->the_post();
@@ -55,6 +55,7 @@ if(empty($entry_id)){
 			));
 			?>
 			<button type="submit">Update Entry</button>
+			<a href="?sgfc-delete-entry=<?php echo $_GET['entry-id'] ?>" class="delete-entry-link">Delete this Entry</a>
 		</form>
 		<?php
 

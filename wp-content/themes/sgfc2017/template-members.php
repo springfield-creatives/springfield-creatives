@@ -25,7 +25,7 @@ require('partial-hero.php');
       <div class="grid margin-double">
         <div class="margin"></div>
         <div class="unit-1-2 unit-1-1-sm margin">
-          <form>
+          <form action="<?php the_field('membership_directory_url', 'options') ?>">
             <h3>Member Search</h3>
             <label>
               <input type="text" placeholder="First Name" name="member_fname" value="<?php echo !empty($_GET['member_fname']) ? $_GET['member_fname'] : '' ?>" />
@@ -38,6 +38,26 @@ require('partial-hero.php');
             </label>
             <label>
               <input type="text" placeholder="Keyword" name="member_keyword" value="<?php echo !empty($_GET['member_keyword']) ? $_GET['member_keyword'] : '' ?>" />
+            </label>
+            <label class="select">
+              <select name="member_availability" >
+                <option value="">Any Availability</option>
+               
+                <?php
+                $field_key = SGFC_AVAILABILITY_ACF_KEY;
+                $field = get_field_object($field_key);
+                
+                foreach( $field['choices'] as $k => $v ):
+
+                  $selected = '';
+                  if(!empty($_GET['member_availability']) && $_GET['member_availability'] == $k)
+                    $selected = 'selected';
+
+                  echo '<option name="' . $k . '" ' . $selected . '>' . $v . '</option>';
+
+                endforeach;
+                ?>
+              </select>
             </label>
             <label class="select">
               <select name="member_committee" >
@@ -118,15 +138,53 @@ require('partial-hero.php');
       <?php
         $member_results = sgfc_get_member_results();
 
-        foreach($member_results['results'] as $member):
-          render_person_item($member);
-        endforeach;
+        if(empty($member_results['results'])){
+          echo '<div class="unit-1-1 text-center"><h4>No members found that match your criteria.</h4></div>';
+        }else{
+          foreach($member_results['results'] as $member):
+            render_person_item($member);
+          endforeach;
+        }
       ?>
     </div>
-    <hr />
-    <div class="text-center">
-        <h3><a class="left" href="">← Previous</a><a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> <a class="right" href="">Next →</a></h3>
-    </div>
+
+    <?php
+    if($member_results['pages'] > 1):
+      ?>
+      <hr />
+      <div class="text-center">
+        <h3>
+          <?php
+          parse_str($_SERVER['QUERY_STRING'], $query_string);
+
+          $cur_page = isset($_GET['paged']) ? intval($_GET['paged']) : get_query_var('paged');
+          if(empty($cur_page))
+            $cur_page = 1;
+
+          if($cur_page > 1){
+            $query_string['paged'] = $cur_page - 1;
+            echo '<a class="left" href="?' . http_build_query($query_string) . '">← Previous</a>';
+          }
+
+          for($i = 1; $i <= $member_results['pages']; $i++){
+            if($i==$cur_page){
+              echo '<strong>' . $i . '</a> ';
+            }else{
+              $query_string['paged'] = $i;
+              echo '<a href="?' . http_build_query($query_string) . '">' . $i . ' </a>';
+            }
+          }
+          
+          if($cur_page != $member_results['pages']){
+            $query_string['paged'] = $cur_page + 1;
+            echo '<a class="right" href="?' . http_build_query($query_string) . '">Next →</a>';
+          }  
+          ?>      
+        </h3>
+      </div>
+      <?php
+    endif;
+    ?>
   </article>
 </section>
 <section class="inverse">

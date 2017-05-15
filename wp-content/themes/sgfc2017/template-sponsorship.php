@@ -59,15 +59,18 @@ foreach($levels as $key=>$level):
                 <p class="callout"><?php echo $level['intro'] ?></p>
                 <ul class="text-left">
                   <?php
-                  if(!empty($level['feature_list']))
-                  foreach($level['feature_list'] as $feature)
-                    echo '<li>' . $feature . '</li>'
+                  if(!empty($level['feature_list'])){
+                    $features_arr = explode("\r\n", $level['feature_list']);
+
+                    foreach($features_arr as $feature)
+                      echo '<li>' . $feature . '</li>';
+                  }
                   ?>
                 </ul>
                 <p><a class="button" href="<?php the_field('sponsor_signup_url', 'options') ?>"><?php echo $level['button_cta'] ?></a></p>
             </div>
         </div>
-        <div class="grid grid-center margin">
+        <div class="grid small grid-center margin">
         	<?php
 
 					// get all sponsor posts level 3 and up
@@ -85,7 +88,7 @@ foreach($levels as $key=>$level):
 							?>
 							<div class="unit-1-8 unit-1-4-sm unit-center margin">
 								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
-									<img class="full" src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" />
+									<div class="circle border"><span><img src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" /></span></div>
 								</a>
 							</div>	
 							<?php
@@ -105,7 +108,7 @@ foreach($levels as $key=>$level):
 endforeach;
 ?>
 
-<section class="alt">
+<section class="<?php echo !$is_alt ? 'alt' : '' ?>">
     <article>
         <div class="grid grid-center">
             <div class="unit-2-3 unit-1-1-md text-center">

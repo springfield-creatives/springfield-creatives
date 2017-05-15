@@ -12,7 +12,7 @@
     <![endif]-->
 
     <?php
-    if( current_user_can('debugger') && defined('SGFC_BUGHERD_KEY') ):
+    if( defined('SGFC_BUGHERD_KEY') ):
       ?>
       <script type='text/javascript'>
         (function (d, t) {

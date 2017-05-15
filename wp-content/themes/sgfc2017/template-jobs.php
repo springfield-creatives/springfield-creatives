@@ -66,12 +66,12 @@ foreach($featured_jobs as $job):
       <div class="grid">
         <?php if($job['image']): ?>
           <div class="unit-1-5 unit-1-1-sm unit-center">
-            <p><a href="<?php echo $job['url'] ?>"><img class="full" src="<?php echo $job['image'] ?>" /></a></p>
+            <a href="<?php echo $job['url'] ?>"><div class="circle border margin"><span><img src="<?php echo $job['image'] ?>" /></span></div></a>
           </div>
         <?php endif; ?>
         <?php if(!$job['image']): ?>
           <div class="unit-1-5 unit-1-1-sm unit-center">
-            <p><a href="<?php echo $job['url'] ?>"><img class="full" src="/wp-content/uploads/2017/04/agency.svg" /></a></p>
+            <a href="<?php echo $job['url'] ?>"><div class="circle border margin"><span><img src="/wp-content/uploads/2017/04/agency.svg" /></span></div></a>
           </div>
         <?php endif; ?>
         <div class="unit-4-5 unit-1-1-sm unit-center">
@@ -99,18 +99,18 @@ endforeach;
             <div class="grid">
               <div class="unit-1-4">
                 <?php if($job['image']): ?>
-                  <p>
                     <a href="<?php echo $job['url'] ?>">
-                      <img class="full" src="<?php echo $job['image'] ?>" />
+                      <div class="circle border margin"><span>
+                      <img src="<?php echo $job['image'] ?>" />
+                      </span></div>
                     </a>
-                  </p>
                 <?php endif; ?>
                 <?php if(!$job['image']): ?>
-                  <p>
                     <a href="<?php echo $job['url'] ?>">
-                      <img class="full" src="/wp-content/uploads/2017/04/agency.svg" />
+                      <div class="circle border margin"><span>
+                      <img src="/wp-content/uploads/2017/04/agency.svg" />
+                      </span></div>
                     </a>
-                  </p>
                 <?php endif; ?>
               </div>
               <div class="unit-3-4">

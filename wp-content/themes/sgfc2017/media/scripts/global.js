@@ -33,5 +33,10 @@ jQuery(function($) {
     }
     return false;
   });
+
+  $('.delete-entry-link').click(function(e){
+    if(!confirm('Are you sure you want to delete this entry?'))
+      e.preventDefault();
+  });
   
 });

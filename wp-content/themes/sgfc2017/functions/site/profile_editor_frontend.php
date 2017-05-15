@@ -64,8 +64,9 @@ function sgfc_my_account_profile_link( $items ) {
 	$new_items['businesses'] = 'Business Profiles';
 	$new_items['organizations'] = 'Organization Profiles';
 
-	// remove downloads
+	// remove sections
 	unset($items['downloads']);
+	unset($items['subscriptions']);
 
 	$new_items = array_merge($new_items, $items);
 
@@ -244,3 +245,27 @@ function sgfc_my_account_organzation_profile_form_submission(){
 	$update_notice_added_already = true; // super hacky :(
 }
 add_action('wp_loaded', 'sgfc_my_account_organzation_profile_form_submission');
+
+
+// Process entry deletion
+function sgfc_my_account_entry_deletion_link(){
+	if(empty($_GET['sgfc-delete-entry']))
+		return;
+
+	global $update_notice_added_already;
+
+	$post_id = intval($_GET['sgfc-delete-entry']);
+	$current_user = wp_get_current_user();
+
+	if(!sgfc_has_editor_permission($post_id, $current_user->ID))
+		die('You do not have permissions');
+
+	wp_trash_post($post_id);
+
+	// add notice
+	if(!$update_notice_added_already)
+		wc_add_notice('Entry deleted :\'(');
+
+	$update_notice_added_already = true; // super hacky :(
+}
+add_action('wp_loaded', 'sgfc_my_account_entry_deletion_link');

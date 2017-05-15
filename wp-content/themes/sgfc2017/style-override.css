@@ -1,2 +1,434 @@
 .event-button { margin-right: 10px }
 .event_form { display: none }
+
+.woocommerce .products ul,
+.woocommerce ul.products {
+  text-align: center !important;
+}
+.woocommerce .products ul li,
+.woocommerce ul.products li {
+  display: inline-block !important;
+  float: none !important;
+  vertical-align: top !important;
+  margin-left: -3px !important;
+}
+
+article .circle {
+  background: #fff;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  display:block;
+  overflow: hidden;
+  position:relative;
+}
+article .circle.border {
+  border: 4px solid #5c6569;
+}
+article .circle:after{
+  content:'';
+  display:block;
+  padding-bottom:100%;
+}
+article .circle span{
+  display:block;
+  height:100%;
+  left:0;
+  position:absolute;
+  text-align:center;
+  top:0;
+  width:100%;
+}
+article .circle img{
+  max-height:50%;
+  max-width:80%;
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+  -moz-transform:translateY(-50%);
+  -ms-transform:translateY(-50%);
+  -webkit-transform:translateY(-50);
+}
+
+section article ul.sidebar,
+.woocommerce-MyAccount-navigation ul {
+  border-top: 1px solid #efefef;
+  margin: 0;
+  padding: 0;
+}
+section article ul.sidebar li,
+.woocommerce-MyAccount-navigation ul li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+section article ul.sidebar li a,
+.woocommerce-MyAccount-navigation ul li a {
+  border-bottom: 1px solid #efefef;
+  border-top: none;
+  box-sizing: border-box;
+  display: block;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 15px 10px;
+}
+section article ul.sidebar li.current-menu-item a,
+.woocommerce-MyAccount-navigation ul li.is-active a {
+  background: #5C6569;
+  color: #fff !important;
+}
+
+.tribe-bar-disabled {
+  z-index: 1; 
+}
+@media (max-width: 767px) {
+  .gfield.gf_left_half {
+      width: 100%;
+      padding-right: 0;
+      float: none;
+  }
+}
+@media (max-width: 767px) {
+  .gfield.gf_right_half {
+      width: 100%;
+      padding-left: 0;
+      float: none;
+  }
+}
+
+.gform_wrapper select.chosen-select {
+  visibility: hidden;
+  height: 28px !important;
+  min-height: 28px !important;
+}
+
+.gform_wrapper .chosen-container {
+  position: relative;
+  background: #fff;
+  border: 1px solid #5c6569;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 30px 0;
+  padding: 19px 20px;
+  width: 100%;
+}
+.wp-core-ui.wp-editor-wrap {
+  border: 1px solid #5c6569;
+}
+.ginput_container_post_image input {
+  padding: 19px 20px;
+}
+@media all and (max-width: 767px) {
+  .gform_wrapper .chosen-container {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 10px 20px;
+  }
+}
+.gform_wrapper .chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: visible;
+  padding: 0;
+  border: none;
+  background-color: #FFF;
+  background: none;
+  background-clip: padding-box;
+  box-shadow: none;
+  color: #444;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 24px;
+}
+.gform_wrapper .chosen-container-single .chosen-single span {
+  overflow: visible;
+}
+.gform_wrapper .chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  width: 18px;
+  height: 100%;
+}
+.gform_wrapper .chosen-container-active .chosen-single {
+  border: none;
+  box-shadow: none;
+}
+
+.gform_wrapper .chosen-container-active.chosen-with-drop .chosen-single {
+  border: none;
+  background-image: none;
+  box-shadow: none
+}
+.gfield_description {
+  bottom: 0 !important;
+  position: relative !important; 
+}
+.gform_wrapper .chosen-container {
+  margin-bottom: 10px !important; 
+}
+.label-hidden label {
+  display: none !important;
+}
+
+
+/* Proportional units
+       ========================================================================== */
+/*
+     * Specify the proportional width of an object.
+     * Primarily for, but not limited to, use with `.grid__cell` components.
+     * Intentional redundancy build into each set of unit classes.
+     */
+.unit-1-2, .unit-2-4, .unit-3-6, .unit-4-8, .unit-5-10, .unit-6-12 {
+  width: 50%; }
+
+.unit-1-3, .unit-2-6, .unit-4-12 {
+  width: 33.33333%; }
+
+.unit-2-3, .unit-4-6, .unit-8-12 {
+  width: 66.66667%; }
+
+.unit-1-4, .unit-2-8, .unit-3-12 {
+  width: 25%; }
+
+.unit-3-4, .unit-6-8, .unit-9-12 {
+  width: 75%; }
+
+.unit-1-5, .unit-2-10 {
+  width: 20%; }
+
+.unit-2-5, .unit-4-10 {
+  width: 40%; }
+
+.unit-3-5, .unit-6-10 {
+  width: 60%; }
+
+.unit-4-5, .unit-8-10 {
+  width: 80%; }
+
+.unit-1-6, .unit-2-12 {
+  width: 16.66667%; }
+
+.unit-5-6, .unit-10-12 {
+  width: 83.33333%; }
+
+.unit-1-8 {
+  width: 12.5%; }
+
+.unit-3-8 {
+  width: 37.5%; }
+
+.unit-5-8 {
+  width: 62.5%; }
+
+.unit-7-8 {
+  width: 87.5%; }
+
+.unit-1-10 {
+  width: 10%; }
+
+.unit-3-10 {
+  width: 30%; }
+
+.unit-7-10 {
+  width: 70%; }
+
+.unit-9-10 {
+  width: 90%; }
+
+.unit-1-12 {
+  width: 8.33333%; }
+
+.unit-5-12 {
+  width: 41.66667%; }
+
+.unit-7-12 {
+  width: 58.33333%; }
+
+.unit-11-12 {
+  width: 91.66667%; }
+
+@media all and (max-width: 1199px) {
+  /* Proportional units
+       ========================================================================== */
+  /*
+     * Specify the proportional width of an object.
+     * Primarily for, but not limited to, use with `.grid__cell` components.
+     * Intentional redundancy build into each set of unit classes.
+     */
+  .unit-1-1-lg {
+    width: 100%; }
+  .unit-0-1-lg {
+    width: 0%; }
+  .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-4-8-lg, .unit-5-10-lg, .unit-6-12-lg {
+    width: 50%; }
+  .unit-1-3-lg, .unit-2-6-lg, .unit-4-12-lg {
+    width: 33.33333%; }
+  .unit-2-3-lg, .unit-4-6-lg, .unit-8-12-lg {
+    width: 66.66667%; }
+  .unit-1-4-lg, .unit-2-8-lg, .unit-3-12-lg {
+    width: 25%; }
+  .unit-3-4-lg, .unit-6-8-lg, .unit-9-12-lg {
+    width: 75%; }
+  .unit-1-5-lg, .unit-2-10-lg {
+    width: 20%; }
+  .unit-2-5-lg, .unit-4-10-lg {
+    width: 40%; }
+  .unit-3-5-lg, .unit-6-10-lg {
+    width: 60%; }
+  .unit-4-5-lg, .unit-8-10-lg {
+    width: 80%; }
+  .unit-1-6-lg, .unit-2-12-lg {
+    width: 16.66667%; }
+  .unit-5-6-lg, .unit-10-12-lg {
+    width: 83.33333%; }
+  .unit-1-8-lg {
+    width: 12.5%; }
+  .unit-3-8-lg {
+    width: 37.5%; }
+  .unit-5-8-lg {
+    width: 62.5%; }
+  .unit-7-8-lg {
+    width: 87.5%; }
+  .unit-1-10-lg {
+    width: 10%; }
+  .unit-3-10-lg {
+    width: 30%; }
+  .unit-7-10-lg {
+    width: 70%; }
+  .unit-9-10-lg {
+    width: 90%; }
+  .unit-1-12-lg {
+    width: 8.33333%; }
+  .unit-5-12-lg {
+    width: 41.66667%; }
+  .unit-7-12-lg {
+    width: 58.33333%; }
+  .unit-11-12-lg {
+    width: 91.66667%; } }
+
+@media all and (max-width: 1023px) {
+  /* Proportional units
+       ========================================================================== */
+  /*
+     * Specify the proportional width of an object.
+     * Primarily for, but not limited to, use with `.grid__cell` components.
+     * Intentional redundancy build into each set of unit classes.
+     */
+  .unit-1-1-md {
+    width: 100%; }
+  .unit-0-1-md {
+    width: 0%; }
+  .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-4-8-md, .unit-5-10-md, .unit-6-12-md {
+    width: 50%; }
+  .unit-1-3-md, .unit-2-6-md, .unit-4-12-md {
+    width: 33.33333%; }
+  .unit-2-3-md, .unit-4-6-md, .unit-8-12-md {
+    width: 66.66667%; }
+  .unit-1-4-md, .unit-2-8-md, .unit-3-12-md {
+    width: 25%; }
+  .unit-3-4-md, .unit-6-8-md, .unit-9-12-md {
+    width: 75%; }
+  .unit-1-5-md, .unit-2-10-md {
+    width: 20%; }
+  .unit-2-5-md, .unit-4-10-md {
+    width: 40%; }
+  .unit-3-5-md, .unit-6-10-md {
+    width: 60%; }
+  .unit-4-5-md, .unit-8-10-md {
+    width: 80%; }
+  .unit-1-6-md, .unit-2-12-md {
+    width: 16.66667%; }
+  .unit-5-6-md, .unit-10-12-md {
+    width: 83.33333%; }
+  .unit-1-8-md {
+    width: 12.5%; }
+  .unit-3-8-md {
+    width: 37.5%; }
+  .unit-5-8-md {
+    width: 62.5%; }
+  .unit-7-8-md {
+    width: 87.5%; }
+  .unit-1-10-md {
+    width: 10%; }
+  .unit-3-10-md {
+    width: 30%; }
+  .unit-7-10-md {
+    width: 70%; }
+  .unit-9-10-md {
+    width: 90%; }
+  .unit-1-12-md {
+    width: 8.33333%; }
+  .unit-5-12-md {
+    width: 41.66667%; }
+  .unit-7-12-md {
+    width: 58.33333%; }
+  .unit-11-12-md {
+    width: 91.66667%; } }
+
+@media all and (max-width: 767px) {
+  /* Proportional units
+       ========================================================================== */
+  /*
+     * Specify the proportional width of an object.
+     * Primarily for, but not limited to, use with `.grid__cell` components.
+     * Intentional redundancy build into each set of unit classes.
+     */
+  .unit-1-1-sm {
+    width: 100%; }
+  .unit-0-1-sm {
+    width: 0%; }
+  .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-4-8-sm, .unit-5-10-sm, .unit-6-12-sm {
+    width: 50%; }
+  .unit-1-3-sm, .unit-2-6-sm, .unit-4-12-sm {
+    width: 33.33333%; }
+  .unit-2-3-sm, .unit-4-6-sm, .unit-8-12-sm {
+    width: 66.66667%; }
+  .unit-1-4-sm, .unit-2-8-sm, .unit-3-12-sm {
+    width: 25%; }
+  .unit-3-4-sm, .unit-6-8-sm, .unit-9-12-sm {
+    width: 75%; }
+  .unit-1-5-sm, .unit-2-10-sm {
+    width: 20%; }
+  .unit-2-5-sm, .unit-4-10-sm {
+    width: 40%; }
+  .unit-3-5-sm, .unit-6-10-sm {
+    width: 60%; }
+  .unit-4-5-sm, .unit-8-10-sm {
+    width: 80%; }
+  .unit-1-6-sm, .unit-2-12-sm {
+    width: 16.66667%; }
+  .unit-5-6-sm, .unit-10-12-sm {
+    width: 83.33333%; }
+  .unit-1-8-sm {
+    width: 12.5%; }
+  .unit-3-8-sm {
+    width: 37.5%; }
+  .unit-5-8-sm {
+    width: 62.5%; }
+  .unit-7-8-sm {
+    width: 87.5%; }
+  .unit-1-10-sm {
+    width: 10%; }
+  .unit-3-10-sm {
+    width: 30%; }
+  .unit-7-10-sm {
+    width: 70%; }
+  .unit-9-10-sm {
+    width: 90%; }
+  .unit-1-12-sm {
+    width: 8.33333%; }
+  .unit-5-12-sm {
+    width: 41.66667%; }
+  .unit-7-12-sm {
+    width: 58.33333%; }
+  .unit-11-12-sm {
+    width: 91.66667%; } }

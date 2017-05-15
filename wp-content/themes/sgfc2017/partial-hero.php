@@ -3,13 +3,7 @@
  * A hero banner
 */
 
-// Updates hero
-if(is_home()){
-	$updates_page_id =  get_option( 'page_for_posts' );
-	$hero_img = get_field('hero_image', $updates_page_id);
-	$hero_intro = get_field('hero_intro', $updates_page_id);
-	$buttons = get_field('hero_buttons', $updates_page_id);
-}
+
 
 $hero_img = !empty($hero_img) ? $hero_img : get_field('hero_image');
 if(empty($hero_img) || !empty($hero_page_option_prefix)){
@@ -74,7 +68,7 @@ if(empty($button_label))
 	      <div class="unit-2-3 unit-1-1-md text-center">
 	      	
 	      	<?php if(!empty($hero_intro)): ?>
-		        <p class="margin-double"><?php the_field('hero_intro') ?></p>
+		        <p class="margin-double"><?php echo $hero_intro ?></p>
 		      <?php endif; ?>
 
 	      	<?php

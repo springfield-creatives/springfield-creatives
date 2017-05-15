@@ -9,6 +9,12 @@ define('SGFC_JOB_ACF_ID', 2912);
 define('SGFC_BUSINESS_ACF_ID', 410);
 define('SGFC_ORGANIZATION_ACF_ID', 410);
 define('SGFC_CONTACT_ACF_ID', 2828);
+define('SGFC_AVAILABILITY_ACF_KEY', 'field_58e25c883e984');
+
+define('SGFC_JOB_POST_FORM_ID', 29);
+
+define('SGFC_PROFESSIONAL_MEMBERSHIP_PRODUCT_ID', 2717);
+define('SGFC_STUDENT_MEMBERSHIP_PRODUCT_ID', 2718);
 
 global $fa_icons;
 $fa_icons = array(
@@ -63,7 +69,7 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 
 // ADD WORDPRESS FEATURE SUPPORT
 add_theme_support( 'post-thumbnails' );
-add_image_size( 'square, 500, 500, true' );
+add_image_size( 'square', '500', '500', true );
 add_theme_support( 'menus' );
 
 
@@ -100,6 +106,7 @@ include_once('functions/site/sponsor-helpers.php');
 include_once('functions/site/sc-helpers.php');
 include_once('functions/site/acf.php');
 include_once('functions/site/profile_editor_frontend.php');
+include_once('functions/site/gravity_forms.php');
 
 // Author slug rewrite
 include_once('functions/site/author-slug-rewrite.php');
@@ -109,14 +116,6 @@ define('DISALLOW_FILE_EDIT', true);
 
 
 
-
-add_filter( 'gform_pre_render', 'add_input_type_gravity_forms' );
-function add_input_type_gravity_forms( $form ) {
-  foreach ( $form['fields'] as $f => $field )
-    $form['fields'][$f]['cssClass'] .= ' input-type-' . $field['type'];
-
-  return $form;
-}
 
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';

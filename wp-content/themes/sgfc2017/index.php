@@ -12,16 +12,11 @@ if(function_exists('is_account_page') && is_account_page()){
 
 }else if(is_home() || is_archive()){
 
-  $title = 'News';
-	$banner_img = get_field('news_banner', 'options');
-
-}else{
-
-  the_post();
-  $title = get_the_title();
-  $is_single = true;
-
-	$banner_img = get_field('banner');
+  $updates_page_id =  get_option( 'page_for_posts' );
+  $hero_title = get_field('hero_text', $updates_page_id);
+  $hero_img = get_field('hero_image', $updates_page_id);
+  $hero_intro = get_field('hero_intro', $updates_page_id);
+  $buttons = get_field('hero_buttons', $updates_page_id);
 
 }
 
@@ -37,31 +32,55 @@ if(!$no_hero){
 <section>
   <article>
     <?php
-
     if($is_single){
 
       the_content();
 
     }else{
-      while(have_posts()): the_post();
-        ?>
-        <div class="post">
 
-          <div class="details">
+      ?>
+      <div class="grid">
+        <div class="unit-3-4 unit-1-1-md margin">
 
-            <h3>
-              <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-            </h3>
+          <?php
+          while(have_posts()): the_post();
 
-            <p><?php the_excerpt() ?> <em>Read more</em></p>
+            $image = get_object_image_src(get_the_ID(), 'post', 'square');
+            ?>
 
+            <div class="grid small">
+                <div class="unit-1-4 unit-1-1-sm">
+                    <p><a href="<?php the_permalink() ?>"><img src="<?php echo $image ?>" /></a></p>
+                </div>
+                <div class="unit-3-4 unit-1-1-sm">
+                    <p class="callout clean"><?php echo get_the_date() ?></p>
+                    <h3 class="clean"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+                    <p><?php the_author() ?></p>
+                    <?php the_excerpt() ?> <a href="<?php the_permalink() ?>">Continue Reading</a>
+                </div>
+            </div>
+            <hr />
+
+            <?php
+          endwhile;
+          ?>
+
+          <div class="text-center">
+              <h4><a href="">← Previous</a> | <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> | <a href="">Next →</a></h4>
           </div>
 
         </div>
-        <?php
-      endwhile;
+        
+        <div class="unit-1-4 unit-1-1-md">
+          <?php require('partial-blog-sidebar.php'); ?>
+        </div>
+      
+      </div>
+
+      <?php
     }
     ?>
+    </div>
   </article>
 </section>
 <?php

@@ -31,8 +31,7 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
     
     // check if there's a featured image
     if(has_post_thumbnail($post_id)){
-      $featured_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), $size );
-      return is_array($featured_src) ? $featured_src[0] : $featured_src;
+      return get_the_post_thumbnail_url($post_id, $size);
     }
     
     // try hero image
@@ -320,9 +319,7 @@ function sgfc_prep_user_data($user){
 
   $email = $user->user_email;
 
-  $user_image = get_avatar_url( $user->ID, array(
-    'size' => 300
-  ));
+  $user_image = sgfc_get_user_avatar( $user->ID, '300');
 
   $user_business_data = get_user_business_data($user->ID);
   $positions = $user_business_data['positions'];
@@ -575,6 +572,15 @@ function sgfc_get_member_results(){
         );
       }
 
+      // Availability
+      if(!empty($_GET['member_availability'])){
+        $meta_query[] = array(
+          'key' => 'availability',
+          'value' => '"' . $_GET['member_availability'] . '"',
+          'compare' => 'LIKE'
+        );
+      }
+
       // COMMITTEE
       if(!empty($_GET['member_committee'])){
         $meta_query[] = array(
@@ -593,7 +599,7 @@ function sgfc_get_member_results(){
 
     $result_data['results'] = $members->results;
     $result_data['count'] = $members->total_users;
-    $result_data['pages'] = ceil($total_users / $number);
+    $result_data['pages'] = ceil($members->total_users / $number);
 
     }
 
@@ -654,7 +660,7 @@ function sgfc_get_business_results($type = 'businesses'){
 
     // sort into featured and non
     foreach($posts_array as $post){
-      if($post->sponsor)
+      if($post->sponsor && intval(get_field('sponsor_level', $post->ID)) >= 3)
         $result_data['results_featured'][] = $post;
       else
         $result_data['results_reg'][] = $post;
@@ -719,7 +725,7 @@ function sgfc_get_business_results($type = 'businesses'){
     $results = new WP_Query($wp_query_args);
 
     while($results->have_posts()): $results->the_post();
-      if(get_field('is_sponsor'))
+      if(get_field('is_sponsor') && intval( get_field('sponsor_level') ) >= 3)
         $result_data['results_featured'][] = $post;
       else
         $result_data['results_reg'][] = $post;
@@ -760,6 +766,14 @@ function sc_search_display_name( $search_columns, $search, $this ) {
     return $search_columns;
 }
 
+function sgfc_is_sponsor($post){
+
+  // check the manually-added property
+  if(isset($post->sponsor))
+    return boolval($post->sponsor);
+
+  return get_field('is_sponsor', $post->ID);
+}
 
 
 /*
@@ -768,7 +782,7 @@ $post: $post object returned by WP or ACF. Defaults to current $post
 $subtitle: override subtitle default for that post type
 */
 
-function return_directory_item_html($post_object = false, $is_featured = false){
+function return_directory_item_html($post_object = false, $is_featured = false, $is_sponsor = false){
   global $post;
 
   if($post_object === false)
@@ -812,10 +826,10 @@ function return_directory_item_html($post_object = false, $is_featured = false){
     ?>
 
     <div class="unit-1-5 unit-1-1-sm unit-center">
-      <div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div>
+      <a href="<?php echo $link ?>"><div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div></a>
     </div>
     <div class="unit-4-5 unit-1-1-sm unit-center">
-      <h2><?php echo $name ?></h2>
+      <h2><a href="<?php echo $link ?>"><?php echo $name ?></a></h2>
 
       <?php
       if(!empty($subtitle))
@@ -855,12 +869,19 @@ function return_directory_item_html($post_object = false, $is_featured = false){
     <div class="unit-1-2 unit-1-1-sm margin">
       <div class="grid">
         <div class="unit-1-3 unit-center">
-          <div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div>
+          <a href="<?php echo $link ?>"><div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div></a>
         </div>
         <div class="unit-2-3 unit-center">
           
-          <h4><?php echo $name ?></h4>
+          <h4><a href="<?php echo $link ?>">
+            <?php
+            if($is_sponsor)
+              echo '<i class="fa fa-star"></i> ';
+            ?>
+            <?php echo $name ?>
+          </a></h4>
           
+
           <p>
             <?php
             if(!empty($subtitle))
@@ -899,8 +920,8 @@ function sgfc_get_simple_url($website){
 $post: $post array returned by WP or ACF
 $subtitle: override subtitle default of company
 */
-function render_directory_item($post = false, $is_featured = false){
-  echo return_directory_item_html($post, $is_featured);
+function render_directory_item($post = false, $is_featured = false, $is_sponsor = false){
+  echo return_directory_item_html($post, $is_featured, $is_sponsor);
 }
 
 
@@ -986,4 +1007,20 @@ function sgfc_get_editable_posts($user_id, $post_type, $action_post_name){
     echo '<li><a href="?entry-id=' . $cur_post['id'] . '">' . $cur_post['title'] . '</a></li>';
 
   echo '</ul>';
+}
+
+
+function sgfc_get_user_avatar($user_id, $size){
+  // try manual avatar
+  if(has_wp_user_avatar($user_id))
+    return get_wp_user_avatar_src($user_id, $size);
+
+  // try gravatar/wp default
+  // $wp_avatar = get_avatar_url($user_id, array( 'size' => 300 ));
+  // if(!empty($wp_avatar))
+  //   return $wp_avatar;
+
+  // if we still have nothing, use the default as configured in the avatar plugin
+  return get_wp_user_avatar_src($user_id, $size);
+
 }

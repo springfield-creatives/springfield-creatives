@@ -101,9 +101,9 @@ endif;
         'posts_per_page' => 3
       ));
       while($news_q->have_posts()): $news_q->the_post();
-        $image = get_the_post_thumbnail_url();
+        $image = get_the_post_thumbnail_url(null, 'square');
         if(empty($image))
-          $image = get_field('hero_image')['sizes']['large'];
+          $image = get_field('hero_image')['sizes']['square'];
         ?>
         <div class="unit-1-3 unit-1-1-sm margin">
           <p><a href="<?php the_permalink() ?>"><img class="full" src="<?php echo $image ?>" /></a></p>

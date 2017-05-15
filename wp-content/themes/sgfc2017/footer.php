@@ -5,7 +5,7 @@
           <h2 class="clean text-center">Silver and Gold Level Sponsors</h2>
           <p class="text-center callout"><?php the_field('sponsorship_blurb', 'options') ?></p>
           <p class="margin text-center"><a href="<?php bloginfo('url') ?>/sponsorship/">View All Sponsors</a></p>
-          <div class="grid grid-center margin">
+          <div class="grid small grid-center margin">
           	<?php
   
   					// get all sponsor posts level 3 and up
@@ -16,7 +16,7 @@
   							?>
   							<div class="unit-1-8 unit-1-4-sm unit-center margin">
   								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
-  									<img class="full" src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" />
+  									<div class="circle border"><span><img src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" /></span></div>
   								</a>
   							</div>	
   							<?php

@@ -4,8 +4,9 @@ the_post();
 
 $services = array();
 $services_obj = get_the_terms($post, 'skills');
-foreach($services_obj as $service)
-	$services[] = $service->name;
+if(!empty($services_obj))
+	foreach($services_obj as $service)
+		$services[] = $service->name;
 
 $contact_links = get_contact_links_arr(get_the_ID());
 $social_links = get_social_links_arr(get_the_ID());
