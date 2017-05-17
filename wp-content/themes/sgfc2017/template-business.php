@@ -6,6 +6,10 @@ Template Name: Business & Organization Directory
 get_header();
 the_post();
 
+$empty_search_query = count($_GET) == 0;
+if(!$empty_search_query)
+  $hero_intro = false;
+
 require('partial-hero.php');
 
 if(get_field('type') == 'businesses'){

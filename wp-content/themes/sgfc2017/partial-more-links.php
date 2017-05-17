@@ -7,7 +7,7 @@
           $link_html_els = array();
           $more_links = get_field('more_section_links');
           foreach($more_links as $link)
-            $link_html_els[] = '<a href="' . $link['URL'] . '">' . $link['title'] . '</a>';
+            $link_html_els[] = '<a href="' . $link['url'] . '">' . $link['title'] . '</a>';
 
           echo join(' | ', $link_html_els);
           ?>

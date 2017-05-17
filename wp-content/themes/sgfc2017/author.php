@@ -20,9 +20,7 @@ foreach($meta as $k=>$v){
 $meta['email'] = $user->data->user_email;
 
 // image
-$user_image = get_avatar_url( $user_id, array(
-  'size' => 300
-));
+$user_image = sgfc_get_user_avatar( $user_id, '300');
 
 // description
 $user_desc = !empty($meta['about_you']) ? $meta['about_you'] : $meta['description'];
@@ -45,8 +43,9 @@ $user_business_data = get_user_business_data($user_id);
 
 $skills = array();
 $skills_data = get_field('skills', 'user_' . $user_id);
-foreach($skills_data as $skill_term)
-	$skills[] = $skill_term->name;
+if(!empty($skills_data))
+	foreach($skills_data as $skill_term)
+		$skills[] = $skill_term->name;
 
 $availability = get_field('availability', 'user_' . $user_id);
 

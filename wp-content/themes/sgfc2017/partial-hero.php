@@ -51,7 +51,7 @@ if(empty($hero_title)){
 }
 
 // hero intro
-if(empty($hero_intro))
+if(empty($hero_intro) && $hero_intro !== false)
 	$hero_intro = get_field('hero_intro');
 
 // button label/link

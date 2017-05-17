@@ -20,10 +20,11 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
 
   }else if($post_type == 'organizations' || $post_type == 'businesses'){
 
+
     // get connected business/organization and use that
     $post_image = get_field( 'logo', $post_id );
     if(!empty($post_image))
-      return $post_image['sizes'][$size];
+      return !empty($post_image['sizes'][$size]) ? $post_image['sizes'][$size] : $post_image['url'];
 
   }else{
 
@@ -177,6 +178,10 @@ function get_social_links_arr($id, $is_user = false, $meta = array()){
     'soundcloud_url' => array(
       'key' => 'soundcloud',
       'nice_name' => 'SoundCloud'
+    ),
+    'medium_url' => array(
+      'key' => 'medium',
+      'nice_name' => 'Medium'
     ),
   );
 
@@ -416,7 +421,45 @@ function render_person_item($user){
   echo return_person_item_html($user);
 }
 
+function _flatten_array($array) {
+    if (!is_array($array)) {
+        // nothing to do if it's not an array
+        return array($array);
+    }
 
+    $result = array();
+    foreach ($array as $value) {
+        // explode the sub-array, and add the parts
+        $result = array_merge($result, flatten($value));
+    }
+
+    return $result;
+}
+
+
+function _sgfc_get_inactive_membership_user_ids(){
+  
+  global $wpdb;
+
+  $safe_query = 
+    "
+    SELECT wp_users.ID
+    FROM wp_users
+      INNER JOIN wp_posts
+        ON ( wp_users.ID = wp_posts.post_author )
+    WHERE 1=1
+    AND 
+    ( 
+      ( wp_posts.post_type = 'wc_user_membership' AND wp_posts.post_status != 'wcm-active' )
+    )
+    GROUP BY wp_users.ID
+    ORDER BY wp_usermeta.meta_value ASC
+    ";
+
+  $member_query = $wpdb->get_results($safe_query, ARRAY_N);
+
+  return _flatten_array($member_query);
+}
 
 function sgfc_get_member_results(){
   global $wpdb;
@@ -445,27 +488,33 @@ function sgfc_get_member_results(){
 
     if($_GET['member_view'] !== 'all'){
 
-      // ALPHABETICAL
+      // Alphabetical listing
+
       $safe_query = $wpdb->prepare( 
         "
-        SELECT * FROM $wpdb->users 
-        INNER JOIN $wpdb->usermeta
-        ON ( $wpdb->users.ID = $wpdb->usermeta.user_id )
+        SELECT *
+        FROM $wpdb->users
+          INNER JOIN $wpdb->usermeta
+            ON ( $wpdb->users.ID = $wpdb->usermeta.user_id )
+          INNER JOIN $wpdb->posts
+            ON ( $wpdb->users.ID = $wpdb->posts.post_author )
         WHERE 1=1
         AND 
         ( 
-        ( $wpdb->usermeta.meta_key = 'last_name' AND CAST($wpdb->usermeta.meta_value AS CHAR) LIKE %s )
+          ( $wpdb->usermeta.meta_key = 'last_name' AND CAST($wpdb->usermeta.meta_value AS CHAR) LIKE %s )
+          AND
+          ( $wpdb->posts.post_type = 'wc_user_membership' AND $wpdb->posts.post_status = 'wcm-active' )
         )
-        -- AND ($wpdb->users.post_status = 'publish') TODO: Make sure they're active
         GROUP BY $wpdb->users.ID
         ORDER BY $wpdb->usermeta.meta_value ASC
         ", 
         $_GET['member_view'] . '%'
       );
 
+      $member_query = $wpdb->get_results($safe_query); 
       $result_data = array(
-        'results' => $wpdb->get_results($safe_query),
-        'count' => $wpdb->get_results($safe_query),
+        'results' => $member_query,
+        'count' => $member_query->num_rows,
         'pages' => 1
       );
     
@@ -474,7 +523,7 @@ function sgfc_get_member_results(){
       // SHOW ALL
       // query and pagination
       $number     = 36;
-      $paged      = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $paged      = !empty(get_query_var('paged')) ? get_query_var('paged') : 1;
       $offset     = ($paged - 1) * $number;
 
       $args = array(
@@ -486,14 +535,14 @@ function sgfc_get_member_results(){
       );
 
       // TODO - only show registered
-      // $meta_query = array(
-      //     'relation' => 'AND',
-      //     array(
-      //         'key'     => 'wp_capabilities',
-      //         'value'   => 'expired',
-      //         'compare' => 'NOT LIKE'
-      //     )
-      // );
+      $meta_query = array(
+          'relation' => 'AND',
+          array(
+              'key'     => 'wp_capabilities',
+              'value'   => 'expired',
+              'compare' => 'NOT LIKE'
+          )
+      );
 
 
       // do the query
@@ -513,6 +562,7 @@ function sgfc_get_member_results(){
     $offset     = ($paged - 1) * $number;
 
     $args = array(
+      'active_members' => true,
       'orderby' => "meta_value",
       'meta_key' => 'last_name',
       "order" => "asc",
@@ -523,11 +573,11 @@ function sgfc_get_member_results(){
     // Filter by industry or search boxes?
     if(!empty($_GET['member_industry'])){
 
-      $meta_query = array('relation' => 'OR');
+      $meta_query = array('relation' => 'AND');
 
       foreach($_GET['member_industry'] as $industry_id)
         $meta_query[] = array(
-          'key' => 'profession',
+          'key' => 'skills',
           'value' => '"' . $industry_id . '"',
           'compare' => 'LIKE'
         );
@@ -589,24 +639,40 @@ function sgfc_get_member_results(){
           'compare' => 'LIKE'
         );
       }
-      
+
+    }
 
     $args['meta_query'] = $meta_query;
 
-
-    // do the query
     $members = new WP_User_Query($args);
 
     $result_data['results'] = $members->results;
     $result_data['count'] = $members->total_users;
     $result_data['pages'] = ceil($members->total_users / $number);
 
-    }
 
   }
+
+  wp_reset_query();
   
   return $result_data;
 }
+
+
+// filter all user query to only contain active members
+// Use query var "active_members" = true
+function sgfc_add_active_members_filter( $user_query ) {
+
+  global $wpdb;
+
+  if(!$user_query->get("active_members"))
+    return;
+
+  $user_query->query_from .= ' INNER JOIN ' . $wpdb->posts . ' ON ' . $wpdb->posts . '.post_author = ' . $wpdb->users . '.ID '; // additional joins here
+  $user_query->query_where .= ' AND ' . $wpdb->posts . '.post_status = "wcm-active"'; // additional where clauses
+
+}
+add_action( 'pre_user_query', 'sgfc_add_active_members_filter' );
 
 
 
@@ -959,7 +1025,7 @@ function sgfc_get_editable_posts($user_id, $post_type, $action_post_name){
     'author' => $user_id
   ));
   while($user_jobs_author->have_posts()): $user_jobs_author->the_post();
-    $posts[] = array(
+    $posts[get_the_ID()] = array(
       'id' => get_the_ID(),
       'title' => get_the_title()
     );
@@ -982,7 +1048,7 @@ function sgfc_get_editable_posts($user_id, $post_type, $action_post_name){
     )
   ));
   while($user_jobs_acf->have_posts()): $user_jobs_acf->the_post();
-    $posts[] = array(
+    $posts[get_the_ID()] = array(
       'id' => get_the_ID(),
       'title' => get_the_title()
     );
@@ -1024,3 +1090,68 @@ function sgfc_get_user_avatar($user_id, $size){
   return get_wp_user_avatar_src($user_id, $size);
 
 }
+
+
+function sgfc_get_perks(){
+  
+  $perks = array();
+
+  $perks_q = new WP_Query(array(
+    'post_type' => array('organizations', 'businesses'),
+    'meta_query' => array(
+      array(
+        'key'     => 'perks',
+        'value'   => '',
+        'compare' => '!=',
+      )
+    ),
+  ));
+
+  while($perks_q->have_posts()){
+    $perks_q->the_post();
+    $the_link = 
+    $post_image_src = 
+    $perks[] = array(
+      'link' => get_the_permalink(),
+      'title' => get_the_title(),
+      'logo' => get_object_image_src(get_the_ID(), get_post_type()),
+      'perks' => get_field('perks')
+    );
+  }
+  return $perks;
+
+}
+
+function sgfc_get_perks_shortcode(){
+  $perks = sgfc_get_perks();
+
+  ob_start();
+  ?>
+
+  <div class="grid small">
+    <?php
+    foreach($perks as $perk):
+      ?>
+      <div class="unit-1-2 unit-1-1-sm margin">
+        <div class="grid">
+          <div class="unit-1-3">
+            <a href="<?php echo $perk['link'] ?>"><div class="circle border margin-half"><span><img src="<?php echo $perk['logo'] ?>" /></span></div></a>
+          </div>
+          <div class="unit-2-3">
+            <h4><?php echo $perk['title'] ?></h4>
+            <p><?php echo $perk['perks'] ?></p>
+          </div>
+        </div>
+      </div>
+      <?php
+    endforeach;
+    ?>
+  </div>
+
+  <?php
+  $html = ob_get_contents();
+  ob_clean();
+
+  return $html;
+}
+add_shortcode('sgfc-perks', 'sgfc_get_perks_shortcode');

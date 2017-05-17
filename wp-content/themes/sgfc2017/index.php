@@ -66,7 +66,35 @@ if(!$no_hero){
           ?>
 
           <div class="text-center">
-              <h4><a href="">← Previous</a> | <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a> <a href="">5</a> | <a href="">Next →</a></h4>
+              <h4>
+                <?php
+                parse_str($_SERVER['QUERY_STRING'], $query_string);
+
+                $cur_page = isset($_GET['paged']) ? intval($_GET['paged']) : get_query_var('paged');
+                if(empty($cur_page))
+                  $cur_page = 1;
+
+                if($cur_page > 1){
+                  $query_string['paged'] = $cur_page - 1;
+                  echo '<a class="left" href="?' . http_build_query($query_string) . '">← Previous</a>';
+                }
+
+                for($i = 1; $i <= $wp_query->max_num_pages; $i++){
+                  if($i==$cur_page){
+                    echo '<strong>' . $i . '</strong> ';
+                  }else{
+                    $query_string['paged'] = $i;
+                    echo '<a href="?' . http_build_query($query_string) . '">' . $i . ' </a>';
+                  }
+                }
+
+                if($cur_page != $wp_query->max_num_pages){
+                  $query_string['paged'] = $cur_page + 1;
+                  echo '<a class="right" href="?' . http_build_query($query_string) . '">Next →</a>';
+                }  
+                ?>      
+
+              </h4>
           </div>
 
         </div>

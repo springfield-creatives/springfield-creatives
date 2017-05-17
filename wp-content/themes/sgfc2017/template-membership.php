@@ -91,7 +91,7 @@ require('partial-hero.php');
         <p class="callout"><?php the_field('corporate_blurb') ?></p>
       </div>
     </div>
-    <p class="text-center"><a class="button" href="<?php the_field('corporate_link') ?>">More Information</a></p>
+    <p class="text-center"><a class="button" href="/members/corporate-membership/">More Information</a></p>
   </article>
 </section>
 

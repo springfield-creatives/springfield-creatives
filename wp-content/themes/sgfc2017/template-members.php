@@ -5,7 +5,10 @@ Template Name: Members Directory
 
 get_header();
 the_post();
+
 $empty_search_query = count($_GET) == 0;
+if(!$empty_search_query)
+  $hero_intro = false;
 
 require('partial-hero.php');
 ?>
@@ -88,10 +91,11 @@ require('partial-hero.php');
           <h3>or, Narrow By Skillset</h3>
           <?php
           $industry = get_terms(array(
-            'taxonomy' => 'industry'
+            'taxonomy' => 'skills',
+            'hide_empty' => 0
           ));
           ?>
-          <form>
+          <form action="<?php the_field('membership_directory_url', 'options') ?>">
             <div class="grid margin-half">
               <div class="unit-1-2 unit-1-1-lg">
                 <?php
@@ -168,7 +172,7 @@ require('partial-hero.php');
 
           for($i = 1; $i <= $member_results['pages']; $i++){
             if($i==$cur_page){
-              echo '<strong>' . $i . '</a> ';
+              echo '<strong>' . $i . '</strong> ';
             }else{
               $query_string['paged'] = $i;
               echo '<a href="?' . http_build_query($query_string) . '">' . $i . ' </a>';

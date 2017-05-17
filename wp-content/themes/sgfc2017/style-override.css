@@ -1,6 +1,14 @@
 .event-button { margin-right: 10px }
 .event_form { display: none }
 
+.type-product .related.products{
+  display: none
+}
+
+.acf-taxonomy-field .acf-icon {
+  background-color: #e7c144;
+  color: #fff;
+}
 .woocommerce .products ul,
 .woocommerce ul.products {
   text-align: center !important;
@@ -179,12 +187,16 @@ section article ul.sidebar li.current-menu-item a,
   display: none !important;
 }
 
+#tribe-events-content table.tribe-events-calendar .type-tribe_events.tribe-event-featured {
+  background-color: #ea7750 !important;
+}
+
 
 /* Proportional units
        ========================================================================== */
 /*
      * Specify the proportional width of an object.
-     * Primarily for, but not limited to, use with `.grid__cell` components.
+     * Primarimodly for, but not limited to, use with `.grid__cell` components.
      * Intentional redundancy build into each set of unit classes.
      */
 .unit-1-2, .unit-2-4, .unit-3-6, .unit-4-8, .unit-5-10, .unit-6-12 {

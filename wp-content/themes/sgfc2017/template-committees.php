@@ -66,5 +66,23 @@ while($committees_q->have_posts()): $committees_q->the_post();
 endwhile;
 
 wp_reset_query();
+?>
+
+
+<section class="<?php echo $is_alt? 'alt' : '' ?>">
+  <article>
+    <div class="grid grid-center">
+      <div class="unit-3-5 unit-1-1-md text-center">
+          <h3 class="clean"><?php the_field('callout_title') ?></h3>
+          <p class="callout"><?php the_field('callout_blurb') ?></p>
+          <p><a class="button" href="<?php the_field('callout_button_link') ?>"><?php the_field('callout_button_label') ?></a></p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<?php require('partial-more-links.php'); ?>
+
+<?php
 
 get_footer();

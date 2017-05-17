@@ -4,14 +4,12 @@ get_header();
 $no_hero = true;
 if(is_archive()){
 
-  $title = 'SGFC Shop';
-  $banner_img = get_field('shop_hero', 'options')['url'];
+  $hero_title = get_field('hero_text', get_option( 'woocommerce_shop_page_id' ));
+  $hero_img = get_field('hero_image', get_option( 'woocommerce_shop_page_id' ));
+  $hero_intro = get_field('hero_intro', get_option( 'woocommerce_shop_page_id' ));
   $no_hero = false;
 
 }
-
-if(empty($banner_img))
-	$banner_img = get_stylesheet_directory_uri() . '/media/images/hero.jpg';
 
 if(!$no_hero){
   require('partial-hero.php');

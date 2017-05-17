@@ -22,27 +22,32 @@ function register_taxonomies()
 				'all_items' => 'Position'
 			),
 			'query_var' => true,
+			'capabilities' => array(
+				'manage_terms' => 'edit_posts',
+				'edit_terms' => 'edit_posts',
+				'assign_terms' => 'edit_posts'
+			)
 		)
 	);
 
-	register_taxonomy(
-		'job-type', 
-		array(
-			'jobs'
-		),
-		array(
-			'hierarchical' => false,
-			'show_ui' => true,
-			'public' => false,
-			'label' => __('Job Type'),
-			'show_in_nav_menus' => true,
-			'labels' => array(
-				'add_new_item' => 'Add New Job Type',
-				'all_items' => 'Job Type'
-			),
-			'query_var' => true,
-		)
-	);
+	// register_taxonomy(
+	// 	'job-type', 
+	// 	array(
+	// 		'jobs'
+	// 	),
+	// 	array(
+	// 		'hierarchical' => false,
+	// 		'show_ui' => true,
+	// 		'public' => false,
+	// 		'label' => __('Job Type'),
+	// 		'show_in_nav_menus' => true,
+	// 		'labels' => array(
+	// 			'add_new_item' => 'Add New Job Type',
+	// 			'all_items' => 'Job Type'
+	// 		),
+	// 		'query_var' => true,
+	// 	)
+	// );
 
 	register_taxonomy(
 		'industry', 
@@ -79,6 +84,11 @@ function register_taxonomies()
 				'all_items' => 'Skills/Services'
 			),
 			'query_var' => true,
+			'capabilities' => array(
+				'manage_terms' => 'edit_posts',
+				'edit_terms' => 'edit_posts',
+				'assign_terms' => 'edit_posts'
+			)
 		)
 	);
 	

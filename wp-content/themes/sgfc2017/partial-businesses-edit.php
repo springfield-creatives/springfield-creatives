@@ -55,6 +55,7 @@ if(empty($entry_id)){
 			));
 			?>
 			<button type="submit">Update Entry</button>
+			<a href="?sgfc-delete-entry=<?php echo $_GET['entry-id'] ?>" class="delete-entry-link">Delete this Entry</a>
 		</form>
 		<?php
 

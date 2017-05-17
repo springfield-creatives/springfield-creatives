@@ -45,6 +45,7 @@ require('partial-hero.php');
         </div>
     </article>
 </section>
+
 <section class="alt">
   <article>
     <div class="grid grid-center">

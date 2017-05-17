@@ -88,7 +88,7 @@ foreach($levels as $key=>$level):
 							?>
 							<div class="unit-1-8 unit-1-4-sm unit-center margin">
 								<a href="<?php echo $sponsor['link'] ?>" target="_blank" title="<?php echo $sponsor['name'] ?>">
-									<div class="circle border"><span><img src="<?php echo $sponsor['logo']['sizes']['medium'] ?>" /></span></div>
+									<div class="circle border"><span><img src="<?php echo get_object_image_src($sponsor['id']) ?>" /></span></div>
 								</a>
 							</div>	
 							<?php

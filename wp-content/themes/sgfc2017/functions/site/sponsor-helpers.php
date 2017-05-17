@@ -48,13 +48,14 @@ function get_sponsors($min_level = 1, $range = '>=', $user_args = array()) {
 			$sponsor_logo = get_field( 'default_' . get_post_type() . '_image', 'option');
 */
 
-		$sponsor_url = get_field('sponsor_url');
 
+		$sponsor_url = get_field('website');
 		if(empty($sponsor_url))
-			$sponsor_url = get_field('website_url');
+			$sponsor_url = get_permalink();
 
 		//store each sponsor by level
 		$sponsors[ intval(get_field('sponsor_level')) ][] = array(
+			'id' => get_the_ID(),
 			'name' => get_the_title(),
 			'logo' => $sponsor_logo,
 			'link' => $sponsor_url,

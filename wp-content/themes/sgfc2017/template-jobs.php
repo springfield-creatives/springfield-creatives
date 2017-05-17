@@ -28,7 +28,7 @@ $regular_jobs = array();
 $job_query = new WP_Query(array(
   'post_type' => 'jobs',
   'posts_per_page' => -1,
-  'orderby' => 'menu_order',
+  'orderby' => 'title',
   'order' => 'ASC'
 ));
 while($job_query->have_posts()): $job_query->the_post();
@@ -44,13 +44,13 @@ while($job_query->have_posts()): $job_query->the_post();
     'url' => get_the_permalink(),
     'apply' => get_field('apply_link'),
     'short_desc' => get_field('short_description'),
-    'image' => get_field('logo', $business->ID)['url'],
+    'image' => get_field('logo', $business->ID),
     'business' => $business->post_title,
     'business_link' => get_the_permalink($business->ID),
     'business_website' => get_field('website_url', $business->ID)
   );
 
-  if($post_type == 'featured')
+  if($post_type == 'featured' || $post_type == 'sponsor')
     $featured_jobs[] = $job_data;
   else
     $regular_jobs[] = $job_data;
@@ -66,7 +66,7 @@ foreach($featured_jobs as $job):
       <div class="grid">
         <?php if($job['image']): ?>
           <div class="unit-1-5 unit-1-1-sm unit-center">
-            <a href="<?php echo $job['url'] ?>"><div class="circle border margin"><span><img src="<?php echo $job['image'] ?>" /></span></div></a>
+            <a href="<?php echo $job['url'] ?>"><div class="circle border margin"><span><img src="<?php echo $job['image']['url'] ?>" /></span></div></a>
           </div>
         <?php endif; ?>
         <?php if(!$job['image']): ?>
@@ -101,7 +101,7 @@ endforeach;
                 <?php if($job['image']): ?>
                     <a href="<?php echo $job['url'] ?>">
                       <div class="circle border margin"><span>
-                      <img src="<?php echo $job['image'] ?>" />
+                      <img src="<?php echo $job['image']['url'] ?>" />
                       </span></div>
                     </a>
                 <?php endif; ?>
