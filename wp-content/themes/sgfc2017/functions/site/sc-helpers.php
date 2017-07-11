@@ -23,7 +23,7 @@ function get_object_image_src($post_id, $post_type = false, $size = 'square-medi
 
     // get connected business/organization and use that
     $post_image = get_field( 'logo', $post_id );
-    if(!empty($post_image))
+    if(!empty($post_image) && is_array($post_image))
       return !empty($post_image['sizes'][$size]) ? $post_image['sizes'][$size] : $post_image['url'];
 
   }else{
@@ -492,7 +492,7 @@ function sgfc_get_member_results(){
 
       $safe_query = $wpdb->prepare( 
         "
-        SELECT *
+        SELECT $wpdb->users.*, $wpdb->usermeta.*
         FROM $wpdb->users
           INNER JOIN $wpdb->usermeta
             ON ( $wpdb->users.ID = $wpdb->usermeta.user_id )
@@ -746,8 +746,8 @@ function sgfc_get_business_results($type = 'businesses'){
       $wp_query_args['tax_query'] = array(
           array(
             'taxonomy' => 'industry',
-            'field'    => 'term_id',
-            'value' => $_GET['business_industry']
+            'field'    => 'slug',
+            'terms' => $_GET['business_industry']
           )
       );
 
@@ -780,13 +780,14 @@ function sgfc_get_business_results($type = 'businesses'){
           'compare' => 'LIKE'
         );
         $meta_query['relation'] = 'OR';
-
-        $wp_query_args['meta_query'] = $meta_query;
-
-        $wp_query_args['s'] = $_GET['business_keyword'];
       }
 
     }
+
+    $wp_query_args['meta_query'] = $meta_query;
+
+    if(!empty($wp_query_args['s']))
+      $wp_query_args['s'] = $_GET['business_keyword'];
 
     $results = new WP_Query($wp_query_args);
 
@@ -891,10 +892,10 @@ function return_directory_item_html($post_object = false, $is_featured = false, 
     // 
     ?>
 
-    <div class="unit-1-5 unit-1-1-sm unit-center">
+    <div class="unit-1-5 unit-1-2-sm unit-1-3-mb unit-center">
       <a href="<?php echo $link ?>"><div class="circle border margin-half"><span><img src="<?php echo $post_image_src ?>" /></span></div></a>
     </div>
-    <div class="unit-4-5 unit-1-1-sm unit-center">
+    <div class="unit-4-5 unit-1-2-sm unit-2-3-mb unit-center">
       <h2><a href="<?php echo $link ?>"><?php echo $name ?></a></h2>
 
       <?php
@@ -917,7 +918,8 @@ function return_directory_item_html($post_object = false, $is_featured = false, 
           echo ' | <a href="mailto:' . $email . '">Email</a>';
         ?>
       </p>
-      
+    </div>
+    <div class="unit-4-5 unit-1-1-sm unit-center grid-cell-right">
       <?php
       if(!empty($short_desc))
         echo '<p>' . $short_desc . '</p>';

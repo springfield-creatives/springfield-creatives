@@ -33,13 +33,14 @@ function register_CPTs()
 		'rewrite' => Array(
 			'slug' => 'job'
 		),
-		'capability_type' => 'job',
+		'capability_type' => 'jobs',
 		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 21,
 		'supports' => array(
 			'title',
 			'editor',
+			'thumbnail',
 			'page-attributes'
 		)
 	);
@@ -74,13 +75,14 @@ function register_CPTs()
 		'rewrite' => Array(
 			'slug' => 'businesses'
 		),
-		'capability_type' => array('business', 'businesses'),
+		'capability_type' => 'businesses',
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => 21,
 		'supports' => array(
 			'title',
 			'editor',
+			'thumbnail',
 			'page-attributes'
 		)
 	);
@@ -115,13 +117,14 @@ function register_CPTs()
 		'rewrite' => Array(
 			'slug' => 'organizations'
 		),
-		'capability_type' => 'organization',
+		'capability_type' => 'organizations',
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => 21,
 		'supports' => array(
 			'title',
 			'editor',
+			'thumbnail',
 			'page-attributes'
 		)
 	);
@@ -158,7 +161,7 @@ function register_CPTs()
 		'rewrite' => Array(
 			'slug' => 'committees'
 		),
-		'capability_type' => 'committee',
+		'capability_type' => 'committees',
 		'has_archive' => false,
 		'hierarchical' => false,
 		'menu_position' => 21,

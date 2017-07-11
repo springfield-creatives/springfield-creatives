@@ -12,6 +12,8 @@ define('SGFC_CONTACT_ACF_ID', 2828);
 define('SGFC_AVAILABILITY_ACF_KEY', 'field_58e25c883e984');
 
 define('SGFC_JOB_POST_FORM_ID', 29);
+define('SGFC_BUSINESS_POST_FORM_ID', 30);
+define('SGFC_ORGANIZATION_POST_FORM_ID', 31);
 
 define('SGFC_PROFESSIONAL_MEMBERSHIP_PRODUCT_ID', 2717);
 define('SGFC_STUDENT_MEMBERSHIP_PRODUCT_ID', 2718);
@@ -109,7 +111,7 @@ include_once('functions/site/profile_editor_frontend.php');
 include_once('functions/site/gravity_forms.php');
 include_once('functions/site/member-card-funcs.php');
 
-// Author slug rewrite
+// // Author slug rewrite
 include_once('functions/site/author-slug-rewrite.php');
 
 // SECURITY STUFF

@@ -154,7 +154,7 @@ if(!empty($profile['edit-link'])){
 
 					<?php
 					// Hours
-					if(isset($profile['hours'])):
+					if(!empty($profile['hours'])):
 						?>
 						<div class="unit-1-2 unit-1-1-lg">
 							<h3>Hours</h3>

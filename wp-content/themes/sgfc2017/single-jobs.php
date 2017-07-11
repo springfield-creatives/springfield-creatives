@@ -4,8 +4,9 @@ the_post();
 
 
 $business = get_field('company');
-$website = get_field('website_url', $business->ID);
-$image = get_object_image_src($business->ID);
+$business_id = is_object($business) ? $business->ID : $business;
+$website = get_field('website_url', $business_id);
+$image = get_object_image_src($business_id);
 $job_type = get_field('job_type');
 
 $apply_link = get_field('apply_link');
@@ -25,10 +26,10 @@ global $fa_icons;
           <br>
           <h1><?php the_title() ?></h1>
           <h3><?php echo $business->post_title ?></h3>
-          <p class="callout"><?php echo $job_type['label'] ?></p>
-          <p><a href="<?php echo $website ?>"><?php echo sgfc_get_simple_url( $website ) ?></a> | <a href="<?php echo get_the_permalink($business->ID) ?>">View Profile</a></p>
+          <p class="callout"><?php echo is_array($job_type) ? $job_type['label'] : $job_type ?></p>
+          <p><a href="<?php echo $website ?>"><?php echo sgfc_get_simple_url( $website ) ?></a> | <a href="<?php echo get_the_permalink($business_id) ?>">View Profile</a></p>
           <ul class="social">
-            
+
             <?php
             if(!empty($profile['social_links'])){
               foreach($profile['social_links'] as $key => $contact_info){
@@ -40,7 +41,7 @@ global $fa_icons;
 
           </ul>
         </div>
-        <?php the_field('full_description') ?>
+        <?php echo apply_filters('the_content', get_field('full_description')) ?>
         <p><a class="button" target="_blank" href="<?php echo $apply_link ?>">Apply</a></p>
       </div>
       <div class="unit-1-2 unit-1-1-md margin">

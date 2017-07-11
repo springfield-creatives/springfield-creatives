@@ -111,7 +111,7 @@ require('partial-hero.php');
                   ?>
                   <div class="checkbox">
                     <input id="label-<?php echo $ind_count ?>" type="checkbox" name="member_industry[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET['member_industry']) && in_array($cur_ind->term_id, $_GET['member_industry']) ? 'checked ' : '' ?>/>
-                    <label for="label-<?php echo $ind_count ?>"><?php echo $cur_ind->name ?></label>
+                    <label for="label-<?php echo $ind_count ?>"><?php echo ucfirst($cur_ind->name) ?></label>
                   </div>
                 <?php
                 endforeach;

@@ -37,7 +37,7 @@ $media = get_gallery_arr($user_id, true);
 $edit_link = ($cur_user->ID == $user_id) ? get_bloginfo('url') . '/my-account/member-profile/' : '';
 
 // expired? TODO
-$expired = user_can( $user_id, 'expired' );
+// $expired = user_can( $user_id, 'expired' );
 
 $user_business_data = get_user_business_data($user_id);
 

@@ -53,3 +53,20 @@ function sgfc_populate_business_select_field( $form ) {
 
     return $form;
 }
+
+
+// set submitted biz/orgs logos in the correct ACF field
+add_action( 'gform_after_submission', 'set_post_content', 10, 2 );
+function set_post_content( $entry, $form ) {
+
+    if($form['id'] != SGFC_BUSINESS_POST_FORM_ID && $form['id'] !=  SGFC_ORGANIZATION_POST_FORM_ID)
+        return;
+
+    $thumb_id = get_post_thumbnail_id($entry['post_id']);
+    if(empty($thumb_id))
+        return;
+
+    //updating post
+    update_field('logo', $thumb_id, $entry['post_id']);
+
+}

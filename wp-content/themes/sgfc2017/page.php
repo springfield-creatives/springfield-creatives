@@ -1,5 +1,6 @@
 <?php
 get_header();
+the_post();
 
 $no_hero = false;
 

@@ -22,11 +22,11 @@ function register_taxonomies()
 				'all_items' => 'Position'
 			),
 			'query_var' => true,
-			'capabilities' => array(
-				'manage_terms' => 'edit_posts',
-				'edit_terms' => 'edit_posts',
-				'assign_terms' => 'edit_posts'
-			)
+			// 'capabilities' => array(
+			// 	'manage_terms' => 'editable_taxes',
+			// 	'edit_terms' => 'editable_taxes',
+			// 	'assign_terms' => 'editable_taxes'
+			// )
 		)
 	);
 
@@ -84,11 +84,11 @@ function register_taxonomies()
 				'all_items' => 'Skills/Services'
 			),
 			'query_var' => true,
-			'capabilities' => array(
-				'manage_terms' => 'edit_posts',
-				'edit_terms' => 'edit_posts',
-				'assign_terms' => 'edit_posts'
-			)
+			// 'capabilities' => array(
+			// 	'manage_terms' => 'editable_taxes',
+			// 	'edit_terms' => 'editable_taxes',
+			// 	'assign_terms' => 'editable_taxes'
+			// )
 		)
 	);
 	

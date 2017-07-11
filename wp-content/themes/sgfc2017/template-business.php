@@ -18,7 +18,7 @@ if(get_field('type') == 'businesses'){
     'singular' => 'Business',
     'plural' => 'Businesses',
     'tax' => array(
-      'tax' => 'industry',
+      'wp_tax_name' => 'industry',
       'label' => 'Industry',
       'query_name' => 'business_industry'
     )
@@ -30,7 +30,7 @@ if(get_field('type') == 'businesses'){
     'singular' => 'Organization',
     'plural' => 'Organizations',
     'tax' => array(
-      'tax' => 'organization-type',
+      'wp_tax_name' => 'organization-type',
       'label' => 'Organization Type',
       'query_name' => 'business_org_type'
     )
@@ -70,12 +70,14 @@ if(get_field('type') == 'businesses'){
           <h3>or, Narrow By <?php echo $post_type_data['tax']['label'] ?></h3>
           <?php
           $industry = get_terms(array(
-            'taxonomy' => $post_type_data['tax']['tax']
+            'taxonomy' => $post_type_data['tax']['wp_tax_name'],
+            'hide_empty' => true
           ));
           ?>
           <form>
             <div class="grid margin-half">
               <div class="unit-1-2 unit-1-1-lg">
+
                 <?php
                 $ind_count = 0;
                 $midpoint = round(count($industry)/2);
@@ -88,8 +90,8 @@ if(get_field('type') == 'businesses'){
 
                   ?>
                   <div class="checkbox">
-                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="<?php echo $post_type_data['tax']['query_name'] ?>[]" value="<?php echo $cur_ind->term_id ?>" <?php echo !empty($_GET[ $post_type_data['tax']['query_name'] ]) && in_array($cur_ind->term_id, $_GET[ $post_type_data['tax']['query_name'] ]) ? 'checked ' : '' ?>/>
-                    <label for="label-<?php echo $ind_count ?>"><?php echo $cur_ind->name ?></label>
+                    <input id="label-<?php echo $ind_count ?>" type="checkbox" name="<?php echo $post_type_data['tax']['query_name'] ?>[]" value="<?php echo $cur_ind->slug ?>" <?php echo !empty($_GET[ $post_type_data['tax']['query_name'] ]) && in_array($cur_ind->term_id, $_GET[ $post_type_data['tax']['query_name'] ]) ? 'checked ' : '' ?>/>
+                    <label for="label-<?php echo $ind_count ?>"><?php echo ucfirst($cur_ind->name) ?></label>
                   </div>
                 <?php
                 endforeach;
@@ -116,9 +118,9 @@ if(get_field('type') == 'businesses'){
 </section>
 
 <?php
-if(!$empty_search_query){
-  $business_results = sgfc_get_business_results(get_field('type'));
-}
+
+$business_results = sgfc_get_business_results(get_field('type'));
+
 
 
 if(!empty($business_results) && !empty($business_results['results_featured'])):

@@ -16,6 +16,14 @@ the_post();
       </div>
     </div>
 
+    <?php
+    if(!is_user_logged_in()):
+    	?>
+	    <div class="woocommerce-message"><p>Please sign in or create an account before posting your job. If you are not logged in, you won't be able to edit it later.</p>
+    	<?php echo do_shortcode('[woocommerce_social_login_buttons]'); ?></div>
+	    <?php
+    endif;
+    ?>
     <?php the_content() ?>
 
   </article>

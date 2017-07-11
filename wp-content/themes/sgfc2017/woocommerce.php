@@ -21,7 +21,7 @@ if(!$no_hero){
 ?>
 
 <section>
-  <article>
+  <article>asdf
     <?php woocommerce_content(); ?>
   </article>
 </section>
