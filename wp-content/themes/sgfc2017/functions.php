@@ -56,6 +56,9 @@ function custom_load_scripts() {
     wp_register_style('theme-css',get_stylesheet_directory_uri().'/style.css', FALSE, NULL, FALSE);
     wp_enqueue_style('theme-css');
 
+    wp_register_style('theme-css',get_stylesheet_directory_uri().'/style.css', FALSE, NULL, FALSE);
+    wp_enqueue_style('theme-css');
+
     wp_register_style('manual-override',get_stylesheet_directory_uri().'/style-override.css', FALSE, NULL, FALSE);
     wp_enqueue_style('manual-override');
 

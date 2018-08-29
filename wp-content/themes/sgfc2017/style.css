@@ -455,7 +455,7 @@ img {
     white-space: nowrap;
     cursor: pointer;
     background: #333;
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
   }
 
   .featherlight:last-of-type {
@@ -581,11 +581,11 @@ img {
   border: 1px solid #AAA;
   border-radius: 5px;
   background-color: #FFF;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, white), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
-  background: -webkit-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: -moz-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: -o-linear-gradient(top, white 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #FFF), color-stop(50%, #F6F6F6), color-stop(52%, #EEE), color-stop(100%, #F4F4F4));
+  background: -webkit-linear-gradient(top, #FFF 20%, #F6F6F6 50%, #EEE 52%, #F4F4F4 100%);
+  background: -moz-linear-gradient(top, #FFF 20%, #F6F6F6 50%, #EEE 52%, #F4F4F4 100%);
+  background: -o-linear-gradient(top, #FFF 20%, #F6F6F6 50%, #EEE 52%, #F4F4F4 100%);
+  background: linear-gradient(to bottom, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
   background-clip: padding-box;
   box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
   color: #444;
@@ -595,7 +595,7 @@ img {
 }
 
 .gform_wrapper .chosen-container-single .chosen-default {
-  color: #999999;
+  color: #999;
 }
 
 .gform_wrapper .chosen-container-single .chosen-single span {
@@ -754,10 +754,10 @@ img {
   height: 1%;
   border: 1px solid #AAA;
   background-color: #FFF;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #eeeeee), color-stop(15%, white));
-  background-image: -webkit-linear-gradient(#eeeeee 1%, white 15%);
-  background-image: -moz-linear-gradient(#eeeeee 1%, white 15%);
-  background-image: -o-linear-gradient(#eeeeee 1%, white 15%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #EEE), color-stop(15%, #FFF));
+  background-image: -webkit-linear-gradient(#EEE 1%, #FFF 15%);
+  background-image: -moz-linear-gradient(#EEE 1%, #FFF 15%);
+  background-image: -o-linear-gradient(#EEE 1%, #FFF 15%);
   background-image: linear-gradient(#eeeeee 1%, #ffffff 15%);
   cursor: text;
 }
@@ -788,7 +788,7 @@ img {
 }
 
 .gform_wrapper .chosen-container-multi .chosen-choices li.search-field .default {
-  color: #999999;
+  color: #999;
 }
 
 .gform_wrapper .chosen-container-multi .chosen-choices li.search-choice {
@@ -798,10 +798,10 @@ img {
   border: 1px solid #AAA;
   border-radius: 3px;
   background-color: #E4E4E4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #F4F4F4), color-stop(50%, #F0F0F0), color-stop(52%, #E8E8E8), color-stop(100%, #EEE));
+  background-image: -webkit-linear-gradient(#F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
+  background-image: -moz-linear-gradient(#F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
+  background-image: -o-linear-gradient(#F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
   background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
   background-clip: padding-box;
   box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
@@ -829,16 +829,16 @@ img {
   padding-right: 5px;
   border: 1px solid #CCC;
   background-color: #E4E4E4;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #F4F4F4), color-stop(50%, #F0F0F0), color-stop(52%, #E8E8E8), color-stop(100%, #EEE));
+  background-image: -webkit-linear-gradient(top, #F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
+  background-image: -moz-linear-gradient(top, #F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
+  background-image: -o-linear-gradient(top, #F4F4F4 20%, #F0F0F0 50%, #E8E8E8 52%, #EEE 100%);
+  background-image: linear-gradient(to bottom, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
   color: #666;
 }
 
 .gform_wrapper .chosen-container-multi .chosen-choices li.search-choice-focus {
-  background: #d4d4d4;
+  background: #D4D4D4;
 }
 
 .gform_wrapper .chosen-container-multi .chosen-choices li.search-choice-focus .search-choice-close {
@@ -867,10 +867,10 @@ img {
   border-bottom-right-radius: 0;
   -moz-border-radius-bottomleft: 0;
   border-bottom-left-radius: 0;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #eeeeee), color-stop(80%, white));
-  background-image: -webkit-linear-gradient(#eeeeee 20%, white 80%);
-  background-image: -moz-linear-gradient(#eeeeee 20%, white 80%);
-  background-image: -o-linear-gradient(#eeeeee 20%, white 80%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #EEE), color-stop(80%, #FFF));
+  background-image: -webkit-linear-gradient(#EEE 20%, #FFF 80%);
+  background-image: -moz-linear-gradient(#EEE 20%, #FFF 80%);
+  background-image: -o-linear-gradient(#EEE 20%, #FFF 80%);
   background-image: linear-gradient(#eeeeee 20%, #ffffff 80%);
   box-shadow: 0 1px 0 #fff inset;
 }
@@ -890,7 +890,7 @@ img {
 }
 
 .gform_wrapper .chosen-container-active .chosen-choices li.search-field input[type="text"] {
-  color: #111111 !important;
+  color: #111 !important;
 }
 
 .gform_wrapper .chosen-disabled {
@@ -1011,6 +1011,14 @@ Springfield Creatives Styles
  * Primarily for, but not limited to, use with `.grid__cell` components.
  * Intentional redundancy build into each set of unit classes.
  */
+.unit-1-1 {
+  width: 100%;
+}
+
+.unit-0-1 {
+  width: 0%;
+}
+
 .unit-1-2, .unit-2-4, .unit-3-6, .unit-4-8, .unit-5-10, .unit-6-12 {
   width: 50%;
 }
@@ -1111,6 +1119,14 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
+  .unit-1-1-lg {
+    width: 100%;
+  }
+
+  .unit-0-1-lg {
+    width: 0%;
+  }
+
   .unit-1-2-lg, .unit-2-4-lg, .unit-3-6-lg, .unit-4-8-lg, .unit-5-10-lg, .unit-6-12-lg {
     width: 50%;
   }
@@ -1211,6 +1227,14 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
+  .unit-1-1-md {
+    width: 100%;
+  }
+
+  .unit-0-1-md {
+    width: 0%;
+  }
+
   .unit-1-2-md, .unit-2-4-md, .unit-3-6-md, .unit-4-8-md, .unit-5-10-md, .unit-6-12-md {
     width: 50%;
   }
@@ -1311,6 +1335,14 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
+  .unit-1-1-sm {
+    width: 100%;
+  }
+
+  .unit-0-1-sm {
+    width: 0%;
+  }
+
   .unit-1-2-sm, .unit-2-4-sm, .unit-3-6-sm, .unit-4-8-sm, .unit-5-10-sm, .unit-6-12-sm {
     width: 50%;
   }
@@ -1411,6 +1443,14 @@ Springfield Creatives Styles
    * Primarily for, but not limited to, use with `.grid__cell` components.
    * Intentional redundancy build into each set of unit classes.
    */
+  .unit-1-1-mb {
+    width: 100%;
+  }
+
+  .unit-0-1-mb {
+    width: 0%;
+  }
+
   .unit-1-2-mb, .unit-2-4-mb, .unit-3-6-mb, .unit-4-8-mb, .unit-5-10-mb, .unit-6-12-mb {
     width: 50%;
   }
@@ -1650,18 +1690,18 @@ body {
 }
 
 a {
-  color: #e7c144;
+  color: #E7C144;
   text-decoration: none;
 }
 a:hover {
-  color: #ea7750;
+  color: #EA7750;
   text-decoration: none;
 }
 
 /* Header
 ----------------------------------------------- */
 .site-header {
-  background: #5c6569;
+  background: #5C6569;
   box-sizing: border-box;
   left: 0;
   padding: 50px 5% 20px 5%;
@@ -1718,7 +1758,7 @@ body.admin-bar .site-header {
 }
 @media all and (max-width: 767px) {
   .site-header.alt {
-    background: #5c6569;
+    background: #5C6569;
   }
 }
 .site-header.alt h2 a:after {
@@ -1742,13 +1782,20 @@ body.admin-bar .site-header {
     top: 20px;
     width: 24px;
     z-index: 100;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
   }
+}
+@media all and (max-width: 1199px) and (max-width: 767px) {
+  .site-header > span {
+    top: 15px;
+  }
+}
+@media all and (max-width: 1199px) {
   body.admin-bar .site-header > span {
     top: 66px;
   }
   .site-header > span span {
-    background: #e7c144;
+    background: #E7C144;
     display: block;
     height: 3px;
     left: 0;
@@ -1760,7 +1807,7 @@ body.admin-bar .site-header {
     width: 24px;
   }
   .site-header > span span:before {
-    background: #e7c144;
+    background: #E7C144;
     content: '';
     display: block;
     height: 3px;
@@ -1772,7 +1819,7 @@ body.admin-bar .site-header {
     width: 24px;
   }
   .site-header > span span:after {
-    background: #e7c144;
+    background: #E7C144;
     bottom: -7px;
     content: '';
     display: block;
@@ -1782,11 +1829,6 @@ body.admin-bar .site-header {
     -moz-transition: all 0.2s linear;
     -webkit-transition: all 0.2s linear;
     width: 24px;
-  }
-}
-@media all and (max-width: 1199px) and (max-width: 767px) {
-  .site-header > span {
-    top: 15px;
   }
 }
 .site-header h2 {
@@ -1847,7 +1889,7 @@ body.admin-bar .site-header {
 }
 @media all and (max-width: 1199px) {
   .site-header nav {
-    background: #5c6569;
+    background: #5C6569;
     box-sizing: border-box;
     display: block;
     float: none;
@@ -1894,8 +1936,8 @@ body.admin-bar .site-header {
   }
 }
 .site-header nav ul.primary > li:hover > a {
-  background: #5c6569;
-  color: #e7c144;
+  background: #5C6569;
+  color: #E7C144;
 }
 @media all and (max-width: 1199px) {
   .site-header nav ul.primary > li:hover > a {
@@ -1923,16 +1965,16 @@ body.admin-bar .site-header {
   margin: 0;
 }
 .site-header nav ul.primary > li > a:hover {
-  background: #5c6569;
-  color: #e7c144;
+  background: #5C6569;
+  color: #E7C144;
   text-decoration: none;
 }
 .site-header nav ul.primary > li > a.current {
-  color: #e7c144;
+  color: #E7C144;
 }
 .site-header nav ul.primary > li.button > a {
   background: #fff;
-  color: #5c6569;
+  color: #5C6569;
 }
 @media all and (max-width: 1199px) {
   .site-header nav ul.primary > li.button > a {
@@ -1943,24 +1985,24 @@ body.admin-bar .site-header {
 }
 .site-header nav ul.primary > li.button > a:hover {
   background: #fff;
-  color: #e7c144;
+  color: #E7C144;
 }
 .site-header nav ul.primary > li.button ul {
   background: #fff;
   left: auto;
   right: -1px;
-  border-right: 1px solid #5c6569;
-  border-left: 1px solid #5c6569;
-  border-bottom: 1px solid #5c6569;
+  border-right: 1px solid #5C6569;
+  border-left: 1px solid #5C6569;
+  border-bottom: 1px solid #5C6569;
   border-top-right-radius: 0;
 }
 .site-header nav ul.primary > li.button ul a {
-  color: #e7c144;
+  color: #E7C144;
   text-align: right;
   display: block;
 }
 .site-header nav ul.primary ul {
-  background: #5c6569;
+  background: #5C6569;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1993,11 +2035,11 @@ body.admin-bar .site-header {
   font: 18px/24px "proxima-nova", Helvetica, Arial, Verdana, sans-serif;
 }
 .site-header nav ul.primary ul li a:hover {
-  color: #e7c144;
+  color: #E7C144;
   text-decoration: none;
 }
 .site-header nav ul.primary ul li a.current {
-  color: #e7c144;
+  color: #E7C144;
 }
 .site-header nav ul.secondary {
   position: absolute;
@@ -2040,7 +2082,7 @@ form label {
 form input,
 form textarea {
   background: #fff;
-  border: 1px solid #5c6569;
+  border: 1px solid #5C6569;
   box-sizing: border-box;
   color: #000;
   display: block;
@@ -2098,7 +2140,7 @@ form .gfield_checkbox input + label:before,
 form .gfield_radio input + label:before,
 form div.radio input + label:before {
   background: #fff;
-  border: 1px solid #5c6569;
+  border: 1px solid #5C6569;
   content: '';
   height: 24px;
   left: 0;
@@ -2133,7 +2175,7 @@ form select {
   -moz-appearance: button;
   -webkit-appearance: button;
   background: #fff;
-  border: 1px solid #5c6569;
+  border: 1px solid #5C6569;
   border-radius: 0;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
@@ -2160,7 +2202,7 @@ form select {
 .woocommerce input.button,
 .gform_button,
 form button {
-  background: #e7c144;
+  background: #E7C144;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -2177,7 +2219,7 @@ form button {
 .woocommerce input.button:hover,
 .gform_button:hover,
 form button:hover {
-  background: #ea7750;
+  background: #EA7750;
   text-decoration: none;
   color: white;
 }
@@ -2515,7 +2557,7 @@ form button:hover {
 /* Calendar
 ----------------------------------------------- */
 div.calendar {
-  background: #f2f1e4;
+  background: #F2F1E4;
   padding: 10px;
 }
 div.calendar .controls {
@@ -2530,7 +2572,7 @@ div.calendar .controls {
   }
 }
 div.calendar .controls span {
-  background: #e7c144;
+  background: #E7C144;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -2610,8 +2652,8 @@ div.calendar .days-container > ul li {
 div.calendar .days-container .days .day,
 div.calendar .days-container .days .empty {
   background: #fff;
-  border-left: 1px solid #f2f1e4;
-  border-right: 1px solid #f2f1e4;
+  border-left: 1px solid #F2F1E4;
+  border-right: 1px solid #F2F1E4;
   box-sizing: border-box;
   color: #333333;
   display: inline-block;
@@ -2720,7 +2762,7 @@ div.calendar .days-container .days .empty ul li {
 }
 div.calendar .days-container .days .day ul span,
 div.calendar .days-container .days .empty ul span {
-  background: #e7c144;
+  background: #E7C144;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -2739,7 +2781,7 @@ div.calendar .days-container .days .empty ul span {
 div.calendar .days-container .days .day > span,
 div.calendar .days-container .days .empty > span {
   pointer-events: none;
-  background-color: #5c6569;
+  background-color: #5C6569;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -2752,7 +2794,7 @@ div.calendar .days-container .days .empty > span {
 }
 div.calendar .days-container .days .day > span.official,
 div.calendar .days-container .days .empty > span.official {
-  background-color: #ea7750;
+  background-color: #EA7750;
 }
 
 #tribe-events-pg-template {
@@ -2767,7 +2809,7 @@ div.calendar .days-container .days .empty > span.official {
 /* Content
 ----------------------------------------------- */
 section {
-  color: #5c6569;
+  color: #5C6569;
   position: relative;
 }
 section.hero {
@@ -2837,11 +2879,11 @@ section.hero article p a.button {
   }
 }
 section.alt {
-  background: #f2f1e4;
-  color: #13344a;
+  background: #F2F1E4;
+  color: #13344A;
 }
 section.inverse {
-  background: #5c6569;
+  background: #5C6569;
   color: #fff;
 }
 section.inverse h1,
@@ -2856,14 +2898,14 @@ section.inverse h2 a,
 section.inverse h3 a,
 section.inverse h4 a,
 section.inverse p a {
-  color: #e7c144;
+  color: #E7C144;
 }
 section.inverse h1 a:hover,
 section.inverse h2 a:hover,
 section.inverse h3 a:hover,
 section.inverse h4 a:hover,
 section.inverse p a:hover {
-  color: #ea7750;
+  color: #EA7750;
 }
 section.thin article {
   padding: 25px 0;
@@ -2941,7 +2983,7 @@ section article h4 a {
   color: #000;
 }
 section article h4 i.fa {
-  color: #e7c144;
+  color: #E7C144;
 }
 section article p {
   font-size: 18px;
@@ -2974,7 +3016,7 @@ section article p i {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 section article hr {
-  background: #f2f1e4;
+  background: #F2F1E4;
   border: none;
   display: block;
   height: 1px;
@@ -2988,7 +3030,7 @@ section article img.rounded {
 }
 section article blockquote {
   border-left: 3px solid #efefef;
-  color: #e7c144;
+  color: #E7C144;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 24px;
   font-style: italic;
@@ -3043,7 +3085,7 @@ section article .contact {
   margin-bottom: 24px;
 }
 section article a.button {
-  background: #e7c144;
+  background: #E7C144;
   color: #fff;
   display: inline-block;
   font-size: 22px;
@@ -3059,7 +3101,7 @@ section article a.button {
   }
 }
 section article a.button:hover {
-  background: #ea7750;
+  background: #EA7750;
   text-decoration: none;
   color: #fff;
 }
@@ -3074,7 +3116,7 @@ section article a.button:hover {
 .woocommerce a.button.alt,
 .woocommerce button.button.alt,
 .woocommerce input.button.alt {
-  background-color: #e7c144;
+  background-color: #E7C144;
 }
 
 .woocommerce #respond input#submit.disabled,
@@ -3114,7 +3156,7 @@ section article a.button:hover {
 .woocommerce input.button.alt:disabled[disabled],
 .woocommerce input.button.alt:disabled[disabled]:hover {
   padding: 20px 50px;
-  background-color: #5c6569;
+  background-color: #5C6569;
   color: #fff;
 }
 
@@ -3197,7 +3239,7 @@ div.acf-fields > .acf-field > .acf-label label {
   line-height: 36px;
 }
 .woocommerce .woocommerce-MyAccount-navigation li.is-active a {
-  color: #ea7750;
+  color: #EA7750;
 }
 
 .woocommerce-EditAccountForm .woocommerce-FormRow--first,
@@ -3261,7 +3303,7 @@ div.acf-fields > .acf-field > .acf-label label {
 /* Footer
 ----------------------------------------------- */
 footer {
-  background: #5c6569;
+  background: #5C6569;
   padding: 50px 0;
 }
 footer > div {
@@ -3299,7 +3341,7 @@ footer > div ul.social li a {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  color: #5c6569;
+  color: #5C6569;
   display: block;
   font-size: 24px;
   height: 40px;
