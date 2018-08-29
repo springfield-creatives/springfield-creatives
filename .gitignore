@@ -6,7 +6,7 @@
 *.swp
 Thumbs.db
 .idea/
-
+.htaccess
 # wordpress specific
 wp-config.php
 wp-content/mu-plugins/

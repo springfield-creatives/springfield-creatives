@@ -826,12 +826,12 @@ function sc_title_wp_query_filter($where, &$wp_query){
 }
 
 
-add_filter( 'user_search_columns', 'sc_search_display_name', 10, 3 );
+/*add_filter( 'user_search_columns', 'sc_search_display_name', 10, 3 );
     
 function sc_search_display_name( $search_columns, $search, $this ) {
     $search_columns[] = 'display_name';
     return $search_columns;
-}
+} */
 
 function sgfc_is_sponsor($post){
 
