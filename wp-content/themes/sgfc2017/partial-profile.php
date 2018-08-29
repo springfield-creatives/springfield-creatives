@@ -91,11 +91,11 @@ if(!empty($profile['edit-link'])){
           <h3><?php echo $profile['subhead'] ?></h3>
           <p class="callout"><?php echo $profile['callout'] ?></p>
           <div class="contact">
-          	
+
 						<?php
 						global $fa_icons;
 						foreach($profile['contact_links'] as $key => $contact_info){
-							
+
 							if(empty($contact_info['title']))
 								continue;
 
@@ -106,10 +106,10 @@ if(!empty($profile['edit-link'])){
 
           </div>
           <ul class="social">
-          	
+
 						<?php
 						foreach($profile['social_links'] as $key => $contact_info){
-							
+
 							if($key == 'email')
 								continue;
 
@@ -163,9 +163,9 @@ if(!empty($profile['edit-link'])){
 							</div>
 						</div>
 	        <?php endif; ?>
-        
+
       </div>
-      
+
       <?php
       // MAP
       if(!empty($profile['contact_links']['address']['title'])){
@@ -178,7 +178,7 @@ if(!empty($profile['edit-link'])){
 				);
 				echo '<iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCiddn9bKV6xJLFEm8sTQ4k6LtUTAO9RGg&q=' . $safe_address . '" width="100%" height="350" frameborder="0" style="border:0"></iframe>';
 
-				
+
 			}
 			?>
     </div>
@@ -187,7 +187,8 @@ if(!empty($profile['edit-link'])){
 
 <?php
 // Media!
-if(!empty($profile['media']) && !$expired):
+if(!empty($profile['media']) && !$expired && !empty($profile['media']['type'])):
+
 	?>
 	<section>
 	  <article>
