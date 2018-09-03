@@ -1600,6 +1600,55 @@ div.acf-fields > .acf-field > .acf-label label {
   }
 }
 
+/* Job Posting */
+.job-post-container {
+  .woocommerce-message {
+    border-top-color: $gold;
+    border-top-width: 4px;
+    padding: 40px;
+  }
+  .woocommerce-message:before {
+    display: none;
+  }
+  .wc-social-login.form-row-wide {
+    text-align: center;
+  }
+  .account-row {
+    margin: 40px 0;
+  }
+  h3 {
+    text-transform: none;
+  }
+  li#field_3 {
+    display: none;
+  }
+  ul#gform_fields_login {
+    margin-bottom: 0;
+  }
+  nav.gf_login_links {
+    text-align: left;
+    a {
+
+    }
+  }
+}
+#gform_29 {
+  #field_29_3 .gfield_description {
+    bottom: 0 !important;
+    position: relative !important;
+    margin-top: 65px;
+  }
+  .input-type-creditcard label {
+    display: none;
+  }
+  .chosen-container {
+    border: none !important;
+    padding: 0 !important;
+  }
+  .gform_footer.top_label {
+    text-align: right;
+  }
+}
 
 
 /* ACF Frontend Override

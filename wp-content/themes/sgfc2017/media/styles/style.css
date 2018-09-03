@@ -3282,6 +3282,50 @@ div.acf-fields > .acf-field > .acf-label label {
   margin-top: 10px;
 }
 
+/* Job Posting */
+.job-post-container .woocommerce-message {
+  border-top-color: #E7C144;
+  border-top-width: 4px;
+  padding: 40px;
+}
+.job-post-container .woocommerce-message:before {
+  display: none;
+}
+.job-post-container .wc-social-login.form-row-wide {
+  text-align: center;
+}
+.job-post-container .account-row {
+  margin: 40px 0;
+}
+.job-post-container h3 {
+  text-transform: none;
+}
+.job-post-container li#field_3 {
+  display: none;
+}
+.job-post-container ul#gform_fields_login {
+  margin-bottom: 0;
+}
+.job-post-container nav.gf_login_links {
+  text-align: left;
+}
+
+#gform_29 #field_29_3 .gfield_description {
+  bottom: 0 !important;
+  position: relative !important;
+  margin-top: 65px;
+}
+#gform_29 .input-type-creditcard label {
+  display: none;
+}
+#gform_29 .chosen-container {
+  border: none !important;
+  padding: 0 !important;
+}
+#gform_29 .gform_footer.top_label {
+  text-align: right;
+}
+
 /* ACF Frontend Override
 ----------------------------------------------- */
 .acf-fields.acf-fields > .acf-field {
