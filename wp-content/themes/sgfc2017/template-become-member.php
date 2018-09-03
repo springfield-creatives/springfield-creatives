@@ -92,7 +92,7 @@ endforeach;
         <p class="callout"><?php the_field('join_blurb') ?></p>
       </div>
     </div>
-    <?php echo do_shortcode('[products ids="' . SGFC_PROFESSIONAL_MEMBERSHIP_PRODUCT_ID. ',' . SGFC_STUDENT_MEMBERSHIP_PRODUCT_ID . '"]') ?>
+    <?php echo do_shortcode('[products ids="' . SGFC_STUDENT_MEMBERSHIP_PRODUCT_ID . ',' . SGFC_PROFESSIONAL_MEMBERSHIP_PRODUCT_ID . '"]') ?>
   </article>
 </section>
 

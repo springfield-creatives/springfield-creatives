@@ -111,6 +111,9 @@ include_once('functions/site/profile_editor_frontend.php');
 include_once('functions/site/gravity_forms.php');
 include_once('functions/site/member-card-funcs.php');
 
+// WOOCOMMERCE
+
+
 // // Author slug rewrite
 include_once('functions/site/author-slug-rewrite.php');
 

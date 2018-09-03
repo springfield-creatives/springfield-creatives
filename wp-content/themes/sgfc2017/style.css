@@ -3283,6 +3283,12 @@ div.acf-fields > .acf-field > .acf-label label {
 }
 
 /* Job Posting */
+.woocommerce-message {
+  border-top-color: #E7C144;
+  border-top-width: 4px;
+  padding: 40px;
+}
+
 .job-post-container .woocommerce-message {
   border-top-color: #E7C144;
   border-top-width: 4px;

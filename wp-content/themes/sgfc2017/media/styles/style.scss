@@ -1601,6 +1601,11 @@ div.acf-fields > .acf-field > .acf-label label {
 }
 
 /* Job Posting */
+.woocommerce-message {
+  border-top-color: $gold;
+  border-top-width: 4px;
+  padding: 40px;
+}
 .job-post-container {
   .woocommerce-message {
     border-top-color: $gold;
