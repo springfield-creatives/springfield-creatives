@@ -604,6 +604,7 @@ img {
   margin-right: 26px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-top: -40px;
 }
 
 .gform_wrapper .chosen-container-single .chosen-single-with-deselect span {
