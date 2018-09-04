@@ -114,6 +114,22 @@ include_once('functions/site/member-card-funcs.php');
 // WOOCOMMERCE
 
 
+// LOG IN FORM PLACEHOLDERS
+add_filter( 'gform_userregistration_login_form', 'change_form', 10, 1 );
+function change_form( $form ) {
+    $fields = $form['fields'];
+    foreach ( $fields as &$field ) {
+        if ( $field->label == 'Username' ) {
+            $field->placeholder = 'Email Address';
+        }
+        if ( $field->label == 'Password' ) {
+            $field->placeholder = 'Password';
+        }
+    }
+    return $form;
+}
+
+
 // // Author slug rewrite
 include_once('functions/site/author-slug-rewrite.php');
 
