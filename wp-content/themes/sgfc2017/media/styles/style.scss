@@ -1548,6 +1548,13 @@ div.acf-fields > .acf-field > .acf-label label {
   }
 }
 
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: #EA7750;
+  color: #fff;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: $red;
+}
 // hide first & last name on account page
 .woocommerce-EditAccountForm {
   .woocommerce-FormRow--first,

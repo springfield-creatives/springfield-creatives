@@ -3242,6 +3242,15 @@ div.acf-fields > .acf-field > .acf-label label {
   color: #EA7750;
 }
 
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: #EA7750;
+  color: #fff;
+}
+
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+  background-color: #EA7750;
+}
+
 .woocommerce-EditAccountForm .woocommerce-FormRow--first,
 .woocommerce-EditAccountForm .woocommerce-FormRow--last {
   display: none;
