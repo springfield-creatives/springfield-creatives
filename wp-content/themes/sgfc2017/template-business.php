@@ -67,7 +67,7 @@ if(get_field('type') == 'businesses'){
           </form>
         </div>
         <div class="unit-1-2 unit-1-1-sm">
-          <h3>or, Narrow By <?php echo $post_type_data['tax']['label'] ?></h3>
+          <h3>or, Narrow By Service<?php // echo $post_type_data['tax']['label'] ?></h3>
           <?php
           $industry = get_terms(array(
             'taxonomy' => $post_type_data['tax']['wp_tax_name'],
